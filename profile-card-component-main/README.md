@@ -16,7 +16,6 @@ This is a solution to the [Profile card component challenge on Frontend Mentor](
     - [Continued development](#continued-development)
     - [Useful resources](#useful-resources)
   - [Author](#author)
-  - [Author](#author-1)
   - [Acknowledgments](#acknowledgments)
 
 **Note: Delete this note and update the table of contents based on what sections you keep.**
@@ -67,8 +66,6 @@ background-position: right 48vw bottom 40vh, left 45vw top 44vh;
 ### Useful resources
 
 ---
-
-## Author
 
 ## Author
 
