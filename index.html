@@ -58,13 +58,13 @@
         border: 1px solid rgba(0, 0, 0, 0.24);
       }
 
-      tr:nth-child(even) {
-        /* background-color: #dddddd; */
-      }
+      /* tr:nth-child(even) {
+          background-color: #dddddd;
+       }
 
-      tr:nth-child(odd) {
-        /* background-color:  rgb(248, 12, 12); */
-      }
+       tr:nth-child(odd) {
+          background-color:  rgb(248, 12, 12); 
+       }*/
 
       .sticker {
         font-size: 1.6rem;
@@ -134,8 +134,33 @@
         color: rgb(244, 137, 37);
       }
 
-      #link-to-page {
+      .my-animation-links {
         text-decoration: none;
+        color: rgb(36, 14, 238);
+
+        position: relative;
+      }
+
+      .my-animation-links::after {
+        content: " ";
+
+        position: absolute;
+        left: 0;
+        bottom: -2px;
+        width: 100%;
+        height: 2px;
+
+        /* background: red; */
+        background: currentColor;
+
+        transform: scaleX(0);
+        transform-origin: right;
+        transition: transform 250ms ease-in;
+      }
+
+      .my-animation-links:hover::after {
+        transform: scaleX(1);
+        transform-origin: left;
       }
     </style>
   </head>
@@ -158,7 +183,7 @@
             <td>
               <a
                 href="./stats-preview-card-component-main/index.html"
-                id="link-to-page"
+                class="my-animation-links"
               >
                 stats-preview-card-component
               </a>
@@ -183,7 +208,7 @@
             <td>
               <a
                 href="./3-column-preview-card-component-main/index.html"
-                id="link-to-page"
+                class="my-animation-links"
               >
                 3-column-preview-card-component
               </a>
@@ -208,7 +233,7 @@
             <td>
               <a
                 href="./testimonials-grid-section-main/index.html"
-                id="link-to-page"
+                class="my-animation-links"
               >
                 testimonials-grid-section
               </a>
@@ -233,7 +258,7 @@
             <td>
               <a
                 href="./product-preview-card-component-main/index.html"
-                id="link-to-page"
+                class="my-animation-links"
               >
                 product-preview-card-component
               </a>
@@ -258,7 +283,7 @@
             <td>
               <a
                 href="./fylo-data-storage-component-master/index.html"
-                id="link-to-page"
+                class="my-animation-links"
               >
                 fylo-data-storage-component
               </a>
@@ -283,7 +308,7 @@
             <td>
               <a
                 href="./fylo-landing-page-with-two-column-layout-master/index.html"
-                id="link-to-page"
+                class="my-animation-links"
               >
                 fylo-landing-page-with-two-column-layout
               </a>
@@ -308,7 +333,7 @@
             <td>
               <a
                 href="./space-tourism-website-main/index.html"
-                id="link-to-page"
+                class="my-animation-links"
               >
                 space-tourism-website
               </a>
@@ -336,7 +361,7 @@
             <td>
               <a
                 href="./ecommerce-product-page-main/index.html"
-                id="link-to-page"
+                class="my-animation-links"
               >
                 ecommerce-product-page
               </a>
@@ -362,7 +387,10 @@
           <tr>
             <td>09</td>
             <td>
-              <a href="./room-homepage-master/index.html" id="link-to-page">
+              <a
+                href="./room-homepage-master/index.html"
+                class="my-animation-links"
+              >
                 room-homepage
               </a>
             </td>
@@ -389,7 +417,7 @@
             <td>
               <a
                 href="./easybank-landing-page-master/index.html"
-                id="link-to-page"
+                class="my-animation-links"
               >
                 easybank-landing-page
               </a>
@@ -415,7 +443,10 @@
           <tr>
             <td>11</td>
             <td>
-              <a href="./blogr-landing-page-main/index.html" id="link-to-page">
+              <a
+                href="./blogr-landing-page-main/index.html"
+                class="my-animation-links"
+              >
                 blogr-landing-page
               </a>
             </td>
@@ -440,7 +471,10 @@
           <tr>
             <td>12</td>
             <td>
-              <a href="./multi-step-form-main/index.html" id="link-to-page">
+              <a
+                href="./multi-step-form-main/index.html"
+                class="my-animation-links"
+              >
                 multi-step-form
               </a>
             </td>
@@ -465,7 +499,10 @@
           <tr>
             <td>13</td>
             <td>
-              <a href="./calculator-app-main/index.html" id="link-to-page">
+              <a
+                href="./calculator-app-main/index.html"
+                class="my-animation-links"
+              >
                 calculator-app
               </a>
             </td>
@@ -492,7 +529,7 @@
             <td>
               <a
                 href="./launch-countdown-timer-main/index.html"
-                id="link-to-page"
+                class="my-animation-links"
               >
                 launch-countdown-timer
               </a>
@@ -520,7 +557,7 @@
             <td>
               <a
                 href="./profile-card-component-main/index.html"
-                id="link-to-page"
+                class="my-animation-links"
               >
                 profile-card-component
               </a>
@@ -545,7 +582,7 @@
             <td>
               <a
                 href="./time-tracking-dashboard-main/index.html"
-                id="link-to-page"
+                class="my-animation-links"
               >
                 time-tracking-dashboard
               </a>
