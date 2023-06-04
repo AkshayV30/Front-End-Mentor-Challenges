@@ -1,0 +1,190 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+}
+
+.main--nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background: white;
+  padding: 20px;
+}
+.main--nav ul {
+  display: flex;
+  gap: 15px;
+  list-style: none;
+}
+
+.first {
+  padding: 50px;
+  display: grid;
+  grid-template-columns: repeat(2, 2fr);
+  width: 100%;
+  background: hsla(0, 0%, 51%, 0.05);
+}
+
+.first--txt {
+  grid-column: 1/2;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 25px;
+}
+.first--txt h1 {
+  width: 15ch;
+}
+.first--txt p {
+  width: 45ch;
+}
+
+.first--img {
+  grid-column: 2/-1;
+  width: 50%;
+}
+
+.first--img #background--img-1 {
+  height: 250px;
+  z-index: -1;
+  position: absolute;
+}
+.first--img #background--img-2 {
+  height: 250px;
+  z-index: 1;
+}
+
+.second {
+  padding: 50px;
+  display: grid;
+  grid-template-rows: 1fr, 2fr;
+  gap: 35px;
+  background: hsla(0, 0%, 67%, 0.3);
+}
+
+.second--txt h1 {
+  padding: 25px 0;
+}
+.second--txt p {
+  width: 65ch;
+}
+
+.second--cards {
+  display: flex;
+  gap: 25px;
+}
+.second--cards .second-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 15px;
+}
+.second--cards .second-card p {
+  width: 25ch;
+}
+.second--cards .second-card #logo {
+  width: 55px;
+  height: auto;
+}
+
+.third {
+  padding: 50px;
+  background: hsla(0, 0%, 55%, 0.116);
+}
+.third h1 {
+  padding: 25px 0;
+}
+.third .third--cards {
+  display: flex;
+  gap: 25px;
+}
+
+.third-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  border-radius: 5px;
+  overflow: hidden;
+}
+.third-card img {
+  width: 200px;
+  height: 150px;
+}
+
+.third-card-txt {
+  padding: 12px;
+  background: #fff;
+}
+.third-card-txt #t-caption {
+  font-size: 8px;
+}
+.third-card-txt #t-heading {
+  padding: 10px 0;
+}
+.third-card-txt #t-para {
+  font-size: 10px;
+}
+
+footer {
+  background: #0915be;
+  padding: 20px 50px;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+}
+footer .footer-icon {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+footer .footer-icon #company-logo {
+  width: 80px;
+  height: auto;
+}
+footer .footer-icons {
+  display: flex;
+  gap: 10px;
+}
+footer .footer-icons #f-icon {
+  width: 12px;
+}
+footer ul {
+  list-style: none;
+  font-size: 10px;
+}
+footer #c-1 {
+  grid-column: 2/3;
+}
+footer #c-2 {
+  grid-column: 3/4;
+}
+footer li {
+  padding: 5px;
+}
+footer .f-end {
+  grid-column: 5/6;
+  text-align: right;
+}
+footer .f-end p {
+  padding: 25px 0;
+  font-size: 10px;
+}
+
+button {
+  border-style: none;
+}
+button .btn {
+  background: red;
+  padding: 12px;
+  border-radius: 24px;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}/*# sourceMappingURL=main.css.map */
