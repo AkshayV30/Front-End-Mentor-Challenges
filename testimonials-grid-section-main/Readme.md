@@ -32,7 +32,7 @@ Screenshot for desktop view ![Desktop](./screenshot/desktop.png)
 
 ### Links
 
-- Solution URL: [Solution](https://akshayv30.github.io/Front-End-Mentor-Challenges/testimonials-grid-section-main)
+- Solution URL: [Solution](https://akshayv30.github.io/Front-End-Mentor-Challenges/tree/master/testimonials-grid-section-main)
 - Live Site URL: [Live site](https://akshayv30.github.io/Front-End-Mentor-Challenges/testimonials-grid-section-main/index.html)
 
 ## My process
@@ -50,8 +50,8 @@ Screenshot for desktop view ![Desktop](./screenshot/desktop.png)
 
 I learned about css Grid property following are few commands that i have worked on particularly for this webapage
 
-```
-display:grid;
+```css
+display: grid;
 
 grid-column: 1 / 3;
 grid-row: 1 / 2;
