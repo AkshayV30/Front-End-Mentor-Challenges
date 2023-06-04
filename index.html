@@ -5,16 +5,33 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Front End Mentor Challenge</title>
-
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 
-      *,
-      *::before,
-      *::after {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
+      @media (max-width: 650px) {
+        th {
+          display: none;
+        }
+        td {
+          display: grid;
+          grid-template-columns: 15ch auto;
+          gap: 0.75rem;
+          padding: 0.5rem 1rem;
+        }
+
+        td:first-child {
+          padding-top: 2rem;
+        }
+
+        td:last-child {
+          padding-bottom: 2rem;
+        }
+
+        td::before {
+          content: attr(data-cell) ":";
+          font-weight: 700;
+          text-transform: uppercase;
+        }
       }
 
       body {
@@ -23,53 +40,69 @@
         flex-direction: column;
         align-items: center;
 
-        font-size: 62.5%;
         text-align: center;
+
+        font-size: 1.125rem;
+        line-height: 1.5;
       }
 
-      .container {
-        width: 102.4rem;
-      }
-
-      .container > h1 {
-        font-size: 3.2rem;
-        padding: 2.8rem 0;
+      .wrapper {
+        width: min(900px, 100%-3rem);
+        margin-inline: auto;
       }
 
       table {
-        width: 100%;
+        /* background: #323232; */
+        padding: 1rem;
+
         border-collapse: collapse;
       }
 
+      caption,
       th,
       td {
-        /* border: 1px solid black; */
-        padding: 12px;
+        /* background: white; */
+        padding: 1rem;
+      }
+      td {
+        border: 1px solid rgba(236, 21, 21, 0.322);
+      }
+      th,
+      caption {
+        text-align: center;
+      }
+
+      caption {
+        background: hsl(0 0 0);
+        font-size: 2.4rem;
+        font-weight: 900;
+        text-transform: uppercase;
       }
 
       th {
-        background-color: #f2f2f2;
+        background: hsl(0 0% 0% / 0.7);
+        color: white;
         font-size: 1.6rem;
-        color: rgb(6, 6, 95);
       }
-
       td {
         font-size: 1.4rem;
-        border: 1px solid rgba(0, 0, 0, 0.24);
       }
 
-      /* tr:nth-child(even) {
-          background-color: #dddddd;
-       }
+      tr:nth-of-type(2n) {
+        /* background: hsl(0 0% 0% / 0.1); */
+      }
 
-       tr:nth-child(odd) {
-          background-color:  rgb(248, 12, 12); 
-       }*/
+      .container-main {
+      }
+      .container-table {
+        max-width: 100%;
+        overflow-x: auto;
+      }
 
       .sticker {
-        font-size: 1.6rem;
+        font-size: 1.2rem;
         font-weight: 700;
-        line-height: 1.5;
+        line-height: 1.25;
         display: flex;
         font-family: Barlow, sans-serif;
       }
@@ -77,6 +110,7 @@
       .sticker > #sticker-no,
       .sticker > #sticker-name {
         padding: 10px;
+        letter-spacing: 0.2ch;
       }
 
       .newbie,
@@ -165,447 +199,455 @@
     </style>
   </head>
   <body>
-    <div class="container">
-      <h1>Front End Mentor Challenges</h1>
-      <table>
-        <thead>
-          <tr>
-            <th>Sl No.</th>
-            <th>Challenge Name</th>
-            <th>Technology Utilized</th>
-            <th>Difficulty level</th>
-            <th>Status</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>01</td>
-            <td>
-              <a
-                href="./stats-preview-card-component-main/index.html"
-                class="my-animation-links"
-              >
-                stats-preview-card-component
-              </a>
-            </td>
-            <td>
-              <span style="color: rgb(106, 190, 205)"> HTMl </span>
-              <span style="color: rgb(62, 84, 163); padding-left: 4px">
-                CSS
-              </span>
-            </td>
-            <td>
-              <div class="sticker newbie">
-                <div id="sticker-no">1</div>
-                <div id="sticker-name">NEWBIE</div>
-              </div>
-            </td>
-            <td>Done</td>
-          </tr>
+    <div class="container-main">
+      <div class="wrapper">
+        <table class="container-table">
+          <caption>
+            Front End Mentor Challenges
+          </caption>
 
-          <tr>
-            <td>02</td>
-            <td>
-              <a
-                href="./3-column-preview-card-component-main/index.html"
-                class="my-animation-links"
-              >
-                3-column-preview-card-component
-              </a>
-            </td>
-            <td>
-              <span style="color: rgb(106, 190, 205)">HTMl</span>
-              <span style="color: rgb(62, 84, 163); padding-left: 4px"
-                >CSS</span
-              >
-            </td>
-            <td>
-              <div class="sticker newbie">
-                <div id="sticker-no">1</div>
-                <div id="sticker-name">NEWBIE</div>
-              </div>
-            </td>
-            <td>Done</td>
-          </tr>
+          <!-- tr  table row -->
+          <thead>
+            <tr>
+              <!-- th  table head -->
+              <th>Sl No.</th>
+              <th>Challenge Name</th>
+              <th>Technologies / languages</th>
+              <th>Difficulty level</th>
+              <th>Status</th>
+            </tr>
+          </thead>
 
-          <tr>
-            <td>03</td>
-            <td>
-              <a
-                href="./testimonials-grid-section-main/index.html"
-                class="my-animation-links"
-              >
-                testimonials-grid-section
-              </a>
-            </td>
-            <td>
-              <span style="color: rgb(106, 190, 205)">HTMl</span>
-              <span style="color: rgb(62, 84, 163); padding-left: 4px"
-                >CSS</span
-              >
-            </td>
-            <td>
-              <div class="sticker junior">
-                <div id="sticker-no">2</div>
-                <div id="sticker-name">JUNIOR</div>
-              </div>
-            </td>
-            <td>Done</td>
-          </tr>
+          <tbody>
+            <tr>
+              <td data-cell="sl-no">01</td>
+              <td data-cell="challenge-name">
+                <a
+                  href="./stats-preview-card-component-main/index.html"
+                  class="my-animation-links"
+                >
+                  stats-preview-card-component
+                </a>
+              </td>
+              <td data-cell="technology">
+                <span style="color: rgb(106, 190, 205)"> HTMl </span>
+                <span style="color: rgb(62, 84, 163); padding-left: 4px">
+                  CSS
+                </span>
+              </td>
+              <td data-cell="difficulty">
+                <div class="sticker newbie">
+                  <div id="sticker-no">1</div>
+                  <div id="sticker-name">NEWBIE</div>
+                </div>
+              </td>
+              <td data-cell="status">Done</td>
+            </tr>
 
-          <tr>
-            <td>04</td>
-            <td>
-              <a
-                href="./product-preview-card-component-main/index.html"
-                class="my-animation-links"
-              >
-                product-preview-card-component
-              </a>
-            </td>
-            <td>
-              <span style="color: rgb(106, 190, 205)">HTMl</span>
-              <span style="color: rgb(62, 84, 163); padding-left: 4px"
-                >CSS</span
-              >
-            </td>
-            <td>
-              <div class="sticker newbie">
-                <div id="sticker-no">1</div>
-                <div id="sticker-name">NEWBIE</div>
-              </div>
-            </td>
-            <td>WIP</td>
-          </tr>
+            <tr>
+              <td data-cell="sl-no">02</td>
+              <td data-cell="challenge-name">
+                <a
+                  href="./3-column-preview-card-component-main/index.html"
+                  class="my-animation-links"
+                >
+                  3-column-preview-card-component
+                </a>
+              </td>
+              <td data-cell="technology">
+                <span style="color: rgb(106, 190, 205)">HTMl</span>
+                <span style="color: rgb(62, 84, 163); padding-left: 4px"
+                  >CSS</span
+                >
+              </td>
+              <td data-cell="difficulty">
+                <div class="sticker newbie">
+                  <div id="sticker-no">1</div>
+                  <div id="sticker-name">NEWBIE</div>
+                </div>
+              </td>
+              <td data-cell="status">Done</td>
+            </tr>
 
-          <tr>
-            <td>05</td>
-            <td>
-              <a
-                href="./fylo-data-storage-component-master/index.html"
-                class="my-animation-links"
-              >
-                fylo-data-storage-component
-              </a>
-            </td>
-            <td>
-              <span style="color: rgb(106, 190, 205)">HTMl</span>
-              <span style="color: rgb(62, 84, 163); padding-left: 4px"
-                >CSS</span
-              >
-            </td>
-            <td>
-              <div class="sticker junior">
-                <div id="sticker-no">2</div>
-                <div id="sticker-name">JUNIOR</div>
-              </div>
-            </td>
-            <td>WIP</td>
-          </tr>
+            <tr>
+              <td data-cell="sl-no">03</td>
+              <td data-cell="challenge-name">
+                <a
+                  href="./testimonials-grid-section-main/index.html"
+                  class="my-animation-links"
+                >
+                  testimonials-grid-section
+                </a>
+              </td>
+              <td data-cell="technology">
+                <span style="color: rgb(106, 190, 205)">HTMl</span>
+                <span style="color: rgb(62, 84, 163); padding-left: 4px"
+                  >CSS</span
+                >
+              </td>
+              <td data-cell="difficulty">
+                <div class="sticker junior">
+                  <div id="sticker-no">2</div>
+                  <div id="sticker-name">JUNIOR</div>
+                </div>
+              </td>
+              <td data-cell="status">Done</td>
+            </tr>
 
-          <tr>
-            <td>06</td>
-            <td>
-              <a
-                href="./fylo-landing-page-with-two-column-layout-master/index.html"
-                class="my-animation-links"
-              >
-                fylo-landing-page-with-two-column-layout
-              </a>
-            </td>
-            <td>
-              <span style="color: rgb(106, 190, 205)">HTMl</span>
-              <span style="color: rgb(62, 84, 163); padding-left: 4px"
-                >CSS</span
-              >
-            </td>
-            <td>
-              <div class="sticker junior">
-                <div id="sticker-no">2</div>
-                <div id="sticker-name">JUNIOR</div>
-              </div>
-            </td>
-            <td>WIP</td>
-          </tr>
+            <tr>
+              <td data-cell="sl-no">04</td>
+              <td data-cell="challenge-name">
+                <a
+                  href="./product-preview-card-component-main/index.html"
+                  class="my-animation-links"
+                >
+                  product-preview-card-component
+                </a>
+              </td>
+              <td data-cell="technology">
+                <span style="color: rgb(106, 190, 205)">HTMl</span>
+                <span style="color: rgb(62, 84, 163); padding-left: 4px"
+                  >CSS</span
+                >
+              </td>
+              <td data-cell="difficulty">
+                <div class="sticker newbie">
+                  <div id="sticker-no">1</div>
+                  <div id="sticker-name">NEWBIE</div>
+                </div>
+              </td>
+              <td data-cell="status">WIP</td>
+            </tr>
 
-          <tr>
-            <td>07</td>
-            <td>
-              <a
-                href="./space-tourism-website-main/index.html"
-                class="my-animation-links"
-              >
-                space-tourism-website
-              </a>
-            </td>
-            <td>
-              <span style="color: rgb(106, 190, 205)">HTMl</span>
-              <span style="color: rgb(62, 84, 163); padding-left: 4px"
-                >CSS</span
-              >
-              <span style="color: rgb(207, 99, 144); padding-left: 4px"
-                >JS</span
-              >
-            </td>
-            <td>
-              <div class="sticker intermediate">
-                <div id="sticker-no">3</div>
-                <div id="sticker-name">INTERMEDIATE</div>
-              </div>
-            </td>
-            <td>WIP</td>
-          </tr>
+            <tr>
+              <td data-cell="sl-no">05</td>
+              <td data-cell="challenge-name">
+                <a
+                  href="./fylo-data-storage-component-master/index.html"
+                  class="my-animation-links"
+                >
+                  fylo-data-storage-component
+                </a>
+              </td>
+              <td data-cell="technology">
+                <span style="color: rgb(106, 190, 205)">HTMl</span>
+                <span style="color: rgb(62, 84, 163); padding-left: 4px"
+                  >CSS</span
+                >
+              </td>
+              <td data-cell="difficulty">
+                <div class="sticker junior">
+                  <div id="sticker-no">2</div>
+                  <div id="sticker-name">JUNIOR</div>
+                </div>
+              </td>
+              <td data-cell="status">WIP</td>
+            </tr>
 
-          <tr>
-            <td>08</td>
-            <td>
-              <a
-                href="./ecommerce-product-page-main/index.html"
-                class="my-animation-links"
-              >
-                ecommerce-product-page
-              </a>
-            </td>
-            <td>
-              <span style="color: rgb(106, 190, 205)">HTMl</span>
-              <span style="color: rgb(62, 84, 163); padding-left: 4px"
-                >CSS</span
-              >
-              <span style="color: rgb(207, 99, 144); padding-left: 4px"
-                >JS</span
-              >
-            </td>
-            <td>
-              <div class="sticker intermediate">
-                <div id="sticker-no">3</div>
-                <div id="sticker-name">INTERMEDIATE</div>
-              </div>
-            </td>
-            <td>WIP</td>
-          </tr>
+            <tr>
+              <td data-cell="sl-no">06</td>
+              <td data-cell="challenge-name">
+                <a
+                  href="./fylo-landing-page-with-two-column-layout-master/index.html"
+                  class="my-animation-links"
+                >
+                  fylo-landing-page-with-two-column-layout
+                </a>
+              </td>
+              <td data-cell="technology">
+                <span style="color: rgb(106, 190, 205)">HTMl</span>
+                <span style="color: rgb(62, 84, 163); padding-left: 4px"
+                  >CSS</span
+                >
+              </td>
+              <td data-cell="difficulty">
+                <div class="sticker junior">
+                  <div id="sticker-no">2</div>
+                  <div id="sticker-name">JUNIOR</div>
+                </div>
+              </td>
+              <td data-cell="status">WIP</td>
+            </tr>
 
-          <tr>
-            <td>09</td>
-            <td>
-              <a
-                href="./room-homepage-master/index.html"
-                class="my-animation-links"
-              >
-                room-homepage
-              </a>
-            </td>
-            <td>
-              <span style="color: rgb(106, 190, 205)">HTMl</span>
-              <span style="color: rgb(62, 84, 163); padding-left: 4px"
-                >CSS</span
-              >
-              <span style="color: rgb(207, 99, 144); padding-left: 4px"
-                >JS</span
-              >
-            </td>
-            <td>
-              <div class="sticker intermediate">
-                <div id="sticker-no">3</div>
-                <div id="sticker-name">INTERMEDIATE</div>
-              </div>
-            </td>
-            <td>WIP</td>
-          </tr>
+            <tr>
+              <td data-cell="sl-no">07</td>
+              <td data-cell="challenge-name">
+                <a
+                  href="./space-tourism-website-main/index.html"
+                  class="my-animation-links"
+                >
+                  space-tourism-website
+                </a>
+              </td>
+              <td data-cell="technology">
+                <span style="color: rgb(106, 190, 205)">HTMl</span>
+                <span style="color: rgb(62, 84, 163); padding-left: 4px"
+                  >CSS</span
+                >
+                <span style="color: rgb(207, 99, 144); padding-left: 4px"
+                  >JS</span
+                >
+              </td>
+              <td data-cell="difficulty">
+                <div class="sticker intermediate">
+                  <div id="sticker-no">3</div>
+                  <div id="sticker-name">INTERMEDIATE</div>
+                </div>
+              </td>
+              <td data-cell="status">WIP</td>
+            </tr>
 
-          <tr>
-            <td>10</td>
-            <td>
-              <a
-                href="./easybank-landing-page-master/index.html"
-                class="my-animation-links"
-              >
-                easybank-landing-page
-              </a>
-            </td>
-            <td>
-              <span style="color: rgb(106, 190, 205)">HTMl</span>
-              <span style="color: rgb(62, 84, 163); padding-left: 4px"
-                >CSS</span
-              >
-              <span style="color: rgb(207, 99, 144); padding-left: 4px"
-                >JS</span
-              >
-            </td>
-            <td>
-              <div class="sticker intermediate">
-                <div id="sticker-no">3</div>
-                <div id="sticker-name">INTERMEDIATE</div>
-              </div>
-            </td>
-            <td>WIP</td>
-          </tr>
+            <tr>
+              <td data-cell="sl-no">08</td>
+              <td data-cell="challenge-name">
+                <a
+                  href="./ecommerce-product-page-main/index.html"
+                  class="my-animation-links"
+                >
+                  ecommerce-product-page
+                </a>
+              </td>
+              <td data-cell="technology">
+                <span style="color: rgb(106, 190, 205)">HTMl</span>
+                <span style="color: rgb(62, 84, 163); padding-left: 4px"
+                  >CSS</span
+                >
+                <span style="color: rgb(207, 99, 144); padding-left: 4px"
+                  >JS</span
+                >
+              </td>
+              <td data-cell="difficulty">
+                <div class="sticker intermediate">
+                  <div id="sticker-no">3</div>
+                  <div id="sticker-name">INTERMEDIATE</div>
+                </div>
+              </td>
+              <td data-cell="status">WIP</td>
+            </tr>
 
-          <tr>
-            <td>11</td>
-            <td>
-              <a
-                href="./blogr-landing-page-main/index.html"
-                class="my-animation-links"
-              >
-                blogr-landing-page
-              </a>
-            </td>
-            <td>
-              <span style="color: rgb(106, 190, 205)">HTMl</span>
-              <span style="color: rgb(62, 84, 163); padding-left: 4px"
-                >CSS</span
-              >
-              <span style="color: rgb(207, 99, 144); padding-left: 4px"
-                >JS</span
-              >
-            </td>
-            <td>
-              <div class="sticker junior">
-                <div id="sticker-no">2</div>
-                <div id="sticker-name">JUNIOR</div>
-              </div>
-            </td>
-            <td>WIP</td>
-          </tr>
+            <tr>
+              <td data-cell="sl-no">09</td>
+              <td data-cell="challenge-name">
+                <a
+                  href="./room-homepage-master/index.html"
+                  class="my-animation-links"
+                >
+                  room-homepage
+                </a>
+              </td>
+              <td data-cell="technology">
+                <span style="color: rgb(106, 190, 205)">HTMl</span>
+                <span style="color: rgb(62, 84, 163); padding-left: 4px"
+                  >CSS</span
+                >
+                <span style="color: rgb(207, 99, 144); padding-left: 4px"
+                  >JS</span
+                >
+              </td>
+              <td data-cell="difficulty">
+                <div class="sticker intermediate">
+                  <div id="sticker-no">3</div>
+                  <div id="sticker-name">INTERMEDIATE</div>
+                </div>
+              </td>
+              <td data-cell="status">WIP</td>
+            </tr>
 
-          <tr>
-            <td>12</td>
-            <td>
-              <a
-                href="./multi-step-form-main/index.html"
-                class="my-animation-links"
-              >
-                multi-step-form
-              </a>
-            </td>
-            <td>
-              <span style="color: rgb(106, 190, 205)">HTMl</span>
-              <span style="color: rgb(62, 84, 163); padding-left: 4px"
-                >CSS</span
-              >
-              <span style="color: rgb(207, 99, 144); padding-left: 4px"
-                >JS</span
-              >
-            </td>
-            <td>
-              <div class="sticker advanced">
-                <div id="sticker-no">4</div>
-                <div id="sticker-name">ADVANCED</div>
-              </div>
-            </td>
-            <td>WIP</td>
-          </tr>
+            <tr>
+              <td data-cell="sl-no">10</td>
+              <td data-cell="challenge-name">
+                <a
+                  href="./easybank-landing-page-master/index.html"
+                  class="my-animation-links"
+                >
+                  easybank-landing-page
+                </a>
+              </td>
+              <td data-cell="technology">
+                <span style="color: rgb(106, 190, 205)">HTMl</span>
+                <span style="color: rgb(62, 84, 163); padding-left: 4px"
+                  >CSS</span
+                >
+                <span style="color: rgb(207, 99, 144); padding-left: 4px"
+                  >JS</span
+                >
+              </td>
+              <td data-cell="difficulty">
+                <div class="sticker intermediate">
+                  <div id="sticker-no">3</div>
+                  <div id="sticker-name">INTERMEDIATE</div>
+                </div>
+              </td>
+              <td data-cell="status">WIP</td>
+            </tr>
 
-          <tr>
-            <td>13</td>
-            <td>
-              <a
-                href="./calculator-app-main/index.html"
-                class="my-animation-links"
-              >
-                calculator-app
-              </a>
-            </td>
-            <td>
-              <span style="color: rgb(106, 190, 205)">HTMl</span>
-              <span style="color: rgb(62, 84, 163); padding-left: 4px"
-                >CSS</span
-              >
-              <span style="color: rgb(207, 99, 144); padding-left: 4px"
-                >JS</span
-              >
-            </td>
-            <td>
-              <div class="sticker intermediate">
-                <div id="sticker-no">3</div>
-                <div id="sticker-name">INTERMEDIATE</div>
-              </div>
-            </td>
-            <td>WIP</td>
-          </tr>
+            <tr>
+              <td data-cell="sl-no">11</td>
+              <td data-cell="challenge-name">
+                <a
+                  href="./blogr-landing-page-main/index.html"
+                  class="my-animation-links"
+                >
+                  blogr-landing-page
+                </a>
+              </td>
+              <td data-cell="technology">
+                <span style="color: rgb(106, 190, 205)">HTMl</span>
+                <span style="color: rgb(62, 84, 163); padding-left: 4px"
+                  >CSS</span
+                >
+                <span style="color: rgb(207, 99, 144); padding-left: 4px"
+                  >JS</span
+                >
+              </td>
+              <td data-cell="difficulty">
+                <div class="sticker junior">
+                  <div id="sticker-no">2</div>
+                  <div id="sticker-name">JUNIOR</div>
+                </div>
+              </td>
+              <td data-cell="status">WIP</td>
+            </tr>
 
-          <tr>
-            <td>14</td>
-            <td>
-              <a
-                href="./launch-countdown-timer-main/index.html"
-                class="my-animation-links"
-              >
-                launch-countdown-timer
-              </a>
-            </td>
-            <td>
-              <span style="color: rgb(106, 190, 205)">HTMl</span>
-              <span style="color: rgb(62, 84, 163); padding-left: 4px"
-                >CSS</span
-              >
-              <span style="color: rgb(207, 99, 144); padding-left: 4px"
-                >JS</span
-              >
-            </td>
-            <td>
-              <div class="sticker intermediate">
-                <div id="sticker-no">3</div>
-                <div id="sticker-name">INTERMEDIATE</div>
-              </div>
-            </td>
-            <td>WIP</td>
-          </tr>
+            <tr>
+              <td data-cell="sl-no">12</td>
+              <td data-cell="challenge-name">
+                <a
+                  href="./multi-step-form-main/index.html"
+                  class="my-animation-links"
+                >
+                  multi-step-form
+                </a>
+              </td>
+              <td data-cell="technology">
+                <span style="color: rgb(106, 190, 205)">HTMl</span>
+                <span style="color: rgb(62, 84, 163); padding-left: 4px"
+                  >CSS</span
+                >
+                <span style="color: rgb(207, 99, 144); padding-left: 4px"
+                  >JS</span
+                >
+              </td>
+              <td data-cell="difficulty">
+                <div class="sticker advanced">
+                  <div id="sticker-no">4</div>
+                  <div id="sticker-name">ADVANCED</div>
+                </div>
+              </td>
+              <td data-cell="status">WIP</td>
+            </tr>
 
-          <tr>
-            <td>15</td>
-            <td>
-              <a
-                href="./profile-card-component-main/index.html"
-                class="my-animation-links"
-              >
-                profile-card-component
-              </a>
-            </td>
-            <td>
-              <span style="color: rgb(106, 190, 205)">HTMl</span>
-              <span style="color: rgb(62, 84, 163); padding-left: 4px"
-                >CSS</span
-              >
-            </td>
-            <td>
-              <div class="sticker newbie">
-                <div id="sticker-no">1</div>
-                <div id="sticker-name">NEWBIE</div>
-              </div>
-            </td>
-            <td>Done</td>
-          </tr>
+            <tr>
+              <td data-cell="sl-no">13</td>
+              <td data-cell="challenge-name">
+                <a
+                  href="./calculator-app-main/index.html"
+                  class="my-animation-links"
+                >
+                  calculator-app
+                </a>
+              </td>
+              <td data-cell="technology">
+                <span style="color: rgb(106, 190, 205)">HTMl</span>
+                <span style="color: rgb(62, 84, 163); padding-left: 4px"
+                  >CSS</span
+                >
+                <span style="color: rgb(207, 99, 144); padding-left: 4px"
+                  >JS</span
+                >
+              </td>
+              <td data-cell="difficulty">
+                <div class="sticker intermediate">
+                  <div id="sticker-no">3</div>
+                  <div id="sticker-name">INTERMEDIATE</div>
+                </div>
+              </td>
+              <td data-cell="status">WIP</td>
+            </tr>
 
-          <tr>
-            <td>16</td>
-            <td>
-              <a
-                href="./time-tracking-dashboard-main/index.html"
-                class="my-animation-links"
-              >
-                time-tracking-dashboard
-              </a>
-            </td>
-            <td>
-              <span style="color: rgb(106, 190, 205)">HTMl</span>
-              <span style="color: rgb(62, 84, 163); padding-left: 4px"
-                >CSS</span
-              >
-              <span style="color: rgb(207, 99, 144); padding-left: 4px"
-                >JS</span
-              >
-            </td>
-            <td>
-              <div class="sticker junior">
-                <div id="sticker-no">2</div>
-                <div id="sticker-name">JUNIOR</div>
-              </div>
-            </td>
-            <td>WIP</td>
-          </tr>
-        </tbody>
-      </table>
+            <tr>
+              <td data-cell="sl-no">14</td>
+              <td data-cell="challenge-name">
+                <a
+                  href="./launch-countdown-timer-main/index.html"
+                  class="my-animation-links"
+                >
+                  launch-countdown-timer
+                </a>
+              </td>
+              <td data-cell="technology">
+                <span style="color: rgb(106, 190, 205)">HTMl</span>
+                <span style="color: rgb(62, 84, 163); padding-left: 4px"
+                  >CSS</span
+                >
+                <span style="color: rgb(207, 99, 144); padding-left: 4px"
+                  >JS</span
+                >
+              </td>
+              <td data-cell="difficulty">
+                <div class="sticker intermediate">
+                  <div id="sticker-no">3</div>
+                  <div id="sticker-name">INTERMEDIATE</div>
+                </div>
+              </td>
+              <td data-cell="status">WIP</td>
+            </tr>
+
+            <tr>
+              <td data-cell="sl-no">15</td>
+              <td>
+                <a
+                  href="./profile-card-component-main/index.html"
+                  class="my-animation-links"
+                >
+                  profile-card-component
+                </a>
+              </td>
+              <td data-cell="technology">
+                <span style="color: rgb(106, 190, 205)">HTMl</span>
+                <span style="color: rgb(62, 84, 163); padding-left: 4px"
+                  >CSS</span
+                >
+              </td>
+              <td data-cell="difficulty">
+                <div class="sticker newbie">
+                  <div id="sticker-no">1</div>
+                  <div id="sticker-name">NEWBIE</div>
+                </div>
+              </td>
+              <td data-cell="status">Done</td>
+            </tr>
+
+            <tr>
+              <td data-cell="sl-no">16</td>
+              <td>
+                <a
+                  href="./time-tracking-dashboard-main/index.html"
+                  class="my-animation-links"
+                >
+                  time-tracking-dashboard
+                </a>
+              </td>
+              <td data-cell="technology">
+                <span style="color: rgb(106, 190, 205)">HTMl</span>
+                <span style="color: rgb(62, 84, 163); padding-left: 4px"
+                  >CSS</span
+                >
+                <span style="color: rgb(207, 99, 144); padding-left: 4px"
+                  >JS</span
+                >
+              </td>
+              <td data-cell="difficulty">
+                <div class="sticker junior">
+                  <div id="sticker-no">2</div>
+                  <div id="sticker-name">JUNIOR</div>
+                </div>
+              </td>
+              <td data-cell="status">WIP</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
   </body>
 </html>
