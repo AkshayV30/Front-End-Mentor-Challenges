@@ -21,8 +21,8 @@ This is a solution to the [Stats preview card component challenge on Frontend Me
 ### Screenshot of my solution.
 
 The desktop version as well as mobile version of the solution was done.
-![](./screenshots/Desktop-capture_23-6-2021_153023.jpeg)
-![](./screenshots/Mobile-capture_23-6-2021_15300.jpeg)
+![Desktop View](./screenshots/Desktop-capture_23-6-2021_153023.jpeg)
+![Mobile View](./screenshots/Mobile-capture_23-6-2021_15300.jpeg)
 
 ### Links
 

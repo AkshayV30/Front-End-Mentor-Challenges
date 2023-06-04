@@ -31,7 +31,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Solution](https://akshayv30.github.io/Front-End-Mentor-Challenges/tree/master/3-column-preview-card-component-main)
+- Solution URL: [Solution Link](https://github.com/AkshayV30/Front-End-Mentor-Challenges/tree/master/3-column-preview-card-component-main)
 - Live Site URL: [Live site](https://akshayv30.github.io/Front-End-Mentor-Challenges/3-column-preview-card-component-main/index.html)
 
 ### Built with
