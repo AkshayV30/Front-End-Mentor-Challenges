@@ -32,7 +32,7 @@ Screenshot for desktop view ![Desktop](./screenshot/desktop.png)
 
 ### Links
 
-- Solution URL: [Solution](https://akshayv30.github.io/Front-End-Mentor-Challenges/testimonials-grid-section-main/)
+- Solution URL: [Solution](https://akshayv30.github.io/Front-End-Mentor-Challenges/testimonials-grid-section-main)
 - Live Site URL: [Live site](https://akshayv30.github.io/Front-End-Mentor-Challenges/testimonials-grid-section-main/index.html)
 
 ## My process

@@ -26,8 +26,8 @@ The desktop version as well as mobile version of the solution was done.
 
 ### Links
 
-- Solution URL: (https://github.com/AkshayV30/FrontEndMentorChallenges/stats-preview-card-component-main/)
-- Live Site URL: (https://akshayv30.github.io/Front-End-Mentor-Challenges/stats-preview-card-component-main/index.html)
+- Solution URL: [Solution Link](https://github.com/AkshayV30/FrontEndMentorChallenges/stats-preview-card-component-main)
+- Live Site URL:[Live Site](https://akshayv30.github.io/Front-End-Mentor-Challenges/stats-preview-card-component-main/index.html)
 
 ### Built with
 
