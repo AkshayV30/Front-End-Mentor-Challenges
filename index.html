@@ -9,6 +9,14 @@
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
       body {
         font-family: "Roboto", sans-serif;
         display: flex;
@@ -25,6 +33,7 @@
 
       .container > h1 {
         font-size: 3.2rem;
+        padding: 2.8rem 0;
       }
 
       table {
@@ -34,7 +43,7 @@
 
       th,
       td {
-        border: 1px solid black;
+        /* border: 1px solid black; */
         padding: 12px;
       }
 
@@ -46,14 +55,83 @@
 
       td {
         font-size: 1.4rem;
+        border: 1px solid rgba(0, 0, 0, 0.24);
       }
 
       tr:nth-child(even) {
-        background-color: #dddddd;
+        /* background-color: #dddddd; */
       }
 
       tr:nth-child(odd) {
         /* background-color:  rgb(248, 12, 12); */
+      }
+
+      .sticker {
+        font-size: 1.6rem;
+        font-weight: 700;
+        line-height: 1.5;
+        display: flex;
+        font-family: Barlow, sans-serif;
+      }
+
+      .sticker > #sticker-no,
+      .sticker > #sticker-name {
+        padding: 10px;
+      }
+
+      .newbie,
+      .junior,
+      .intermediate,
+      .advanced {
+        border-radius: 12px;
+        box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      }
+      .newbie {
+        border: 4px solid rgb(106, 190, 205);
+      }
+
+      .newbie > #sticker-no {
+        background-color: rgb(106, 190, 205);
+        color: white;
+      }
+      .newbie > #sticker-name {
+        color: rgb(106, 190, 205);
+      }
+
+      .junior {
+        border: 4px solid rgb(170, 215, 66);
+      }
+
+      .junior > #sticker-no {
+        background-color: rgb(170, 215, 66);
+        color: white;
+      }
+      .junior > #sticker-name {
+        color: rgb(170, 215, 66);
+      }
+
+      .intermediate {
+        border: 4px solid rgb(241, 182, 4);
+      }
+
+      .intermediate > #sticker-no {
+        background-color: rgb(241, 182, 4);
+        color: white;
+      }
+      .intermediate > #sticker-name {
+        color: rgb(241, 182, 4);
+      }
+
+      .advanced {
+        border: 4px solid rgb(244, 137, 37);
+      }
+
+      .advanced > #sticker-no {
+        background-color: rgb(244, 137, 37);
+        color: white;
+      }
+      .advanced > #sticker-name {
+        color: rgb(244, 137, 37);
       }
 
       #link-to-page {
@@ -70,6 +148,7 @@
             <th>Sl No.</th>
             <th>Challenge Name</th>
             <th>Technology Utilized</th>
+            <th>Difficulty level</th>
             <th>Status</th>
           </tr>
         </thead>
@@ -77,127 +156,417 @@
           <tr>
             <td>01</td>
             <td>
-              <a href="#" id="link-to-page">
-                3-column-preview-card-component-main
+              <a
+                href="./stats-preview-card-component-main/index.html"
+                id="link-to-page"
+              >
+                stats-preview-card-component
               </a>
             </td>
-            <td>HTMl, CSS</td>
+            <td>
+              <span style="color: rgb(106, 190, 205)"> HTMl </span>
+              <span style="color: rgb(62, 84, 163); padding-left: 4px">
+                CSS
+              </span>
+            </td>
+            <td>
+              <div class="sticker newbie">
+                <div id="sticker-no">1</div>
+                <div id="sticker-name">NEWBIE</div>
+              </div>
+            </td>
             <td>Done</td>
           </tr>
 
           <tr>
             <td>02</td>
-            <td><a href="#" id="link-to-page"> calculator-app-main </a></td>
-            <td>HTMl, CSS</td>
-            <td>---------</td>
+            <td>
+              <a
+                href="./3-column-preview-card-component-main/index.html"
+                id="link-to-page"
+              >
+                3-column-preview-card-component
+              </a>
+            </td>
+            <td>
+              <span style="color: rgb(106, 190, 205)">HTMl</span>
+              <span style="color: rgb(62, 84, 163); padding-left: 4px"
+                >CSS</span
+              >
+            </td>
+            <td>
+              <div class="sticker newbie">
+                <div id="sticker-no">1</div>
+                <div id="sticker-name">NEWBIE</div>
+              </div>
+            </td>
+            <td>Done</td>
           </tr>
 
           <tr>
             <td>03</td>
             <td>
-              <a href="#" id="link-to-page"> easybank-landing-page-master</a>
+              <a
+                href="./testimonials-grid-section-main/index.html"
+                id="link-to-page"
+              >
+                testimonials-grid-section
+              </a>
             </td>
-            <td>HTMl, CSS</td>
-            <td>---------</td>
+            <td>
+              <span style="color: rgb(106, 190, 205)">HTMl</span>
+              <span style="color: rgb(62, 84, 163); padding-left: 4px"
+                >CSS</span
+              >
+            </td>
+            <td>
+              <div class="sticker junior">
+                <div id="sticker-no">2</div>
+                <div id="sticker-name">JUNIOR</div>
+              </div>
+            </td>
+            <td>Done</td>
           </tr>
+
           <tr>
             <td>04</td>
             <td>
-              <a href="#" id="link-to-page"> ecommerce-product-page-main</a>
+              <a
+                href="./product-preview-card-component-main/index.html"
+                id="link-to-page"
+              >
+                product-preview-card-component
+              </a>
             </td>
-            <td>HTMl, CSS</td>
-            <td>---------</td>
+            <td>
+              <span style="color: rgb(106, 190, 205)">HTMl</span>
+              <span style="color: rgb(62, 84, 163); padding-left: 4px"
+                >CSS</span
+              >
+            </td>
+            <td>
+              <div class="sticker newbie">
+                <div id="sticker-no">1</div>
+                <div id="sticker-name">NEWBIE</div>
+              </div>
+            </td>
+            <td>WIP</td>
           </tr>
+
           <tr>
             <td>05</td>
             <td>
-              <a href="#" id="link-to-page"
-                >fylo-data-storage-component-master</a
+              <a
+                href="./fylo-data-storage-component-master/index.html"
+                id="link-to-page"
+              >
+                fylo-data-storage-component
+              </a>
+            </td>
+            <td>
+              <span style="color: rgb(106, 190, 205)">HTMl</span>
+              <span style="color: rgb(62, 84, 163); padding-left: 4px"
+                >CSS</span
               >
             </td>
-            <td>HTMl, CSS</td>
-            <td>---------</td>
+            <td>
+              <div class="sticker junior">
+                <div id="sticker-no">2</div>
+                <div id="sticker-name">JUNIOR</div>
+              </div>
+            </td>
+            <td>WIP</td>
           </tr>
+
           <tr>
             <td>06</td>
             <td>
-              <a href="#" id="link-to-page">
-                fylo-landing-page-with-two-column-layout-master
+              <a
+                href="./fylo-landing-page-with-two-column-layout-master/index.html"
+                id="link-to-page"
+              >
+                fylo-landing-page-with-two-column-layout
               </a>
             </td>
-            <td>HTMl, CSS</td>
-            <td>---------</td>
+            <td>
+              <span style="color: rgb(106, 190, 205)">HTMl</span>
+              <span style="color: rgb(62, 84, 163); padding-left: 4px"
+                >CSS</span
+              >
+            </td>
+            <td>
+              <div class="sticker junior">
+                <div id="sticker-no">2</div>
+                <div id="sticker-name">JUNIOR</div>
+              </div>
+            </td>
+            <td>WIP</td>
           </tr>
+
           <tr>
             <td>07</td>
             <td>
-              <a href="#" id="link-to-page"> launch-countdown-timer-main</a>
+              <a
+                href="./space-tourism-website-main/index.html"
+                id="link-to-page"
+              >
+                space-tourism-website
+              </a>
             </td>
-            <td>HTMl, CSS</td>
-            <td>---------</td>
+            <td>
+              <span style="color: rgb(106, 190, 205)">HTMl</span>
+              <span style="color: rgb(62, 84, 163); padding-left: 4px"
+                >CSS</span
+              >
+              <span style="color: rgb(207, 99, 144); padding-left: 4px"
+                >JS</span
+              >
+            </td>
+            <td>
+              <div class="sticker intermediate">
+                <div id="sticker-no">3</div>
+                <div id="sticker-name">INTERMEDIATE</div>
+              </div>
+            </td>
+            <td>WIP</td>
           </tr>
+
           <tr>
             <td>08</td>
-            <td><a href="#" id="link-to-page"> multi-step-form-main </a></td>
-            <td>HTMl, CSS</td>
-            <td>---------</td>
+            <td>
+              <a
+                href="./ecommerce-product-page-main/index.html"
+                id="link-to-page"
+              >
+                ecommerce-product-page
+              </a>
+            </td>
+            <td>
+              <span style="color: rgb(106, 190, 205)">HTMl</span>
+              <span style="color: rgb(62, 84, 163); padding-left: 4px"
+                >CSS</span
+              >
+              <span style="color: rgb(207, 99, 144); padding-left: 4px"
+                >JS</span
+              >
+            </td>
+            <td>
+              <div class="sticker intermediate">
+                <div id="sticker-no">3</div>
+                <div id="sticker-name">INTERMEDIATE</div>
+              </div>
+            </td>
+            <td>WIP</td>
           </tr>
+
           <tr>
             <td>09</td>
             <td>
-              <a href="#" id="link-to-page">
-                product-preview-card-component-main</a
+              <a href="./room-homepage-master/index.html" id="link-to-page">
+                room-homepage
+              </a>
+            </td>
+            <td>
+              <span style="color: rgb(106, 190, 205)">HTMl</span>
+              <span style="color: rgb(62, 84, 163); padding-left: 4px"
+                >CSS</span
+              >
+              <span style="color: rgb(207, 99, 144); padding-left: 4px"
+                >JS</span
               >
             </td>
-            <td>HTMl, CSS</td>
-            <td>---------</td>
+            <td>
+              <div class="sticker intermediate">
+                <div id="sticker-no">3</div>
+                <div id="sticker-name">INTERMEDIATE</div>
+              </div>
+            </td>
+            <td>WIP</td>
           </tr>
+
           <tr>
             <td>10</td>
             <td>
-              <a href="#" id="link-to-page"> profile-card-component-main </a>
+              <a
+                href="./easybank-landing-page-master/index.html"
+                id="link-to-page"
+              >
+                easybank-landing-page
+              </a>
             </td>
-            <td>HTMl, CSS</td>
-            <td>---------</td>
+            <td>
+              <span style="color: rgb(106, 190, 205)">HTMl</span>
+              <span style="color: rgb(62, 84, 163); padding-left: 4px"
+                >CSS</span
+              >
+              <span style="color: rgb(207, 99, 144); padding-left: 4px"
+                >JS</span
+              >
+            </td>
+            <td>
+              <div class="sticker intermediate">
+                <div id="sticker-no">3</div>
+                <div id="sticker-name">INTERMEDIATE</div>
+              </div>
+            </td>
+            <td>WIP</td>
           </tr>
+
           <tr>
             <td>11</td>
-            <td><a href="#" id="link-to-page"> room-homepage-master </a></td>
-            <td>HTMl, CSS</td>
-            <td>---------</td>
+            <td>
+              <a href="./blogr-landing-page-main/index.html" id="link-to-page">
+                blogr-landing-page
+              </a>
+            </td>
+            <td>
+              <span style="color: rgb(106, 190, 205)">HTMl</span>
+              <span style="color: rgb(62, 84, 163); padding-left: 4px"
+                >CSS</span
+              >
+              <span style="color: rgb(207, 99, 144); padding-left: 4px"
+                >JS</span
+              >
+            </td>
+            <td>
+              <div class="sticker junior">
+                <div id="sticker-no">2</div>
+                <div id="sticker-name">JUNIOR</div>
+              </div>
+            </td>
+            <td>WIP</td>
           </tr>
+
           <tr>
             <td>12</td>
             <td>
-              <a href="#" id="link-to-page"> space-tourism-website-main </a>
+              <a href="./multi-step-form-main/index.html" id="link-to-page">
+                multi-step-form
+              </a>
             </td>
-            <td>HTMl, CSS</td>
-            <td>---------</td>
+            <td>
+              <span style="color: rgb(106, 190, 205)">HTMl</span>
+              <span style="color: rgb(62, 84, 163); padding-left: 4px"
+                >CSS</span
+              >
+              <span style="color: rgb(207, 99, 144); padding-left: 4px"
+                >JS</span
+              >
+            </td>
+            <td>
+              <div class="sticker advanced">
+                <div id="sticker-no">4</div>
+                <div id="sticker-name">ADVANCED</div>
+              </div>
+            </td>
+            <td>WIP</td>
           </tr>
+
           <tr>
             <td>13</td>
             <td>
-              <a href="#" id="link-to-page">
-                stats-preview-card-component-main
+              <a href="./calculator-app-main/index.html" id="link-to-page">
+                calculator-app
               </a>
             </td>
-            <td>HTMl, CSS</td>
-            <td>---------</td>
+            <td>
+              <span style="color: rgb(106, 190, 205)">HTMl</span>
+              <span style="color: rgb(62, 84, 163); padding-left: 4px"
+                >CSS</span
+              >
+              <span style="color: rgb(207, 99, 144); padding-left: 4px"
+                >JS</span
+              >
+            </td>
+            <td>
+              <div class="sticker intermediate">
+                <div id="sticker-no">3</div>
+                <div id="sticker-name">INTERMEDIATE</div>
+              </div>
+            </td>
+            <td>WIP</td>
           </tr>
+
           <tr>
             <td>14</td>
             <td>
-              <a href="#" id="link-to-page"> testimonials-grid-section-main </a>
+              <a
+                href="./launch-countdown-timer-main/index.html"
+                id="link-to-page"
+              >
+                launch-countdown-timer
+              </a>
             </td>
-            <td>HTMl, CSS</td>
-            <td>---------</td>
+            <td>
+              <span style="color: rgb(106, 190, 205)">HTMl</span>
+              <span style="color: rgb(62, 84, 163); padding-left: 4px"
+                >CSS</span
+              >
+              <span style="color: rgb(207, 99, 144); padding-left: 4px"
+                >JS</span
+              >
+            </td>
+            <td>
+              <div class="sticker intermediate">
+                <div id="sticker-no">3</div>
+                <div id="sticker-name">INTERMEDIATE</div>
+              </div>
+            </td>
+            <td>WIP</td>
           </tr>
-          <!-- <tr>
-          <td>00</td>
-          <td><a href="#"> ++++++++++++ </a></td>
-          <td>HTMl, CSS</td>
-          <td>---------</td>
-        </tr> -->
+
+          <tr>
+            <td>15</td>
+            <td>
+              <a
+                href="./profile-card-component-main/index.html"
+                id="link-to-page"
+              >
+                profile-card-component
+              </a>
+            </td>
+            <td>
+              <span style="color: rgb(106, 190, 205)">HTMl</span>
+              <span style="color: rgb(62, 84, 163); padding-left: 4px"
+                >CSS</span
+              >
+            </td>
+            <td>
+              <div class="sticker newbie">
+                <div id="sticker-no">1</div>
+                <div id="sticker-name">NEWBIE</div>
+              </div>
+            </td>
+            <td>Done</td>
+          </tr>
+
+          <tr>
+            <td>16</td>
+            <td>
+              <a
+                href="./time-tracking-dashboard-main/index.html"
+                id="link-to-page"
+              >
+                time-tracking-dashboard
+              </a>
+            </td>
+            <td>
+              <span style="color: rgb(106, 190, 205)">HTMl</span>
+              <span style="color: rgb(62, 84, 163); padding-left: 4px"
+                >CSS</span
+              >
+              <span style="color: rgb(207, 99, 144); padding-left: 4px"
+                >JS</span
+              >
+            </td>
+            <td>
+              <div class="sticker junior">
+                <div id="sticker-no">2</div>
+                <div id="sticker-name">JUNIOR</div>
+              </div>
+            </td>
+            <td>WIP</td>
+          </tr>
         </tbody>
       </table>
     </div>

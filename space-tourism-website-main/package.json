@@ -1,0 +1,15 @@
+{
+  "name": "space-tourism",
+  "version": "1.0.0",
+  "description": "challenge begin date: 15-2-2023",
+  "main": "index.js",
+  "scripts": {
+    "watch:sass": "node-sass ./Resources/scss/main.scss ./Resources/css/style.css -w",
+    "compile:css": "node-sass ./Resources/scss/main.scss ./Resources/css/style.css "
+  },
+  "author": "AkshayV30",
+  "license": "ISC",
+  "devDependencies": {
+    "node-sass": "^8.0.0"
+  }
+}

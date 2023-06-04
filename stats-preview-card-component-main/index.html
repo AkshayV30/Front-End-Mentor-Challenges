@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 " />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Frontend Mentor | Stats preview card component</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 
+     font-family: 'Inter', sans-serif;    font-family: 'Lexend Deca', sans-serif; -->
+
+    <style>
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-size: 15px;
+        font-family: "Inter", sans-serif;
+        background-color: hsl(233, 47%, 7%);
+        color: hsl(0, 0%, 100%);
+      }
+
+      .card-base {
+        display: flex;
+        max-width: 52%;
+        min-height: 10em;
+
+        margin: 8em auto;
+
+        border-radius: 1em;
+        background-color: hsl(244, 38%, 16%);
+        justify-content: space-between;
+        align-items: center;
+
+        transition: transform 500ms ease;
+        overflow: hidden;
+      }
+
+      .card-base:hover {
+        transform: scale(1.01);
+      }
+
+      .card-text-title {
+        margin: 2.5em 4em 2.5em 2.5em;
+        max-width: 40ch;
+        width: 50%;
+        flex: 0 0 10%; /*grow shrink basis*/
+      }
+
+      .card-text-title h1 {
+        font-size: 2rem;
+      }
+
+      .card-text-title p {
+        color: hsla(0, 0%, 100%, 0.75);
+        margin-top: 1em;
+      }
+      .card-text-title a {
+        color: hsl(277, 64%, 61%);
+      }
+
+      .sub {
+        display: flex;
+
+        justify-content: space-between;
+        margin-top: 3.5em;
+      }
+      .sub-1 {
+        font-size: 1.4rem;
+        color: hsl(0, 0%, 100%);
+      }
+      .sub-2 {
+        font-size: 0.8rem;
+
+        color: hsla(0, 0%, 100%, 0.6);
+        text-transform: uppercase;
+      }
+
+      .cardImage {
+        height: 350px;
+        width: 50%;
+      }
+      .cardImageFilter {
+        display: block;
+        filter: invert(6%) sepia(6%) saturate(4190%) hue-rotate(242deg)
+          brightness(82%) contrast(91%);
+        -moz-filter: invert(6%) sepia(6%) saturate(4190%) hue-rotate(242deg)
+          brightness(82%) contrast(91%);
+      }
+
+      .attribution {
+        font-size: 10px;
+        text-align: center;
+        margin-top: 23em;
+      }
+
+      .attribution a {
+        color: hsla(0, 0%, 100%, 0.7);
+        text-decoration: none;
+      }
+
+      @media only screen and (max-width: 90em) /*1440px */ {
+      }
+
+      @media only screen and (max-width: 79.4em) /*1270px*/ {
+      }
+
+      @media only screen and (max-width: 64em) /*1024 px*/ {
+      }
+
+      @media only screen and (max-width: 48em) /*768px*/ {
+        .card-base {
+          flex-direction: column-reverse;
+          text-align: center;
+        }
+        /* .card-text-title h1 {
+          font-size: 1.5rem;
+        }
+        .cardImage {
+          height: 250px;
+        }
+        .sub {
+          flex-direction: column;
+        }
+        .sub-1 {
+          margin-top: 0.5em;
+        } */
+      }
+
+      @media only screen and (max-width: 23.5em) /*375px*/ {
+      }
+    </style>
+  </head>
+  <!-- ================================================================================================================================ -->
+  <body>
+    <div class="card-base">
+      <div class="card-text-title">
+        <h1>
+          Get
+          <a>insights</a>
+          that help your business grow.
+        </h1>
+
+        <p>
+          Discover the benefits of data analytics and make better decisions
+          regarding revenue, customer experience, and overall efficiency.
+        </p>
+
+        <div class="sub">
+          <div class="sub-1">
+            10k+
+            <div class="sub-2">companies</div>
+          </div>
+
+          <div class="sub-1">
+            314
+            <div class="sub-2">templates</div>
+          </div>
+
+          <div class="sub-1">
+            12M+
+            <div class="sub-2">queries</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- <picture class="cardImage">
+        <source
+          srcset="
+            images/image-header-mobile.jpg  540w,
+            images/image-header-desktop.jpg 654w
+          "
+        /> -->
+
+      <img
+        class="cardImageFilter"
+        sizes="(max-width:768px) 70vw  "
+        alt="image-header-desktop"
+        src="images/image-header-desktop.jpg"
+        class="cardImage"
+      />
+      <!-- </picture> -->
+    </div>
+
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor .
+      </a>
+      Coded by <a href="#"> Akshay Kumar Minz</a>.
+    </div>
+  </body>
+</html>

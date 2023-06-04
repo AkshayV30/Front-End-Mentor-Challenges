@@ -1,20 +1,20 @@
 # Front End Mentor Challenges
 
-| Sl No. | Challenge Name                                    | Technology Utilized | Status    |
-| ------ | ------------------------------------------------- | ------------------- | --------- |
-| 01     | [3-column-preview-card-component-main]            |                     | Completed |
-| 02     | [calculator-app-main]                             |                     | WIP       |
-| 03     | [easybank-landing-page-master]                    |                     | WIP       |
-| 04     | [ecommerce-product-page-main]                     |                     | WIP       |
-| 05     | [fylo-data-storage-component-master]              |                     |           |
-| 06     | [fylo-landing-page-with-two-column-layout-master] |                     |           |
-| 07     | [launch-countdown-timer-main]                     |                     |           |
-| 08     | [multi-step-form-main]                            |                     |           |
-| 09     | [product-preview-card-component-main]             |                     |           |
-| 10     | [profile-card-component-main]                     |                     |           |
-| 11     | [room-homepage-master]                            |                     |           |
-| 12     | [space-tourism-website-main]                      |                     |           |
-| 13     | [stats-preview-card-component-main]               |                     |           |
-| 14     | [testimonials-grid-section-main]                  |                     |           |
-| 15     |                                                   |                     |           |
-|        |                                                   |                     |           |
+| Sl No. | Challenge Name                             | Technology Utilized |
+| ------ | ------------------------------------------ | ------------------- |
+| 01     | [stats-preview-card-component]             |                     |
+| 02     | [3-column-preview-card-component]          |                     |
+| 03     | [testimonials-grid-section]                |                     |
+| 04     | [product-preview-card-component]           |                     |
+| 05     | [fylo-data-storage-component]              |                     |
+| 06     | [fylo-landing-page-with-two-column-layout] |                     |
+| 07     | [space-tourism-website]                    |                     |
+| 08     | [ecommerce-product-page]                   |                     |
+| 09     | [room-homepage]                            |                     |
+| 10     | [easybank-landing-page]                    |                     |
+| 11     | [blogr-landing-page]                       |                     |
+| 12     | [multi-step-form]                          |                     |
+| 13     | [calculator-app]                           |                     |
+| 14     | [launch-countdown-timer]                   |                     |
+| 15     | [profile-card-component]                   |                     |
+| 16     | [time-tracking-dashboard]                  |                     |

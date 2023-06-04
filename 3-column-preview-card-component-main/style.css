@@ -1,0 +1,261 @@
+/* <!-- Feel free to remove these styles or customise in your own stylesheet 👍 
+    
+font-family: 'Big Shoulders Display', cursive;
+
+font-family: 'Lexend Deca', sans-serif;--> */
+
+
+/* -------------------------------------media queries----------------- */
+
+/* 1em=1px/default browsser font szie,16px*/
+
+/* @media only screen and (min-width: 90em) /*1440px 90em* / {
+
+ 
+} */
+
+/* @media only screen and ( min-width:79.4em) /*1270px 79.4em* / {
+
+
+} */
+
+@media only screen and (min-width: 48em) /*1024 64em px*/ {
+  
+    .cardBase {
+           
+        margin: 0em auto;
+        padding:  160px;
+
+      }
+      
+      .card{
+        padding: 2.8em;
+      }
+      
+      .card h1{
+        padding: 0.8em 0;
+      }
+      
+      .card p {
+        width: 24ch;
+        line-height: 24px;
+      
+        padding-bottom: 56px;
+      }
+      
+      .card-1 {
+       
+        border-radius:10px 0 0 10px ;
+        }
+
+      .card-3 {
+       
+        border-radius:0 10px 10px 0 ;
+        }
+    
+       .button {
+        font-size: 14px;
+          
+        padding: 12px 36px;
+              
+        border-radius: 24px; 
+      }  
+
+
+}
+ 
+@media only screen and (max-width: 48em) /*768px 48em*/ {
+  
+    .cardBase {
+        flex-direction: column;
+      
+        padding:80px ;
+      }
+      
+      .card{
+        padding: 2.8em;
+      }
+      
+      .card h1{
+        padding: 1.6em 0;
+      }
+      
+      .card p {
+        width: 24ch;
+        line-height: 24px;
+      
+        padding-bottom: 32px;
+      }
+      
+      .card-1 {
+        border-radius:10px 10px 0 0 ;
+      }
+              
+      .card-3 {
+        border-radius:0 0 10px 10px ;
+      }
+
+      .button {
+        font-size: 14px;
+          
+        padding: 12px 28px ;
+              
+        border-radius: 24px; 
+      }  
+       
+ 
+        
+}  
+
+@media only screen and (max-width: 24em ) /*375px 24em*/  {
+     
+    .cardBase {
+     
+      /* margin: 20em auto; */
+      padding:20px ;
+    }
+    
+    .card{
+      padding: 1.6em;
+    }
+    
+    .card h1{
+      padding: 0.75em 0;
+    }
+    
+    .card p {
+      width: 28ch;
+      line-height: 20px;
+    
+      padding-bottom: 20px;
+    }
+    
+
+    .button {
+      font-size: 12px;
+        
+      padding: 8px 24px ;
+            
+      border-radius: 16px; 
+    }  
+  
+}
+
+/* ------------------------------------------------------------------------ */
+*,
+*::before,
+*::after {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+body {
+background-color: hsl(0, 0%, 95%);
+
+font-size: 15px;
+}
+
+/* -----------------------------------------------------------------------card------------------------ */
+
+.cardBase {
+
+display: flex;
+text-align: center;
+justify-content: center;
+
+border-radius: 2px;
+
+margin: 5em auto;
+width: 100%;
+overflow: hidden;
+}
+
+.card {
+text-align: left;
+}
+
+.card h1 {
+text-transform: uppercase;
+
+
+font-family: 'Big Shoulders Display', cursive;
+color: #fff;
+}
+
+.card p {
+font-family: 'Lexend Deca', sans-serif;
+color: hsla(0, 0%, 100%, 0.75);
+}
+
+.card-1 {
+background-color: hsl(31, 77%, 52%);
+} 
+
+.card-2 {
+background-color: hsl(184, 100%, 22%);
+}
+
+.card-3 {
+background-color: hsl(179, 100%, 13%);
+} 
+
+/* ---------------------------------------------Button------------------------------------------ */
+.button {
+text-align: center;
+text-decoration: none;
+
+display: inline-block;
+
+border: none;
+
+cursor: pointer;
+
+background-color: #fff;
+font-family: 'Lexend Deca', sans-serif;
+} 
+
+
+.btn-1:hover{
+    background-color: hsl(31, 77%, 52%);
+    color:#fff;
+    border: 2px solid #ffffff;
+ 
+} 
+
+.btn-2:hover{
+    background-color: hsl(184, 100%, 22%);
+    color:#fff;
+    border: 2px solid #ffffff;
+  
+} 
+
+.btn-3:hover{
+    background-color:hsl(179, 100%, 13%);
+    color:#fff;
+    border: 2px solid #ffffff;
+  
+} 
+
+.btn-1{
+    color: hsl(31, 77%, 52%);
+}
+
+.btn-2{
+    color: hsl(184, 100%, 22%);
+}
+
+.btn-3{
+    color: hsl(179, 100%, 13%);
+}
+
+
+
+/* --------------------------------------------------------attribution------------------------ */
+.attribution {
+font-size: 14px;
+text-align: center;
+}
+.attribution a {
+color: hsl(228, 45%, 44%);
+}
