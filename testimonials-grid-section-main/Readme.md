@@ -32,10 +32,12 @@ Screenshot for desktop view ![Desktop](./screenshot/desktop.png)
 
 ### Links
 
-- Solution URL: [Solution](https://github.com/AkshayV30/testimonials-grid-section-main)
-- Live Site URL: [Live site](https://akshayv30.github.io/testimonials-grid-section-main/)
+- Solution URL: [Solution](https://akshayv30.github.io/Front-End-Mentor-Challenges/testimonials-grid-section-main/)
+- Live Site URL: [Live site](https://akshayv30.github.io/Front-End-Mentor-Challenges/testimonials-grid-section-main/index.html)
 
 ## My process
+
+--
 
 ### Built with
 
@@ -43,7 +45,6 @@ Screenshot for desktop view ![Desktop](./screenshot/desktop.png)
 - CSS custom properties
 - CSS Grid
 - Desktop-first workflow
--
 
 ### What I learned
 
