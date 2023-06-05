@@ -21,34 +21,254 @@
 
       /* font-family: 'Fraunces', serif; */
       @import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700&display=swap");
+
+      /* -----------------------------media---queries-------------------------- */
+
+      @media (min-width: 646px) {
+        .img-primary {
+          background: url(./images/image-product-desktop.jpg);
+        }
+
+        .container-card {
+          display: flex;
+          flex-direction: row;
+
+          min-width: 646px;
+          height: 420px;
+        }
+
+        .img-primary {
+          width: 50%;
+        }
+        .card-text {
+          width: 50%;
+        }
+
+        #card-text-heading-2 {
+          max-width: 12ch;
+          line-height: 1.25;
+        }
+        #card-text-para {
+          max-width: 26ch;
+          line-height: 1.5;
+        }
+      }
+
+      @media only screen and (max-width: 646px) {
+        .img-primary {
+          background: url(./images/image-product-mobile.jpg);
+        }
+
+        .container-card {
+          display: flex;
+          flex-direction: column;
+
+          min-width: 340px;
+          height: 620px;
+        }
+
+        .img-primary {
+          height: 100%;
+        }
+        .card-text {
+          height: 100%;
+        }
+
+        #card-text-heading-2 {
+          max-width: 16ch;
+        }
+        #card-text-para {
+          max-width: 30ch;
+          line-height: 1.6;
+        }
+      }
+
+      /* -------------------------------------------------------------------- */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html {
+        /* 10px / 16px = 0.625 = 62.5% */
+        /* Percentage of user's browser font-size setting */
+        font-size: 62.5%;
+        overflow: hidden;
+      }
+
+      body {
+        background-color: hsl(30, 38%, 92%);
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        height: 100vh;
+      }
+      /* ========================================================== */
+      /* ------------------------------container card--------------- */
+      .container-card {
+        border-radius: 1rem;
+        overflow: hidden;
+      }
+      /* ========================================================== */
+      /* ------------------------------primary image------------------ */
+
+      .img-primary {
+        /* background-image: url(./images/image-product-desktop.jpg); */
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+      /* ========================================================== */
+      /* ------------------------------card text ------------------ */
+
+      .card-text {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+
+        padding: 2.5rem;
+
+        background: hsl(0, 0%, 100%);
+      }
+
+      #card-text-heading-1 {
+        font-size: 1.4rem;
+        color: hsl(228, 12%, 48%);
+
+        font-family: "Montserrat", sans-serif;
+        font-weight: 500;
+
+        text-transform: uppercase;
+        letter-spacing: 3px;
+
+        padding: 1rem 0;
+      }
+
+      #card-text-heading-2 {
+        font-size: 2.4rem;
+
+        color: hsl(212, 21%, 14%);
+
+        font-style: "Fraunces", serif;
+        font-weight: 700;
+      }
+      #card-text-para {
+        font-size: 1.8rem;
+
+        padding: 5px 0;
+
+        font-size: 1.4rem;
+        font-family: "Montserrat", sans-serif;
+        font-weight: 500;
+
+        color: hsl(228, 12%, 48%);
+      }
+
+      /* ========================================================== */
+      /* ------------------------------price----------------------- */
+
+      .price {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+
+        padding: 0.5rem 0;
+
+        font-family: "Fraunces", serif;
+        font-weight: 700;
+      }
+
+      .price > #price-1 {
+        font-size: 3.6rem;
+        color: hsl(158, 36%, 37%);
+        padding-right: 1.4rem;
+      }
+
+      .price > #price-2 {
+        font-size: 1.6rem;
+        color: hsl(228, 12%, 48%);
+      }
+
+      /* ========================================================== */
+      /* ------------------------------button green----------------- */
+      .btn-green {
+        border-style: none;
+        border-radius: 1rem;
+
+        background-color: hsla(158, 36%, 37%, 1);
+        color: hsl(0, 0%, 100%);
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        cursor: pointer;
+
+        padding: 1.2rem;
+
+        text-align: center;
+
+        font-size: 1.6rem;
+        font-family: "Montserrat", sans-serif;
+        font-weight: 500;
+
+        transition: transform 500ms ease;
+      }
+
+      .btn-green:after,
+      .btn-green:hover {
+        transform: scale(1.03);
+        background-color: rgb(44, 85, 70);
+      }
+
+      #btn-green-cart {
+        width: 28px;
+        height: auto;
+        padding-right: 1.2rem;
+      }
+
+      #btn-green-txt {
+      }
+      /* ========================================================== */
+      /* ------------------------------attribuiton----------------- */
+      .attribution {
+        font-size: 12px;
+        text-align: center;
+        position: fixed;
+        bottom: 5px;
+      }
+
+      .attribution a {
+        color: hsla(0, 0%, 0%, 0.7);
+        text-decoration: none;
+      }
     </style>
   </head>
   <body>
-    <div class="cardBase">
-      <picture>
-        <img
-          src="./images/image-product-desktop.jpg"
-          alt="image-product-desktop"
-          loading="lazy"
-          decoding="async"
-      /></picture>
+    <div class="container-card">
+      <div class="img-primary">
+        <!-- dummy div for background image -->
+      </div>
 
-      <div class="cardText">
-        <h3>Perfume</h3>
-        <h2>Gabrielle Essence Eau De Parfum</h2>
-        <p>
+      <div class="card-text">
+        <h3 id="card-text-heading-1">Perfume</h3>
+        <h2 id="card-text-heading-2">Gabrielle Essence Eau De Parfum</h2>
+        <p id="card-text-para">
           A floral, solar and voluptuous interpretation composed by Olivier
           Polge, Perfumer-Creator for the House of CHANEL.
         </p>
 
         <div class="price">
-          <div class="price-1">$149.99</div>
-          <div class="price-2"><del>$169.99</del></div>
+          <div id="price-1">$149.99</div>
+          <div id="price-2"><del>$169.99</del></div>
         </div>
 
-        <button>
-          <img src="./images/icon-cart.svg" alt="cart" />
-          <span> Add to Cart</span>
+        <button class="btn-green">
+          <img id="btn-green-cart" src="./images/icon-cart.svg" alt="cart" />
+          <p id="btn-green-txt">Add to Cart</p>
         </button>
       </div>
     </div>
@@ -57,7 +277,8 @@
       Challenge by
       <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
         >Frontend Mentor</a
-      >. Coded by <a href="#">Akshay Kumar Minz</a>.
+      >. Coded by
+      <a href="https://www.frontendmentor.io/profile/AkshayV30">AkshayV30</a>.
     </div>
   </body>
 </html>
