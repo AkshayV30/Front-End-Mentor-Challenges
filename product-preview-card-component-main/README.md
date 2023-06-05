@@ -34,7 +34,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Solution Link](https://github.com/AkshayV30/FrontEndMentorChallenges/tree/master/product-preview-card-component-main)
+- Solution URL: [Solution Link](https://github.com/AkshayV30/Front-End-Mentor-Challenges/tree/master/product-preview-card-component-main)
 - Live Site URL: [Live site](https://akshayv30.github.io/Front-End-Mentor-Challenges/product-preview-card-component-main/index.html)
 
 ## My process
