@@ -16,7 +16,6 @@ This is a solution to the [Fylo data storage component challenge on Frontend Men
     - [Continued development](#continued-development)
     - [Useful resources](#useful-resources)
   - [Author](#author)
-  - [Acknowledgments](#acknowledgments)
 
 ## Overview
 
@@ -28,12 +27,13 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
+![Desktop View](./screenshot/desktop__.jpeg)
+![Mobile View](./screenshot/mobile__.jpeg)
 
 ### Links
 
-- Solution URL: [Solution](https://github.com/AkshayV30/fylo-data-storage-component-master)
-- Live Site URL: [Live Site](https://akshayv30.github.io/fylo-data-storage-component-master/)
+- Solution URL: [Solution Link](https://github.com/AkshayV30/Front-End-Mentor-Challenges/tree/master/fylo-data-storage-component-master)
+- Live Site URL: [Live Site](https://akshayv30.github.io/Front-End-Mentor-Challenges/fylo-data-storage-component-master/index.html)
 
 ## My process
 
@@ -42,20 +42,45 @@ Users should be able to:
 - Semantic HTML5 markup
 - CSS custom properties
 - Flexbox
-- CSS Grid
 - Desktop-first workflow
 
 ### What I learned
 
+```css
+.container-callout {
+  animation: progress 0.75s ease-in-out forwards;
+  opacity: 0;
+}
+@keyframes progress {
+  0% {
+    width: 0;
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* ----------------- */
+.callout::before {
+  content: " ";
+
+  border-left: 20px solid transparent;
+  border-top: 20px solid #fff;
+
+  position: relative;
+  bottom: -50px;
+  right: -102px;
+}
+```
+
 ### Continued development
 
-..
+---
 
 ### Useful resources
 
 ## Author
 
-- Website - [AkshayV30](https://akshayv30.github.io/product-preview-card-component-main/)
-- Frontend Mentor - [@AKshayV30](https://www.frontendmentor.io/profile/AkshayV30)
-
-## Acknowledgments
+- Website - [AkshayMinz](https://github.com/AkshayV30)
+- Frontend Mentor - [@AkshayV30](https://www.frontendmentor.io/profile/AkshayV30)
