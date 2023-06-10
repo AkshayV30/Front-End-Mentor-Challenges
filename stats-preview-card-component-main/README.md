@@ -44,8 +44,8 @@ These could be concepts you're still not completely comfortable with or techniqu
 ### Useful resources
 
 - (https://www.udemy.com) - This helped me for clearing out my basics.
-  -(https://www.w3schools.com/css/)
-  -(https://developer.mozilla.org/en-US/docs/Web/CSS)
+- (https://www.w3schools.com/css/)
+- (https://developer.mozilla.org/en-US/docs/Web/CSS)
 
 ## Author
 
