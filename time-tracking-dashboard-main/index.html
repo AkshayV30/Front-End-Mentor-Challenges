@@ -1,80 +1,148 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Time tracking dashboard</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
-<body>
+    <title>Frontend Mentor | Time tracking dashboard</title>
 
-  Report for
-  Jeremy Robson
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&display=swap");
+    </style>
+  </head>
+  <body>
+    <main>
+      <div class="container-card">
+        <div class="container-up profile">
+          <img
+            src="./images/image-jeremy.png"
+            id="profile-pic"
+            alt="profile-img"
+          />
+          <h3><span>Report for</span> <br />Jeremy Robson</h3>
+        </div>
 
-  Daily
-  Weekly
-  Monthly
+        <div class="container-down">
+          <button>Daily</button>
+          <button>Weekly</button>
+          <button>Monthly</button>
+        </div>
+      </div>
 
-  Work
-  5hrs <!-- daily -->
-  Previous - 7hrs <!-- daily -->
-  32hrs <!-- weekly -->
-  Previous - 36hrs <!-- weekly -->
-  103hrs <!-- monthly -->
-  Previous - 128hrs <!-- monthly -->
+      <div class="daily">
+        Work 5hrs
+        <!-- daily -->
+        Previous - 7hrs
+        <!-- daily -->
 
-  Play
-  1hr <!-- daily -->
-  Previous - 2hrs <!-- daily -->
-  10hrs <!-- weekly -->
-  Previous - 8hrs <!-- weekly -->
-  23hrs <!-- monthly -->
-  Previous - 29hrs <!-- monthly -->
+        Play 1hr
+        <!-- daily -->
+        Previous - 2hrs
+        <!-- daily -->
 
-  Study
-  0hrs <!-- daily -->
-  Previous - 1hr <!-- daily -->
-  4hrs <!-- weekly -->
-  Previous - 7hrs <!-- weekly -->
-  13hrs <!-- monthly -->
-  Previous - 19hrs <!-- monthly -->
+        Study 0hrs
+        <!-- daily -->
+        Previous - 1hr
+        <!-- daily -->
 
-  Exercise
-  1hr <!-- daily -->
-  Previous - 1hr <!-- daily -->
-  4hrs <!-- weekly -->
-  Previous - 5hrs <!-- weekly -->
-  11hrs <!-- monthly -->
-  Previous - 18hrs <!-- monthly -->
+        Exercise 1hr
+        <!-- daily -->
+        Previous - 1hr
+        <!-- daily -->
 
-  Social
-  1hr <!-- daily -->
-  Previous - 3hrs <!-- daily -->
-  5hrs <!-- weekly -->
-  Previous - 10hrs <!-- weekly -->
-  21hrs <!-- monthly -->
-  Previous - 23hrs <!-- monthly -->
+        Social 1hr
+        <!-- daily -->
+        Previous - 3hrs
+        <!-- daily -->
 
-  Self Care
-  0hrs <!-- daily -->
-  Previous - 1hr <!-- daily -->
-  2hrs <!-- weekly -->
-  Previous - 2hrs <!-- weekly -->
-  7hrs <!-- monthly -->
-  Previous - 11hrs <!-- monthly -->
+        Self Care 0hrs
+        <!-- daily -->
+        Previous - 1hr
+        <!-- daily -->
+      </div>
 
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
-</body>
+      <div class="weekly">
+        32hrs
+        <!-- weekly -->
+        Previous - 36hrs
+        <!-- weekly -->
+
+        10hrs
+        <!-- weekly -->
+        Previous - 8hrs
+        <!-- weekly -->
+
+        4hrs
+        <!-- weekly -->
+        Previous - 7hrs
+        <!-- weekly -->
+
+        4hrs
+        <!-- weekly -->
+        Previous - 5hrs
+        <!-- weekly -->
+
+        5hrs
+        <!-- weekly -->
+        Previous - 10hrs
+        <!-- weekly -->
+
+        2hrs
+        <!-- weekly -->
+        Previous - 2hrs
+        <!-- weekly -->
+      </div>
+
+      <div class="monthly">
+        103hrs
+        <!-- monthly -->
+        Previous - 128hrs
+        <!-- monthly -->
+
+        23hrs
+        <!-- monthly -->
+        Previous - 29hrs
+        <!-- monthly -->
+
+        13hrs
+        <!-- monthly -->
+        Previous - 19hrs
+        <!-- monthly -->
+
+        11hrs
+        <!-- monthly -->
+        Previous - 18hrs
+        <!-- monthly -->
+
+        21hrs
+        <!-- monthly -->
+        Previous - 23hrs
+        <!-- monthly -->
+
+        7hrs
+        <!-- monthly -->
+        Previous - 11hrs
+        <!-- monthly -->
+      </div>
+    </main>
+
+    <footer>
+      <div class="attribution">
+        Challenge by
+        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+          >Frontend Mentor</a
+        >. Coded by <a href="#">Your Name Here</a>.
+      </div>
+    </footer>
+  </body>
 </html>
