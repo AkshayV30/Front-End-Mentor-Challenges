@@ -1,0 +1,295 @@
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  // ## Layout
+
+  // - Mobile: 375px
+  // - Desktop: 1440px
+
+  // ## Colors
+
+  // ### Primary
+
+  --primary-1: hsl(0, 0%, 63%); // - Dark Gray
+  --primary-2: hsl(0, 0%, 0%); // - Black
+  --primary-3: hsl(0, 0%, 100%); // - White
+  --primary-4: hsl(0, 0%, 27%); // - Very Dark Gray
+
+  // ## Typography
+  --font-fam: "League Spartan", sans-serif;
+  --font-w-1: 500;
+  --font-w-2: 600;
+  --font-w-3: 700;
+}
+// ---------------------------------------------------------------
+//
+// ---------------------------------------------------------------
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.2rem;
+  font-family: var(--font-fam);
+
+  overflow-x: hidden;
+
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+// ---------------------------------------------------------------
+// main
+// ---------------------------------------------------------------
+main {
+  display: grid;
+  grid-template-columns: 1.2fr 1.2fr 0.25fr 1.25fr;
+  grid-template-rows: 64vh 6vh 30vh;
+
+  z-index: 0;
+
+  nav,
+  .main-hero-img {
+    grid-column: 1 / 3;
+    grid-row: 1 / 3;
+  }
+
+  nav {
+    z-index: 2;
+  }
+
+  .main-hero-img {
+    z-index: 1;
+  }
+
+  .main-hero-txt {
+    grid-column: 3 / -1;
+    grid-row: 1 / 3;
+  }
+  .container-lower {
+    grid-column: 1 / -1;
+    grid-row: 3 / 4;
+  }
+
+  .buttons-arrow {
+    grid-column: 3 / 4;
+    grid-row: 2 / 3;
+  }
+}
+// ---------------------------------------------------------------
+//             nav
+// ---------------------------------------------------------------
+
+.container-nav {
+  margin: 8rem;
+  display: flex;
+  gap: 2.4rem;
+  align-items: center;
+
+  #logo {
+    height: 2rem;
+  }
+
+  ul {
+    display: flex;
+    gap: 2rem;
+
+    li {
+      list-style: none;
+
+      a {
+        //   z-index: 2;
+        text-decoration: none;
+        font-size: 1.4rem;
+        color: var(--primary-3);
+      }
+      a:hover {
+        padding-bottom: 0.4rem;
+        border-bottom: 0.2rem solid var(--primary-3);
+      }
+    }
+  }
+}
+
+// ---------------------------------------------------------------
+//             main-hero-img
+// ---------------------------------------------------------------
+#hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; //need to fix REVIEW_A:
+}
+
+.main-hero-img {
+  // background-color: red; //for test
+
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+
+  .main-hero-img__track {
+    list-style: none;
+    position: relative;
+    height: 100%;
+
+    transition: transform 250ms ease-in;
+
+    .main-hero-img__slide {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 100%;
+    }
+  }
+}
+
+// ---------------------------------------------------------------
+//             main-txt
+// ---------------------------------------------------------------
+
+.main-hero-txt {
+  // background-color: rgb(161, 41, 41); //for test
+
+  position: relative;
+
+  .main-hero-txt__track {
+    list-style: none;
+
+    position: relative;
+
+    .main-hero-txt__slide {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 100%;
+    }
+  }
+}
+
+.de-active-hero {
+  display: none;
+}
+
+.main-hero-txt__content {
+  width: 100%;
+  height: 100%;
+  padding: 10rem;
+
+  h1 {
+    width: 16ch;
+    font-size: 4rem;
+    font-weight: var(--font-w-3);
+    padding-bottom: 2rem;
+  }
+  p {
+    font-size: 1.6rem;
+    font-weight: var(--font-w-1);
+
+    width: 42ch;
+    padding-bottom: 2rem;
+    line-height: 1.25;
+    color: var(--primary-1);
+  }
+
+  span {
+    color: var(--primary-1);
+    text-transform: uppercase;
+    letter-spacing: 0.7rem;
+
+    cursor: pointer;
+  }
+
+  img {
+    padding-left: 2rem;
+  }
+
+  //  #long-arrow {
+  //    background-color: red;
+  //  }
+}
+
+// ---------------------------------------------------------------
+//             arrow  button
+// ---------------------------------------------------------------
+
+.buttons-arrow {
+  z-index: 3;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  //   gap: 2rem;
+
+  button {
+    padding: 1.6rem 2rem;
+    background-color: rgb(2, 2, 2);
+
+    img {
+      height: 2rem;
+      width: 2rem;
+      z-index: 2;
+    }
+  }
+
+  button:hover,
+  button:active {
+    cursor: pointer;
+  }
+
+  button:hover {
+    opacity: 0.8;
+  }
+  button:active {
+    opacity: 0.5;
+  }
+}
+// ---------------------------------------------------------------
+//             container-lower
+// ---------------------------------------------------------------
+.container-lower {
+  display: flex;
+  //   gap: 4rem;
+  #img-dark {
+    //  align-self: stretch;
+  }
+
+  div {
+    padding: 6rem;
+    width: 100%;
+
+    h3 {
+      text-transform: uppercase;
+      font-weight: var(--font-w-2);
+      padding-bottom: 2rem;
+      font-size: 2rem;
+    }
+
+    p {
+      width: 55ch;
+      font-weight: var(--font-w-1);
+      line-height: 1.25;
+      font-size: 1.4rem;
+      color: var(--primary-1);
+    }
+  }
+}
+
+// ---------------------------------------------------------------
+// footer
+// ---------------------------------------------------------------
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}

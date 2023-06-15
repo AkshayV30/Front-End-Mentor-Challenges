@@ -1,44 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | E-commerce product page</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
-<body>
+    <title>Frontend Mentor | E-commerce product page</title>
 
-  Collections
-  Men
-  Women
-  About
-  Contact
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <link rel="stylesheet" href="./style.css" />
+    <script type="module" src="./script.js"></script>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
+    </style>
+  </head>
+  <body>
+    <main>
+      <nav>
+        <img id="logo" src="./images/logo.svg" alt="" />
+        <ul>
+          <li><a href="#">Collections</a></li>
+          <li><a href="#">Men</a></li>
+          <li><a href="#">Women</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+        <div>
+          <img
+            id="icon-cart-main"
+            src="./images/icon-cart.svg"
+            alt="icon cart"
+          />
+          <img id="profile-img" src="./images/image-avatar.png" alt="avatar" />
+        </div>
+      </nav>
 
-  Sneaker Company
+      <div class="container-main">
+        <div class="container-img">
+          <div class="container-img--main">
+            <img src="./images/image-product-1.jpg" alt="product-1" />
+            <img src="./images/image-product-2.jpg" alt="product-2" />
+            <img src="./images/image-product-3.jpg" alt="product-3" />
+            <img src="./images/image-product-4.jpg" alt="product-4" />
+          </div>
+          <!--
+        <div class="container-img--thumbnail">
+          <img src="./images/image-product-1-thumbnail.jpg" alt="" />
+          <img src="./images/image-product-2-thumbnail.jpg" alt="" />
+          <img src="./images/image-product-3-thumbnail.jpg" alt="" />
+          <img src="./images/image-product-4-thumbnail.jpg" alt="" />
+          <img src="./images/image-product-5-thumbnail.jpg" alt="" /></div> -->
+        </div>
 
-  Fall Limited Edition Sneakers
+        <div class="card-txt-body">
+          <div class="txt">
+            <h4>Sneaker Company</h4>
+            <h1>Fall Limited Edition Sneakers</h1>
+            <p>
+              These low-profile sneakers are your perfect casual wear companion.
+              Featuring a durable rubber outer sole, they’ll withstand
+              everything the weather can offer.
+            </p>
 
-  These low-profile sneakers are your perfect casual wear companion. Featuring a 
-  durable rubber outer sole, they’ll withstand everything the weather can offer.
+            <div class="price">
+              <div>
+                <span id="price-bold"> $125.00</span>
+                <span id="price-discount"> 50%</span>
+              </div>
+              <p id="price-strike"><s> $250.00 </s></p>
+            </div>
+          </div>
 
-  $125.00
-  50%
-  $250.00
+          <div class="buttons">
+            <button class="btn-add" type="button">
+              <img
+                id="icon-minus"
+                src="./images/icon-minus.svg"
+                alt="minus symbol"
+              />
+              <span>0</span>
+              <img
+                id="icon-plus"
+                src="./images/icon-plus.svg"
+                alt="plus symbol"
+              />
+            </button>
+            <button class="btn-cart" type="button">
+              <img id="icon-cart" src="./images/icon-cart.svg" alt="" />
+              <span>Add to cart</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </main>
 
-  0
-  Add to cart
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
-</body>
+    <footer>
+      <div class="attribution">
+        Challenge by
+        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+          >Frontend Mentor</a
+        >. Coded by <a href="#">Your Name Here</a>.
+      </div>
+    </footer>
+  </body>
 </html>

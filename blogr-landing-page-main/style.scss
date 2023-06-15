@@ -69,6 +69,9 @@ body {
   height: 3.2rem;
 }
 // -----------------------------------------------------------------
+//          media queries
+// -----------------------------------------------------------------
+// -----------------------------------------------------------------
 //          main
 // -----------------------------------------------------------------
 //         nav
@@ -81,8 +84,8 @@ body {
   .section-1-body {
     height: 35vh;
     width: 100%;
-    background-image: url(./images/bg-pattern-intro-desktop.svg);
 
+    background-image: url(./images/bg-pattern-intro-desktop.svg);
     background-position: 32% 49.5%;
     background-repeat: no-repeat;
     background-size: 200%;
@@ -101,7 +104,9 @@ body {
   color: white;
   gap: 2rem;
 }
-
+// -----------------------------------------------------------------
+//           Buttons
+// -----------------------------------------------------------------
 .buttons {
   button {
     font-family: var(--font-fam-b);
@@ -195,7 +200,7 @@ nav {
   img {
     height: 80vh;
     position: absolute;
-    right: -50rem;
+    right: -43rem;
   }
 
   div {
@@ -208,8 +213,8 @@ nav {
     p {
       width: 50ch;
       line-height: 1.25;
-      font-weight: var(--font-w-a-1);
       padding-bottom: 2rem;
+      font-weight: var(--font-w-a-1);
       color: var(--body-copy);
     }
   }
@@ -218,7 +223,7 @@ nav {
 //        section--3
 // -----------------------------------------------------------------
 .container-section--3 {
-  background: url(./images/bg-pattern-circles.svg) no-repeat bottom left,
+  background: url(./images/bg-pattern-circles.svg) no-repeat -25% 90%,
     linear-gradient(
       to bottom right,
       var(--Very-dark),
@@ -261,12 +266,16 @@ nav {
   padding: 20rem;
   font-family: var(--font-fam-a);
   color: var(--Very-dark);
+
   display: flex;
   align-items: center;
   justify-content: flex-end;
+
   position: relative;
+
   img {
     height: 65vh;
+
     position: absolute;
     left: -23rem;
   }
@@ -274,16 +283,16 @@ nav {
   div {
     h2 {
       padding: 1.2rem 0;
+
       font-weight: var(--font-w-a-2);
       color: var(--Very-dark-headings);
     }
     p {
       width: 50ch;
       line-height: 1.25;
-      // letter-spacing: 0.025em;
+      padding-bottom: 2rem;
 
       font-weight: var(--font-w-a-1);
-      padding-bottom: 2rem;
       color: var(--body-copy);
     }
   }
@@ -295,6 +304,7 @@ nav {
 footer {
   background: var(--footer-background);
   color: var(--footer-text);
+
   border-top-right-radius: var(--br);
   padding-top: 5rem;
   font-family: var(--font-fam-a);
@@ -305,17 +315,21 @@ footer {
 
     display: flex;
     justify-content: space-evenly;
+
     color: var(--txt);
 
     ul {
       list-style: none;
+
       display: flex;
       flex-direction: column;
+
       gap: 0.5rem;
 
       li {
         a {
           text-decoration: none;
+
           color: var(--footer-text);
           margin-bottom: 0.2em;
         }

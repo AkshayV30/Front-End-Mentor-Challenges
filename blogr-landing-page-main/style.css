@@ -153,7 +153,7 @@ nav select {
 .section-2-body img {
   height: 80vh;
   position: absolute;
-  right: -50rem;
+  right: -43rem;
 }
 .section-2-body div h2 {
   padding: 2rem 0;
@@ -163,13 +163,13 @@ nav select {
 .section-2-body div p {
   width: 50ch;
   line-height: 1.25;
-  font-weight: var(--font-w-a-1);
   padding-bottom: 2rem;
+  font-weight: var(--font-w-a-1);
   color: var(--body-copy);
 }
 
 .container-section--3 {
-  background: url(./images/bg-pattern-circles.svg) no-repeat bottom left, linear-gradient(to bottom right, var(--Very-dark), var(--Very-dark-desaturated));
+  background: url(./images/bg-pattern-circles.svg) no-repeat -25% 90%, linear-gradient(to bottom right, var(--Very-dark), var(--Very-dark-desaturated));
   border-radius: 0 var(--br) 0 var(--br);
   font-family: var(--font-fam-a);
   height: 47.5vh;
@@ -217,8 +217,8 @@ nav select {
 .container-section--4 div p {
   width: 50ch;
   line-height: 1.25;
-  font-weight: var(--font-w-a-1);
   padding-bottom: 2rem;
+  font-weight: var(--font-w-a-1);
   color: var(--body-copy);
 }
 

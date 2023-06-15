@@ -1,0 +1,188 @@
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-1: hsl(26, 100%, 55%);
+  --primary-2: hsl(25, 100%, 94%);
+  --neutral--1: hsl(220, 13%, 13%);
+  --neutral--2: hsl(219, 9%, 45%);
+  --neutral--3: hsl(220, 14%, 75%);
+  --neutral--4: hsl(223, 64%, 98%);
+  --neutral--5: hsl(0, 0%, 100%);
+  --neutral--6: hsl(
+    0,
+    0%,
+    0%
+  );
+  --font-fam: "Kumbh Sans", sans-serif;
+  --font-w-1: 400;
+  --font-w-2: 700;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+  font-family: var(--font-fam);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 100vh;
+  overflow: hidden;
+}
+
+main {
+  margin: 2rem 0;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4rem;
+  padding-bottom: 2.8rem;
+  border-bottom: 0.15rem solid var(--neutral--3);
+}
+nav #logo {
+  height: 2.4rem;
+}
+nav ul {
+  display: flex;
+  gap: 2rem;
+}
+nav ul li {
+  list-style: none;
+}
+nav ul a {
+  text-decoration: none;
+  color: black;
+  padding-bottom: 4.1rem;
+}
+nav ul a:hover {
+  border-bottom: 0.4rem solid var(--primary-1);
+}
+nav div {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+nav div #icon-cart-main {
+  height: 2.4rem;
+  cursor: pointer;
+}
+nav div #profile-img {
+  height: 5rem;
+  cursor: pointer;
+}
+nav div #profile-img:hover,
+nav div #profile-img:active {
+  border-radius: 50%;
+  border: 0.2rem solid var(--primary-1);
+}
+
+.container-main {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10rem;
+  margin: 16rem;
+  max-width: 144rem;
+}
+.container-main .container-img {
+  width: 100%;
+}
+.container-main .card-txt-body {
+  width: 100%;
+}
+
+.container-img img {
+  height: 5rem;
+  border-radius: 1rem;
+}
+
+.card-txt-body .txt h4 {
+  color: var(--primary-1);
+  text-transform: uppercase;
+  padding-bottom: 1rem;
+  font-weight: var(--font-w-1);
+}
+.card-txt-body .txt h1 {
+  font-size: 3.5rem;
+  width: 20ch;
+  padding-bottom: 1.4rem;
+  font-weight: var(--font-w-2);
+}
+.card-txt-body .txt p {
+  width: 50ch;
+  line-height: 1.2;
+  color: var(--neutral--2);
+  padding-bottom: 2.8rem;
+}
+.card-txt-body .price {
+  font-weight: var(--font-w-2);
+}
+.card-txt-body .price div {
+  display: flex;
+  align-items: center;
+}
+.card-txt-body .price #price-bold {
+  font-size: 2.4rem;
+}
+.card-txt-body .price #price-discount {
+  margin: 0.5rem;
+  color: var(--primary-1);
+  padding: 0.4rem 1rem;
+  background-color: var(--primary-2);
+  border-radius: 1rem;
+}
+.card-txt-body .price #price-strike {
+  padding: 1rem 0;
+  color: var(--neutral--3);
+}
+.card-txt-body .buttons {
+  display: flex;
+}
+.card-txt-body .buttons button {
+  border: none;
+}
+.card-txt-body .buttons .btn-add {
+  padding: 1rem 2rem;
+  margin-right: 1rem;
+  background-color: var(--neutral--4);
+  border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+}
+.card-txt-body .buttons .btn-add #icon-minus,
+.card-txt-body .buttons .btn-add #icon-plus {
+  cursor: pointer;
+}
+.card-txt-body .buttons .btn-cart {
+  cursor: pointer;
+  padding: 1rem 3rem;
+  border-radius: 1rem;
+  background-color: var(--primary-1);
+  color: var(--neutral--5);
+  font-weight: var(--font-w-2);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}/*# sourceMappingURL=style.css.map */
