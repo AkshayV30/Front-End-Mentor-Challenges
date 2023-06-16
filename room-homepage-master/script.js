@@ -15,7 +15,7 @@ console.log(slideWidth);
 
 //seting up for moving to next slide by calculating width of current slid
 const setSlidePosition = (slide, index) => {
-  slide.style.left = slideWidth * 2.2 * index + "px"; //need to be fixed REVIEW_A:
+  slide.style.left = slideWidth * 2.5 * index + "px"; //need to be fixed REVIEW_A:
 };
 slides.forEach(setSlidePosition);
 

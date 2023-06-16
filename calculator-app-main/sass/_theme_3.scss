@@ -1,0 +1,75 @@
+//-----------------------------------------------------------------
+//                                                       THEME--3
+//-----------------------------------------------------------------
+:root {
+  //# Colors
+  // #### Backgrounds
+  --theme-3-back--1: hsl(268, 75%, 9%); //  Very dark violet (main background)
+  --theme-3-back--2: hsl(
+    268,
+    71%,
+    12%
+  ); //  Very dark violet (toggle background, keypad background, screen background)
+
+  // #### Keys
+  --theme-3-key--1: hsl(281, 89%, 26%); //Dark violet (key background)
+  --theme-3-key--2: hsl(285, 91%, 52%); //Vivid magenta (key shadow)
+
+  --theme-3-key--3: hsl(176, 100%, 44%); //Pure cyan (key background, toggle)
+  --theme-3-key--4: hsl(177, 92%, 70%); //Soft cyan (key shadow)
+
+  --theme-3-key--5: hsl(268, 47%, 21%); //Very dark violet (key background)
+  --theme-3-key--6: hsl(290, 70%, 36%); //Dark magenta (key shadow)
+
+  // #### Text
+  --theme-3-text--1: hsl(52, 100%, 62%); // Light yellow
+  --theme-3-text--2: hsl(198, 20%, 13%); // Very dark blue
+  --theme-3-text--3: hsl(0, 0%, 100%); // White (text)
+}
+
+body.t3 {
+  background: var(--theme-3-back--1);
+}
+.calc-screen.t3 {
+  background: var(--theme-3-back--3);
+  p {
+    color: var(--theme-3-text--2);
+  }
+}
+.container--keypad.t3 {
+  background: var(--theme-3-back--2);
+}
+.slider.t3 {
+  background: var(--theme-3-back--2);
+}
+.container--top.t3 {
+  span,
+  ol {
+    color: var(--theme-3-text--1);
+  }
+}
+// ----------------------------------------------------------------button
+.btn.t3 {
+  color: var(--theme-3-text--1);
+  background: var(--theme-3-key--5);
+  box-shadow: 0 0.5rem var(--theme-3-key--6);
+}
+
+.btn.keq.t3 {
+  color: var(--theme-3-text--2);
+}
+.btn.kdel.t3,
+.btn.kres.t3 {
+  color: var(--theme-3-text--3);
+}
+
+.btn.kdel.t3,
+.btn.kres.t3 {
+  background: var(--theme-3-key--1);
+  box-shadow: 0 0.5rem var(--theme-3-key--2);
+}
+
+.btn.keq.t3 {
+  background: var(--theme-3-key--3);
+  box-shadow: 0 0.5rem var(--theme-3-key--4);
+}

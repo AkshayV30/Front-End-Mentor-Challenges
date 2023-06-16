@@ -1,0 +1,284 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+:root {
+  --font-fam: "League Spartan", sans-serif;
+  --font-w-1: 600;
+  --font-w-2: 700;
+  --font-w-3: 800;
+  --font-w-4: 900; }
+
+html {
+  font-size: 62.5%; }
+
+body {
+  font-size: 3.2rem;
+  font-family: var(--font-fam);
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; }
+
+.container--main {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 58rem;
+  height: 80rem; }
+  .container--main .container--top {
+    display: flex;
+    justify-content: space-between; }
+  .container--main .calc-screen {
+    height: 10rem; }
+  .container--main .container--keypad {
+    display: grid;
+    grid-template-columns: repeat(4, 12rem);
+    grid-template-rows: repeat(5, 6rem);
+    gap: 2rem; }
+
+.container--top .theme-selector {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  position: relative; }
+  .container--top .theme-selector span {
+    font-size: 1.6rem; }
+  .container--top .theme-selector ol {
+    position: absolute;
+    top: -20px;
+    right: 8px;
+    list-style: none;
+    display: flex;
+    gap: 0.8rem;
+    font-size: 1.6rem; }
+  .container--top .theme-selector .slider {
+    border-radius: 2rem;
+    position: relative;
+    content: " ";
+    width: 6rem;
+    height: 2rem; }
+
+.calc-screen {
+  border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 2rem; }
+  .calc-screen .digits {
+    letter-spacing: 0.2rem; }
+
+@keyframes blinkAnimate {
+  0% {
+    opacity: 0; }
+  25% {
+    opacity: 0.25; }
+  50% {
+    opacity: 0.5; }
+  75% {
+    opacity: 0.25; }
+  100% {
+    opacity: 0; } }
+
+.container--keypad {
+  padding: 2rem;
+  border-radius: 1rem; }
+  .container--keypad button {
+    cursor: pointer;
+    font-size: 3.2rem;
+    font-weight: var(--font-w-2); }
+    .container--keypad button:active {
+      opacity: 0.7; }
+  .container--keypad .btn {
+    border: none;
+    border-radius: 1rem; }
+  .container--keypad .kres,
+  .container--keypad .keq {
+    grid-column: span 2; }
+
+.attribution {
+  font-size: 11px;
+  text-align: center; }
+
+.attribution a {
+  color: #3e52a3; }
+
+:root {
+  --theme-1-back--1: hsl(
+    222,
+    26%,
+    31%
+  );
+  --theme-1-back--2: hsl(
+    223,
+    31%,
+    20%
+  );
+  --theme-1-back--3: hsl(
+    224,
+    36%,
+    15%
+  );
+  --theme-1-key--1: hsl(
+    225,
+    21%,
+    49%
+  );
+  --theme-1-key--2: hsl(224, 28%, 35%);
+  --theme-1-key--3: hsl(6, 63%, 50%);
+  --theme-1-key--4: hsl(6, 70%, 34%);
+  --theme-1-key--5: hsl(30, 25%, 89%);
+  --theme-1-key--6: hsl(28, 16%, 65%);
+  --theme-1-text--1: hsl(221, 14%, 31%);
+  --theme-1-text--2: hsl(0, 0%, 100%); }
+
+body.t1 {
+  background: var(--theme-1-back--1); }
+
+.calc-screen.t1 {
+  background: var(--theme-1-back--3); }
+  .calc-screen.t1 p {
+    color: var(--theme-1-text--2); }
+
+.container--keypad.t1 {
+  background: var(--theme-1-back--2); }
+
+.slider.t1 {
+  background: var(--theme-1-back--2); }
+
+.container--top.t1 span,
+.container--top.t1 ol {
+  color: var(--theme-1-text--2); }
+
+.btn.t1 {
+  color: var(--theme-1-text--1);
+  background: var(--theme-1-key--5);
+  box-shadow: 0 0.5rem var(--theme-1-key--6); }
+
+.btn.kdel.t1,
+.btn.kres.t1,
+.btn.keq.t1 {
+  color: var(--theme-1-text--2); }
+
+.btn.kdel.t1,
+.btn.kres.t1 {
+  background: var(--theme-1-key--1);
+  box-shadow: 0 0.5rem var(--theme-1-key--2); }
+
+.btn.keq.t1 {
+  background: var(--theme-1-key--3);
+  box-shadow: 0 0.5rem var(--theme-1-key--4); }
+
+:root {
+  --theme-2-back--1: hsl(0, 0%, 90%);
+  --theme-2-back--2: hsl(
+    0,
+    5%,
+    81%
+  );
+  --theme-2-back--3: hsl(0, 0%, 93%);
+  --theme-2-key--1: hsl(185, 42%, 37%);
+  --theme-2-key--2: hsl(185, 58%, 25%);
+  --theme-2-key--3: hsl(25, 98%, 40%);
+  --theme-2-key--4: hsl(25, 99%, 27%);
+  --theme-2-key--5: hsl(45, 7%, 89%);
+  --theme-2-key--6: hsl(35, 11%, 61%);
+  --theme-2-text--1: hsl(60, 10%, 19%);
+  --theme-2-text--2: hsl(0, 0%, 100%); }
+
+body.t2 {
+  background: var(--theme-2-back--1); }
+
+.calc-screen.t2 {
+  background: var(--theme-2-back--3); }
+  .calc-screen.t2 p {
+    color: var(--theme-2-text--2); }
+
+.container--keypad.t2 {
+  background: var(--theme-2-back--2); }
+
+.slider.t2 {
+  background: var(--theme-2-back--2); }
+
+.container--top.t2 span,
+.container--top.t2 ol {
+  color: var(--theme-2-text--2); }
+
+.btn.t2 {
+  color: var(--theme-2-text--1);
+  background: var(--theme-2-key--5);
+  box-shadow: 0 0.5rem var(--theme-2-key--6); }
+
+.btn.kdel.t2,
+.btn.kres.t2,
+.btn.keq.t2 {
+  color: var(--theme-2-text--2); }
+
+.btn.kdel.t2,
+.btn.kres.t2 {
+  background: var(--theme-2-key--1);
+  box-shadow: 0 0.5rem var(--theme-2-key--2); }
+
+.btn.keq.t2 {
+  background: var(--theme-2-key--3);
+  box-shadow: 0 0.5rem var(--theme-2-key--4); }
+
+:root {
+  --theme-3-back--1: hsl(268, 75%, 9%);
+  --theme-3-back--2: hsl(
+    268,
+    71%,
+    12%
+  );
+  --theme-3-key--1: hsl(281, 89%, 26%);
+  --theme-3-key--2: hsl(285, 91%, 52%);
+  --theme-3-key--3: hsl(176, 100%, 44%);
+  --theme-3-key--4: hsl(177, 92%, 70%);
+  --theme-3-key--5: hsl(268, 47%, 21%);
+  --theme-3-key--6: hsl(290, 70%, 36%);
+  --theme-3-text--1: hsl(52, 100%, 62%);
+  --theme-3-text--2: hsl(198, 20%, 13%);
+  --theme-3-text--3: hsl(0, 0%, 100%); }
+
+body.t3 {
+  background: var(--theme-3-back--1); }
+
+.calc-screen.t3 {
+  background: var(--theme-3-back--3); }
+  .calc-screen.t3 p {
+    color: var(--theme-3-text--2); }
+
+.container--keypad.t3 {
+  background: var(--theme-3-back--2); }
+
+.slider.t3 {
+  background: var(--theme-3-back--2); }
+
+.container--top.t3 span,
+.container--top.t3 ol {
+  color: var(--theme-3-text--1); }
+
+.btn.t3 {
+  color: var(--theme-3-text--1);
+  background: var(--theme-3-key--5);
+  box-shadow: 0 0.5rem var(--theme-3-key--6); }
+
+.btn.keq.t3 {
+  color: var(--theme-3-text--2); }
+
+.btn.kdel.t3,
+.btn.kres.t3 {
+  color: var(--theme-3-text--3); }
+
+.btn.kdel.t3,
+.btn.kres.t3 {
+  background: var(--theme-3-key--1);
+  box-shadow: 0 0.5rem var(--theme-3-key--2); }
+
+.btn.keq.t3 {
+  background: var(--theme-3-key--3);
+  box-shadow: 0 0.5rem var(--theme-3-key--4); }

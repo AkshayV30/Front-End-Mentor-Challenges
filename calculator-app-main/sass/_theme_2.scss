@@ -1,0 +1,77 @@
+//-----------------------------------------------------------------
+//                                                       THEME--2
+//-----------------------------------------------------------------
+:root {
+  //# Colors
+  // #### Backgrounds
+
+  --theme-2-back--1: hsl(0, 0%, 90%); //  Light gray (main background)
+  --theme-2-back--2: hsl(
+    0,
+    5%,
+    81%
+  ); //  Grayish red (toggle background, keypad background)
+  --theme-2-back--3: hsl(0, 0%, 93%); //  Very light gray (screen background)
+
+  // #### Keys
+
+  --theme-2-key--1: hsl(185, 42%, 37%); //  Dark moderate cyan (key background)
+  --theme-2-key--2: hsl(185, 58%, 25%); //  Very dark cyan (key shadow)
+
+  --theme-2-key--3: hsl(25, 98%, 40%); // Orange (key background, toggle)
+  --theme-2-key--4: hsl(25, 99%, 27%); // Dark orange (key shadow)
+
+  --theme-2-key--5: hsl(45, 7%, 89%); //  Light grayish yellow (key background)
+  --theme-2-key--6: hsl(35, 11%, 61%); //  Dark grayish orange (key shadow)
+
+  // #### Text
+
+  --theme-2-text--1: hsl(60, 10%, 19%); //  Very dark grayish yellow
+  --theme-2-text--2: hsl(0, 0%, 100%); //  White (text)
+}
+body.t2 {
+  background: var(--theme-2-back--1);
+}
+
+.calc-screen.t2 {
+  background: var(--theme-2-back--3);
+  p {
+    color: var(--theme-2-text--2);
+  }
+}
+.container--keypad.t2 {
+  background: var(--theme-2-back--2);
+}
+
+.slider.t2 {
+  background: var(--theme-2-back--2);
+}
+.container--top.t2 {
+  span,
+  ol {
+    color: var(--theme-2-text--2);
+  }
+}
+// ----------------------------------------------------------------button
+.btn.t2 {
+  color: var(--theme-2-text--1);
+  background: var(--theme-2-key--5);
+  box-shadow: 0 0.5rem var(--theme-2-key--6);
+}
+
+.btn.kdel.t2,
+.btn.kres.t2,
+.btn.keq.t2 {
+  color: var(--theme-2-text--2);
+}
+
+.btn.kdel.t2,
+.btn.kres.t2 {
+  background: var(--theme-2-key--1);
+  box-shadow: 0 0.5rem var(--theme-2-key--2);
+}
+
+.btn.keq.t2 {
+  background: var(--theme-2-key--3);
+  box-shadow: 0 0.5rem var(--theme-2-key--4);
+}

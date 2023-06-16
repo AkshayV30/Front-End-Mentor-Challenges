@@ -3,19 +3,63 @@
 *::before {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --font-fam: "Public Sans", sans-serif;
+  --font-w-1: 300;
+  --font-w-2: 400;
+  --font-w-3: 700;
+  --primary-1: hsl(233, 26%, 24%);
+  --primary-2: hsl(136, 65%, 51%);
+  --primary-3: hsl(192, 70%, 51%);
+  --neutral-1: hsl(233, 8%, 62%);
+  --neutral-2: hsl(220, 16%, 96%);
+  --neutral-3: hsl(0, 0%, 98%);
+  --neutral-4: hsl(0, 0%, 100%);
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.8rem;
+  font-family: var(--font-fam);
+}
+
+button {
+  border-style: none;
+  background: linear-gradient(to bottom right, var(--primary-2), var(--primary-3));
+  border-radius: 24px;
+  padding: 12px;
+  box-shadow: 0.2rem 0.2rem 0.4rem rgba(0, 0, 0, 0.459);
+  color: var(--neutral-4);
+  cursor: pointer;
+}
+button:hover {
+  opacity: 0.5;
 }
 
 .main--nav {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  background: white;
+  background: var(--neutral-4);
   padding: 20px;
 }
 .main--nav ul {
   display: flex;
   gap: 15px;
   list-style: none;
+}
+.main--nav ul a {
+  text-decoration: none;
+}
+.main--nav ul a:hover {
+  padding-bottom: 1rem;
+  border-bottom: 2px solid var(--primary-2);
 }
 
 .first {
@@ -60,6 +104,8 @@
   padding: 50px;
   display: grid;
   grid-template-rows: 1fr, 2fr;
+  justify-content: space-evenly;
+  width: 100%;
   gap: 35px;
   background: hsla(0, 0%, 67%, 0.3);
 }
@@ -72,6 +118,7 @@
 }
 
 .second--cards {
+  width: 100%;
   display: flex;
   gap: 25px;
 }
@@ -107,28 +154,33 @@
   align-items: flex-start;
   border-radius: 5px;
   overflow: hidden;
-}
-.third-card img {
-  width: 200px;
-  height: 150px;
-}
-
-.third-card-txt {
-  padding: 12px;
   background: #fff;
 }
-.third-card-txt #t-caption {
-  font-size: 8px;
+.third-card img {
+  width: 100%;
+  height: 100%;
 }
-.third-card-txt #t-heading {
-  padding: 10px 0;
+.third-card #t-caption {
+  font-size: 1.2rem;
+  padding: 1rem;
 }
-.third-card-txt #t-para {
-  font-size: 10px;
+.third-card .t-heading {
+  padding: 1rem;
+}
+.third-card .t-heading a {
+  color: var(--primary-1);
+  text-decoration: none;
+}
+.third-card .t-heading a:hover {
+  color: var(--primary-2);
+}
+.third-card #t-para {
+  padding: 1rem;
+  font-size: 1.4rem;
 }
 
 footer {
-  background: #0915be;
+  background: var(--primary-1);
   padding: 20px 50px;
   display: grid;
   grid-template-columns: repeat(5, 1fr);
@@ -149,6 +201,9 @@ footer .footer-icons {
 footer .footer-icons #f-icon {
   width: 12px;
 }
+footer .footer-icons #f-icon:hover {
+  background-color: red;
+}
 footer ul {
   list-style: none;
   font-size: 10px;
@@ -162,6 +217,13 @@ footer #c-2 {
 footer li {
   padding: 5px;
 }
+footer li a {
+  text-decoration: none;
+  color: var(--neutral-4);
+}
+footer li a:hover {
+  color: var(--primary-2);
+}
 footer .f-end {
   grid-column: 5/6;
   text-align: right;
@@ -169,22 +231,16 @@ footer .f-end {
 footer .f-end p {
   padding: 25px 0;
   font-size: 10px;
-}
-
-button {
-  border-style: none;
-}
-button .btn {
-  background: red;
-  padding: 12px;
-  border-radius: 24px;
+  color: var(--neutral-1);
 }
 
 .attribution {
+  grid-column: 1/-1;
   font-size: 11px;
-  text-align: center;
+  margin: 0 auto;
+  color: var(--neutral-1);
 }
 
 .attribution a {
-  color: hsl(228, 45%, 44%);
+  color: var(--neutral-1);
 }/*# sourceMappingURL=main.css.map */

@@ -125,7 +125,7 @@ main {
 #hero-img {
   width: 100%;
   height: 100%;
-  object-fit: cover; //need to fix REVIEW_A:
+  object-fit: fill; //need to fix REVIEW_A:
 }
 
 .main-hero-img {
@@ -140,7 +140,7 @@ main {
     position: relative;
     height: 100%;
 
-    transition: transform 250ms ease-in;
+    transition: transform 500ms ease-in;
 
     .main-hero-img__slide {
       position: absolute;

@@ -1,0 +1,91 @@
+//-----------------------------------------------------------------
+//                                                       THEME--1
+//-----------------------------------------------------------------
+:root {
+  //# Colors
+  // ## Backgrounds
+  --theme-1-back--1: hsl(
+    222,
+    26%,
+    31%
+  ); // Very dark desaturated blue (main background)
+
+  --theme-1-back--2: hsl(
+    223,
+    31%,
+    20%
+  ); //  Very dark desaturated blue (toggle background, keypad background)
+
+  --theme-1-back--3: hsl(
+    224,
+    36%,
+    15%
+  ); //  Very dark desaturated blue (screen background)
+
+  // ### Keys
+
+  --theme-1-key--1: hsl(
+    225,
+    21%,
+    49%
+  ); // Desaturated dark blue (key background)
+  --theme-1-key--2: hsl(224, 28%, 35%); // Desaturated dark blue (key shadow)
+
+  --theme-1-key--3: hsl(6, 63%, 50%); //  Red (key background, toggle)
+  --theme-1-key--4: hsl(6, 70%, 34%); //  Dark red (key shadow)
+
+  --theme-1-key--5: hsl(30, 25%, 89%); //Light grayish orange (key background)
+  --theme-1-key--6: hsl(28, 16%, 65%); //  Grayish orange (key shadow)
+
+  // #### Text
+
+  --theme-1-text--1: hsl(221, 14%, 31%); //  Very dark grayish blue
+  --theme-1-text--2: hsl(0, 0%, 100%); //  White
+}
+
+body.t1 {
+  background: var(--theme-1-back--1);
+}
+
+.calc-screen.t1 {
+  background: var(--theme-1-back--3);
+  p {
+    color: var(--theme-1-text--2);
+  }
+}
+.container--keypad.t1 {
+  background: var(--theme-1-back--2);
+}
+.slider.t1 {
+  background: var(--theme-1-back--2);
+}
+.container--top.t1 {
+  span,
+  ol {
+    color: var(--theme-1-text--2);
+  }
+}
+
+// ----------------------------------------------------------------button
+.btn.t1 {
+  color: var(--theme-1-text--1);
+  background: var(--theme-1-key--5);
+  box-shadow: 0 0.5rem var(--theme-1-key--6);
+}
+
+.btn.kdel.t1,
+.btn.kres.t1,
+.btn.keq.t1 {
+  color: var(--theme-1-text--2);
+}
+
+.btn.kdel.t1,
+.btn.kres.t1 {
+  background: var(--theme-1-key--1);
+  box-shadow: 0 0.5rem var(--theme-1-key--2);
+}
+
+.btn.keq.t1 {
+  background: var(--theme-1-key--3);
+  box-shadow: 0 0.5rem var(--theme-1-key--4);
+}

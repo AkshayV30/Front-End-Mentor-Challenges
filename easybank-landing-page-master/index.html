@@ -15,27 +15,25 @@
     <title>Frontend Mentor | Easybank landing page</title>
 
     <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap");
+    </style>
     <link rel="stylesheet" href="./css/main.css" />
   </head>
   <body>
-    <nav class="main--nav">
-      <picture>
-        <img src="./images/logo.svg" alt="image of logo" />
-      </picture>
-      <div>
-        <ul>
-          <li>Home</li>
-          <li>About</li>
-          <li>Contact</li>
-          <li>Blog</li>
-          <li>Careers</li>
-        </ul>
-      </div>
-      <button>
-        <span class="btn"> Request Invite </span>
-      </button>
-    </nav>
     <main>
+      <nav class="main--nav">
+        <img src="./images/logo.svg" alt="image of logo" />
+        <ul>
+          <li><a href="#">Home </a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Careers</a></li>
+        </ul>
+        <button>Request Invite</button>
+      </nav>
+
       <section class="first">
         <div class="first--txt">
           <h1>Next generation digital banking</h1>
@@ -46,21 +44,20 @@
             more.
           </p>
 
-          <button>
-            <span class="btn"> Request Invite </span>
-          </button>
+          <button>Request Invite</button>
         </div>
+
         <div class="first--img">
-          <img
+          <!-- <img
             id="background--img-1"
             src="./images/bg-intro-desktop.svg"
             alt="background image 1"
-          />
-          <img
+          /> -->
+          <!-- <img
             src="./images/image-mockups.png"
             alt="mockup image"
             id="background--img-2"
-          />
+          /> -->
         </div>
       </section>
 
@@ -100,6 +97,7 @@
               start taking control of your finances right away.
             </p>
           </div>
+
           <div class="second-card">
             <img src="./images/icon-api.svg" alt="" id="logo" />
             <h3>Open API</h3>
@@ -117,22 +115,23 @@
         <div class="third--cards">
           <div class="third-card">
             <img src="./images/image-currency.jpg" alt="" />
-            <div class="third-card-txt">
-              <p id="t-caption">By Claire Robinson</p>
-              <h4 id="t-heading">Receive money in any currency with no fees</h4>
-              <p id="t-para">
-                The world is getting smaller and we’re becoming more mobile. So
-                why should you be forced to only receive money in a single …
-              </p>
-            </div>
+
+            <p id="t-caption">By Claire Robinson</p>
+            <h4 class="t-heading">
+              <a href="#"> Receive money in any currency with no fees </a>
+            </h4>
+            <p id="t-para">
+              The world is getting smaller and we’re becoming more mobile. So
+              why should you be forced to only receive money in a single …
+            </p>
           </div>
 
           <div class="third-card">
             <img src="./images/image-restaurant.jpg" alt="" />
             <div class="third-card-txt">
               <p id="t-caption">By Wilson Hutton</p>
-              <h4 id="t-heading">
-                Treat yourself without worrying about money
+              <h4 class="t-heading">
+                <a href="#"> Treat yourself without worrying about money </a>
               </h4>
               <p id="t-para">
                 Our simple budgeting feature allows you to separate out your
@@ -145,7 +144,9 @@
             <img src="./images/image-plane.jpg" alt="" />
             <div class="third-card-txt">
               <p id="t-caption">By Wilson Hutton</p>
-              <h4 id="t-heading">Take your Easybank card wherever you go</h4>
+              <h4 class="t-heading">
+                <a href="#"> Take your Easybank card wherever you go </a>
+              </h4>
               <p id="t-para">
                 We want you to enjoy your travels. This is why we don’t charge
                 any fees on purchases while you’re abroad. We’ll even show you …
@@ -157,8 +158,8 @@
             <img src="./images/image-confetti.jpg" alt="" />
             <div class="third-card-txt">
               <p id="t-caption">By Claire Robinson</p>
-              <h4 id="t-heading">
-                Our invite-only Beta accounts are now live!
+              <h4 class="t-heading">
+                <a href="#"> Our invite-only Beta accounts are now live! </a>
               </h4>
               <p id="t-para">
                 After a lot of hard work by the whole team, we’re excited to
@@ -174,53 +175,80 @@
     <footer>
       <div class="footer-icon">
         <img src="./images/logo.svg" alt="image of logo" id="company-logo" />
-        <div class="footer-icons">
-          <img
-            id="f-icon"
-            src="./images/icon-facebook.svg"
-            alt="facebook icon"
-          />
-          <img id="f-icon" src="./images/icon-youtube.svg" alt="youtube icon" />
-          <img
-            id="f-icon"
-            src="./images/icon-twitter.svg"
-            alt=" twitter icon"
-          />
-          <img
-            id="f-icon"
-            src="./images/icon-pinterest.svg"
-            alt=" pintrest icon"
-          />
-          <img
-            id="f-icon"
-            src="./images/icon-instagram.svg"
-            alt="instagram icon"
-          />
-        </div>
+
+        <ul class="footer-icons">
+          <li>
+            <a href="#">
+              <!-- <img
+                id="f-icon"
+                src="./images/icon-facebook.svg"
+                alt="facebook icon"
+            /> -->
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20">
+                <path
+                  fill="#FFF"
+                  d="M18.896 0H1.104C.494 0 0 .494 0 1.104v17.793C0 19.506.494 20 1.104 20h9.58v-7.745H8.076V9.237h2.606V7.01c0-2.583 1.578-3.99 3.883-3.99 1.104 0 2.052.082 2.329.119v2.7h-1.598c-1.254 0-1.496.597-1.496 1.47v1.928h2.989l-.39 3.018h-2.6V20h5.098c.608 0 1.102-.494 1.102-1.104V1.104C20 .494 19.506 0 18.896 0z"
+                />
+              </svg>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <img
+                id="f-icon"
+                src="./images/icon-youtube.svg"
+                alt="youtube icon"
+            /></a>
+          </li>
+          <li>
+            <a href="#">
+              <img
+                id="f-icon"
+                src="./images/icon-twitter.svg"
+                alt=" twitter icon"
+            /></a>
+          </li>
+          <li>
+            <a href="#">
+              <img
+                id="f-icon"
+                src="./images/icon-pinterest.svg"
+                alt=" pintrest icon"
+            /></a>
+          </li>
+          <li>
+            <a href="#">
+              <img
+                id="f-icon"
+                src="./images/icon-instagram.svg"
+                alt="instagram icon"
+              />
+            </a>
+          </li>
+        </ul>
       </div>
 
       <ul id="c-1">
-        <li>About Us</li>
-        <li>Contact</li>
-        <li>Blog</li>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#">Blog</a></li>
       </ul>
       <ul id="c-2">
-        <li>Careers</li>
-        <li>Support</li>
-        <li>Privacy Policy</li>
+        <li><a href="#">Careers</a></li>
+        <li><a href="#">Support</a></li>
+        <li><a href="#">Privacy Policy</a></li>
       </ul>
       <div class="f-end">
-        <button>
-          <span class="btn"> Request Invite </span>
-        </button>
+        <button>Request Invite</button>
         <p>© Easybank. All Rights Reserved</p>
       </div>
+
+      <div class="attribution">
+        Challenge by
+        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+          >Frontend Mentor</a
+        >. Coded by <a href="#">AkshayV30</a>.
+      </div>
     </footer>
-    <div class="attribution">
-      Challenge by
-      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
-        >Frontend Mentor</a
-      >. Coded by <a href="#">Your Name Here</a>.
-    </div>
   </body>
 </html>

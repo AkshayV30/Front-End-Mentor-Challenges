@@ -1,0 +1,34 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  // ## Typography
+
+  // ### Font
+  --font-fam: "League Spartan", sans-serif;
+  --font-w-1: 600;
+  --font-w-2: 700; // - Weights: 700 recommended
+  --font-w-3: 800;
+  --font-w-4: 900;
+}
+
+html {
+  // 10px / 16px(browser font size) = 62.5
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 3.2rem;
+  font-family: var(--font-fam);
+
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}

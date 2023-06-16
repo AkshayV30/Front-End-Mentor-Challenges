@@ -90,8 +90,8 @@ main .buttons-arrow {
 #hero-img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  -o-object-fit: fill;
+     object-fit: fill;
 }
 
 .main-hero-img {
@@ -103,7 +103,7 @@ main .buttons-arrow {
   list-style: none;
   position: relative;
   height: 100%;
-  transition: transform 250ms ease-in;
+  transition: transform 500ms ease-in;
 }
 .main-hero-img .main-hero-img__track .main-hero-img__slide {
   position: absolute;

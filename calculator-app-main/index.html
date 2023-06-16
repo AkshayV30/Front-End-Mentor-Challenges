@@ -1,26 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Calculator app</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
-<body>
+    <title>Frontend Mentor | Calculator app</title>
 
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
 
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
-</body>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@600;700;800;900&display=swap");
+    </style>
+    <link rel="stylesheet" href="./css/style.css" />
+    <script type="module" src="./js/script.js"></script>
+  </head>
+  <body class="t1">
+    <main class="container--main t1">
+      <div class="container--top t1">
+        <span>calc</span>
+        <div class="theme-selector t1">
+          <span> THEME</span>
+          <ol>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+          </ol>
+          <div class="slider t1"></div>
+        </div>
+      </div>
+      <div class="calc-screen t1">
+        <!-- dynamic content -->
+        <p data-previous-digit class="digits t1"></p>
+        <p data-current-digit class="digits t1"></p>
+      </div>
+      <div class="container--keypad t1">
+        <button data-number class="btn k7 t1" type="button">7</button>
+        <button data-number class="btn k8 t1" type="button">8</button>
+        <button data-number class="btn k9 t1" type="button">9</button>
+        <button data-del="delete" class="btn kdel t1" type="button">DEL</button>
+
+        <button data-number class="btn k4 t1" type="button">4</button>
+        <button data-number class="btn k5 t1" type="button">5</button>
+        <button data-number class="btn k6 t1" type="button">6</button>
+        <button data-operation="plus" class="btn kplus t1" type="button">
+          +
+        </button>
+
+        <button data-number class="btn k1 t1" type="button">1</button>
+        <button data-number class="btn k2 t1" type="button">2</button>
+        <button data-number class="btn k3 t1" type="button">3</button>
+        <button data-operation="subtract" class="btn kminus t1" type="button">
+          -
+        </button>
+
+        <button data-number class="btn kdot t1" type="button">.</button>
+        <button data-number class="btn k0 t1" type="button">0</button>
+        <button data-operation="divide" class="btn kdiv t1" type="button">
+          /
+        </button>
+        <button data-operation="mutiply" class="btn kmulti t1" type="button">
+          *
+        </button>
+
+        <button data-reset="all-clear" class="btn kres t1" type="button">
+          RESET
+        </button>
+        <button data-equals="calculate" class="btn keq t1" type="button">
+          =
+        </button>
+      </div>
+    </main>
+
+    <footer>
+      <div class="attribution">
+        Challenge by
+        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+          >Frontend Mentor</a
+        >. Coded by <a href="#">Your Name Here</a>.
+      </div>
+    </footer>
+  </body>
 </html>
