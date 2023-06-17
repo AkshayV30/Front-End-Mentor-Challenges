@@ -19,10 +19,11 @@
       @import url("https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap");
     </style>
     <link rel="stylesheet" href="./css/main.css" />
+    <script src="./script.js"></script>
   </head>
   <body>
     <main>
-      <nav class="main--nav">
+      <nav class="main-nav">
         <img src="./images/logo.svg" alt="image of logo" />
         <ul>
           <li><a href="#">Home </a></li>
@@ -34,7 +35,7 @@
         <button>Request Invite</button>
       </nav>
 
-      <section class="first">
+      <section class="section-first">
         <div class="first--txt">
           <h1>Next generation digital banking</h1>
 
@@ -46,22 +47,12 @@
 
           <button>Request Invite</button>
         </div>
-
         <div class="first--img">
-          <!-- <img
-            id="background--img-1"
-            src="./images/bg-intro-desktop.svg"
-            alt="background image 1"
-          /> -->
-          <!-- <img
-            src="./images/image-mockups.png"
-            alt="mockup image"
-            id="background--img-2"
-          /> -->
+          <img id="img-front" src="./images/image-mockups.png" alt="" />
         </div>
       </section>
 
-      <section class="second">
+      <section class="section-second">
         <div class="second--txt">
           <h1>Why choose Easybank?</h1>
           <p>
@@ -109,26 +100,28 @@
         </div>
       </section>
 
-      <section class="third">
+      <section class="section-third">
         <h1>Latest Articles</h1>
 
         <div class="third--cards">
           <div class="third-card">
             <img src="./images/image-currency.jpg" alt="" />
 
-            <p id="t-caption">By Claire Robinson</p>
-            <h4 class="t-heading">
-              <a href="#"> Receive money in any currency with no fees </a>
-            </h4>
-            <p id="t-para">
-              The world is getting smaller and we’re becoming more mobile. So
-              why should you be forced to only receive money in a single …
-            </p>
+            <div>
+              <p id="t-caption">By Claire Robinson</p>
+              <h4 class="t-heading">
+                <a href="#"> Receive money in any currency with no fees </a>
+              </h4>
+              <p id="t-para">
+                The world is getting smaller and we’re becoming more mobile. So
+                why should you be forced to only receive money in a single …
+              </p>
+            </div>
           </div>
 
           <div class="third-card">
             <img src="./images/image-restaurant.jpg" alt="" />
-            <div class="third-card-txt">
+            <div>
               <p id="t-caption">By Wilson Hutton</p>
               <h4 class="t-heading">
                 <a href="#"> Treat yourself without worrying about money </a>
@@ -142,7 +135,7 @@
 
           <div class="third-card">
             <img src="./images/image-plane.jpg" alt="" />
-            <div class="third-card-txt">
+            <div>
               <p id="t-caption">By Wilson Hutton</p>
               <h4 class="t-heading">
                 <a href="#"> Take your Easybank card wherever you go </a>
@@ -156,7 +149,7 @@
 
           <div class="third-card">
             <img src="./images/image-confetti.jpg" alt="" />
-            <div class="third-card-txt">
+            <div>
               <p id="t-caption">By Claire Robinson</p>
               <h4 class="t-heading">
                 <a href="#"> Our invite-only Beta accounts are now live! </a>
@@ -174,22 +167,19 @@
 
     <footer>
       <div class="footer-icon">
-        <img src="./images/logo.svg" alt="image of logo" id="company-logo" />
+        <div>
+          <img src="./images/logo.svg" alt="image of logo" id="company-logo" />
+          <p>easybank</p>
+        </div>
 
         <ul class="footer-icons">
           <li>
             <a href="#">
-              <!-- <img
+              <img
                 id="f-icon"
                 src="./images/icon-facebook.svg"
                 alt="facebook icon"
-            /> -->
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20">
-                <path
-                  fill="#FFF"
-                  d="M18.896 0H1.104C.494 0 0 .494 0 1.104v17.793C0 19.506.494 20 1.104 20h9.58v-7.745H8.076V9.237h2.606V7.01c0-2.583 1.578-3.99 3.883-3.99 1.104 0 2.052.082 2.329.119v2.7h-1.598c-1.254 0-1.496.597-1.496 1.47v1.928h2.989l-.39 3.018h-2.6V20h5.098c.608 0 1.102-.494 1.102-1.104V1.104C20 .494 19.506 0 18.896 0z"
-                />
-              </svg>
+              />
             </a>
           </li>
           <li>
@@ -198,7 +188,8 @@
                 id="f-icon"
                 src="./images/icon-youtube.svg"
                 alt="youtube icon"
-            /></a>
+              />
+            </a>
           </li>
           <li>
             <a href="#">
@@ -228,16 +219,20 @@
         </ul>
       </div>
 
-      <ul id="c-1">
-        <li><a href="#">About Us</a></li>
-        <li><a href="#">Contact</a></li>
-        <li><a href="#">Blog</a></li>
-      </ul>
-      <ul id="c-2">
-        <li><a href="#">Careers</a></li>
-        <li><a href="#">Support</a></li>
-        <li><a href="#">Privacy Policy</a></li>
-      </ul>
+      <div>
+        <ul id="c-1">
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Contact</a></li>
+          <li><a href="#">Blog</a></li>
+        </ul>
+      </div>
+      <div>
+        <ul id="c-2">
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Support</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+        </ul>
+      </div>
       <div class="f-end">
         <button>Request Invite</button>
         <p>© Easybank. All Rights Reserved</p>

@@ -27,13 +27,18 @@ html {
 body {
   font-size: 1.8rem;
   font-family: var(--font-fam);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  overflow-x: hidden;
 }
 
 button {
   border-style: none;
-  background: linear-gradient(to bottom right, var(--primary-2), var(--primary-3));
-  border-radius: 24px;
-  padding: 12px;
+  background: linear-gradient(to right, var(--primary-2), var(--primary-3));
+  border-radius: 2.4rem;
+  padding: 1rem 2rem;
   box-shadow: 0.2rem 0.2rem 0.4rem rgba(0, 0, 0, 0.459);
   color: var(--neutral-4);
   cursor: pointer;
@@ -42,130 +47,156 @@ button:hover {
   opacity: 0.5;
 }
 
-.main--nav {
+.main-nav {
   display: flex;
   justify-content: space-around;
   align-items: center;
+  gap: 25rem;
   background: var(--neutral-4);
-  padding: 20px;
+  padding: 1rem;
+  z-index: 4;
 }
-.main--nav ul {
+.main-nav ul {
   display: flex;
-  gap: 15px;
+  gap: 1.6rem;
   list-style: none;
 }
-.main--nav ul a {
+.main-nav ul a {
   text-decoration: none;
+  color: var(--neutral-1);
 }
-.main--nav ul a:hover {
-  padding-bottom: 1rem;
-  border-bottom: 2px solid var(--primary-2);
-}
-
-.first {
-  padding: 50px;
-  display: grid;
-  grid-template-columns: repeat(2, 2fr);
-  width: 100%;
-  background: hsla(0, 0%, 51%, 0.05);
+.main-nav ul a:hover {
+  color: var(--primary-1);
+  padding-bottom: 1.4rem;
+  border-bottom: 0.4rem solid var(--primary-2);
 }
 
-.first--txt {
-  grid-column: 1/2;
-  width: 50%;
+.section-first {
+  padding: 12rem;
+  background: var(--neutral-3);
+  height: 50rem;
+  width: 100vw;
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 25px;
-}
-.first--txt h1 {
-  width: 15ch;
-}
-.first--txt p {
-  width: 45ch;
+  justify-content: space-between;
+  background-image: url(../images/bg-intro-desktop.svg);
+  background-repeat: no-repeat;
+  background-position: 145% 70%;
+  background-size: 60%;
 }
 
 .first--img {
-  grid-column: 2/-1;
+  width: 50%;
+  position: relative;
+}
+.first--img #img-front {
+  z-index: 3;
+  width: 70%;
+  -o-object-fit: contain;
+     object-fit: contain;
+  position: absolute;
+  top: -45%;
+  right: -20%;
+}
+
+.first--txt {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2.6rem;
   width: 50%;
 }
-
-.first--img #background--img-1 {
-  height: 250px;
-  z-index: -1;
-  position: absolute;
+.first--txt h1 {
+  width: 15ch;
+  font-size: 4rem;
+  font-weight: var(--font-w-1);
+  color: var(--primary-1);
 }
-.first--img #background--img-2 {
-  height: 250px;
-  z-index: 1;
+.first--txt p {
+  width: 42ch;
+  color: var(--neutral-1);
+  line-height: 1.25;
 }
 
-.second {
-  padding: 50px;
-  display: grid;
-  grid-template-rows: 1fr, 2fr;
-  justify-content: space-evenly;
+.section-second {
+  padding: 8rem 12rem;
   width: 100%;
-  gap: 35px;
-  background: hsla(0, 0%, 67%, 0.3);
+  gap: 3.6rem;
+  background: var(--neutral-2);
 }
 
 .second--txt h1 {
-  padding: 25px 0;
+  color: var(--primary-1);
 }
 .second--txt p {
-  width: 65ch;
+  padding-top: 1rem;
+  padding-bottom: 4rem;
+  width: 60ch;
+  font-size: 1.4rem;
+  line-height: 1.5;
+  color: var(--neutral-1);
 }
 
 .second--cards {
   width: 100%;
   display: flex;
-  gap: 25px;
+  justify-content: space-between;
+  gap: 2.5rem;
 }
 .second--cards .second-card {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 15px;
+  gap: 2.4rem;
+}
+.second--cards .second-card h3 {
+  color: var(--primary-1);
 }
 .second--cards .second-card p {
   width: 25ch;
+  color: var(--neutral-1);
+  font-size: 1.4rem;
+  line-height: 1.5;
 }
 .second--cards .second-card #logo {
-  width: 55px;
-  height: auto;
+  width: 5.4rem;
+  aspect-ratio: 1;
 }
 
-.third {
-  padding: 50px;
-  background: hsla(0, 0%, 55%, 0.116);
+.section-third {
+  padding: 4rem 12rem 8rem 12rem;
+  background: var(--neutral-3);
 }
-.third h1 {
-  padding: 25px 0;
+.section-third h1 {
+  padding: 2.8rem 0;
+  color: var(--primary-1);
 }
-.third .third--cards {
+.section-third .third--cards {
   display: flex;
-  gap: 25px;
+  gap: 2.6rem;
 }
 
 .third-card {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  border-radius: 5px;
+  border-radius: 1rem;
   overflow: hidden;
   background: #fff;
 }
+.third-card div {
+  padding: 1.6rem;
+}
 .third-card img {
   width: 100%;
-  height: 100%;
 }
 .third-card #t-caption {
   font-size: 1.2rem;
-  padding: 1rem;
+  color: var(--neutral-1);
 }
 .third-card .t-heading {
-  padding: 1rem;
+  padding: 1.2rem 0;
+  color: var(--primary-1);
+  width: 20ch;
 }
 .third-card .t-heading a {
   color: var(--primary-1);
@@ -175,53 +206,61 @@ button:hover {
   color: var(--primary-2);
 }
 .third-card #t-para {
-  padding: 1rem;
+  width: 27ch;
+  line-height: 1.25;
   font-size: 1.4rem;
+  color: var(--neutral-1);
 }
 
 footer {
   background: var(--primary-1);
-  padding: 20px 50px;
+  color: var(--neutral-1);
+  padding: 4rem 12rem 2rem 12rem;
+  width: 100%;
   display: grid;
   grid-template-columns: repeat(5, 1fr);
 }
 footer .footer-icon {
   display: flex;
   flex-direction: column;
-  gap: 25px;
+  gap: 2.5rem;
 }
-footer .footer-icon #company-logo {
-  width: 80px;
+footer .footer-icon div {
+  display: flex;
+  align-items: center;
+}
+footer .footer-icon div #company-logo {
+  width: 10rem;
   height: auto;
+}
+footer .footer-icon div p {
+  margin-left: -76px;
+  color: var(--neutral-4);
+  font-size: 1.4rem;
+  font-weight: 700;
 }
 footer .footer-icons {
   display: flex;
-  gap: 10px;
+  gap: 1rem;
 }
 footer .footer-icons #f-icon {
-  width: 12px;
+  width: 1.4rem;
 }
 footer .footer-icons #f-icon:hover {
-  background-color: red;
+  filter: invert(0.04) sepia(1) saturate(8.1) hue-rotate(64.8deg) brightness(1);
 }
-footer ul {
+footer div ul {
   list-style: none;
-  font-size: 10px;
+  font-size: 1rem;
 }
-footer #c-1 {
-  grid-column: 2/3;
+footer div li {
+  padding: 0.5rem;
 }
-footer #c-2 {
-  grid-column: 3/4;
-}
-footer li {
-  padding: 5px;
-}
-footer li a {
+footer div li a {
   text-decoration: none;
-  color: var(--neutral-4);
+  color: var(--neutral-1);
 }
-footer li a:hover {
+footer div li a:hover {
   color: var(--primary-2);
 }
 footer .f-end {
@@ -229,16 +268,16 @@ footer .f-end {
   text-align: right;
 }
 footer .f-end p {
-  padding: 25px 0;
-  font-size: 10px;
+  padding: 2rem 0;
+  font-size: 1rem;
   color: var(--neutral-1);
 }
 
 .attribution {
   grid-column: 1/-1;
-  font-size: 11px;
-  margin: 0 auto;
+  font-size: 1rem;
   color: var(--neutral-1);
+  margin: 0 auto;
 }
 
 .attribution a {
