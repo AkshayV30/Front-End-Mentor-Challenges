@@ -5,9 +5,6 @@
   flex-direction: column;
   gap: 2rem;
 
-  width: 58rem;
-  height: 80rem;
-
   .container--top {
     display: flex;
     justify-content: space-between;
@@ -21,9 +18,7 @@
 
   .container--keypad {
     display: grid;
-
     grid-template-rows: repeat(5, 6rem);
-
     gap: 2rem;
   }
 }
@@ -119,7 +114,7 @@
   border-radius: 1rem;
   button {
     cursor: pointer;
-    font-size: 3.2rem;
+
     font-weight: var(--font-w-2);
 
     // &:active {
