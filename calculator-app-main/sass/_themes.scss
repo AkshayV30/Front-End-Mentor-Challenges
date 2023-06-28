@@ -1,0 +1,103 @@
+//-----------------------------------------------------------------
+//                                                       THEME--1
+//-----------------------------------------------------------------
+.theme--1 {
+  //# Colors
+  // ## Backgrounds
+  --theme-back--1: hsl(
+    222,
+    26%,
+    31%
+  ); // Very dark desaturated blue (main background)
+
+  --theme-back--2: hsl(
+    223,
+    31%,
+    20%
+  ); //  Very dark desaturated blue (toggle background, keypad background)
+
+  --theme-back--3: hsl(
+    224,
+    36%,
+    15%
+  ); //  Very dark desaturated blue (screen background)
+
+  // ### Keys
+
+  --theme-key--1: hsl(225, 21%, 49%); // Desaturated dark blue (key background)
+  --theme-key--2: hsl(224, 28%, 35%); // Desaturated dark blue (key shadow)
+
+  --theme-key--3: hsl(6, 63%, 50%); //  Red (key background, toggle)
+  --theme-key--4: hsl(6, 70%, 34%); //  Dark red (key shadow)
+
+  --theme-key--5: hsl(30, 25%, 89%); //Light grayish orange (key background)
+  --theme-key--6: hsl(28, 16%, 65%); //  Grayish orange (key shadow)
+
+  // #### Text
+
+  --theme-text--2: hsl(221, 14%, 31%); //  Very dark grayish blue
+  --theme-text--1: hsl(0, 0%, 100%); //  White
+  --theme-text--3: hsl(198, 20%, 13%);
+}
+
+//-----------------------------------------------------------------
+//                                                       THEME--2
+//-----------------------------------------------------------------
+.theme--2 {
+  //# Colors
+  // #### Backgrounds
+
+  --theme-back--1: hsl(0, 0%, 90%); //  Light gray (main background)
+  --theme-back--2: hsl(
+    0,
+    5%,
+    81%
+  ); //  Grayish red (toggle background, keypad background)
+  --theme-back--3: hsl(0, 0%, 93%); //  Very light gray (screen background)
+
+  // #### Keys
+
+  --theme-key--1: hsl(185, 42%, 37%); //  Dark moderate cyan (key background)
+  --theme-key--2: hsl(185, 58%, 25%); //  Very dark cyan (key shadow)
+
+  --theme-key--3: hsl(25, 98%, 40%); // Orange (key background, toggle)
+  --theme-key--4: hsl(25, 99%, 27%); // Dark orange (key shadow)
+
+  --theme-key--5: hsl(45, 7%, 89%); //  Light grayish yellow (key background)
+  --theme-key--6: hsl(35, 11%, 61%); //  Dark grayish orange (key shadow)
+
+  // #### Text
+
+  --theme-text--1: hsl(60, 10%, 19%); //  Very dark grayish yellow
+  --theme-text--2: hsl(0, 0%, 100%); //  White (text)
+  --theme-text--3: hsl(198, 20%, 13%);
+}
+
+//-----------------------------------------------------------------
+//                                                       THEME--3
+//-----------------------------------------------------------------
+.theme--3 {
+  //# Colors
+  // #### Backgrounds
+  --theme-back--1: hsl(268, 75%, 9%); //  Very dark violet (main background)
+  --theme-back--2: hsl(
+    268,
+    71%,
+    12%
+  ); //  Very dark violet (toggle background, keypad background, screen background)
+
+  // #### Keys
+  --theme-key--1: hsl(281, 89%, 26%); //Dark violet (key background)
+  --theme-key--2: hsl(285, 91%, 52%); //Vivid magenta (key shadow)
+
+  --theme-key--3: hsl(176, 100%, 44%); //Pure cyan (key background, toggle)
+  --theme-key--4: hsl(177, 92%, 70%); //Soft cyan (key shadow)
+
+  --theme-key--5: hsl(268, 47%, 21%); //Very dark violet (key background)
+  --theme-key--6: hsl(290, 70%, 36%); //Dark magenta (key shadow)
+
+  // #### Text
+  --theme-text--1: hsl(52, 100%, 62%); // Light yellow
+  --theme-text--2: hsl(198, 20%, 13%); // Very dark blue
+  --theme-text--3: hsl(0, 0%, 100%); // White (text)
+}

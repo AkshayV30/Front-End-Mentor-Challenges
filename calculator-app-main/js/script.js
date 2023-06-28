@@ -138,3 +138,39 @@ btn_del.addEventListener("click", (button) => {
   calculate.del();
   calculate.updateDisplay();
 });
+
+// ------------------------------------------------
+//        theme selector
+// ------------------------------------------------
+const rangeInput = document.getElementById("rng");
+const body = document.body;
+
+rangeInput.addEventListener("change", (e) => {
+  const selectedValue = parseInt(e.target.value);
+
+  console.log(selectedValue);
+  //method 1
+  // switch (selectedValue) {
+  //   case 0: //add .theme--1;
+  //     document.body.classList.add("theme--1");
+  //     document.body.classList.remove("theme--2", "theme--3");
+  //     break;
+  //   case 1: //add/ .theme--2;
+  //     document.body.classList.add("theme--2");
+  //     document.body.classList.remove("theme--1", "theme--3");
+  //     break;
+  //   case 2: //add/ .theme--3;
+  //     document.body.classList.add("theme--3");
+  //     document.body.classList.remove("theme--2", "theme--1");
+  //     break;
+  //   default: // .theme--1;
+  //     document.body.classList.add("theme--1");
+  //     document.body.classList.remove("theme--2", "theme--3");
+  //     break;
+  // }
+
+  //method 2
+  const themes = ["theme--1", "theme--2", "theme--3"];
+  body.classList.remove(...themes);
+  body.classList.add(themes[selectedValue]);
+});

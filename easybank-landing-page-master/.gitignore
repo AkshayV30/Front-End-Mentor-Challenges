@@ -16,3 +16,5 @@
 
 *.css.map
 *.scss
+
+node_modules/

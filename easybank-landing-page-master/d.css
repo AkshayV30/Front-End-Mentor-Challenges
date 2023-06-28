@@ -1,0 +1,168 @@
+
+button {
+  border-radius: 4.8rem;
+  padding: 1.4rem 2.4rem;
+  font-size: 1.4rem;
+}
+
+******************
+header {
+  height: 10vh;
+}
+
+.section-first,.section-second  {
+  padding: 16rem;
+}
+.section-third {
+  padding: 4rem 16rem 12rem 16rem;
+}
+footer {
+  padding: 4rem 16rem 2rem 16rem;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+}
+
+
+.section-second {
+  gap: 3.6rem;
+}
+
+.main-nav {
+  ul {
+    display: flex;
+    gap: 6rem;
+    li {
+      a:hover {
+        padding-bottom: 3.4rem;
+      }
+    }
+  }
+}
+.section-first {
+  background-image: url(../images/bg-intro-desktop.svg);
+  background-position: 145% 65%;
+  background-size: 62%;
+}
+
+
+
+
+.first--img {
+  #img-front {
+    object-fit: contain;
+    top: -100%;
+    right: -36%;
+  }
+}
+
+.first--txt {
+  gap: 2.8rem;
+  width: 50%;
+
+  h1 {
+    width: 15ch;
+    font-size: 6rem;
+  }
+  p {
+    width: 42ch;
+  }
+}
+
+.second--txt {
+  h1 {
+    font-size: 5rem;
+  }
+  p {
+    padding-top: 1rem;
+    padding-bottom: 4rem;
+    width: 60ch;
+  }
+}
+
+.second--cards {
+  gap: 2.5rem;
+  .second-card {
+    gap: 2.4rem;
+    h3 {
+      font-size: 3.2rem;
+    }
+    p {
+      width: 25ch;
+
+    }
+    #logo {
+      width: 8rem;
+    }
+  }
+}
+
+.section-third {
+  h1 {
+    padding: 3.2rem 0;
+    font-size: 4rem;
+  }
+  .third--cards {
+    gap: 2.6rem;
+  }
+}
+
+.third-card {
+  div {
+    padding: 1.6rem;
+  }
+  img {
+    width: 100%;
+  }
+  #t-caption {
+    font-size: 1.2rem;
+  }
+  .t-heading {
+    padding: 1.2rem 0;
+    width: 20ch;
+  }
+  #t-para {
+    width: 27ch;
+    font-size: 1.4rem;
+  }
+}
+
+footer {
+  .footer-icon {
+    flex-direction: column;
+    gap: 2.5rem;
+    div {
+      display: flex;
+      align-items: center;
+      #company-logo {
+       width: 10rem;
+        height: auto;
+      }
+      p {
+
+        margin-left: -76px;
+        font-size: 1.4rem;
+      }
+    }
+  }
+  .footer-icons {
+    gap: 1rem;
+    #f-icon {
+      width: 1.4rem;
+    }
+  }
+  div {
+    ul {
+      font-size: 1rem;
+    }
+    li {
+      padding: 0.5rem;
+    }
+  }
+  .f-end {
+    p {
+      padding: 2rem 0;
+      font-size: 1rem;
+    }
+  }
+}

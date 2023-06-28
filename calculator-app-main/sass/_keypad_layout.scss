@@ -1,0 +1,52 @@
+body {
+  background: var(--theme-back--1);
+}
+
+.calc-screen {
+  background: var(--theme-back--2);
+  p {
+    color: var(--theme-text--2);
+  }
+}
+.container--keypad {
+  background: var(--theme-back--2);
+}
+
+#no,
+#theme,
+#calc {
+  color: var(--theme-text--1);
+}
+
+//-----------------------------------------------------------------
+//         slider
+//-----------------------------------------------------------------
+
+.slider input[type="range"] {
+  accent-color: var(--theme-key--3);
+  appearance: none;
+  background: var(--theme-back--2);
+}
+
+// ----------------------------------------------------------------button
+.btn {
+  color: var(--theme-text--1);
+  background: var(--theme-key--5);
+  box-shadow: 0 0.5rem var(--theme-key--6);
+  &:hover {
+    filter: brightness(115%);
+  }
+}
+
+.btn.kdel,
+.btn.kres {
+  background: var(--theme-key--1);
+  box-shadow: 0 0.5rem var(--theme-key--2);
+  color: hsl(0, 0%, 100%);
+}
+
+.btn.keq {
+  background: var(--theme-key--3);
+  box-shadow: 0 0.5rem var(--theme-key--4);
+  color: var(--theme-text--2);
+}

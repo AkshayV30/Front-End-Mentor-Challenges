@@ -22,60 +22,57 @@
     <link rel="stylesheet" href="./css/style.css" />
     <script type="module" src="./js/script.js"></script>
   </head>
-  <body class="t1">
-    <main class="container--main t1">
-      <div class="container--top t1">
-        <span>calc</span>
-        <div class="theme-selector t1">
-          <span> THEME</span>
+  <body class="theme--1">
+    <main class="container--main">
+      <div class="container--top">
+        <span id="calc">calc</span>
+        <div class="theme-selector">
+          <span id="theme"> THEME</span>
           <ol>
-            <li>1</li>
-            <li>2</li>
-            <li>3</li>
+            <li id="no">1</li>
+            <li id="no">2</li>
+            <li id="no">3</li>
           </ol>
-          <div class="slider t1"></div>
+
+          <div class="slider">
+            <input type="range" min="0" max="2" value="0" id="rng" step="1" />
+          </div>
         </div>
       </div>
-      <div class="calc-screen t1">
+
+      <div class="calc-screen">
         <!-- dynamic content -->
-        <p data-previous-digit class="digits t1"></p>
-        <p data-current-digit class="digits t1"></p>
+        <p data-previous-digit class="digits" id="pp"></p>
+        <p data-current-digit class="digits" id="pp"></p>
       </div>
-      <div class="container--keypad t1">
-        <button data-number class="btn k7 t1" type="button">7</button>
-        <button data-number class="btn k8 t1" type="button">8</button>
-        <button data-number class="btn k9 t1" type="button">9</button>
-        <button data-del="delete" class="btn kdel t1" type="button">DEL</button>
 
-        <button data-number class="btn k4 t1" type="button">4</button>
-        <button data-number class="btn k5 t1" type="button">5</button>
-        <button data-number class="btn k6 t1" type="button">6</button>
-        <button data-operation="plus" class="btn kplus t1" type="button">
-          +
-        </button>
+      <div class="container--keypad">
+        <button data-number class="btn">7</button>
+        <button data-number class="btn">8</button>
+        <button data-number class="btn">9</button>
+        <button data-del="delete" class="btn kdel">DEL</button>
 
-        <button data-number class="btn k1 t1" type="button">1</button>
-        <button data-number class="btn k2 t1" type="button">2</button>
-        <button data-number class="btn k3 t1" type="button">3</button>
-        <button data-operation="subtract" class="btn kminus t1" type="button">
-          -
-        </button>
+        <button data-number class="btn">4</button>
+        <button data-number class="btn">5</button>
+        <button data-number class="btn">6</button>
+        <button data-operation="plus" class="btn kplus">+</button>
 
-        <button data-number class="btn kdot t1" type="button">.</button>
-        <button data-number class="btn k0 t1" type="button">0</button>
-        <button data-operation="divide" class="btn kdiv t1" type="button">
-          /
-        </button>
-        <button data-operation="mutiply" class="btn kmulti t1" type="button">
+        <button data-number class="btn">1</button>
+        <button data-number class="btn">2</button>
+        <button data-number class="btn">3</button>
+        <button data-operation="subtract" class="btn kminus">-</button>
+
+        <button data-number class="btn kdot">.</button>
+        <button data-number class="btn">0</button>
+        <button data-operation="divide" class="btn kdiv">/</button>
+        <button data-operation="mutiply" class="btn kmulti" type="button">
           *
         </button>
 
-        <button data-reset="all-clear" class="btn kres t1" type="button">
+        <button data-reset="all-clear" class="btn kres" type="button">
           RESET
         </button>
-        <button data-equals="calculate" class="btn keq t1" type="button">
-          =
-        </button>
+        <button data-equals="calculate" class="btn keq" type="button">=</button>
       </div>
     </main>
 
@@ -84,7 +81,8 @@
         Challenge by
         <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
           >Frontend Mentor</a
-        >. Coded by <a href="#">Your Name Here</a>.
+        >. Coded by
+        <a href="https://www.frontendmentor.io/profile/AkshayV30">AkshayV30</a>.
       </div>
     </footer>
   </body>

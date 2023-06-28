@@ -49,28 +49,28 @@
       list-style: none;
 
       display: flex;
-      gap: 0.8rem;
+      gap: 1.2rem;
+      justify-content: flex-end;
+      width: 100%;
 
       font-size: 1.6rem;
     }
 
     .slider {
-      border-radius: 2rem;
-      position: relative;
-
-      content: " ";
-      width: 6rem;
-      height: 2rem;
+      // border-radius: 2rem;
     }
-
-    // .slider::before {
-    //   padding: 0.4rem;
-    //   border-radius: 50%;
-    //   position: absolute;
-    //   top: 50;
-    //   background-color: white;
-    // }
   }
+}
+//-----------------------------------------------------------------
+//         slider
+//-----------------------------------------------------------------
+
+.slider input[type="range"] {
+  padding: 1.2rem 0.8rem;
+  height: 1.8rem;
+  width: 6rem;
+  border-radius: 2em;
+  cursor: pointer;
 }
 //-----------------------------------------------------------------
 //          calc screen
@@ -85,8 +85,8 @@
   padding: 2rem;
 
   .digits {
+    color: var(--theme-text--1);
     letter-spacing: 0.2rem;
-    // animation: blinkAnimate 2s linear infinite;
   }
 }
 
@@ -122,9 +122,9 @@
     font-size: 3.2rem;
     font-weight: var(--font-w-2);
 
-    &:active {
-      opacity: 0.7;
-    }
+    // &:active {
+    //   opacity: 0.7;
+    // }
   }
   .btn {
     border: none;
