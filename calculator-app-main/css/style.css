@@ -37,7 +37,6 @@ body {
     height: 10rem; }
   .container--main .container--keypad {
     display: grid;
-    grid-template-columns: repeat(4, 12rem);
     grid-template-rows: repeat(5, 6rem);
     gap: 2rem; }
 
@@ -208,3 +207,11 @@ body {
   background: var(--theme-key--3);
   box-shadow: 0 0.5rem var(--theme-key--4);
   color: var(--theme-text--2); }
+
+@media only screen and (max-width: 24em) {
+  .container--keypad {
+    grid-template-columns: repeat(4, 6rem); } }
+
+@media (min-width: 24em) and (screen) {
+  .container--keypad {
+    grid-template-columns: repeat(4, 12rem); } }

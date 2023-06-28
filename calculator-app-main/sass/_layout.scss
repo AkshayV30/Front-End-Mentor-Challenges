@@ -21,7 +21,7 @@
 
   .container--keypad {
     display: grid;
-    grid-template-columns: repeat(4, 12rem);
+
     grid-template-rows: repeat(5, 6rem);
 
     gap: 2rem;
