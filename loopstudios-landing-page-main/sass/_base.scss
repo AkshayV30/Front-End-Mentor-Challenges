@@ -1,0 +1,287 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+//----------------------------------------------------
+
+// # Front-end Style Guide
+:root {
+  // ## Colors
+  // ### Primary
+
+  --primary-color-1: hsl(0, 0%, 100%); // - White:
+  --primary-color-2: hsl(0, 0%, 0%); // - Black:
+  --primary-color-3: hsl(0, 0%, 55%); // - Dark Gray:
+  --primary-color-4: hsl(0, 0%, 41%); // - Very Dark Gray:
+
+  // ### Fonts
+  --font-fam-1: "Alata", sans-serif; // - Family: [Alata](https://fonts.google.com/specimen/Alata)
+  --font-w-1: 400;
+  --font-fam-2: "Josefin Sans", sans-serif; // Family: [Josefin Sans](https://fonts.google.com/specimen/Josefin+Sans)
+  --font-w-2: 300;
+
+  // ## Icons
+
+  // We provide the required social icons. But, if you prefer, you can use a font icon library. Some suggestions can be found below:
+
+  // - [Font Awesome](https://fontawesome.com)
+  // - [IcoMoon](https://icomoon.io)
+  // - [Ionicons](https://ionicons.com)
+}
+// ---------------------------------------------------
+html {
+  font-size: 62.5%; //10/ 16px 62.5% 1rem =>10px
+}
+
+body {
+  font-size: 1.6rem;
+
+  display: flex;
+  flex-direction: column;
+
+  font-family: var(--font-fam-2);
+  font-weight: var(--font-w-2);
+
+  overflow-x: hidden;
+}
+//---------------------------------------------------
+//----------------------------------------------------
+.spacing--1 {
+  padding: 4rem 10rem;
+}
+.spacing--2 {
+  padding: 8rem 0rem;
+}
+
+//----------------------------------------------------
+//                                    header
+//----------------------------------------------------
+header {
+  .container-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .box {
+    border: 0.2rem solid var(--primary-color-1);
+    padding: 2rem;
+
+    margin: 8rem 0;
+    width: 50rem;
+
+    h1 {
+      color: var(--primary-color-1);
+      font-family: var(--font-fam-2);
+      // word-wrap: 10rem;
+      text-transform: uppercase;
+      font-weight: var(--font-w-2);
+      font-size: 5.2rem;
+    }
+  }
+}
+
+.container-nav {
+  img {
+    height: 2rem;
+  }
+
+  ul {
+    gap: 1rem;
+    li {
+      list-style: none;
+
+      a {
+        text-decoration: none;
+        color: var(--primary-color-1);
+        font-family: var(--font-fam-1);
+        font-size: 1.4rem;
+
+        &:hover {
+          border-bottom: 0.2rem solid var(--primary-color-1);
+          padding-bottom: 0.5rem;
+        }
+      }
+    }
+  }
+}
+//----------------------------------------------------
+//                                    main
+//----------------------------------------------------
+.section--1 {
+  picture {
+    //  #desktop-img {
+    //    width: 100rem;
+    //    // aspect-ratio: 2.25;
+    //  }
+    //  #mobile-img {
+    //    display: none;
+    //  }
+  }
+  .section-1-txt {
+    width: 56rem;
+
+    background: var(--primary-color-1);
+    h2 {
+      text-transform: uppercase;
+      font-size: 4.2rem;
+    }
+    p {
+      padding-top: 4rem;
+      font-size: 1.8rem;
+
+      line-height: 1.25;
+    }
+  }
+}
+//----------------------------------------------------
+//                                     gallery
+//----------------------------------------------------
+.gallery {
+  display: grid;
+
+  .g-1,
+  .g-2,
+  .g-3,
+  .g-4,
+  .g-5,
+  .g-6,
+  .g-7,
+  .g-8 {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    p {
+      padding: 2rem;
+      color: var(--primary-color-1);
+      text-transform: uppercase;
+    }
+  }
+
+  .g-txt-1,
+  .g-txt-2 {
+    p {
+      font-size: 2rem;
+
+      line-height: 1.25;
+    }
+  }
+  .g-txt-1 {
+    p {
+      width: 10ch;
+    }
+  }
+  .g-txt-2 {
+    p {
+      width: 12ch;
+    }
+  }
+}
+
+.gallery--heading {
+  h2 {
+    text-transform: uppercase;
+    font-size: 4.2rem;
+  }
+}
+.btn {
+  button {
+    border: 0.2rem solid var(--primary-color-2);
+    padding: 0.5rem 3rem;
+    text-transform: uppercase;
+    color: var(--primary-color-2);
+    font-weight: var(--font-w-1);
+    font-family: var(--font-fam-1);
+    font-size: 1.8rem;
+
+    cursor: pointer;
+    background: var(--primary-color-1);
+
+    &:hover {
+      color: var(--primary-color-3);
+      background: var(--primary-color-2);
+    }
+  }
+}
+
+//----------------------------------------------------
+//                                     footer
+//----------------------------------------------------
+footer {
+  background: var(--primary-color-2);
+  color: var(--primary-color-1);
+
+  display: flex;
+  flex-direction: column;
+
+  .container-footer {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.container-footer {
+  .container-footer--left {
+    img {
+      height: 1.4rem;
+    }
+    ul {
+      padding-top: 2rem;
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+  }
+
+  .container-footer--right {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: flex-end;
+    ul {
+      list-style: none;
+      display: flex;
+      gap: 1.6rem;
+    }
+  }
+}
+
+.container-footer--left {
+  ul > li > a {
+    text-decoration: none;
+    color: var(--primary-color-1);
+    font-size: 1.2rem;
+
+    &:hover {
+      border-bottom: 0.2rem solid var(--primary-color-3);
+    }
+  }
+}
+.container-footer--right {
+  p {
+    color: var(--primary-color-3);
+    font-size: 1.2rem;
+  }
+  ul > li > a {
+    img {
+      height: 1.8rem;
+      aspect-ratio: 1;
+    }
+    &:hover {
+      border-bottom: 0.2rem solid var(--primary-color-3);
+    }
+  }
+}
+//----------------------------------------------------
+.attribution {
+  padding-top: 2rem;
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(0, 0%, 96%);
+}

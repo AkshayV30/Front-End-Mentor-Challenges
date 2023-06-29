@@ -1,0 +1,335 @@
+/* (1440x900) WXGA+ Display */
+@media screen and (max-width: 1440px) {
+  /* insert styles here */
+}
+
+@media only screen and (min-width: 721px) {
+  header {
+    .container-nav {
+      ul {
+        display: flex;
+      }
+      .btn-menu {
+        display: none;
+        background: none;
+      }
+    }
+
+    background: url(../images/desktop/image-hero.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 45vh;
+    .box {
+      margin: 8rem 0;
+      h1 {
+        // width: 100%;
+      }
+    }
+  }
+
+  .section--1 {
+    picture {
+      #desktop-img {
+        display: block;
+        width: 80rem;
+      }
+      #mobile-img {
+        display: none;
+        // width: 100%;
+      }
+
+      position: relative;
+    }
+    .section-1-txt {
+      position: absolute;
+      bottom: -15%;
+      right: 25%;
+
+      padding: 4rem;
+      // text-align: center;
+      h2 {
+        padding: 2rem 0;
+        width: 20ch;
+        line-height: 1.25;
+      }
+      p {
+        // width: 10ch;
+        padding: 0;
+      }
+    }
+  }
+
+  .gallery {
+    grid-template-columns: repeat(4, 36rem);
+    grid-template-rows: 0.5fr repeat(2, 45rem);
+    justify-content: space-between;
+    gap: 4rem;
+
+    .gallery--heading {
+      grid-row: 1 / 2;
+      grid-column: 1 / 2;
+    }
+
+    .btn {
+      grid-row: 1 / 2;
+      grid-column: 4 / 5;
+      text-align: right;
+    }
+
+    .g-1,
+    .g-2,
+    .g-3,
+    .g-4 {
+      grid-row: 2 / 3;
+      // height: 80rem;
+    }
+    .g-1 {
+      grid-column: 1 / 2;
+      background: url(../images/desktop/image-deep-earth.jpg);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+    .g-2 {
+      grid-column: 2 / 3;
+      background: url(../images/desktop/image-night-arcade.jpg);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+    .g-3 {
+      grid-column: 3 / 4;
+      background: url(../images/desktop/image-soccer-team.jpg);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+    .g-4 {
+      grid-column: 4 / 5;
+      background: url(../images/desktop/image-grid.jpg);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+    .g-5,
+    .g-6,
+    .g-7,
+    .g-8 {
+      grid-row: 3 / 4;
+    }
+
+    .g-5 {
+      grid-column: 1 / 2;
+      background: url(../images/desktop/image-from-above.jpg);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+    .g-6 {
+      grid-column: 2 / 3;
+      background: url(../images/desktop/image-pocket-borealis.jpg);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+    .g-7 {
+      grid-column: 3 / 4;
+      background: url(../images/desktop/image-curiosity.jpg);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+    .g-8 {
+      grid-column: 4 / 5;
+      background: url(../images/desktop/image-fisheye.jpg);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+  }
+}
+
+@media only screen and (max-width: 720px) {
+  /* insert styles here */
+
+  header {
+    .container-nav {
+      ul {
+        display: none;
+      }
+      .btn-menu {
+        display: block;
+        background: none;
+        cursor: pointer;
+      }
+    }
+
+    background: url(../images/mobile/image-hero.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 90vh;
+
+    .box {
+      margin: 16rem 0;
+      h1 {
+        width: 10ch;
+      }
+    }
+  }
+
+  .spacing--1 {
+    padding: 4rem;
+  }
+  .spacing--2 {
+    padding: 4rem 0rem;
+  }
+
+  .section--1 {
+    picture {
+      #desktop-img {
+        display: none;
+      }
+      #mobile-img {
+        display: block;
+        width: 100%;
+      }
+    }
+    .section-1-txt {
+      padding: 2rem;
+      text-align: center;
+      h2 {
+        padding: 2rem 0;
+      }
+      p {
+        // max-width: 30ch;
+        padding: 0;
+      }
+    }
+  }
+
+  .gallery {
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.5fr repeat(8, 4fr) 0.5fr;
+    gap: 2rem;
+
+    .gallery--heading,
+    .g-1,
+    .g-2,
+    .g-3,
+    .g-4,
+    .g-5,
+    .g-7,
+    .g-8,
+    .btn {
+      grid-column: span 1;
+    }
+
+    .gallery--heading {
+      grid-row: 1 / 2;
+
+      text-align: center;
+    }
+
+    .g-1 {
+      grid-row: 2 / 3;
+
+      background: url(../images/mobile/image-deep-earth.jpg);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+    .g-2 {
+      grid-row: 3 / 4;
+      background: url(../images/mobile/image-night-arcade.jpg);
+
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+    .g-3 {
+      grid-row: 4 / 5;
+      background: url(../images/mobile/image-soccer-team.jpg);
+
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+    .g-4 {
+      grid-row: 5 / 6;
+      background: url(../images/mobile/image-grid.jpg);
+
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+    .g-5 {
+      grid-row: 6 / 7;
+      background: url(../images/mobile/image-from-above.jpg);
+
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+    .g-6 {
+      grid-row: 7 / 8;
+      background: url(../images/mobile/image-pocket-borealis.jpg);
+
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+    .g-7 {
+      grid-row: 8 / 9;
+      background: url(../images/mobile/image-curiosity.jpg);
+
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+    .g-8 {
+      grid-row: 9 / 10;
+      background: url(../images/mobile/image-fisheye.jpg);
+
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+    .btn {
+      grid-row: 10 / 11;
+
+      text-align: center;
+    }
+  }
+
+  footer {
+    .container-footer {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  .container-footer {
+    .container-footer--left {
+      img {
+        height: 1.8rem;
+      }
+      ul {
+        gap: 2rem;
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+
+    .container-footer--right {
+      padding-top: 4rem;
+      align-items: center;
+    }
+  }
+}
