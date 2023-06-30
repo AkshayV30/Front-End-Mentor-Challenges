@@ -1,0 +1,328 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+// ---------------------------------------------------------------------
+
+:root {
+  // ## Colors
+
+  // ### Primary
+
+  --color-primary-1: hsl(163, 72%, 41%); // - Lime Green:
+  --color-primary-2: hsl(356, 69%, 56%); // - Bright Red:
+
+  --color-facebook: hsl(208, 92%, 53%); // - Facebook:
+  --color-twitter: hsl(203, 89%, 53%); // - Twitter:
+  --color-youtube: hsl(348, 97%, 39%); // - YouTube:
+
+  //linear gradient hsl(37, 97%, 70%) to hsl(329, 70%, 58%); // - Instagram:
+  --color-instagram-1: hsl(37, 97%, 70%);
+  --color-instagram-2: hsl(329, 70%, 58%);
+
+  // #### Light Theme
+
+  --color-toggle-l-1: hsl(230, 22%, 74%); // - Toggle:
+
+  // #### Dark Theme
+
+  // - Toggle: linear gradient hsl(210, 78%, 56%) to hsl(146, 68%, 55%)
+  --color-toggle-d-1: hsl(210, 78%, 56%);
+  --color-toggle-d-2: hsl(146, 68%, 55%);
+
+  // ## Typography
+
+  // - Font size (Overview Card Headings): 14px
+
+  // ### Font
+  --font-fam: "Inter", sans-serif; // - Family: [Inter](https://fonts.google.com/specimen/Inter)
+  --font-w-1: 400;
+  --font-w-2: 700;
+}
+
+.darken {
+  // #### Dark Theme
+
+  --color-bg: hsl(230, 17%, 14%); // - Very Dark Blue (BG)
+  --color-top-bg-pattern: hsl(
+    232,
+    19%,
+    15%
+  ); // - Very Dark Blue (Top BG Pattern)
+  --color-card-bg: hsl(228, 28%, 20%); // - Dark Desaturated Blue (Card BG):
+  --color-text-1: hsl(228, 34%, 66%); // - Desaturated Blue (Text)
+  --color-text-2: hsl(0, 0%, 100%); // - White (Text)
+}
+
+.lighten {
+  // #### Light Theme
+
+  --color-bg: hsl(0, 0%, 100%); // - White (BG)
+  --color-top-bg-pattern: hsl(
+    225,
+    100%,
+    98%
+  ); // - Very Pale Blue (Top BG Pattern)
+  --color-card-bg: hsl(227, 47%, 96%); // - Light Grayish Blue (Card BG)
+  --color-text-1: hsl(228, 12%, 44%); // - Dark Grayish Blue (Text)
+  --color-text-2: hsl(230, 17%, 14%); // - Very Dark Blue (Text):
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: var(--font-fam);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-x: hidden;
+
+  background-color: var(--color-bg);
+  color: var(--color-text-2);
+}
+
+main {
+  max-width: 144rem;
+  //   padding: 10rem 40rem;
+}
+
+// ----------------------------------------------------------------------
+//                            media icon
+// ----------------------------------------------------------------------
+#icon-facebook {
+  width: 2rem;
+  aspect-ratio: 1;
+}
+#icon-youtube {
+  width: 2rem;
+  aspect-ratio: 1;
+}
+#icon-instagram {
+  width: 2rem;
+  aspect-ratio: 1;
+}
+#icon-twitter {
+  width: 2rem;
+  aspect-ratio: 1;
+}
+// ================================ direction icon =====================
+#icon-upward {
+  width: 1rem;
+  aspect-ratio: 1;
+}
+#icon-downward {
+  width: 1rem;
+  aspect-ratio: 1;
+}
+//===================================================
+.border--facebook {
+  border-top: 0.2rem solid var(--color-facebook);
+}
+.border--twitter {
+  border-top: 0.2rem solid var(--color-twitter);
+}
+.border--instagram {
+  border-top: 0.2rem solid;
+  background-image: linear-gradient(hsl(37, 97%, 70%) to hsl(329, 70%, 58%)) 0
+    50%;
+
+  //   border-image: linear-gradient(rgb(213, 213, 233), #cf2121) 0 100%;
+}
+
+.border--youtube {
+  border-top: 0.2rem solid var(--color-youtube);
+}
+// ----------------------------------------------------------------------
+//                            first section
+// ----------------------------------------------------------------------
+.container-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 4rem;
+
+  div {
+    text-align: left;
+    h1 {
+      font-size: 1.4rem;
+      font-weight: var(--font-w-2);
+    }
+    p {
+      font-size: 1.2rem;
+
+      font-weight: var(--font-w-1);
+    }
+  }
+}
+.container-first-row {
+  display: flex;
+  gap: 2rem;
+  width: 124rem;
+
+  .card-first-row {
+    border-radius: 0.8rem;
+    &:hover {
+      cursor: pointer;
+      // background-color: var(--color-card-bg);
+      // opacity: 0.6;
+      filter: brightness(115%);
+    }
+
+    width: 100%;
+    height: 20rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 2rem 4rem;
+
+    background-color: var(--color-card-bg);
+
+    div {
+      display: flex;
+      gap: 0.5rem;
+      align-items: center;
+      font-size: 1rem;
+      color: var(--color-text-1);
+
+      #green {
+        color: var(--color-primary-1);
+      }
+      #red {
+        color: var(--color-primary-2);
+      }
+    }
+
+    h2 {
+      font-size: 4rem;
+    }
+
+    h4 {
+      font-size: 1.2rem;
+      color: var(--color-text-1);
+      text-transform: uppercase;
+      letter-spacing: 0.25rem;
+      font-weight: var(--font-w-1);
+    }
+  }
+}
+
+// ----------------------------------------------------------------------
+//                            second section
+// ----------------------------------------------------------------------
+.container-second-row {
+  margin-top: 4rem;
+
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 0.25fr repeat(2, 0.4fr);
+  gap: 2rem;
+
+  .s-heading {
+    grid-row: 1 / 2;
+    grid-column: 1 / span 1;
+
+    padding-bottom: 1.4rem;
+
+    h2 {
+      font-size: 2rem;
+    }
+  }
+
+  .card-second-row {
+    background-color: var(--color-card-bg);
+    border-radius: 0.8rem;
+    padding: 2rem;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &:hover {
+      filter: brightness(115%);
+      cursor: pointer;
+    }
+
+    .f-col {
+      p {
+        padding: 1rem 0;
+      }
+
+      #c-1 {
+        color: var(--color-text-1);
+      }
+      #c-2 {
+        font-size: 4rem;
+        font-weight: var(--font-w-2);
+      }
+    }
+
+    .s-col {
+      .s-col-stat {
+        padding-top: 4rem;
+
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+
+        #green {
+          color: var(--color-primary-1);
+        }
+        #red {
+          color: var(--color-primary-2);
+        }
+      }
+    }
+  }
+
+  .csr-f-1 {
+    grid-row: 2 / 3;
+    grid-column: 1 / 2;
+  }
+  .csr-f-2 {
+    grid-row: 2 / 3;
+    grid-column: 2 / 3;
+  }
+  .csr-f-3 {
+    grid-row: 2 / 3;
+    grid-column: 3 / 4;
+  }
+  .csr-f-4 {
+    grid-row: 2 / 3;
+    grid-column: 4 / 5;
+  }
+
+  .csr-s-1 {
+    grid-row: 3 / 4;
+    grid-column: 1 / 2;
+  }
+  .csr-s-2 {
+    grid-row: 3 / 4;
+    grid-column: 2 / 3;
+  }
+  .csr-s-3 {
+    grid-row: 3 / 4;
+    grid-column: 3 / 4;
+  }
+  .csr-s-4 {
+    grid-row: 3 / 4;
+    grid-column: 4 / 5;
+  }
+}
+
+// ----------------------------------------------------------------------
+// ---------------------------------------------footer-------------------
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}

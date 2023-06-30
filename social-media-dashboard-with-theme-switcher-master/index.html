@@ -1,87 +1,322 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | [Challenge Name Here]</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
-<body>
+    <title>Frontend Mentor | [Challenge Name Here]</title>
 
-  Social Media Dashboard
-  Total Followers: 23,004
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap");
+    </style>
 
-  Dark Mode
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body class="darken">
+    <main>
+      <div class="container-heading">
+        <div>
+          <h1>Social Media Dashboard</h1>
+          <p>Total Followers: 23,004</p>
+        </div>
+        <div class="theme-switcher">Dark Mode</div>
+      </div>
 
-  
+      <div class="container-first-row">
+        <div class="card-first-row border--facebook">
+          <div>
+            <img
+              id="icon-facebook"
+              src="./images/icon-facebook.svg"
+              alt="facebook"
+            />
+            @nathanf
+          </div>
 
-  @nathanf
-  1987
-  Followers
-  12 Today
+          <h2>1987</h2>
 
-  @nathanf
-  1044
-  Followers
-  99 Today
+          <h4>Followers</h4>
 
-  @realnathanf
-  11k
-  Followers
-  1099 Today
+          <div>
+            <img
+              id="icon-upward"
+              src="./images/icon-up.svg"
+              alt="icon-direction-up"
+            />
+            <p id="green">12 Today</p>
+          </div>
+        </div>
 
-  Nathan F.
-  8239
-  Subscribers
-  144 Today
+        <div class="card-first-row border--twitter">
+          <div>
+            <img
+              id="icon-twitter"
+              src="./images/icon-twitter.svg"
+              alt="twitter icon"
+            />
+            <p>@nathanf</p>
+          </div>
+          <h2>1044</h2>
+          <h4>Followers</h4>
+          <div>
+            <img
+              id="icon-upward"
+              src="./images/icon-up.svg"
+              alt="icon-direction-up"
+            />
+            <p id="green">99 Today</p>
+          </div>
+        </div>
 
+        <div class="card-first-row border--instagram">
+          <div>
+            <img
+              id="icon-instagram"
+              src="./images/icon-instagram.svg"
+              alt="instagram icon"
+            />
+            <p>@realnathanf</p>
+          </div>
+          <h2>11k</h2>
+          <h4>Followers</h4>
+          <div>
+            <img
+              id="icon-upward"
+              src="./images/icon-up.svg"
+              alt="icon-direction-up"
+            />
+            <p id="green">1099 Today</p>
+          </div>
+        </div>
 
+        <div class="card-first-row border--youtube">
+          <div>
+            <img
+              id="icon-youtube"
+              src="./images/icon-youtube.svg"
+              alt="youtube icon"
+            />
+            <p>Nathan F.</p>
+          </div>
+          <h2>8239</h2>
+          <h4>Subscribers</h4>
+          <div>
+            <img
+              id="icon-downward"
+              src="./images/icon-down.svg"
+              alt="icon-direction-down"
+            />
+            <p id="red">144 Today</p>
+          </div>
+        </div>
+      </div>
 
-  Overview - Today
+      <div class="container-second-row">
+        <div class="s-heading"><h2>Overview - Today</h2></div>
 
-  Page Views
-  87
-  3%
+        <div class="card-second-row csr-f-1">
+          <div class="f-col">
+            <p id="c-1">Page Views</p>
+            <p id="c-2">87</p>
+          </div>
 
-  Likes
-  52
-  2%
+          <div class="s-col">
+            <img
+              id="icon-facebook"
+              src="./images/icon-facebook.svg"
+              alt="facebook icon"
+            />
+            <div class="s-col-stat">
+              <img
+                id="icon-upward"
+                src="./images/icon-up.svg"
+                alt="icon-direction-up"
+              />
+              <p id="green">3%</p>
+            </div>
+          </div>
+        </div>
 
-  Likes
-  5462
-  2257%
+        <div class="card-second-row csr-f-2">
+          <div class="f-col">
+            <p id="c-1">Likes</p>
+            <p id="c-2">52</p>
+          </div>
 
-  Profile Views
-  52k
-  1375%
+          <div class="s-col">
+            <img
+              id="icon-facebook"
+              src="./images/icon-facebook.svg"
+              alt="facebook icon"
+            />
+            <div class="s-col-stat">
+              <img
+                id="icon-downward"
+                src="./images/icon-down.svg"
+                alt="icon-direction-down"
+              />
+              <p id="red">2%</p>
+            </div>
+          </div>
+        </div>
 
-  Retweets
-  117
-  303%
+        <div class="card-second-row csr-f-3">
+          <div class="f-col">
+            <p id="c-1">Likes</p>
+            <p id="c-2">5462</p>
+          </div>
 
-  Likes
-  507
-  553%
+          <div class="s-col">
+            <img
+              id="icon-instagram"
+              src="./images/icon-instagram.svg"
+              alt="instagram icon"
+            />
+            <div class="s-col-stat">
+              <img
+                id="icon-downward"
+                src="./images/icon-up.svg"
+                alt="icon-direction-up"
+              />
+              <p id="green">2257%</p>
+            </div>
+          </div>
+        </div>
 
-  Likes
-  107
-  19%
+        <div class="card-second-row csr-f-4">
+          <div class="f-col">
+            <p id="c-1">Profile Views</p>
+            <p id="c-2">52k</p>
+          </div>
 
-  Total Views
-  1407
-  12%
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
-</body>
+          <div class="s-col">
+            <img
+              id="icon-instagram"
+              src="./images/icon-instagram.svg"
+              alt="icon instagram"
+            />
+            <div class="s-col-stat">
+              <img
+                id="icon-upward"
+                src="./images/icon-up.svg"
+                alt="icon-direction-up"
+              />
+              <p id="green">1375%</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="card-second-row csr-s-1">
+          <div class="f-col">
+            <p id="c-1">Retweets</p>
+            <p id="c-2">117</p>
+          </div>
+
+          <div class="s-col">
+            <img
+              id="icon-twitter"
+              src="./images/icon-twitter.svg"
+              alt="icon twitter"
+            />
+            <div class="s-col-stat">
+              <img
+                id="icon-upward"
+                src="./images/icon-up.svg"
+                alt="icon-direction-up"
+              />
+              <p id="green">303%</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="card-second-row csr-s-2">
+          <div class="f-col">
+            <p id="c-1">Likes</p>
+            <p id="c-2">507</p>
+          </div>
+
+          <div class="s-col">
+            <img
+              id="icon-twitter"
+              src="./images/icon-twitter.svg"
+              alt="icon-twitter"
+            />
+            <div class="s-col-stat">
+              <img
+                id="icon-upward"
+                src="./images/icon-up.svg"
+                alt="icon-direction-up"
+              />
+              <p id="green">553%</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="card-second-row csr-s-3">
+          <div class="f-col">
+            <p id="c-1">Likes</p>
+            <p id="c-2">107</p>
+          </div>
+
+          <div class="s-col">
+            <img
+              id="icon-youtube"
+              src="./images/icon-youtube.svg"
+              alt="icon-youtube"
+            />
+            <div class="s-col-stat">
+              <img
+                id="icon-downward"
+                src="./images/icon-down.svg"
+                alt="icon-direction-down"
+              />
+              <p id="red">19%</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="card-second-row csr-s-4">
+          <div class="f-col">
+            <p id="c-1">Total Views</p>
+            <p id="c-2">1407</p>
+          </div>
+
+          <div class="s-col">
+            <img
+              id="icon-youtube"
+              src="./images/icon-youtube.svg"
+              alt="icon-youtube"
+            />
+
+            <div class="s-col-stat">
+              <img
+                id="icon-downward"
+                src="./images/icon-down.svg"
+                alt="icon-direction-down"
+              />
+              <p id="red">12%</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <div class="attribution">
+        Challenge by
+        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+          >Frontend Mentor</a
+        >. Coded by <a href="#">Your Name Here</a>.
+      </div>
+    </footer>
+  </body>
 </html>

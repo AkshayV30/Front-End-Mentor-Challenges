@@ -1,0 +1,60 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --color-primary-1: hsl(163, 72%, 41%);
+  --color-primary-2: hsl(356, 69%, 56%);
+  --color-facebook: hsl(208, 92%, 53%);
+  --color-twitter: hsl(203, 89%, 53%);
+  --color-youtube: hsl(348, 97%, 39%);
+  --color-instagram-1: hsl(37, 97%, 70%);
+  --color-instagram-2: hsl(329, 70%, 58%);
+  --color-toggle-l-1: hsl(230, 22%, 74%);
+  --color-toggle-d-1: hsl(210, 78%, 56%);
+  --color-toggle-d-2: hsl(146, 68%, 55%);
+  --font-fam: "Inter", sans-serif;
+  --font-w-1: 400;
+  --font-w-2: 700;
+}
+
+.darken {
+  --color-bg: hsl(230, 17%, 14%);
+  --color-top-bg-pattern: hsl(
+    232,
+    19%,
+    15%
+  );
+  --color-card-bg: hsl(228, 28%, 20%);
+  --color-text-1: hsl(228, 34%, 66%);
+  --color-text-2: hsl(0, 0%, 100%);
+}
+
+.lighten {
+  --color-bg: hsl(0, 0%, 100%);
+  --color-top-bg-pattern: hsl(
+    225,
+    100%,
+    98%
+  );
+  --color-card-bg: hsl(227, 47%, 96%);
+  --color-text-1: hsl(228, 12%, 44%);
+  --color-text-2: hsl(230, 17%, 14%);
+}
+
+html {
+  font-size: 62.5%;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}/*# sourceMappingURL=main.css.map */

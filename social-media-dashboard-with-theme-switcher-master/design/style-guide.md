@@ -43,7 +43,7 @@ The designs were created to the following widths:
 - Very Pale Blue (Top BG Pattern): hsl(225, 100%, 98%)
 - Light Grayish Blue (Card BG): hsl(227, 47%, 96%)
 - Dark Grayish Blue (Text): hsl(228, 12%, 44%)
-- Very Dark Blue (Text): hsl(230, 17%, 14%)
+- Very Dark Blue (Text): hsl(230, 17%, 14%)--
 
 ## Typography
 
@@ -55,3 +55,5 @@ The designs were created to the following widths:
 
 - Family: [Inter](https://fonts.google.com/specimen/Inter)
 - Weights: 400, 700
+
+19% Total Views 1407 12%
