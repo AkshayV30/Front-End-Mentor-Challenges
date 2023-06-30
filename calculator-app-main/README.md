@@ -55,8 +55,6 @@ Users should be able to:
 
 I learned a lot from javascripts espically using class taking advantage of objects etc.,
 
-I
-
 ### Continued development
 
 - needs little bit of tweaks and refactoring
