@@ -23,19 +23,29 @@
   </head>
   <body>
     <header class="spacing--1">
-      <nav class="container-nav">
-        <img src="./images/logo.svg" alt="logo" />
-        <ul>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Careers</a></li>
-          <li><a href="#">Events</a></li>
-          <li><a href="#">Products</a></li>
-          <li><a href="#">Support</a></li>
-        </ul>
-        <button class="btn-menu">
-          <img src="./images/icon-hamburger.svg" alt="" />
-        </button>
-      </nav>
+      <div class="navigation">
+        <input type="checkbox" class="nav-checkbox" id="nav-toggle" />
+
+        <label for="nav-toggle" class="nav-button">
+          <span class="nav-icon"> &nbsp;</span>
+        </label>
+
+        <div class="nav-background"></div>
+
+        <nav class="container-nav">
+          <img id="logo-1" src="./images/logo.svg" alt="logo" />
+          <ul class="nav-list">
+            <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Careers</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Events</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Products</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Support</a></li>
+          </ul>
+          <!-- <button class="btn-menu">
+            <img src="./images/icon-hamburger.svg" alt="" />
+          </button> -->
+        </nav>
+      </div>
 
       <div class="box"><h1>Immersive experiences that deliver</h1></div>
     </header>
@@ -67,22 +77,18 @@
       </div>
 
       <div class="gallery">
-        <div class="gallery--heading">
-          <h2>Our creations</h2>
-        </div>
-        <div class="btn">
-          <button>See all</button>
-        </div>
+        <div class="gallery--heading"><h2>Our creations</h2></div>
+        <div class="btn"><button>See all</button></div>
 
-        <div class="g-1 g-txt-1"><p>Deep earth</p></div>
-        <div class="g-2 g-txt-1"><p>Night arcade</p></div>
-        <div class="g-3 g-txt-2"><p>Soccer team VR</p></div>
-        <div class="g-4 g-txt-1"><p>The grid</p></div>
+        <div class="g g-1 g-txt-1"><p>Deep earth</p></div>
+        <div class="g g-2 g-txt-1"><p>Night arcade</p></div>
+        <div class="g g-3 g-txt-2"><p>Soccer team VR</p></div>
+        <div class="g g-4 g-txt-1"><p>The grid</p></div>
 
-        <div class="g-5 g-txt-2"><p>From up above VR</p></div>
-        <div class="g-6 g-txt-1"><p>Pocket borealis</p></div>
-        <div class="g-7 g-txt-1"><p>The curiosity</p></div>
-        <div class="g-8 g-txt-2"><p>Make it fisheye</p></div>
+        <div class="g g-5 g-txt-2"><p>From up above VR</p></div>
+        <div class="g g-6 g-txt-1"><p>Pocket borealis</p></div>
+        <div class="g g-7 g-txt-1"><p>The curiosity</p></div>
+        <div class="g g-8 g-txt-2"><p>Make it fisheye</p></div>
       </div>
     </main>
 

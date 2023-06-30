@@ -32,11 +32,6 @@ body {
 .spacing--2 {
   padding: 8rem 0rem; }
 
-header .container-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center; }
-
 header .box {
   border: 0.2rem solid var(--primary-color-1);
   padding: 2rem;
@@ -49,21 +44,35 @@ header .box {
     font-weight: var(--font-w-2);
     font-size: 5.2rem; }
 
-.container-nav img {
+.container-nav #logo-1 {
   height: 2rem; }
 
-.container-nav ul {
-  gap: 1rem; }
-  .container-nav ul li {
-    list-style: none; }
-    .container-nav ul li a {
-      text-decoration: none;
-      color: var(--primary-color-1);
-      font-family: var(--font-fam-1);
-      font-size: 1.4rem; }
-      .container-nav ul li a:hover {
-        border-bottom: 0.2rem solid var(--primary-color-1);
-        padding-bottom: 0.5rem; }
+.container-nav .nav-list {
+  gap: 1rem;
+  list-style: none; }
+  .container-nav .nav-list .nav-item {
+    margin: 1rem; }
+    .container-nav .nav-list .nav-item .nav-link {
+      position: relative; }
+      .container-nav .nav-list .nav-item .nav-link:link, .container-nav .nav-list .nav-item .nav-link:visited {
+        color: var(--primary-color-1);
+        font-family: var(--font-fam-2);
+        font-weight: var(--font-w-2);
+        text-decoration: none; }
+      .container-nav .nav-list .nav-item .nav-link::after {
+        content: " ";
+        position: absolute;
+        left: 0;
+        bottom: -0.2rem;
+        width: 100%;
+        height: 0.2rem;
+        background: currentColor;
+        transform: scaleX(0);
+        transform-origin: right;
+        transition: transform 350ms ease-in; }
+      .container-nav .nav-list .nav-item .nav-link:hover::after {
+        transform: scaleX(1);
+        transform-origin: left; }
 
 .section--1 .section-1-txt {
   width: 56rem;
@@ -78,6 +87,8 @@ header .box {
 
 .gallery {
   display: grid; }
+  .gallery .g:hover {
+    opacity: 0.7; }
   .gallery .g-1,
   .gallery .g-2,
   .gallery .g-3,
@@ -192,13 +203,21 @@ footer {
     background-size: cover;
     background-position: center;
     height: 45vh; }
-    header .container-nav ul {
-      display: flex; }
-    header .container-nav .btn-menu {
-      display: none;
-      background: none; }
     header .box {
       margin: 8rem 0; }
+  .nav-checkbox,
+  .nav-button,
+  .nav-background {
+    display: none; }
+  .container-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; }
+    .container-nav .nav-list {
+      display: flex; }
+      .container-nav .nav-list .nav-item .nav-link:link, .container-nav .nav-list .nav-item .nav-link:visited {
+        display: inline-block;
+        font-size: 1.6rem; }
   .section--1 picture {
     position: relative; }
     .section--1 picture #desktop-img {
@@ -218,13 +237,13 @@ footer {
     .section--1 .section-1-txt p {
       padding: 0; }
   .gallery {
-    grid-template-columns: repeat(4, 36rem);
-    grid-template-rows: 0.5fr repeat(2, 45rem);
-    justify-content: space-between;
-    gap: 4rem; }
+    grid-template-columns: repeat(4, 38rem);
+    grid-template-rows: 0.5fr repeat(2, 66rem);
+    justify-content: center;
+    grid-gap: 2rem; }
     .gallery .gallery--heading {
       grid-row: 1 / 2;
-      grid-column: 1 / 2; }
+      grid-column: 1 / span 2; }
     .gallery .btn {
       grid-row: 1 / 2;
       grid-column: 4 / 5;
@@ -256,8 +275,7 @@ footer {
       grid-column: 4 / 5;
       background: url(../images/desktop/image-grid.jpg);
       background-size: cover;
-      background-repeat: no-repeat;
-      background-position: center; }
+      background-repeat: no-repeat; }
     .gallery .g-5,
     .gallery .g-6,
     .gallery .g-7,
@@ -267,26 +285,22 @@ footer {
       grid-column: 1 / 2;
       background: url(../images/desktop/image-from-above.jpg);
       background-size: cover;
-      background-repeat: no-repeat;
-      background-position: center; }
+      background-repeat: no-repeat; }
     .gallery .g-6 {
       grid-column: 2 / 3;
       background: url(../images/desktop/image-pocket-borealis.jpg);
       background-size: cover;
-      background-repeat: no-repeat;
-      background-position: center; }
+      background-repeat: no-repeat; }
     .gallery .g-7 {
       grid-column: 3 / 4;
       background: url(../images/desktop/image-curiosity.jpg);
       background-size: cover;
-      background-repeat: no-repeat;
-      background-position: center; }
+      background-repeat: no-repeat; }
     .gallery .g-8 {
       grid-column: 4 / 5;
       background: url(../images/desktop/image-fisheye.jpg);
       background-size: cover;
-      background-repeat: no-repeat;
-      background-position: center; } }
+      background-repeat: no-repeat; } }
 
 @media only screen and (max-width: 720px) {
   /* insert styles here */
@@ -296,16 +310,97 @@ footer {
     background-size: cover;
     background-position: center;
     height: 90vh; }
-    header .container-nav ul {
-      display: none; }
-    header .container-nav .btn-menu {
-      display: block;
-      background: none;
-      cursor: pointer; }
     header .box {
-      margin: 16rem 0; }
+      margin: 20vh 0; }
       header .box h1 {
         width: 10ch; }
+  .nav-checkbox {
+    display: none; }
+  .nav-checkbox:checked ~ .nav-background {
+    transform: scale(80); }
+  .nav-checkbox:checked ~ .container-nav {
+    width: 100%;
+    opacity: 1; }
+  .nav-checkbox:checked ~ .nav-background {
+    opacity: 1; }
+  .nav-checkbox:checked + .nav-button .nav-icon {
+    background: transparent; }
+  .nav-checkbox:checked + .nav-button .nav-icon::before {
+    transform: rotate(45deg);
+    top: 0; }
+  .nav-checkbox:checked + .nav-button .nav-icon::after {
+    top: 0;
+    transform: rotate(-45deg); }
+  .nav-button {
+    height: 7rem;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    position: fixed;
+    top: 6rem;
+    right: 6rem;
+    z-index: 100;
+    text-align: center;
+    cursor: pointer; }
+    .nav-button:hover .nav-icon::before {
+      top: -1rem; }
+    .nav-button:hover .nav-icon::after {
+      top: 1rem; }
+    .nav-button .nav-icon {
+      position: relative;
+      margin-top: 3.25rem; }
+      .nav-button .nav-icon, .nav-button .nav-icon::before, .nav-button .nav-icon::after {
+        width: 3rem;
+        height: 0.2rem;
+        background-color: var(--primary-color-1);
+        display: inline-block; }
+      .nav-button .nav-icon::before, .nav-button .nav-icon::after {
+        content: " ";
+        position: absolute;
+        left: 0;
+        transition: all 0.2s; }
+      .nav-button .nav-icon::before {
+        top: -1rem; }
+      .nav-button .nav-icon::after {
+        top: 1rem; }
+  .nav-background {
+    height: 6rem;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    position: fixed;
+    top: 6.5rem;
+    right: 6.5rem;
+    z-index: 25;
+    opacity: 0;
+    background: var(--primary-color-2);
+    transition: transform 0.8s cubic-bezier(0.86, 0, 0.07, 1); }
+  .container-nav {
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 50;
+    width: 0%;
+    opacity: 0;
+    transition: opacity 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55); }
+    .container-nav #logo-1 {
+      height: 4rem;
+      margin: 4rem;
+      position: absolute;
+      top: 5%;
+      left: 0%;
+      transform: translate(0%, -5%); }
+    .container-nav .nav-list {
+      position: absolute;
+      top: 50%;
+      left: 0%;
+      transform: translate(0%, -50%);
+      text-align: left; }
+      .container-nav .nav-list .nav-item {
+        margin: 4rem; }
+        .container-nav .nav-list .nav-item .nav-link:link, .container-nav .nav-list .nav-item .nav-link:visited {
+          display: inline-block;
+          font-size: 3rem;
+          text-transform: uppercase; }
   .spacing--1 {
     padding: 4rem; }
   .spacing--2 {
@@ -325,7 +420,7 @@ footer {
   .gallery {
     grid-template-columns: 1fr;
     grid-template-rows: 0.5fr repeat(8, 4fr) 0.5fr;
-    gap: 2rem; }
+    grid-gap: 2rem; }
     .gallery .gallery--heading,
     .gallery .g-1,
     .gallery .g-2,
