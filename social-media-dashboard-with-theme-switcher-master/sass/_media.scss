@@ -1,0 +1,118 @@
+@media (min-width: 1200px) and (max-width: 1300px) {
+  /* insert styles here */
+
+  main {
+    max-width: 130rem;
+    //   padding: 10rem 40rem;
+  }
+
+  .container-first-row {
+    width: 111.6rem;
+  }
+}
+
+@media (min-width: 1100px) and (max-width: 1200px) {
+  /* insert styles here */
+
+  main {
+    max-width: 120rem;
+    //   padding: 10rem 40rem;
+  }
+
+  .container-first-row {
+    width: 99.2rem;
+  }
+}
+
+@media (min-width: 1000px) and (max-width: 1100px) {
+  /* insert styles here */
+
+  main {
+    max-width: 110rem;
+    //   padding: 10rem 40rem;
+  }
+
+  .container-first-row {
+    width: 86.8rem;
+  }
+}
+
+@media (min-width: 720px) and (max-width: 1000px) {
+  /* insert styles here */
+
+  main {
+    max-width: 100rem;
+    //   padding: 10rem 40rem;
+  }
+
+  .container-first-row {
+    width: 74.4rem;
+  }
+
+  .container-second-row {
+    .card-second-row {
+      padding: 1.2rem;
+    }
+  }
+
+  .card-second-row {
+    .f-col {
+      #c-2 {
+        font-size: 3.2rem;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 720px) {
+  /* insert styles here */
+
+  body {
+    overflow-y: visible;
+  }
+
+  main {
+    max-width: 70rem;
+    //  padding: 10rem 40rem;
+  }
+
+  .theme-switcher {
+    justify-content: space-between;
+    margin-top: 2rem;
+    padding-top: 1.6rem;
+    //  gap: 2rem;
+    width: 100%;
+
+    //  border-top: 0.1rem solid hsl(230, 22%, 80%);
+  }
+
+  .container-heading {
+    margin: 2rem;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .container-first-row {
+    flex-direction: column;
+    width: 40rem;
+  }
+
+  .container-second-row {
+    display: flex;
+    flex-direction: column;
+    //  align-items: center;
+    max-width: 40rem;
+
+    .card-second-row {
+      padding: 1.2rem;
+    }
+  }
+
+  .card-second-row {
+    .f-col {
+      #c-2 {
+        font-size: 3.2rem;
+      }
+    }
+  }
+}

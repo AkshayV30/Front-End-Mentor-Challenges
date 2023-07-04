@@ -1,0 +1,31 @@
+.darken {
+  // #### Dark Theme
+
+  --color-bg: hsl(230, 17%, 14%); // - Very Dark Blue (BG)
+  --color-top-bg-pattern: hsl(
+    232,
+    19%,
+    15%
+  ); // - Very Dark Blue (Top BG Pattern)
+  --color-card-bg: hsl(228, 28%, 20%); // - Dark Desaturated Blue (Card BG):
+  --color-text-1: hsl(228, 34%, 66%); // - Desaturated Blue (Text)
+  --color-text-2: hsl(0, 0%, 100%); // - White (Text)
+
+  --brightness-value: 150%;
+}
+
+.lighten {
+  // #### Light Theme
+
+  --color-bg: hsl(0, 0%, 100%); // - White (BG)
+  --color-top-bg-pattern: hsl(
+    225,
+    100%,
+    98%
+  ); // - Very Pale Blue (Top BG Pattern)
+  --color-card-bg: hsl(227, 47%, 96%); // - Light Grayish Blue (Card BG)
+  --color-text-1: hsl(228, 12%, 44%); // - Dark Grayish Blue (Text)
+  --color-text-2: hsl(230, 17%, 14%); // - Very Dark Blue (Text):
+
+  --brightness-value: 85%;
+}

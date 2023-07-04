@@ -20,28 +20,6 @@
   --font-w-1: 400;
   --font-w-2: 700; }
 
-.darken {
-  --color-bg: hsl(230, 17%, 14%);
-  --color-top-bg-pattern: hsl(
-    232,
-    19%,
-    15%
-  );
-  --color-card-bg: hsl(228, 28%, 20%);
-  --color-text-1: hsl(228, 34%, 66%);
-  --color-text-2: hsl(0, 0%, 100%); }
-
-.lighten {
-  --color-bg: hsl(0, 0%, 100%);
-  --color-top-bg-pattern: hsl(
-    225,
-    100%,
-    98%
-  );
-  --color-card-bg: hsl(227, 47%, 96%);
-  --color-text-1: hsl(228, 12%, 44%);
-  --color-text-2: hsl(230, 17%, 14%); }
-
 html {
   font-size: 62.5%; }
 
@@ -50,7 +28,9 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  overflow-x: hidden;
+  justify-content: space-between;
+  overflow: hidden;
+  min-height: 100vh;
   background-color: var(--color-bg);
   color: var(--color-text-2); }
 
@@ -82,19 +62,46 @@ main {
   aspect-ratio: 1; }
 
 .border--facebook {
-  border-top: 0.2rem solid var(--color-facebook); }
+  border-top: 0.4rem solid var(--color-facebook); }
 
 .border--twitter {
-  border-top: 0.2rem solid var(--color-twitter); }
+  border-top: 0.4rem solid var(--color-twitter); }
 
 .border--instagram {
-  border-top: 0.2rem solid;
-  background-image: linear-gradient(#fdc468 to #df4996) 0 50%; }
+  position: relative; }
+  .border--instagram::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 0.4rem;
+    border-radius: 0.4rem 0.4rem 0 0;
+    background: linear-gradient(to right, #fdc468, #df4996); }
 
 .border--youtube {
-  border-top: 0.2rem solid var(--color-youtube); }
+  border-top: 0.4rem solid var(--color-youtube); }
+
+.theme-switcher {
+  display: flex;
+  gap: 1rem;
+  align-items: center; }
+  .theme-switcher #theme {
+    color: var(--color-text-2);
+    font-size: 1.2rem;
+    font-weight: var(--font-w-2); }
+  .theme-switcher .slider input[type="range"] {
+    background: linear-gradient(90deg, #378fe6 0%, #3eda82 100%);
+    appearance: none;
+    accent-color: var(--color-card-bg);
+    padding: 1.2rem 0.8rem;
+    height: 1.8rem;
+    width: 6rem;
+    border-radius: 2em;
+    cursor: pointer; }
 
 .container-heading {
+  margin: 10rem 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -103,9 +110,11 @@ main {
     text-align: left; }
     .container-heading div h1 {
       font-size: 1.4rem;
-      font-weight: var(--font-w-2); }
+      font-weight: var(--font-w-2);
+      padding-bottom: 1rem; }
     .container-heading div p {
       font-size: 1.2rem;
+      color: var(--color-text-1);
       font-weight: var(--font-w-1); }
 
 .container-first-row {
@@ -124,7 +133,7 @@ main {
     background-color: var(--color-card-bg); }
     .container-first-row .card-first-row:hover {
       cursor: pointer;
-      filter: brightness(115%); }
+      filter: brightness(var(--brightness-value)); }
     .container-first-row .card-first-row div {
       display: flex;
       gap: 0.5rem;
@@ -164,7 +173,7 @@ main {
     justify-content: space-between;
     align-items: center; }
     .container-second-row .card-second-row:hover {
-      filter: brightness(115%);
+      filter: brightness(var(--brightness-value));
       cursor: pointer; }
     .container-second-row .card-second-row .f-col p {
       padding: 1rem 0; }
@@ -173,15 +182,17 @@ main {
     .container-second-row .card-second-row .f-col #c-2 {
       font-size: 4rem;
       font-weight: var(--font-w-2); }
-    .container-second-row .card-second-row .s-col .s-col-stat {
-      padding-top: 4rem;
-      display: flex;
-      align-items: center;
-      gap: 1rem; }
-      .container-second-row .card-second-row .s-col .s-col-stat #green {
-        color: var(--color-primary-1); }
-      .container-second-row .card-second-row .s-col .s-col-stat #red {
-        color: var(--color-primary-2); }
+    .container-second-row .card-second-row .s-col {
+      text-align: right; }
+      .container-second-row .card-second-row .s-col .s-col-stat {
+        padding-top: 4rem;
+        display: flex;
+        align-items: center;
+        gap: 1rem; }
+        .container-second-row .card-second-row .s-col .s-col-stat #green {
+          color: var(--color-primary-1); }
+        .container-second-row .card-second-row .s-col .s-col-stat #red {
+          color: var(--color-primary-2); }
   .container-second-row .csr-f-1 {
     grid-row: 2 / 3;
     grid-column: 1 / 2; }
@@ -213,3 +224,86 @@ main {
 
 .attribution a {
   color: #3e52a3; }
+
+.darken {
+  --color-bg: hsl(230, 17%, 14%);
+  --color-top-bg-pattern: hsl(
+    232,
+    19%,
+    15%
+  );
+  --color-card-bg: hsl(228, 28%, 20%);
+  --color-text-1: hsl(228, 34%, 66%);
+  --color-text-2: hsl(0, 0%, 100%);
+  --brightness-value: 150%; }
+
+.lighten {
+  --color-bg: hsl(0, 0%, 100%);
+  --color-top-bg-pattern: hsl(
+    225,
+    100%,
+    98%
+  );
+  --color-card-bg: hsl(227, 47%, 96%);
+  --color-text-1: hsl(228, 12%, 44%);
+  --color-text-2: hsl(230, 17%, 14%);
+  --brightness-value: 85%; }
+
+@media (min-width: 1200px) and (max-width: 1300px) {
+  /* insert styles here */
+  main {
+    max-width: 130rem; }
+  .container-first-row {
+    width: 111.6rem; } }
+
+@media (min-width: 1100px) and (max-width: 1200px) {
+  /* insert styles here */
+  main {
+    max-width: 120rem; }
+  .container-first-row {
+    width: 99.2rem; } }
+
+@media (min-width: 1000px) and (max-width: 1100px) {
+  /* insert styles here */
+  main {
+    max-width: 110rem; }
+  .container-first-row {
+    width: 86.8rem; } }
+
+@media (min-width: 720px) and (max-width: 1000px) {
+  /* insert styles here */
+  main {
+    max-width: 100rem; }
+  .container-first-row {
+    width: 74.4rem; }
+  .container-second-row .card-second-row {
+    padding: 1.2rem; }
+  .card-second-row .f-col #c-2 {
+    font-size: 3.2rem; } }
+
+@media only screen and (max-width: 720px) {
+  /* insert styles here */
+  body {
+    overflow-y: visible; }
+  main {
+    max-width: 70rem; }
+  .theme-switcher {
+    justify-content: space-between;
+    margin-top: 2rem;
+    padding-top: 1.6rem;
+    width: 100%; }
+  .container-heading {
+    margin: 2rem;
+    flex-direction: column;
+    align-items: flex-start; }
+  .container-first-row {
+    flex-direction: column;
+    width: 40rem; }
+  .container-second-row {
+    display: flex;
+    flex-direction: column;
+    max-width: 40rem; }
+    .container-second-row .card-second-row {
+      padding: 1.2rem; }
+  .card-second-row .f-col #c-2 {
+    font-size: 3.2rem; } }

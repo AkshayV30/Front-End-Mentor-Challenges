@@ -145,6 +145,8 @@ btn_del.addEventListener("click", (button) => {
 const rangeInput = document.getElementById("rng");
 const body = document.body;
 
+console.log(rangeInput, body);
+
 rangeInput.addEventListener("change", (e) => {
   const selectedValue = parseInt(e.target.value);
 
