@@ -16,11 +16,11 @@
 | 10     | [easybank-landing-page](https://akshayv30.github.io/Front-End-Mentor-Challenges/easybank-landing-page-master/index.html)                                           | HTML, CSS, JS       |     |
 | 11     | [blogr-landing-page](https://akshayv30.github.io/Front-End-Mentor-Challenges/blogr-landing-page-main/index.html)                                                   | HTML, CSS, JS       |     |
 | 12     | [multi-step-form](https://akshayv30.github.io/Front-End-Mentor-Challenges/multi-step-form-main/index.html)                                                         | HTML, CSS, JS       |     |
-| 13     | [calculator-app](https://akshayv30.github.io/Front-End-Mentor-Challenges/calculator-app-main/index.html)                                                           | HTML, CSS, JS       |     |
+| 13     | [calculator-app](https://akshayv30.github.io/Front-End-Mentor-Challenges/calculator-app-main/index.html)                                                           | HTML, CSS, JS       | ✅  |
 | 14     | [launch-countdown-timer](https://akshayv30.github.io/Front-End-Mentor-Challenges/launch-countdown-timer-main/index.html)                                           | HTML, CSS, JS       |     |
 | 15     | [profile-card-component](https://akshayv30.github.io/Front-End-Mentor-Challenges/profile-card-component-main/index.html)                                           | HTML, CSS           | ✅  |
 | 16     | [time-tracking-dashboard](https://akshayv30.github.io/Front-End-Mentor-Challenges/time-tracking-dashboard-main/index.html)                                         | HTML, CSS, JS       |     |
 | 17     | [ip-address-tracker](https://akshayv30.github.io/Front-End-Mentor-Challenges/ip-address-tracker-master/index.html)                                                 | HTML, CSS, JS, API  |     |
-| 18     | [social-media-dashboard-with-theme-switcher](https://akshayv30.github.io/Front-End-Mentor-Challenges/social-media-dashboard-with-theme-switcher-master/index.html) | HTML, CSS, JS       |     |
+| 18     | [social-media-dashboard-with-theme-switcher](https://akshayv30.github.io/Front-End-Mentor-Challenges/social-media-dashboard-with-theme-switcher-master/index.html) | HTML, CSS, JS       | ✅  |
 | 19     | [intro-section-with-dropdown-navigation](https://akshayv30.github.io/Front-End-Mentor-Challenges/intro-section-with-dropdown-navigation-main/index.html)           | HTML, CSS, JS       |     |
-| 20     | [loopstudios-landing-page](https://akshayv30.github.io/Front-End-Mentor-Challenges/loopstudios-landing-page-main/index.html)                                       | HTML, CSS, JS       |     |
+| 20     | [loopstudios-landing-page](https://akshayv30.github.io/Front-End-Mentor-Challenges/loopstudios-landing-page-main/index.html)                                       | HTML, CSS, JS       | ✅  |
