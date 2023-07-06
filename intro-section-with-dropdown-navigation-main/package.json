@@ -1,0 +1,16 @@
+{
+  "name": "intro-section-with-dropdown-navigation-main",
+  "version": "1.0.0",
+  "description": "![Design preview for the Intro section with dropdown navigation coding challenge](./design/desktop-preview.jpg)",
+  "main": "index.js",
+  "scripts": {
+    "watch:sass": "node-sass sass/main.scss css/style.css -w",
+    "prefix:css": "postcss --use autoprefixer -b 'last 10 versions' css/style.comp.css -o css/style.prefix.css"
+  },
+  "author": "AkshayV30",
+  "license": "ISC",
+  "devDependencies": {
+    "node-sass": "^9.0.0",
+    "postcss-cli": "^10.1.0"
+  }
+}

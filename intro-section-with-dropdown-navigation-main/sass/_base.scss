@@ -1,0 +1,275 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  // # Front-end Style Guide // Layout
+  // The designs were created to the following widths:
+  // - Mobile: 375px   // - Desktop: 1440px
+
+  // ## Colors
+
+  // ### Neutral
+
+  --neutral-1: hsl(0, 0%, 98%); //  Almost White
+  --neutral-2: hsl(0, 0%, 41%); //  Medium Gray
+  --neutral-3: hsl(0, 0%, 8%); //  Almost Black
+
+  // ## Typography
+  // ### Body Copy
+  // - Font size (paragraph): 18px
+
+  // ### Font
+  --font-fam: "Epilogue", sans-serif; // - Family: [Epilogue](https://fonts.google.com/specimen/Epilogue)
+  --font-w-1: 500;
+  --font-w-2: 700;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.8rem;
+  font-family: var(--font-fam);
+  font-weight: var(--font-w-1);
+
+  overflow: hidden;
+}
+
+// ========================================header========================
+.hidden {
+  display: none;
+}
+
+.dropdown-main {
+  .dropdown-heading {
+  }
+
+  .dropdown--1,
+  .dropdown--2 {
+    position: absolute;
+    top: 8rem;
+
+    list-style: none;
+
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0.4rem 0.4rem 04rem hsla(0, 0%, 41%, 0.4);
+  }
+
+  .dropdown--1 {
+    left: 14rem;
+
+    li {
+      padding: 0.6rem;
+
+      img {
+        height: 1.4rem;
+      }
+
+      a {
+        text-decoration: none;
+        color: var(--neutral-3);
+        font-size: 1.4rem;
+        margin-left: 1rem;
+      }
+    }
+  }
+  .dropdown--2 {
+    left: 32rem;
+    li {
+      color: var(--neutral-3);
+      font-size: 1.4rem;
+
+      padding-bottom: 1.2rem;
+
+      cursor: pointer;
+    }
+  }
+}
+
+.dropdown-heading {
+  display: flex;
+  align-items: center;
+  position: relative;
+
+  a {
+    text-decoration: none;
+    color: var(--neutral-3);
+    font-size: 1.4rem;
+  }
+
+  picture {
+    padding-left: 1rem;
+    .arrow {
+      height: 1rem;
+      display: none;
+      cursor: pointer;
+    }
+
+    .active {
+      display: block;
+    }
+  }
+}
+
+header {
+  margin-top: 4rem;
+  padding: 0 8rem;
+  // background-color: red;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .btn-container {
+    display: flex;
+    gap: 2rem;
+
+    #btn-null,
+    #btn-full--white {
+      border: none;
+      padding: 1rem 1.6rem;
+      border-radius: 0.8rem;
+      background-color: var(--neutral-1);
+      font-size: 1.4rem;
+      a {
+        text-decoration: none;
+        color: var(--neutral-3);
+      }
+    }
+    #btn-null {
+    }
+    #btn-full--white {
+      border: 0.2rem solid var(--neutral-2);
+
+      &:hover {
+        border: 0.2rem solid var(--neutral-3);
+      }
+    }
+  }
+}
+
+.container--nav {
+  display: flex;
+  align-items: center;
+
+  // padding: 0 8rem;
+  gap: 4rem;
+
+  #logo {
+  }
+
+  .container-menu {
+    display: flex;
+    gap: 4rem;
+    align-items: center;
+
+    #link-null {
+      color: var(--neutral-2);
+    }
+
+    span {
+      font-size: 1.4rem;
+      a {
+        text-decoration: none;
+        color: var(--neutral-3);
+      }
+    }
+  }
+}
+//=========================================main======================
+main {
+  //   margin: 8rem 18rem 14rem 14rem;
+  display: flex;
+
+  justify-content: space-between;
+  align-items: center;
+
+  // border: 2px dotted rgb(187, 255, 0);
+
+  .txt {
+    // border: 2px dotted red;
+    height: 65rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    // align-items: stretch;
+
+    // gap: 4rem;
+
+    h1 {
+      margin-top: 8rem;
+      font-size: 5.4rem;
+      font-weight: var(--font-w-2);
+      letter-spacing: 0.6rem;
+      width: 100%;
+
+      br {
+        display: block;
+      }
+    }
+    p {
+      letter-spacing: 0.05rem;
+      width: 46ch;
+      line-height: 1.5;
+    }
+    .btn-full--black {
+      border: none;
+      width: fit-content;
+
+      padding: 1.2rem;
+      border-radius: 0.8rem;
+      background: var(--neutral-3);
+
+      a {
+        color: var(--neutral-1);
+        font-size: 2rem;
+        text-decoration: none;
+      }
+      &:hover {
+        border: 0.2rem solid var(--neutral-3);
+        background: var(--neutral-1);
+        a {
+          color: var(--neutral-3);
+        }
+      }
+    }
+
+    .clients-logos {
+      // margin-top: 10rem;
+
+      display: flex;
+      gap: 1.6rem;
+
+      img {
+        height: 2.4rem;
+      }
+    }
+  }
+
+  .hero-img {
+    //  display: none;
+
+    #hero-img--desktop {
+      // height: 65rem;
+
+      // aspect-ratio: 0.75;
+    }
+    #hero-img--mobile {
+      // display: none;
+    }
+  }
+}
+// ========================================footer====================
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  a {
+    color: hsl(228, 45%, 44%);
+  }
+}
