@@ -17,7 +17,7 @@
 | 11     | [blogr-landing-page](https://akshayv30.github.io/Front-End-Mentor-Challenges/blogr-landing-page-main/index.html)                                                   | HTML, CSS, JS       |     |
 | 12     | [multi-step-form](https://akshayv30.github.io/Front-End-Mentor-Challenges/multi-step-form-main/index.html)                                                         | HTML, CSS, JS       |     |
 | 13     | [calculator-app](https://akshayv30.github.io/Front-End-Mentor-Challenges/calculator-app-main/index.html)                                                           | HTML, CSS, JS       | ✅  |
-| 14     | [launch-countdown-timer](https://akshayv30.github.io/Front-End-Mentor-Challenges/launch-countdown-timer-main/index.html)                                           | HTML, CSS, JS       |     |
+| 14     | [launch-countdown-timer](https://akshayv30.github.io/Front-End-Mentor-Challenges/launch-countdown-timer-main/index.html)                                           | HTML, CSS, JS       | ✅  |
 | 15     | [profile-card-component](https://akshayv30.github.io/Front-End-Mentor-Challenges/profile-card-component-main/index.html)                                           | HTML, CSS           | ✅  |
 | 16     | [time-tracking-dashboard](https://akshayv30.github.io/Front-End-Mentor-Challenges/time-tracking-dashboard-main/index.html)                                         | HTML, CSS, JS       |     |
 | 17     | [ip-address-tracker](https://akshayv30.github.io/Front-End-Mentor-Challenges/ip-address-tracker-master/index.html)                                                 | HTML, CSS, JS, API  |     |
