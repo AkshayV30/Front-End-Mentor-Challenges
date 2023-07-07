@@ -1,0 +1,45 @@
+@media only screen and (min-width: 721px) {
+  main {
+    h1 {
+      br {
+        display: none;
+      }
+    }
+    .countdown {
+      gap: 4rem;
+    }
+  }
+
+  :root {
+    --timeSegment-font-s: 12rem;
+    --timeSegment-width: 24rem;
+
+    --subTitle-pad: 4rem;
+    --lineHeight-top: 2;
+    --notch-height: 1.2rem;
+    --subTitle-font-s: 1.2rem;
+  }
+}
+
+@media only screen and (max-width: 720px) {
+  main {
+    h1 {
+      text-align: center;
+      br {
+        display: inline-block;
+      }
+    }
+    .countdown {
+      gap: 1.4rem;
+    }
+  }
+
+  :root {
+    --timeSegment-font-s: 6rem;
+    --timeSegment-width: 12rem;
+    --subTitle-pad: 2rem;
+    --lineHeight-top: 1.8;
+    --notch-height: 1rem;
+    --subTitle-font-s: 1rem;
+  }
+}

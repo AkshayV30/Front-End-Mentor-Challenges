@@ -1,0 +1,11 @@
+.social-icon {
+  display: flex;
+  gap: 2rem;
+
+  .my-icons {
+    &:hover {
+      cursor: pointer;
+      fill: var(--primary-2);
+    }
+  }
+}

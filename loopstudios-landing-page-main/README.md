@@ -57,7 +57,6 @@ Users should be able to:
 
 ## Author
 
-- Website - [Akshay Minz](https://akshayv30.github.io/3-column-preview-card-component-main/)
 - Frontend Mentor - [@AkshayV30](https://www.frontendmentor.io/profile/AkshayV30)
 
 --
