@@ -1,0 +1,14 @@
+{
+  "name": "ip-address-tracker-master",
+  "version": "1.0.0",
+  "description": "This is a solution to the [IP address tracker challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/ip-address-tracker-I8-0yYAH0). Frontend Mentor challenges help you improve your coding skills by building realistic projects.",
+  "main": "index.js",
+  "scripts": {
+    "watch:sass": "node-sass scss/main.scss css/style.css -w"
+  },
+  "author": "AkshayV30",
+  "license": "ISC",
+  "devDependencies": {
+    "node-sass": "^9.0.0"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "name": "multi-step-form-main",
+  "version": "1.0.0",
+  "description": "This is a solution to the [Multi-step form challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/multistep-form-YVAnSdqQBJ). Frontend Mentor challenges help you improve your coding skills by building realistic projects.",
+  "main": "index.js",
+  "scripts": {
+    "watch:sass": "node-sass scss/main.scss css/style.css -w",
+    "prefix:css": "postcss --use autoprefixer -b 'last 10 versions' css/style.comp.css -o css/style.prefix.css"
+  },
+  "author": "AkshayV30",
+  "license": "ISC",
+  "devDependencies": {
+    "node-sass": "^9.0.0",
+    "postcss-cli": "^10.1.0"
+  }
+}

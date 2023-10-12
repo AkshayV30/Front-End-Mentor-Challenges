@@ -1,0 +1,116 @@
+.home-picture {
+  background-image: url(../img/home/background-home-desktop.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  //   background: url(../img/home/background-home-desktop.jpg) no-repeat;
+
+  position: relative;
+
+  height: 100vh;
+}
+
+.home-text {
+  grid-row: 2 / 3;
+  grid-column: 1 / 5;
+
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  .description-text {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+    h3 {
+      font-family: $font-family-2;
+      font-size: $heading-5-font-size;
+      text-transform: uppercase;
+      color: $ascent-color-1;
+      //  letter-spacing: 4.75ch;
+    }
+
+    h1 {
+      font-family: $font-family-1;
+      font-size: $heading-1-font-size;
+      color: $ascent-color-2;
+      font-weight: 400;
+    }
+
+    p {
+      color: $ascent-color-1;
+      font-family: $font-family-2;
+      font-size: 14px;
+      max-width: 44ch;
+    }
+  }
+}
+
+.circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 250px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+
+  background-color: $ascent-color-2;
+
+  position: relative;
+  left: 0;
+  top: 0;
+
+  z-index: 0;
+
+  #circle-txt {
+    font-family: $font-family-1;
+    font-size: $heading-4-font-size;
+    text-transform: uppercase;
+    font-weight: 300;
+  }
+
+  &::after,
+  &::before {
+    content: "";
+
+    position: absolute;
+    // left: 00;
+    // top: 000;
+
+    z-index: -1;
+
+    height: 100%;
+    aspect-ratio: 1;
+    border-radius: 50%;
+
+    background: $ascent-color-2;
+    // background: red;
+    opacity: 1;
+
+    // transform: translate(-50%, -50%) scale(1); /* Center the element and set initial scale to 1 */
+    // transform-origin: center;
+    // transition: transform 250ms ease-in;
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &:hover::before {
+    animation: pulse 2s ease-out infinite;
+  }
+  &:hover::after {
+    // transform: translate(-50%, -50%) scale(1.2); /* Grow the circle to 120% from the center */
+    animation: pulse 2s 1s ease-out infinite;
+  }
+
+  @keyframes pulse {
+    100% {
+      transform: scale(2);
+      opacity: 0;
+    }
+  }
+}

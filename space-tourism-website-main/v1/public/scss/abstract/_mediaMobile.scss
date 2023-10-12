@@ -1,0 +1,48 @@
+/* ************************
+   For Mobile:
+   ************************ */
+
+/* 1280x720 Devices (Galaxy Note 2, WXGA) */
+@media only screen and (device-width: 80rem) and (device-height: 45rem) {
+  /* Galaxy Note 2, WXGA Styles */
+  .container {
+    grid-template-columns: repeat(4, 4fr);
+    grid-template-rows: 0.8fr 3.2fr;
+  }
+}
+
+/* 720x1280 Devices (Galaxy Nexus, WXGA) */
+@media only screen and (device-width: 45rem) and (device-height: 80rem) {
+  /* Galaxy Nexus, WXGA Styles */
+  .container {
+    grid-template-columns: repeat(4, 4fr);
+    grid-template-rows: 0.8fr 3.2fr;
+  }
+}
+
+/* 640x960 Devices (iPhone 4 & 4S) */
+@media only screen and (device-width: 40rem) and (device-height: 60rem) {
+  /* iPhone 4 & 4S Styles */
+  .container {
+    grid-template-columns: repeat(4, 4fr);
+    grid-template-rows: 0.8fr 3.2fr;
+  }
+}
+
+/* 320x480 Landscape Devices */
+@media only screen and (device-width: 20rem) and (device-height: 30rem) and (orientation: landscape) {
+  /* Mobile Landscape Styles */
+  .container {
+    grid-template-columns: repeat(4, 4fr);
+    grid-template-rows: 0.8fr 3.2fr;
+  }
+}
+
+/* 320x480 Portrait Devices */
+@media only screen and (device-width: 20rem) and (device-height: 30rem) and (orientation: portrait) {
+  /* Mobile Portrait Styles */
+  .container {
+    grid-template-columns: repeat(4, 4fr);
+    grid-template-rows: 0.8fr 3.2fr;
+  }
+}

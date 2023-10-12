@@ -29,6 +29,12 @@ body {
   justify-content: space-between;
   overflow-x: hidden; }
 
+ul {
+  list-style: none; }
+
+a {
+  text-decoration: none; }
+
 button {
   border-style: none;
   border-radius: 4.8rem;
@@ -60,7 +66,6 @@ header {
 
 .section-first {
   padding: 16rem;
-  width: 100vw;
   background: var(--neutral-3);
   display: flex;
   justify-content: space-between; }
@@ -85,10 +90,8 @@ footer {
 
 .main-nav ul {
   display: flex;
-  gap: 6rem;
-  list-style: none; }
+  gap: 6rem; }
   .main-nav ul li a {
-    text-decoration: none;
     color: var(--neutral-1); }
   .main-nav ul li a:hover {
     color: var(--primary-1);
@@ -98,18 +101,15 @@ footer {
 .section-first {
   background-image: url(../images/bg-intro-desktop.svg);
   background-repeat: no-repeat;
-  background-position: 145% 65%;
-  background-size: 62%; }
-
-.first--img {
-  width: 50%;
-  position: relative; }
-  .first--img #img-front {
-    width: 100%;
-    object-fit: contain;
-    position: absolute;
-    top: -100%;
-    right: -36%; }
+  width: 100%;
+  height: 100%;
+  background-size: 70%; }
+  .section-first .img-front-contain {
+    position: relative;
+    width: 100%; }
+    .section-first .img-front-contain #img-front {
+      object-fit: contain;
+      position: absolute; }
 
 .first--txt {
   display: flex;
@@ -255,65 +255,53 @@ footer .f-end {
 
 /* rem and em do NOT depend on html font-size in media queries! Instead, 1rem = 1em = 16px */
 /**************************/
-/* BELOW 1680px // 1680/16 = 105em */
+/* above 1660px // 1660/16 = 103.75rem */
 /**************************/
-@media (max-width: 105em) {
+@media (min-width: 103.75rem) {
   .section-first {
-    background-position: 145% 95%;
-    background-size: 62%; }
-  .first--img #img-front {
-    object-fit: contain;
-    top: -85%;
-    right: -39%; } }
+    background-position: 100rem -25.5rem; }
+    .section-first .img-front-contain #img-front {
+      height: 100rem;
+      top: -100%;
+      right: -30%; } }
 
 /**************************/
-/* BELOW 1600px // 1600/16 = 100em */
+/* below 1659px // 1660/16 = 103.75rem */
 /**************************/
-@media (max-width: 100em) {
+@media (max-width: 103.74rem) {
   .section-first {
-    background-position: 145% 90%;
-    background-size: 62%; } }
-
-/**************************/
-/* BELOW 1500px // 1500/16 = 93.75em */
-/**************************/
-@media (max-width: 93.75em) {
-  .section-first {
-    background-position: 55vw -14vh;
-    background-size: 51%; }
-  .first--img #img-front {
-    width: 102%;
-    object-fit: contain;
-    top: -70%;
-    right: -32%; }
-  .section-first,
-  .section-second {
-    padding: 12rem; }
-  .section-third {
-    padding: 2rem 12rem 10rem 12rem; }
-  footer {
-    padding: 2rem 12rem 2rem 12rem; } }
+    background-position: 80rem -21.5rem; }
+    .section-first .img-front-contain #img-front {
+      height: 100rem;
+      top: -100%;
+      right: -40.5%; } }
 
 /**************************/
 /* BELOW 1400px // 1400/16 = 87.5em */
 /**************************/
-@media (max-width: 87.5em) {
-  header {
-    height: 8vh; }
-  .first--img #img-front {
-    top: -72%;
-    right: -34%; } }
+@media (max-width: 87.5rem) {
+  .section-first {
+    background-position: 70rem -20rem; }
+    .section-first .img-front-contain #img-front {
+      top: -100%;
+      right: -50%; } }
 
 /**************************/
 /* BELOW 1300px // 1300/16 = 81.25em */
 /**************************/
 @media (max-width: 81.25em) {
   .section-first {
-    background-position: 55vw -15vh;
-    background-size: 55%; }
-  .first--img #img-front {
-    top: -64%;
-    right: -36%; }
+    background-position: 100rem -20rem; }
+    .section-first .img-front-contain #img-front {
+      height: 95rem;
+      right: -29.5%; }
+  .section-first,
+  .section-second {
+    padding-left: 12rem; }
+  .section-third {
+    padding: 2rem 12rem 10rem 12rem; }
+  footer {
+    padding: 2rem 12rem 2rem 12rem; }
   .main-nav ul {
     gap: 4rem; }
     .main-nav ul li a:hover {
@@ -338,15 +326,14 @@ footer .f-end {
 /**************************/
 @media (max-width: 75em) {
   .section-first {
-    background-position: 115% 75%;
-    background-size: 55%; }
-  .first--img #img-front {
-    width: 95%;
-    top: -54%;
-    right: -20%; }
+    background-position: 170% 60%; }
+    .section-first .img-front-contain #img-front {
+      height: 95rem;
+      right: -29.5%; }
   .section-first,
   .section-second {
-    padding: 4rem; }
+    padding-left: 4rem;
+    padding-right: 4rem; }
   .section-third {
     padding: 0.2rem 4rem 2rem 4rem; }
   footer {
@@ -354,16 +341,15 @@ footer .f-end {
 
 @media (max-width: 68.75em) {
   .section-first {
-    background-position: 115% 105%;
-    background-size: 55%; }
-  .first--img #img-front {
-    width: 95%;
-    top: -44%;
-    right: -20%; }
+    background-position: 170% 60%; }
+    .section-first .img-front-contain #img-front {
+      height: 90rem; }
   .first--txt {
     gap: 2.6rem; }
     .first--txt h1 {
       font-size: 4rem; }
+    .first--txt p {
+      width: 40ch; }
   .second--txt h1 {
     font-size: 3.2rem; }
   .second--cards .second-card h3 {
@@ -375,20 +361,14 @@ footer .f-end {
   .section-third h1 {
     font-size: 2.8rem; } }
 
-/**************************/
-/* BELOW 1000px // 1000/16 = 62.5em */
-/**************************/
 @media (max-width: 56.25em) {
   .section-first {
-    background-position: 115% 105%;
-    background-size: 45%; }
-  .first--img #img-front {
-    width: 85%;
-    top: -44%;
-    right: -20%; }
+    background-position: 170% 60%; }
+    .section-first .img-front-contain #img-front {
+      height: 80rem; }
   .section-first,
   .section-second {
-    padding: 2rem; }
+    padding-left: 2rem; }
   .section-third {
     padding: 0.2rem 2rem 1rem 2rem; }
   footer {
@@ -445,14 +425,22 @@ footer .f-end {
     font-size: 1.4rem; } }
 
 /**************************/
-/* BELOW 700px // 700/16 = 43.75em */
+/* BELOW 720px // 720/16 = 45rem */
 /**************************/
-@media (max-width: 43.75em) {
+@media (max-width: 45rem) {
   html {
     /* 9px / 16px  */
     font-size: 56.25%; }
+  .section-first {
+    background-position: 170% 60%; }
+    .section-first .img-front-contain #img-front {
+      height: 78rem;
+      top: -25.5%;
+      right: -26.5%; }
   .main-nav ul {
     gap: 1rem; }
+  .first--txt p {
+    width: 30ch; }
   footer .footer-icons {
     gap: 0.25rem; }
     footer .footer-icons #f-icon {
@@ -469,23 +457,23 @@ footer .f-end {
 /**************************/
 /* BELOW 500px // 500/16 = 31.25em */
 /**************************/
-@media (max-width: 31.25em) {
-  .main-nav {
-    display: none; }
-  header button {
-    display: none; }
+@media (max-width: 31.25rem) {
+  header {
+    justify-content: flex-start; }
+    header #easy-logo {
+      padding-left: 3.2rem;
+      height: 2.8rem; }
+    header .main-nav {
+      display: none; }
+    header button {
+      display: none; }
   .section-first {
-    flex-direction: column-reverse;
     background-image: url(../images/bg-intro-mobile.svg);
-    background-position: 45% 5%;
-    background-size: 65%;
-    text-align: justify; }
-  .first--img {
-    display: none; }
-    .first--img #img-front {
-      width: 85%;
-      top: -44%;
-      right: -20%; }
+    background-size: cover; }
+    .section-first .img-front-contain {
+      height: 78rem; }
+  .first--txt {
+    align-items: center; }
   .second--cards,
   .third--cards {
     flex-direction: column;

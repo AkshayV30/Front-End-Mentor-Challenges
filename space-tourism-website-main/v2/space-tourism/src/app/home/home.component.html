@@ -1,0 +1,49 @@
+<!-- <app-crews></app-crews>
+<app-destination></app-destination>
+<app-technology></app-technology> -->
+<div class="container home-picture" *ngIf="showHome">
+  <div class="main-nav">
+    <div id="logo">
+      <!-- <img src="./Resources/img/shared/logo.svg" alt="logo" /> -->
+      <img src="./../../assets/shared/logo.svg" alt="logo" />
+    </div>
+    <div id="line"></div>
+    <div class="main-nav-heading">
+      <ul>
+        <li>
+          <b>00</b>
+          <a routerLink="/" (click)="exploreClicked()">Home</a>
+        </li>
+        <li>
+          <b>01</b>
+          <a routerLink="/destination">Destination</a>
+        </li>
+        <li>
+          <b>02</b>
+          <a routerLink="/crew">Crew</a>
+        </li>
+        <li>
+          <b>03</b>
+          <a routerLink="/technology">Technology</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="home-text">
+    <div id="description-text">
+      <h3>So, you want to travel to</h3>
+      <h1>Space</h1>
+      <p>
+        Let’s face it; if you want to go to space, you might as well genuinely
+        go to outer space and not hover kind of on the edge of it. Well sit
+        back, and relax because we’ll give you a truly out of this world
+        experience!
+      </p>
+    </div>
+
+    <div id="circle"><h4>Explore</h4></div>
+  </div>
+</div>
+
+<router-outlet *ngIf="!showHome"></router-outlet>
