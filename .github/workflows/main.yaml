@@ -2,10 +2,6 @@ name: API Key
 
 on:
   workflow_dispatch:
-    inputs:
-      api_key:
-        description: "API Key"
-        required: true
 
 jobs:
   build:
