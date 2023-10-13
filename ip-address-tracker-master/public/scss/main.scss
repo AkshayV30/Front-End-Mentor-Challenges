@@ -1,0 +1,189 @@
+:root {
+  // The designs were created to the following widths:
+
+  // - Mobile: 375px
+  // - Desktop: 1440px
+  // ## Colors
+  --colorStyle-1: #fff;
+  --colorStyle-2: hsl(0, 0%, 59%);
+  --colorStyle-3: hsl(0, 0%, 17%);
+  --colorStyle-4: #000;
+
+  --fSize: 1.8rem; // Body Font Size
+
+  --fStyle: "Rubik", sans-serif;
+  --fw--1: 400;
+  --fw--2: 500;
+  --fw--3: 700;
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  max-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  font-family: var(--fStyle);
+
+  font-size: 62.5%;
+  z-index: -1;
+
+  overflow: hidden;
+}
+
+main {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  //   flex-grow: 1;
+  picture {
+    z-index: 0;
+  }
+
+  .container {
+    z-index: 2;
+    position: absolute;
+    left: 25%;
+    top: 16%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  /* Set map container size */
+  #map {
+    z-index: 0;
+    min-height: 60vh;
+    border: 0;
+    margin: 0;
+  }
+}
+
+picture {
+  background-image: url("../img/pattern-bg-desktop.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  height: 40vh;
+}
+
+.container {
+  #title {
+    font-size: 1.8rem;
+    font-weight: var(--fw--1);
+    color: var(--colorStyle-1);
+  }
+  .search-bar {
+    background-color: #fff;
+
+    border-radius: 1rem;
+    //  padding: 2rem;
+  }
+
+  ol {
+    list-style: none;
+
+    padding: 1rem;
+    background: var(--colorStyle-1);
+    border-radius: 1rem;
+    box-shadow: 0.2rem 0.2rem 0.8rem var(--colorStyle-2);
+
+    display: inline-flex;
+    gap: 1rem;
+    //  flex-direction: column;
+    align-items: center;
+
+    li {
+      #ip-address-info,
+      #location-info,
+      #timezone-info {
+        position: relative;
+      }
+      #ip-address-info::after,
+      #location-info::after,
+      #timezone-info::after {
+        position: absolute;
+        top: -2rem;
+        right: -2rem;
+        content: "";
+        width: 0.02rem;
+        height: 4rem;
+        background-color: var(--colorStyle-2);
+      }
+
+      // &:nth-child(1),
+      // &:nth-child(2),
+      // &:nth-child(3) {
+      //   border-right: 0.12rem solid var(--colorStyle-2);
+      // }
+
+      display: inline-flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+      gap: 0.4rem;
+      padding: 1rem 2rem 1rem 1rem;
+      // border: 2px solid red;
+      h4 {
+        font-size: 1rem;
+        letter-spacing: 0.1rem;
+        font-weight: var(--fw--2);
+        color: var(--colorStyle-2);
+        text-transform: uppercase;
+      }
+      p {
+        font-size: 1.8rem;
+        font-weight: var(--fw--2);
+        color: var(--colorStyle-4);
+      }
+    }
+  }
+}
+
+.search-bar {
+  width: 45rem;
+  display: inline-flex;
+
+  .search-input {
+    border: 0;
+    background: white;
+    border-top-left-radius: 0.8rem;
+    border-bottom-left-radius: 0.8rem;
+    outline: 0;
+    padding: 1rem;
+    width: 100%;
+    cursor: pointer;
+  }
+  .search-submit {
+    // width: 5%;
+    font-size: 1.5rem;
+    border: 0;
+    outline: 0;
+    background: #000;
+    padding: 1rem;
+    border-top-right-radius: 0.8rem;
+    border-bottom-right-radius: 0.8rem;
+    cursor: pointer;
+  }
+}
+
+// ------------------------------------------------------
+footer {
+}
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  a {
+    color: hsl(228, 45%, 44%);
+  }
+}
