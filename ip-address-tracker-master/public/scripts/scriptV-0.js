@@ -51,7 +51,7 @@ function isValidInput(inputValue) {
 }
 
 async function fetchData(ipAddressValue) {
-  //   const apiKey = "at_rQM9EUyfCkcxz5QFQBFKye12trNu4";
+ 
   // const app = require("../../server");
   // const apiKey = app.locals.apiKey;
   // const apiKey = "<%= apiKey %>";
