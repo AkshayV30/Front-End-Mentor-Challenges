@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./Resources/img/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Advice generator app</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <link rel="stylesheet" href="./Resources/css/main.css" />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Manrope:wght@800&display=swap");
+    </style>
+  </head>
+  <body>
+    <main>
+      <div class="card">
+        <div class="top">
+          <h4>
+            Advice #
+            <span id="advice-number"> <!-- Advice no from API --></span>
+          </h4>
+          <q>
+            <span id="advice-text"> <!-- Advice text From API --></span>
+          </q>
+        </div>
+
+        <!-- ------------------------ -->
+        <picture id="divider"> </picture>
+        <!-- ------------------------ -->
+
+        <div id="dice">
+          <img src="./Resources/img/icon-dice.svg" alt="dice icon" />
+        </div>
+      </div>
+    </main>
+    <footer>
+      <div class="attribution">
+        Challenge by
+        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+          >Frontend Mentor</a
+        >. Coded by <a href="#">Akshay V30</a>.
+      </div>
+    </footer>
+    <script src="./Resources/script/script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,112 @@
+:root {
+  --primary-color--1: hsl(193, 38%, 86%);
+  --primary-color--2: hsl(150, 100%, 66%);
+  --neutral-color--1: hsl(217, 19%, 38%);
+  --neutral-color--2: hsl(217, 19%, 24%);
+  --neutral-color--3: hsl(218, 23%, 16%);
+  --fontSizeQuote: 2.8rem;
+  --fontFamily: "Manrope", sans-serif;
+  --fontWeight: 800; }
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  border: 0;
+  box-sizing: border-box; }
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 62.5%;
+  background: var(--neutral-color--2);
+  font-family: var(--fontFamily); }
+
+main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50rem; }
+
+.card {
+  font-size: 2.4rem;
+  border-radius: 1rem;
+  box-shadow: 1rem 1rem 10rem var(--neutral-color--3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative; }
+  @media (min-width: 720px) {
+    .card {
+      padding: 2rem;
+      max-width: 30ch; } }
+  @media (max-width: 719px) {
+    .card {
+      padding: 1rem;
+      max-width: 24ch; } }
+  .card #dice {
+    position: absolute;
+    bottom: -2rem;
+    background: var(--primary-color--2);
+    border-radius: 50%;
+    width: 4rem;
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: wiggle 2s ease-in-out infinite; }
+    .card #dice:hover {
+      box-shadow: 0rem 0rem 4rem var(--primary-color--2);
+      cursor: pointer;
+      animation: wiggle 0.5s ease-in-out infinite; }
+
+@keyframes wiggle {
+  0%,
+  100% {
+    transform: rotate(0deg); }
+  25% {
+    transform: rotate(10deg); }
+  50% {
+    transform: rotate(-10deg); }
+  75% {
+    transform: rotate(10deg); } }
+  .card #divider {
+    content: " ";
+    height: 1rem;
+    width: 100%;
+    padding: 3rem 0; }
+    @media (min-width: 37.6rem) {
+      .card #divider {
+        background: url(../img/pattern-divider-desktop.svg) no-repeat center center/contain; } }
+    @media (max-width: 37.5rem) {
+      .card #divider {
+        background: url(../img/pattern-divider-mobile.svg) no-repeat center center/contain; } }
+
+.top {
+  text-align: center;
+  color: var(--primary-color--1);
+  font-weight: var(--fontWeight); }
+  .top h4 {
+    padding-bottom: 1.4rem;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    letter-spacing: 0.2rem;
+    color: var(--primary-color--2); }
+
+.bottom {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 4rem 0; }
+
+.attribution {
+  font-size: 11px;
+  text-align: center; }
+  .attribution a {
+    color: #3e52a3; }

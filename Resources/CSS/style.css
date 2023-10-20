@@ -11,9 +11,11 @@
   --background-button-color--1: rgb(106, 190, 205);
   --background-button-color--2: rgb(62, 84, 163);
   --background-button-color--3: rgb(207, 99, 144);
+  --background-button-color--4: rgb(170, 215, 66);
   --background-color: #000;
 
   --text-color: #fff;
+  --text-color--2: #000000;
 }
 
 @media only screen and (max-width: 720px) {
@@ -129,11 +131,12 @@ header > h1 {
   letter-spacing: 0.2rem;
   color: #000;
 
-  border-top-right-radius: 1.2rem;
+  border-top-right-radius: 0.4rem;
   border-top-left-radius: 1.2rem;
   border-bottom-right-radius: 1.2rem;
-  border-bottom-left-radius: 1.2rem;
+  border-bottom-left-radius: 0.4rem;
 }
+
 .newbie {
   background: rgb(106, 190, 205);
 }
@@ -155,7 +158,7 @@ header > h1 {
 
   font-size: 1rem;
 
-  color: var(--text-color);
+  color: var(--text-color--2);
 }
 
 .font-html-color {
@@ -167,6 +170,10 @@ header > h1 {
 
 .font-js-color {
   background: var(--background-button-color--3);
+}
+
+.font-api-color {
+  background: var(--background-button-color--4);
 }
 
 .my-animation-links {
