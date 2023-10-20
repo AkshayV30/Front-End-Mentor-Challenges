@@ -2,9 +2,9 @@
 
 [![pages-build-deployment](https://github.com/AkshayV30/Front-End-Mentor-Challenges/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/AkshayV30/Front-End-Mentor-Challenges/actions/workflows/pages/pages-build-deployment)
 
-| Sl No. | Challenge Name                                                                                                                                                     | Technology Utilized |      |
-| ------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------- | ---  |
-| 01     | [stats-preview-card-component](https://akshayv30.github.io/Front-End-Mentor-Challenges/stats-preview-card-component-main/index.html)                               | HTML, CSS           | ✅   |
+| Sl No. | Challenge Name                                                                                                                                                     | Technology Utilized |     |
+| ------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------- | --- |
+| 01     | [stats-preview-card-component](https://akshayv30.github.io/Front-End-Mentor-Challenges/stats-preview-card-component-main/index.html)                               | HTML, CSS           | ✅  |
 | 02     | [3-column-preview-card-component](https://akshayv30.github.io/Front-End-Mentor-Challenges/3-column-preview-card-component-main/index.html)                         | HTML, CSS           | ✅  |
 | 03     | [testimonials-grid-section](https://akshayv30.github.io/Front-End-Mentor-Challenges/testimonials-grid-section-main/index.html)                                     | HTML, CSS           | ✅  |
 | 04     | [product-preview-card-component](https://akshayv30.github.io/Front-End-Mentor-Challenges/product-preview-card-component-main/index.html)                           | HTML, CSS           | ✅  |
@@ -23,7 +23,7 @@
 | 17     | [ip-address-tracker](https://akshayv30.github.io/Front-End-Mentor-Challenges/ip-address-tracker-master/index.html)                                                 | HTML, CSS, JS, API  |     |
 | 18     | [social-media-dashboard-with-theme-switcher](https://akshayv30.github.io/Front-End-Mentor-Challenges/social-media-dashboard-with-theme-switcher-master/index.html) | HTML, CSS, JS       | ✅  |
 | 19     | [intro-section-with-dropdown-navigation](https://akshayv30.github.io/Front-End-Mentor-Challenges/intro-section-with-dropdown-navigation-main/index.html)           | HTML, CSS, JS       |     |
-| 20     | [loopstudios-landing-page](https://akshayv30.github.io/Front-End-Mentor-Challenges/loopstudios-landing-page-main/index.html)                                       | HTML, CSS, JS       | ✅  |
-| 21     | [advice-generator-app-main](https://akshayv30.github.io/Front-End-Mentor-Challenges/advice-genrator-app-main/index.html)										      | HTML, CSS, JS, API  | ✅  |
-| 22     | [url-shortening-api-master]()																																	  | HTML, CSS, JS, API	|	  |
-| 23     | [rest-countries-api-with-color-theme-switcher-master]()																											  |	HTML, CSS, JS, API	|	  |
+| 20     | [loopstudios-landing-page](https://akshayv30.github.io/Front-End-Mentor-Challenges/tree/master/loopstudios-landing-page-main/index.html)                           | HTML, CSS, JS       | ✅  |
+| 21     | [advice-generator-app-main](https://github.com/AkshayV30/Front-End-Mentor-Challenges/tree/master/advice-generator-app-main/index.html)                             | HTML, CSS, JS, API  | ✅  |
+| 22     | [url-shortening-api-master]()                                                                                                                                      | HTML, CSS, JS, API  |     |
+| 23     | [rest-countries-api-with-color-theme-switcher-master]()                                                                                                            | HTML, CSS, JS, API  |     |
