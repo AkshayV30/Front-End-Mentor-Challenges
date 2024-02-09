@@ -27,3 +27,5 @@
 | 21     | [advice-generator-app](https://akshayv30.github.io/Front-End-Mentor-Challenges/advice-generator-app-main/index.html)                                               | HTML, CSS, JS, API  | ✅  |
 | 22     | [url-shortening-api-master]()                                                                                                                                      | HTML, CSS, JS, API  |     |
 | 23     | [rest-countries-api-with-color-theme-switcher-master]()                                                                                                            | HTML, CSS, JS, API  |     |
+| 24     | [interactive-card-details-form-main]()                                                                                                                             | HTML, CSS, JS       |     |
+| 25     | [todo-app-main]()                                                                                                                                                  | HTML, CSS, JS       |     |
