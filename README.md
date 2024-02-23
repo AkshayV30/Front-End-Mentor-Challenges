@@ -14,7 +14,7 @@
 | 08     | [ecommerce-product-page](https://akshayv30.github.io/Front-End-Mentor-Challenges/ecommerce-product-page-main/index.html)                                           | HTML, CSS, JS       |     |
 | 09     | [room-homepage](https://akshayv30.github.io/Front-End-Mentor-Challenges/room-homepage-master/index.html)                                                           | HTML, CSS, JS       |     |
 | 10     | [easybank-landing-page](https://akshayv30.github.io/Front-End-Mentor-Challenges/easybank-landing-page-master/index.html)                                           | HTML, CSS, JS       |     |
-| 11     | [blogr-landing-page](https://akshayv30.github.io/Front-End-Mentor-Challenges/blogr-landing-page-main/index.html)                                                   | HTML, CSS, JS       |     |
+| 11     | [blogr-landing-page](https://akshayv30.github.io/Front-End-Mentor-Challenges/blogr-landing-page-main/index.html)                                                   | HTML, CSS, JS       | ✅  |
 | 12     | [multi-step-form](https://akshayv30.github.io/Front-End-Mentor-Challenges/multi-step-form-main/index.html)                                                         | HTML, CSS, JS       |     |
 | 13     | [calculator-app](https://akshayv30.github.io/Front-End-Mentor-Challenges/calculator-app-main/index.html)                                                           | HTML, CSS, JS       | ✅  |
 | 14     | [launch-countdown-timer](https://akshayv30.github.io/Front-End-Mentor-Challenges/launch-countdown-timer-main/index.html)                                           | HTML, CSS, JS       | ✅  |
