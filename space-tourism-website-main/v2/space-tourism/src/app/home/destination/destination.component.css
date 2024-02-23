@@ -1,0 +1,112 @@
+.destination-picture {
+  background-image: url(./../../../assets/destination/background-destination-desktop.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  height: 100vh;
+}
+
+.destination-text {
+  grid-row: 2/-1;
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  width: 85%;
+  margin: 0 auto;
+  padding: 60px 90px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 1fr 3fr;
+}
+
+.destination-text .destination-heading {
+  grid-row: -1/1;
+  grid-column: -1/1;
+}
+
+.destination-text #moon,
+.destination-text #mars,
+.destination-text #europa,
+.destination-text #titan {
+  grid-row: 2/-1;
+  grid-column: -1/1;
+  margin: 60px;
+}
+
+.destination-text .mini-nav {
+  grid-row: 2/-1;
+  grid-column: 2/-1;
+  display: flex;
+  flex-direction: column;
+}
+
+.sub-heading {
+  display: flex;
+  gap: 15px;
+  font-family: "Barlow Condensed", sans-serif;
+}
+
+.sub-heading b {
+  font-weight: 300;
+  color: rgba(95, 95, 95, 0.897);
+  font-size: 28px;
+}
+
+.sub-heading h2 {
+  font-weight: 400;
+  color: #d0d6f9;
+  text-transform: uppercase;
+  font-size: 28px;
+}
+
+.mini-nav .mini-nav-heading ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.mini-nav .mini-nav-heading ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 300;
+  text-transform: uppercase;
+}
+
+.mini-nav .mini-text h1 {
+  font-family: "Bellefair", serif;
+  color: #fff;
+  font-size: 150px;
+  padding: 20px 0;
+  font-weight: 400;
+}
+
+.mini-nav .mini-text p {
+  font-family: "Barlow Condensed", sans-serif;
+  color: #d0d6f9;
+  font-size: 14px;
+  max-width: 44ch;
+  padding: 25px 0;
+}
+
+.mini-nav .mini-sub-text {
+  display: flex;
+  text-transform: uppercase;
+}
+
+.mini-nav .mini-sub-text ul {
+  list-style: none;
+  padding: 10px;
+  border-top: solid 1.5px rgba(255, 255, 255, 0.274);
+}
+
+.mini-nav .mini-sub-text ul :nth-child(1) {
+  color: #d0d6f9;
+  font-family: "Barlow Condensed", sans-serif;
+}
+
+.mini-nav .mini-sub-text ul :nth-child(2) {
+  color: #fff;
+  font-family: "Bellefair", serif;
+}/*# sourceMappingURL=destination.component.css.map */

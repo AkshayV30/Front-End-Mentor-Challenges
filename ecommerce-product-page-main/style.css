@@ -22,6 +22,8 @@
   --font-fam: "Kumbh Sans", sans-serif;
   --font-w-1: 400;
   --font-w-2: 700;
+  --max-img-width: 20rem;
+  --max-img-height: 10rem;
 }
 
 html {
@@ -39,72 +41,264 @@ body {
   overflow: hidden;
 }
 
-main {
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   margin: 2rem 0;
+  width: 90%;
+  padding-bottom: 2.8rem;
+  border-bottom: 0.15rem solid var(--neutral--3);
+  position: relative;
 }
-
-nav {
+header nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 4rem;
-  padding-bottom: 2.8rem;
-  border-bottom: 0.15rem solid var(--neutral--3);
 }
-nav #logo {
+header nav #logo {
   height: 2.4rem;
 }
-nav ul {
+header nav ul {
   display: flex;
   gap: 2rem;
 }
-nav ul li {
+header nav ul li {
   list-style: none;
 }
-nav ul a {
+header nav ul a {
   text-decoration: none;
   color: black;
   padding-bottom: 4.1rem;
 }
-nav ul a:hover {
+header nav ul a:hover {
   border-bottom: 0.4rem solid var(--primary-1);
 }
-nav div {
+header .profile-cart {
   display: flex;
   gap: 2rem;
   align-items: center;
 }
-nav div #icon-cart-main {
+header .profile-cart #icon-cart-main {
   height: 2.4rem;
   cursor: pointer;
+  position: relative;
 }
-nav div #profile-img {
+header .profile-cart #profile-img {
   height: 5rem;
   cursor: pointer;
 }
-nav div #profile-img:hover,
-nav div #profile-img:active {
+header .profile-cart #profile-img:hover,
+header .profile-cart #profile-img:active {
   border-radius: 50%;
   border: 0.2rem solid var(--primary-1);
 }
 
-.container-main {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 10rem;
-  margin: 16rem;
-  max-width: 144rem;
-}
-.container-main .container-img {
-  width: 100%;
-}
-.container-main .card-txt-body {
-  width: 100%;
+.cart-visibility {
+  display: none;
 }
 
-.container-img img {
-  height: 5rem;
+.popUp-cart {
+  border-radius: 1rem;
+  box-shadow: 2px 4px 40px grey;
+  z-index: 100;
+  position: absolute;
+  top: 100%;
+  left: 80%;
+}
+.popUp-cart h4 {
+  padding: 2rem;
+  font-weight: var(--font-w-2);
+  border-bottom: 2px solid var(--primary-2);
+}
+.popUp-cart .contents {
+  text-align: center;
+  padding: 2rem;
+}
+.popUp-cart .contents .upper-content {
+  display: flex;
+  align-items: center;
+  padding-bottom: 2rem;
+  gap: 1rem;
+  justify-content: space-around;
+}
+.popUp-cart .contents .upper-content #product-img {
+  border-radius: 1.2rem;
+  width: 6rem;
+  aspect-ratio: 1;
+}
+.popUp-cart .contents .upper-content #remove-item {
+  cursor: pointer;
+  width: 2rem;
+}
+.popUp-cart .contents #checkOut {
+  border: none;
+  cursor: pointer;
+  background: var(--primary-1);
+  padding: 1.2rem;
+  width: 100%;
+  border-radius: 1.2rem;
+  color: white;
+  font-weight: var(--font-w-2);
+}
+
+.notification {
+  position: relative;
+  display: inline-block;
+}
+.notification #notification-badge {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  padding: 2.5px 5px;
+  border-radius: 5px;
+  background: var(--primary-1);
+  color: #fff;
+  font-size: 10px;
+}
+
+main {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 10rem;
+}
+.container-gallery {
+  display: flex;
+  margin: 1rem auto;
+  position: relative;
+  max-width: 50rem;
+  padding-top: 50rem;
+}
+@media screen and (min-width: var(--max-img-width)) {
+  .container-gallery {
+    padding-top: var(--max-img-height);
+  }
+}
+
+.gallery-item .gallery-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 1rem;
+  max-width: 100%;
+  vertical-align: top;
+  box-shadow: 0px 3px 7px 0px rgba(0, 0, 0, 0.13), 2px 0px 2px -2px rgba(0, 0, 0, 0.16);
+}
+.gallery-item .gallery-selector {
+  position: absolute;
+  opacity: 0;
+  visibility: hidden;
+}
+.gallery-item .gallery-selector:checked + .gallery-img {
+  opacity: 1;
+}
+.gallery-item .gallery-selector:checked ~ .gallery-thumb > img {
+  opacity: 0.5;
+}
+.gallery-item .gallery-selector:checked ~ .gallery-thumb {
+  border: 4px solid var(--primary-1);
+  border-radius: 1rem;
+  vertical-align: middle;
+}
+.gallery-item .gallery-thumb {
+  padding-top: 0.6rem;
+  margin: 0.6rem;
+  display: block;
+  cursor: pointer;
+}
+.gallery-item .gallery-thumb img {
+  max-width: 100%;
+  vertical-align: middle;
+  border-radius: 1rem;
+}
+
+.lightbox {
+  background: var(--neutral--6);
+  opacity: 0.85;
+  width: 100%;
+  height: 100%;
+  z-index: 110;
+  position: fixed;
+}
+
+.lightbox-container {
+  display: flex;
+  position: relative;
+}
+.lightbox-container button {
+  border: none;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.lightbox-container .close-btn {
+  background: none;
+  top: 0;
+  right: 0;
+  padding: 4rem;
+}
+.lightbox-container .left-btn {
+  padding: 2rem;
+  aspect-ratio: 1;
+  width: 4rem;
+  border-radius: 50%;
+  top: 50%;
+  left: 0;
+}
+.lightbox-container .right-btn {
+  padding: 2rem;
+  aspect-ratio: 1;
+  width: 4rem;
+  border-radius: 50%;
+  top: 50%;
+  right: 0;
+}
+.lightbox-container .lightbox-items {
+  position: relative;
+  max-width: 10rem;
+  padding-top: 10rem;
+}
+
+.lightbox-item .lightbox-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 1rem;
+  max-width: 100%;
+  vertical-align: top;
+}
+.lightbox-item .lightbox-selector {
+  position: absolute;
+  opacity: 0;
+  visibility: hidden;
+}
+.lightbox-item .lightbox-selector:checked + .lightbox-img {
+  opacity: 1;
+}
+.lightbox-item .lightbox-selector:checked ~ .lightbox-thumb > img {
+  opacity: 0.5;
+}
+.lightbox-item .lightbox-selector:checked ~ .lightbox-thumb {
+  border: 4px solid var(--primary-1);
+  border-radius: 1rem;
+  vertical-align: middle;
+}
+.lightbox-item .lightbox-thumb {
+  padding-top: 0.6rem;
+  margin: 0.6rem;
+  display: block;
+  cursor: pointer;
+}
+.lightbox-item .lightbox-thumb img {
+  max-width: 100%;
+  vertical-align: middle;
   border-radius: 1rem;
 }
 
@@ -153,7 +347,7 @@ nav div #profile-img:active {
 .card-txt-body .buttons button {
   border: none;
 }
-.card-txt-body .buttons .btn-add {
+.card-txt-body .buttons .btn-add-sub {
   padding: 1rem 2rem;
   margin-right: 1rem;
   background-color: var(--neutral--4);
@@ -162,8 +356,8 @@ nav div #profile-img:active {
   align-items: center;
   gap: 4rem;
 }
-.card-txt-body .buttons .btn-add #icon-minus,
-.card-txt-body .buttons .btn-add #icon-plus {
+.card-txt-body .buttons .btn-add-sub #icon-minus,
+.card-txt-body .buttons .btn-add-sub #icon-plus {
   cursor: pointer;
 }
 .card-txt-body .buttons .btn-cart {

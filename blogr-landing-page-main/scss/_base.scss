@@ -10,7 +10,8 @@
 // -----------------------------------------------------------------
 :root {
   // border-radius
-  --br: 7rem;
+  --br-d: 7rem;
+  --br-m: 10rem;
   //  Primary
 
   --light-CTA-txt: hsl(356, 100%, 66%); // --Light red (CTA text)
@@ -64,37 +65,55 @@ html {
 
 body {
   font-size: 1.6rem; //16px
+
+  display: flex;
+  flex-direction: column;
+
+  overflow-x: hidden;
 }
+
 #logo-blogr {
   height: 3.2rem;
 }
-// -----------------------------------------------------------------
-//          media queries
-// -----------------------------------------------------------------
+
+.material-symbols-outlined {
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 40;
+}
+
 // -----------------------------------------------------------------
 //          main
 // -----------------------------------------------------------------
 //         nav
 // -----------------------------------------------------------------
+
+nav {
+  display: flex;
+
+  align-items: center;
+}
+
+// .nav-left {
+//   display: flex;
+//   align-items: center;
+//   gap: 2rem;
+// }
 .container-section--1 {
-  background: linear-gradient(to bottom, var(--Very-light), var(--Light));
-  border-bottom-left-radius: var(--br);
+  // background-image: url(./../images/desktop/bg-pattern-intro-desktop.svg),
+  //   linear-gradient(to bottom, var(--Very-light), var(--Light));
+  // background-size: 200%, cover;
+  // background-position: 32% 49.5%, center;
+
+  background-repeat: no-repeat;
+  background-blend-mode: normal, initial;
+
   font-family: var(--font-fam-a);
 
-  .section-1-body {
-    height: 35vh;
-    width: 100%;
+  min-width: 100%;
 
-    background-image: url(./images/bg-pattern-intro-desktop.svg);
-    background-position: 32% 49.5%;
-    background-repeat: no-repeat;
-    background-size: 200%;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    gap: 6rem;
-  }
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  gap: 6rem;
 }
 
 .main-header-txt {
@@ -104,9 +123,87 @@ body {
   color: white;
   gap: 2rem;
 }
+
+// -----------------------------------------------------------------
+//           DropDowns
+// -----------------------------------------------------------------
+.dropDowns {
+  // display: flex;
+  gap: 1rem;
+  padding: 1.2rem;
+
+  .dropDown {
+    position: relative;
+  }
+
+  .dropDown-position-0,
+  .dropDown-position-1,
+  .dropDown-position-2 {
+    position: absolute;
+    top: 4rem;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .optionsToSelect {
+    display: flex;
+    justify-content: space-between;
+    gap: 0.2rem;
+    padding: 0.8rem;
+    border-radius: 0.8rem;
+    color: var(--txt);
+  }
+
+  .mySelection {
+    font-size: 1.8rem;
+    cursor: pointer;
+  }
+  .mySelection:hover {
+    text-decoration: underline;
+  }
+
+  // .arrow {
+  //   width: 3rem;
+  //   height: 2rem;
+  // }
+
+  // .arrow-down {
+  //   background: url(./images/arrow_drop_down.svg) no-repeat right;
+  // }
+  // .arrow-up {
+  //   background: url(./images/arrow_drop_up.svg) no-repeat right;
+  // }
+
+  .dropDown-options {
+    display: none;
+    // z-index: 1;
+
+    list-style: none;
+    font-weight: var(--font-w-a-1);
+
+    // background-color: #fff;
+    // border-radius: 5px;
+    // box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.4);
+
+    li {
+      text-align: center;
+      padding: 1rem;
+      width: 100%;
+      cursor: pointer;
+    }
+  }
+  .dropDown-options-open {
+    display: flex;
+    flex-direction: column;
+  }
+  .activeSelection {
+    font-weight: var(--font-w-b-3);
+  }
+}
 // -----------------------------------------------------------------
 //           Buttons
 // -----------------------------------------------------------------
+
 .buttons {
   button {
     font-family: var(--font-fam-b);
@@ -157,30 +254,14 @@ body {
   }
 }
 
-nav {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-
-  select {
-    font-family: var(--font-fam-b);
-    background: transparent;
-    color: rgb(255, 255, 255);
-    border: none;
-
-    // width: 30%;
-    padding: 1em;
-  }
-}
-
 // -----------------------------------------------------------------
 //        section--2
 // -----------------------------------------------------------------
 .container-section--2 {
-  height: 100vh;
-  overflow: hidden;
-  padding: 20rem;
+  min-height: 100vh;
+
   font-family: var(--font-fam-a);
+
   h1 {
     text-align: center;
     padding-bottom: 10rem;
@@ -191,19 +272,14 @@ nav {
 
 .section-2-body {
   display: flex;
-
-  align-items: center;
-  justify-content: flex-start;
+  // height: 100vh;
+  // align-items: center;
+  // justify-content: flex-start;
+  z-index: -1;
 
   position: relative;
 
-  img {
-    height: 80vh;
-    position: absolute;
-    right: -43rem;
-  }
-
-  div {
+  .section-2-text {
     h2 {
       padding: 2rem 0;
       font-weight: var(--font-w-a-2);
@@ -211,7 +287,7 @@ nav {
     }
 
     p {
-      width: 50ch;
+      // width: 50ch;
       line-height: 1.25;
       padding-bottom: 2rem;
       font-weight: var(--font-w-a-1);
@@ -223,14 +299,22 @@ nav {
 //        section--3
 // -----------------------------------------------------------------
 .container-section--3 {
-  background: url(./images/bg-pattern-circles.svg) no-repeat -25% 90%,
+  z-index: -1;
+
+  background: url(./../images/bg-pattern-circles.svg) no-repeat,
     linear-gradient(
       to bottom right,
       var(--Very-dark),
       var(--Very-dark-desaturated)
     );
 
-  border-radius: 0 var(--br) 0 var(--br);
+  // background-size: 90%, cover;
+  // background-position: -210% 80%, center;
+
+  background-repeat: no-repeat;
+  background-blend-mode: normal, initial;
+
+  // border-radius: 0 var(--br-d) 0 var(--br-d);
 
   font-family: var(--font-fam-a);
   height: 47.5vh;
@@ -241,6 +325,7 @@ nav {
 
   img {
     height: 65rem;
+    // box-shadow: 2px 4px 16px rgba(0, 0, 0, 0.3);
   }
   div {
     color: white;
@@ -262,6 +347,8 @@ nav {
 //        section--4
 // -----------------------------------------------------------------
 .container-section--4 {
+  z-index: -1;
+
   height: 100vh;
   padding: 20rem;
   font-family: var(--font-fam-a);
@@ -273,12 +360,12 @@ nav {
 
   position: relative;
 
-  img {
-    height: 65vh;
+  // img {
+  //   height: 65vh;
 
-    position: absolute;
-    left: -23rem;
-  }
+  //   position: absolute;
+  //   left: -23rem;
+  // }
 
   div {
     h2 {
@@ -305,7 +392,7 @@ footer {
   background: var(--footer-background);
   color: var(--footer-text);
 
-  border-top-right-radius: var(--br);
+  border-top-right-radius: var(--br-d);
   padding-top: 5rem;
   font-family: var(--font-fam-a);
 

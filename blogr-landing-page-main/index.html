@@ -15,76 +15,107 @@
     <title>Frontend Mentor | [Blogr]</title>
 
     <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-    <link rel="stylesheet" href="style.css" />
-    <script type="module" src="./app.js"></script>
+    <link rel="stylesheet" href="./css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
 
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,300;0,500;0,600;1,300;1,500;1,600&family=Ubuntu:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap");
     </style>
   </head>
+
   <body>
     <main>
       <div class="container-section--1">
-        <div class="section-1-body">
-          <nav>
+        <nav>
+          <div class="nav-left">
             <img id="logo-blogr" src="./images/logo.svg" alt="Blogr logo" />
 
-            <div>
-              <select>
-                <option value="product">Product</option>
-                <option value="overview">Overview</option>
-                <option value="pricing">Pricing</option>
-                <option value="marketplace">Marketplace</option>
-                <option value="features">Features</option>
-                <option value="integrations">Integrations</option>
-              </select>
+            <div class="dropDowns">
+              <div class="dropDown drop-0">
+                <div class="optionsToSelect">
+                  <span class="mySelection">Product</span>
+                  <!-- <span class="arrow arrow-down"></span> -->
+                  <span class="material-symbols-outlined"> expand_more </span>
+                </div>
+                <ol class="dropDown-options dropDown-position-0">
+                  <li>Overview</li>
+                  <li>Pricing</li>
+                  <li>Marketplace</li>
+                  <li>Features</li>
+                  <li class="activeSelection">Integrations</li>
+                </ol>
+              </div>
 
-              <select>
-                <option value="company">Company</option>
-                <option value="about">About</option>
-                <option value="team">Team</option>
-                <option value="blog">Blog</option>
-                <option value="careers">Careers</option>
-              </select>
+              <div class="dropDown drop-1">
+                <div class="optionsToSelect">
+                  <span class="mySelection">Company</span>
+                  <!-- <span class="arrow arrow-down"></span> -->
+                  <span class="material-symbols-outlined"> expand_more </span>
+                </div>
+                <ol class="dropDown-options dropDown-position-1">
+                  <li>About</li>
+                  <li>Team</li>
+                  <li>Blog</li>
+                  <li class="activeSelection">Careers</li>
+                </ol>
+              </div>
 
-              <select>
-                <option value="connect">Connect</option>
-                <option value="contact">Contact</option>
-                <option value="newsletter">Newsletter</option>
-                <option value="linkedin">LinkedIn</option>
-              </select>
+              <div class="dropDown drop-2">
+                <div class="optionsToSelect">
+                  <span class="mySelection">Connect</span>
+                  <!-- <span class="arrow arrow-down"></span> -->
+                  <span class="material-symbols-outlined"> expand_more </span>
+                </div>
+                <ol class="dropDown-options dropDown-position-2">
+                  <li>Contact</li>
+                  <li>Newsletter</li>
+                  <li class="activeSelection">LinkedIn</li>
+                </ol>
+              </div>
             </div>
 
-            <div class="buttons">
-              <button class="btn-deactive" type="button">
-                <a href="#">Login</a>
-              </button>
-
-              <button class="btn-active" type="button">
-                <a href="#">Sign Up</a>
-              </button>
+            <div class="hamburger-button">
+              <input type="checkbox" class="nav-checkbox" id="nav-toggle" />
+              <label for="nav-toggle" class="nav-button">
+                <span class="nav-icon"> &nbsp;</span>
+              </label>
+              <div class="nav-background"></div>
             </div>
-          </nav>
+          </div>
 
-          <div class="main-header-txt">
-            <h1>A modern publishing platform</h1>
-            <p>Grow your audience and build your online brand</p>
-            <div class="buttons">
-              <button class="btn-active" type="button">
-                <a href="#">Start for Free</a>
-              </button>
-              <button class="btn-outline" type="button">
-                <a href="#">Learn More</a>
-              </button>
-            </div>
+          <div class="buttons button-right">
+            <button class="btn-deactive" type="button">
+              <a href="#">Login</a>
+            </button>
+
+            <button class="btn-active" type="button">
+              <a href="#">Sign Up</a>
+            </button>
+          </div>
+        </nav>
+
+        <div class="main-header-txt">
+          <h1>A modern publishing platform</h1>
+          <p>Grow your audience and build your online brand</p>
+          <div class="buttons">
+            <button class="btn-active" type="button">
+              <a href="#">Start for Free</a>
+            </button>
+            <button class="btn-outline" type="button">
+              <a href="#">Learn More</a>
+            </button>
           </div>
         </div>
       </div>
 
       <div class="container-section--2">
         <h1>Designed for the future</h1>
+
         <div class="section-2-body">
-          <div>
+          <div class="section-2-text">
             <h2>Introducing an extensible editor</h2>
             <p>
               Blogr features an exceedingly intuitive interface which lets you
@@ -103,7 +134,16 @@
               you’re in full control.
             </p>
           </div>
-          <img src="./images/illustration-editor-desktop.svg" alt="" />
+          <picture class="picture-container">
+            <img
+              class="desktop-img-1"
+              src="./images/desktop/illustration-editor-desktop.svg"
+              alt="" />
+            <img
+              class="mobile-img-1"
+              src="./images/mobile/illustration-editor-mobile.svg"
+              alt=""
+          /></picture>
         </div>
       </div>
 
@@ -121,7 +161,19 @@
       </div>
 
       <div class="container-section--4">
-        <img src="./images/illustration-laptop-desktop.svg" alt="" />
+        <picture class="picture-container-2">
+          <img
+            class="desktop-img-2"
+            src="./images/desktop/illustration-laptop-desktop.svg"
+            alt=""
+          />
+
+          <img
+            class="mobile-img-2"
+            src="./images/mobile/illustration-laptop-mobile.svg"
+            alt=""
+          />
+        </picture>
         <div>
           <h2>Free, open, simple</h2>
           <p>
@@ -179,8 +231,9 @@
         Challenge by
         <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
           >Frontend Mentor</a
-        >. Coded by <a href="#">Your Name Here</a>.
+        >. Coded by <a href="#">Akshay V30</a>.
       </div>
     </footer>
+    <script type="module" src="./js/script.js"></script>
   </body>
 </html>

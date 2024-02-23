@@ -1,0 +1,388 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --neutral-1: hsl(0, 0%, 98%);
+  --neutral-2: hsl(0, 0%, 41%);
+  --neutral-3: hsl(0, 0%, 8%);
+  --font-fam: "Epilogue", sans-serif;
+  --font-w-1: 500;
+  --font-w-2: 700;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.8rem;
+  font-family: var(--font-fam);
+  font-weight: var(--font-w-1);
+  overflow: hidden;
+}
+
+.hidden {
+  display: none;
+}
+
+.dropdown-main .dropdown--1,
+.dropdown-main .dropdown--2 {
+  position: absolute;
+  top: 8rem;
+  list-style: none;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0.4rem 0.4rem 4rem hsla(0, 0%, 41%, 0.4);
+}
+.dropdown-main .dropdown--1 {
+  left: 14rem;
+}
+.dropdown-main .dropdown--1 li {
+  padding: 0.6rem;
+}
+.dropdown-main .dropdown--1 li img {
+  height: 1.4rem;
+}
+.dropdown-main .dropdown--1 li a {
+  text-decoration: none;
+  color: var(--neutral-3);
+  font-size: 1.4rem;
+  margin-left: 1rem;
+}
+.dropdown-main .dropdown--2 {
+  left: 32rem;
+}
+.dropdown-main .dropdown--2 li {
+  color: var(--neutral-3);
+  font-size: 1.4rem;
+  padding-bottom: 1.2rem;
+  cursor: pointer;
+}
+
+.dropdown-heading {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.dropdown-heading a {
+  text-decoration: none;
+  color: var(--neutral-3);
+  font-size: 1.4rem;
+}
+.dropdown-heading picture {
+  padding-left: 1rem;
+}
+.dropdown-heading picture .arrow {
+  height: 1rem;
+  display: none;
+  cursor: pointer;
+}
+.dropdown-heading picture .active {
+  display: block;
+}
+
+header {
+  margin-top: 4rem;
+  padding: 0 8rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+header .btn-container {
+  display: flex;
+  gap: 2rem;
+}
+header .btn-container #btn-null,
+header .btn-container #btn-full--white {
+  border: none;
+  padding: 1rem 1.6rem;
+  border-radius: 0.8rem;
+  background-color: var(--neutral-1);
+  font-size: 1.4rem;
+}
+header .btn-container #btn-null a,
+header .btn-container #btn-full--white a {
+  text-decoration: none;
+  color: var(--neutral-3);
+}
+header .btn-container #btn-full--white {
+  border: 0.2rem solid var(--neutral-2);
+}
+header .btn-container #btn-full--white:hover {
+  border: 0.2rem solid var(--neutral-3);
+}
+
+.container--nav {
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+}
+.container--nav .container-menu {
+  display: flex;
+  gap: 4rem;
+  align-items: center;
+}
+.container--nav .container-menu #link-null {
+  color: var(--neutral-2);
+}
+.container--nav .container-menu span {
+  font-size: 1.4rem;
+}
+.container--nav .container-menu span a {
+  text-decoration: none;
+  color: var(--neutral-3);
+}
+
+main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+main .txt {
+  height: 65rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+main .txt h1 {
+  margin-top: 8rem;
+  font-size: 5.4rem;
+  font-weight: var(--font-w-2);
+  letter-spacing: 0.6rem;
+  width: 100%;
+}
+main .txt h1 br {
+  display: block;
+}
+main .txt p {
+  letter-spacing: 0.05rem;
+  width: 46ch;
+  line-height: 1.5;
+}
+main .txt .btn-full--black {
+  border: none;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 1.2rem;
+  border-radius: 0.8rem;
+  background: var(--neutral-3);
+}
+main .txt .btn-full--black a {
+  color: var(--neutral-1);
+  font-size: 2rem;
+  text-decoration: none;
+}
+main .txt .btn-full--black:hover {
+  border: 0.2rem solid var(--neutral-3);
+  background: var(--neutral-1);
+}
+main .txt .btn-full--black:hover a {
+  color: var(--neutral-3);
+}
+main .txt .clients-logos {
+  display: flex;
+  gap: 1.6rem;
+}
+main .txt .clients-logos img {
+  height: 2.4rem;
+}
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+@media (min-width: 1400px) {
+  main {
+    margin: 8rem 18rem 14rem 20rem;
+  }
+}
+@media (min-width: 1200px) and (max-width: 1399px) {
+  main {
+    margin: 8rem 12rem 14rem 12rem;
+  }
+}
+@media (min-width: 1080px) and (max-width: 1199px) {
+  main {
+    margin: 8rem 7rem 14rem 7rem;
+  }
+}
+@media (min-width: 800px) and (max-width: 1079px) {
+  main {
+    margin: 8rem 5rem 14rem 5rem;
+  }
+  main .txt h1 {
+    font-size: 4.8rem;
+    letter-spacing: 0.4rem;
+  }
+  main .txt p {
+    letter-spacing: 0rem;
+    width: 40ch;
+  }
+  main .txt .clients-logos {
+    gap: 1rem;
+  }
+  main .txt .clients-logos img {
+    height: 1.6rem;
+  }
+}
+@media (min-width: 720px) {
+  .hero-img #hero-img--desktop {
+    height: 60rem;
+    aspect-ratio: 0.75;
+  }
+  .hero-img #hero-img--mobile {
+    display: none;
+  }
+  .nav-button,
+  .nav-background,
+  .nav-checkbox {
+    display: none;
+  }
+}
+@media (max-width: 719px) {
+  body {
+    overflow-y: visible;
+  }
+  header {
+    background-color: rgba(20, 182, 20, 0.226);
+    padding: 0 2rem;
+  }
+  header .container--nav {
+    flex-direction: column;
+  }
+  header .container--nav .nav-checkbox {
+    display: none;
+  }
+  header .container--nav .nav-checkbox:checked ~ .nav-background {
+    transform: scale(10);
+  }
+  header .container--nav .nav-checkbox:checked ~ .container-nav {
+    width: 100%;
+    opacity: 1;
+  }
+  header .container--nav .nav-checkbox:checked ~ .nav-background {
+    opacity: 1;
+    height: 100vh;
+  }
+  header .container--nav .nav-checkbox:checked + .nav-button .nav-icon {
+    background: transparent;
+  }
+  header .container--nav .nav-checkbox:checked + .nav-button .nav-icon::before {
+    transform: rotate(45deg);
+    top: 0;
+  }
+  header .container--nav .nav-checkbox:checked + .nav-button .nav-icon::after {
+    top: 0;
+    transform: rotate(-45deg);
+  }
+  header .container--nav .nav-button {
+    height: 8rem;
+    aspect-ratio: 1;
+    position: fixed;
+    top: 2rem;
+    right: 2rem;
+    z-index: 100;
+    text-align: center;
+    cursor: pointer;
+  }
+  header .container--nav .nav-icon {
+    position: relative;
+    margin-top: 3.25rem;
+  }
+  header .container--nav .nav-icon, header .container--nav .nav-icon::before, header .container--nav .nav-icon::after {
+    width: 3rem;
+    height: 0.2rem;
+    background-color: var(--neutral-2);
+    display: inline-block;
+  }
+  header .container--nav .nav-icon::before, header .container--nav .nav-icon::after {
+    content: " ";
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: all 0.2s;
+  }
+  header .container--nav .nav-icon::before {
+    top: -1rem;
+  }
+  header .container--nav .nav-icon::after {
+    top: 1rem;
+  }
+  header .container--nav .nav-background {
+    min-width: 5rem;
+    background: var(--neutral-1);
+    position: fixed;
+    top: 2.5rem;
+    right: 3rem;
+    z-index: 25;
+  }
+  header .container--nav .container-menu {
+    height: 100vh;
+    flex-direction: column;
+    position: fixed;
+    top: 10rem;
+    right: 20rem;
+    z-index: 50;
+    background-color: red;
+  }
+  header .container--nav .container-menu .dropdown-main {
+    z-index: 52;
+  }
+  header .container--nav .container-menu .dropdown-main .dropdown--1 {
+    top: 2rem;
+    right: 2rem;
+  }
+  header .container--nav .container-menu .dropdown-main .dropdown--2 {
+    top: 4rem;
+    right: 2rem;
+  }
+  header .btn-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  header .btn-container #btn-full--white {
+    width: 100%;
+  }
+  main .txt {
+    text-align: center;
+    padding: 2rem;
+  }
+  main .txt h1 br {
+    display: none;
+  }
+  main .txt p {
+    letter-spacing: 0rem;
+    width: 100%;
+  }
+  main .txt .btn-full--black {
+    margin: 0 auto;
+  }
+  main .txt .clients-logos {
+    gap: 2rem;
+    justify-content: center;
+  }
+  main .txt .clients-logos img {
+    height: 3.2rem;
+  }
+}
+@media (min-width: 375px) and (max-width: 719px) {
+  main {
+    margin: 8rem 0rem 14rem 0rem;
+    flex-direction: column-reverse;
+  }
+  main .hero-img #hero-img--mobile {
+    height: 53rem;
+  }
+  main .hero-img #hero-img--desktop {
+    display: none;
+  }
+}/*# sourceMappingURL=main.css.map */

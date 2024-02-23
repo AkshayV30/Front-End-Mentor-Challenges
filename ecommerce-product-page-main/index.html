@@ -22,7 +22,7 @@
     </style>
   </head>
   <body>
-    <main>
+    <header>
       <nav>
         <img id="logo" src="./images/logo.svg" alt="" />
         <ul>
@@ -32,74 +32,279 @@
           <li><a href="#">About</a></li>
           <li><a href="#">Contact</a></li>
         </ul>
-        <div>
+      </nav>
+
+      <div class="profile-cart">
+        <div class="notification">
           <img
             id="icon-cart-main"
             src="./images/icon-cart.svg"
             alt="icon cart"
           />
-          <img id="profile-img" src="./images/image-avatar.png" alt="avatar" />
+          <span id="notification-badge"> 0 </span>
         </div>
-      </nav>
+        <img id="profile-img" src="./images/image-avatar.png" alt="avatar" />
+      </div>
 
-      <div class="container-main">
-        <div class="container-img">
-          <div class="container-img--main">
-            <img src="./images/image-product-1.jpg" alt="product-1" />
-            <img src="./images/image-product-2.jpg" alt="product-2" />
-            <img src="./images/image-product-3.jpg" alt="product-3" />
-            <img src="./images/image-product-4.jpg" alt="product-4" />
+      <div class="popUp-cart cart-visibility">
+        <h4>Cart</h4>
+
+        <div class="contents">
+          <div class="upper-content">
+            <img
+              id="product-img"
+              src="./images/image-product-1-thumbnail.jpg"
+              alt="product1"
+            />
+            <span id="item-name">
+              Fall Limited Editon Sneakers $125 X $500
+            </span>
+            <img id="remove-item" src="./images/icon-delete.svg" alt="" />
           </div>
-          <!--
-        <div class="container-img--thumbnail">
-          <img src="./images/image-product-1-thumbnail.jpg" alt="" />
-          <img src="./images/image-product-2-thumbnail.jpg" alt="" />
-          <img src="./images/image-product-3-thumbnail.jpg" alt="" />
-          <img src="./images/image-product-4-thumbnail.jpg" alt="" />
-          <img src="./images/image-product-5-thumbnail.jpg" alt="" /></div> -->
+
+          <button id="checkOut">CheckOut</button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <div class="container-gallery">
+        <!-- // item--1 -->
+        <div class="gallery-item">
+          <input
+            type="radio"
+            id="img-1"
+            name="gallery"
+            class="gallery-selector"
+          />
+
+          <img
+            class="gallery-img"
+            src="./images/image-product-1.jpg"
+            alt="product-1"
+          />
+
+          <label for="img-1" class="gallery-thumb">
+            <img
+              src="./images/image-product-1-thumbnail.jpg"
+              alt="product-1-thumb"
+            />
+          </label>
         </div>
 
-        <div class="card-txt-body">
-          <div class="txt">
-            <h4>Sneaker Company</h4>
-            <h1>Fall Limited Edition Sneakers</h1>
-            <p>
-              These low-profile sneakers are your perfect casual wear companion.
-              Featuring a durable rubber outer sole, they’ll withstand
-              everything the weather can offer.
-            </p>
+        <!-- // item--2 -->
+        <div class="gallery-item">
+          <input
+            type="radio"
+            id="img-2"
+            name="gallery"
+            checked
+            class="gallery-selector"
+          />
+          <img
+            class="gallery-img"
+            src="./images/image-product-2.jpg"
+            alt="product-2"
+          />
 
-            <div class="price">
-              <div>
-                <span id="price-bold"> $125.00</span>
-                <span id="price-discount"> 50%</span>
-              </div>
-              <p id="price-strike"><s> $250.00 </s></p>
+          <label for="img-2" class="gallery-thumb">
+            <img
+              src="./images/image-product-2-thumbnail.jpg"
+              alt="product-2-thumb"
+            />
+          </label>
+        </div>
+
+        <!-- // item--3 -->
+        <div class="gallery-item">
+          <input
+            type="radio"
+            id="img-3"
+            name="gallery"
+            class="gallery-selector"
+          />
+          <img
+            class="gallery-img"
+            src="./images/image-product-1.jpg"
+            alt="product-3"
+          />
+
+          <label for="img-3" class="gallery-thumb">
+            <img
+              src="./images/image-product-3-thumbnail.jpg"
+              alt="product-3-thumb"
+            />
+          </label>
+        </div>
+        <!-- // item--4 -->
+        <div class="gallery-item">
+          <input
+            type="radio"
+            id="img-4"
+            name="gallery"
+            class="gallery-selector"
+          />
+          <img
+            class="gallery-img"
+            src="./images/image-product-4.jpg"
+            alt="product-4"
+          />
+
+          <label for="img-4" class="gallery-thumb">
+            <img
+              src="./images/image-product-4-thumbnail.jpg"
+              alt="product-4-thumb"
+            />
+          </label>
+        </div>
+      </div>
+
+      <div class="card-txt-body">
+        <div class="txt">
+          <h4>Sneaker Company</h4>
+          <h1>Fall Limited Edition Sneakers</h1>
+          <p>
+            These low-profile sneakers are your perfect casual wear companion.
+            Featuring a durable rubber outer sole, they’ll withstand everything
+            the weather can offer.
+          </p>
+
+          <div class="price">
+            <div>
+              <span id="price-bold"> $125.00</span>
+              <span id="price-discount"> 50%</span>
             </div>
+            <p id="price-strike"><s> $250.00 </s></p>
           </div>
+        </div>
 
-          <div class="buttons">
-            <button class="btn-add" type="button">
-              <img
-                id="icon-minus"
-                src="./images/icon-minus.svg"
-                alt="minus symbol"
-              />
-              <span>0</span>
-              <img
-                id="icon-plus"
-                src="./images/icon-plus.svg"
-                alt="plus symbol"
-              />
-            </button>
-            <button class="btn-cart" type="button">
-              <img id="icon-cart" src="./images/icon-cart.svg" alt="" />
-              <span>Add to cart</span>
-            </button>
-          </div>
+        <audio id="alertSound" src="./audio/wrong-answer-126515.mp3"></audio>
+        <div class="buttons">
+          <button class="btn-add-sub" type="button">
+            <img
+              id="icon-minus"
+              src="./images/icon-minus.svg"
+              alt="minus symbol"
+            />
+            <span id="count">0</span>
+            <img
+              id="icon-plus"
+              src="./images/icon-plus.svg"
+              alt="plus symbol"
+            />
+          </button>
+          <button class="btn-cart" type="button">
+            <img id="icon-cart" src="./images/icon-cart.svg" alt="" />
+            <span>Add to cart</span>
+          </button>
         </div>
       </div>
     </main>
+    <div class="lightbox lightbox-visibility">
+      <div class="lightbox-container">
+        <button class="close-btn">
+          <img src="./images/icon-close.svg" alt="close-btn" />
+        </button>
+
+        <button class="left-btn">
+          <img src="./images/icon-previous.svg" alt="previous icon" />
+        </button>
+
+        <button class="right-btn">
+          <img src="./images/icon-next.svg" alt="forward icon" />
+        </button>
+
+        <div class="lightbox-items">
+          <div class="lightbox-item">
+            <input
+              type="radio"
+              id="light-img-1"
+              name="lightbox"
+              class="lightbox-selector"
+            />
+
+            <img
+              class="lightbox-img"
+              src="./images/image-product-1.jpg"
+              alt="product-1"
+            />
+
+            <label for="img-1" class="lightbox-thumb">
+              <img
+                src="./images/image-product-1-thumbnail.jpg"
+                alt="product-1-thumb"
+              />
+            </label>
+          </div>
+
+          <!-- // item--2 -->
+          <div class="lightbox-item">
+            <input
+              type="radio"
+              id="light-img-2"
+              name="lightbox"
+              checked
+              class="lightbox-selector"
+            />
+            <img
+              class="lightbox-img"
+              src="./images/image-product-2.jpg"
+              alt="product-2"
+            />
+
+            <label for="img-2" class="lightbox-thumb">
+              <img
+                src="./images/image-product-2-thumbnail.jpg"
+                alt="product-2-thumb"
+              />
+            </label>
+          </div>
+
+          <!-- // item--3 -->
+          <div class="lightbox-item">
+            <input
+              type="radio"
+              id="light-img-3"
+              name="lightbox"
+              class="lightbox-selector"
+            />
+            <img
+              class="lightbox-img"
+              src="./images/image-product-1.jpg"
+              alt="product-3"
+            />
+
+            <label for="img-3" class="lightbox-thumb">
+              <img
+                src="./images/image-product-3-thumbnail.jpg"
+                alt="product-3-thumb"
+              />
+            </label>
+          </div>
+          <!-- // item--4 -->
+          <div class="lightbox-item">
+            <input
+              type="radio"
+              id="light-img-4"
+              name="lightbox"
+              class="lightbox-selector"
+            />
+            <img
+              class="lightbox-img"
+              src="./images/image-product-4.jpg"
+              alt="product-4"
+            />
+
+            <label for="img-4" class="lightbox-thumb">
+              <img
+                src="./images/image-product-4-thumbnail.jpg"
+                alt="product-4-thumb"
+              />
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <footer>
       <div class="attribution">

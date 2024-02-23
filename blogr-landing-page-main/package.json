@@ -1,0 +1,14 @@
+{
+  "name": "blogr-landing-page-main",
+  "version": "1.0.0",
+  "description": "This is a solution to the [Blogr landing page challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/blogr-landing-page-EX2RLAApP). Frontend Mentor challenges help you improve your coding skills by building realistic projects.",
+  "scripts": {
+    "watch:sass": "node-sass scss/main.scss css/style.css -w",
+    "compile:sass": "node-sass scss/main.scss css/style.css"
+  },
+  "author": "AkshayV30",
+  "license": "ISC",
+  "devDependencies": {
+    "node-sass": "^9.0.0"
+  }
+}
