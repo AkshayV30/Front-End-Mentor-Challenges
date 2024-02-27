@@ -1,22 +1,22 @@
 # Frontend Mentor - Intro section with dropdown navigation solution
 
-This is a solution to the [Intro section with dropdown navigation challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/intro-section-with-dropdown-navigation-ryaPetHE5). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
+This is a solution to the [Intro section with dropdown navigation challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/intro-section-with-dropdown-navigation-ryaPetHE5). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
 
 ## Table of contents
 
-- [Overview](#overview)
-  - [The challenge](#the-challenge)
-  - [Screenshot](#screenshot)
-  - [Links](#links)
-- [My process](#my-process)
-  - [Built with](#built-with)
-  - [What I learned](#what-i-learned)
-  - [Continued development](#continued-development)
-  - [Useful resources](#useful-resources)
-- [Author](#author)
-- [Acknowledgments](#acknowledgments)
-
-**Note: Delete this note and update the table of contents based on what sections you keep.**
+- [Frontend Mentor - Intro section with dropdown navigation solution](#frontend-mentor---intro-section-with-dropdown-navigation-solution)
+  - [Table of contents](#table-of-contents)
+  - [Overview](#overview)
+    - [The challenge](#the-challenge)
+    - [Screenshot](#screenshot)
+    - [Links](#links)
+  - [My process](#my-process)
+    - [Built with](#built-with)
+    - [What I learned](#what-i-learned)
+    - [Continued development](#continued-development)
+    - [Useful resources](#useful-resources)
+  - [Author](#author)
+  - [Acknowledgments](#acknowledgments)
 
 ## Overview
 
@@ -30,83 +30,152 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
-
-Add a screenshot of your solution. The easiest way to do this is to use Firefox to view your project, right-click the page and select "Take a Screenshot". You can choose either a full-height screenshot or a cropped one based on how long the page is. If it's very long, it might be best to crop it.
-
-Alternatively, you can use a tool like [FireShot](https://getfireshot.com/) to take the screenshot. FireShot has a free option, so you don't need to purchase it. 
-
-Then crop/optimize/edit your image however you like, add it to your project, and update the file path in the image above.
-
-**Note: Delete this note and the paragraphs above when you add your screenshot. If you prefer not to add a screenshot, feel free to remove this entire section.**
+![Desktop-view-1](./screenshot/Screenshot_desktop-1.jpeg)
+![Desktop-view-2](./screenshot/Screenshot_desktop-2.jpeg)
+![Mobile-view-1](./screenshot/Screenshot_mobile-1.jpeg)
+![Mobile-view-2](./screenshot/Screenshot_mobile-1.jpeg)
+A
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [Solution URL](https://github.com/AkshayV30/Front-End-Mentor-Challenges/tree/master/intro-section-with-dropdown-navigation-main)
+- Live Site URL: [Live site URL](https://akshayv30.github.io/Front-End-Mentor-Challenges/intro-section-with-dropdown-navigation-main/index.html)
 
 ## My process
 
 ### Built with
 
 - Semantic HTML5 markup
-- CSS custom properties
-- Flexbox
+- SCSS custom properties
 - CSS Grid
-- Mobile-first workflow
-- [React](https://reactjs.org/) - JS library
-- [Next.js](https://nextjs.org/) - React framework
-- [Styled Components](https://styled-components.com/) - For styles
-
-**Note: These are just examples. Delete this note and replace the list above with your own choices**
+- Desktop-first workflow
 
 ### What I learned
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
-
-To see how you can add code snippets, see below:
+DropDown code snippets, see below:
 
 ```html
-<h1>Some HTML code I'm proud of</h1>
-```
-```css
-.proud-of-this-css {
-  color: papayawhip;
-}
-```
-```js
-const proudOfThisFunc = () => {
-  console.log('🎉')
-}
+<div class="hamburger-button">
+  <input type="checkbox" class="nav-checkbox" id="nav-toggle" />
+
+  <label for="nav-toggle" class="nav-button">
+    <span class="nav-icon"> &nbsp;</span>
+  </label>
+
+  <div class="nav-background"></div>
+</div>
 ```
 
-If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
+```scss
+.hamburger-button {
+  position: fixed;
+  right: 4rem;
+  z-index: 4;
 
-**Note: Delete this note and the content within this section and replace with your own learnings.**
+  #nav-toggle {
+  }
+  .nav-checkbox {
+    display: none;
+  }
+  .nav-checkbox:checked ~ .nav-background {
+    transform: scale(2);
+    display: block;
+    // opacity: 0.8;
+  }
+  .nav-checkbox:checked + .nav-button .nav-icon {
+    background: transparent;
+  }
+  .nav-checkbox:checked + .nav-button .nav-icon::before {
+    transform: rotate(45deg);
+    top: 0;
+  }
+  .nav-checkbox:checked + .nav-button .nav-icon::after {
+    top: 0;
+    transform: rotate(-45deg);
+  }
+  .nav-button {
+    height: 6rem;
+    aspect-ratio: 1;
+    // border-radius: 50%;
+    text-align: center;
+    cursor: pointer;
+    z-index: 10;
+
+    .nav-icon {
+      position: relative;
+      margin-top: 3.25rem;
+
+      &,
+      &::before,
+      &::after {
+        width: 3rem;
+        height: 0.2rem;
+
+        background: #000000;
+        display: inline-block;
+      }
+
+      &::before,
+      &::after {
+        content: " ";
+
+        position: absolute;
+        left: 0;
+        // bottom: 0;
+        transition: all 0.2s;
+      }
+
+      &::before {
+        top: -1rem;
+      }
+      &::after {
+        top: 1rem;
+      }
+    }
+
+    &:hover .nav-icon::before {
+      top: -1rem;
+    }
+
+    &:hover .nav-icon::after {
+      top: 1rem;
+    }
+  }
+  .nav-background {
+    display: none;
+    z-index: -20;
+    height: 100%;
+    //  width: 8rem;
+    padding: 12rem;
+    //  aspect-ratio: 1 / 2.5;
+
+    border-radius: 0.2rem;
+
+    position: fixed;
+    top: 36rem;
+    right: 0rem;
+    //  transform: translateX(-4rem);
+
+    //
+
+    background: #fff;
+    box-shadow: 2px 4px 16px rgba(0, 0, 0, 0.2);
+
+    transition: transform 0.8s cubic-bezier(0.86, 0, 0.07, 1); //animation
+  }
+}
+```
 
 ### Continued development
 
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
-
-**Note: Delete this note and the content within this section and replace with your own plans for continued development.**
+It can be further optimized for better responsiveness of the website
 
 ### Useful resources
 
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
-
-**Note: Delete this note and replace the list above with resources that helped you during the challenge. These could come in handy for anyone viewing your solution or for yourself when you look back on this project in the future.**
+---
 
 ## Author
 
-- Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-- Twitter - [@yourusername](https://www.twitter.com/yourusername)
-
-**Note: Delete this note and add/remove/edit lines above based on what links you'd like to share.**
+- Frontend Mentor - [@AkshayV30](https://www.frontendmentor.io/profile/AkshayV30)
 
 ## Acknowledgments
-
-This is where you can give a hat tip to anyone who helped you out on this project. Perhaps you worked in a team or got some inspiration from someone else's solution. This is the perfect place to give them some credit.
-
-**Note: Delete this note and edit this section's content as necessary. If you completed this challenge by yourself, feel free to delete this section entirely.**

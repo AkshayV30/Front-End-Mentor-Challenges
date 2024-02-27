@@ -24,32 +24,28 @@
   </head>
   <body>
     <header>
-      <div class="container--nav">
-        <input type="checkbox" class="nav-checkbox" id="nav-toggle" />
+      <div class="container-nav">
+        <div class="hamburger-button">
+          <input type="checkbox" class="nav-checkbox" id="nav-toggle" />
 
-        <label for="nav-toggle" class="nav-button">
-          <span class="nav-icon"> &nbsp;</span>
-        </label>
+          <label for="nav-toggle" class="nav-button">
+            <span class="nav-icon"> &nbsp;</span>
+          </label>
 
-        <div class="nav-background"></div>
+          <div class="nav-background"></div>
+        </div>
 
         <img id="logo" src="./images/logo.svg" alt="logo" />
 
-        <div class="container-menu">
-          <div class="dropdown-main dropdown-main--1">
-            <div class="dropdown-heading dropdown-heading--1">
-              <a href="#">Features</a>
-              <picture>
-                <img class="arrow" src="./images/icon-arrow-up.svg" alt="" />
-                <img
-                  class="arrow active"
-                  src="./images/icon-arrow-down.svg"
-                  alt=""
-                />
-              </picture>
+        <nav class="dropDowns container-nav-main">
+          <div class="dropDown dropDown--1">
+            <div class="dropDown-heading">
+              <span> <a href="#">Features</a></span>
+
+              <span class="arrows arrow-down"></span>
             </div>
 
-            <ul class="dropdown--1 hidden">
+            <ol class="dropDown-options dropDown-option-1">
               <li>
                 <img src="./images/icon-todo.svg" alt="todo" />
                 <a href="#"> Todo List </a>
@@ -66,31 +62,41 @@
                 <img src="./images/icon-planning.svg" alt="Planning icon" />
                 <a href="#">Planning</a>
               </li>
-            </ul>
+            </ol>
           </div>
 
-          <div class="dropdown-main dropdown-main--2">
-            <div class="dropdown-heading dropdown-heading--2">
-              <a href="#">Company</a>
-              <picture>
-                <img class="arrow" src="./images/icon-arrow-up.svg" alt="" />
-                <img
-                  class="arrow active"
-                  src="./images/icon-arrow-down.svg"
-                  alt=""
-                />
-              </picture>
+          <div class="dropDown dropDown--2">
+            <div class="dropDown-heading">
+              <span> <a href="#">Company</a></span>
+
+              <span class="arrows arrow-down"></span>
             </div>
-            <ul class="dropdown--2 hidden">
+
+            <ol class="dropDown-options dropDown-option-2">
               <li>History</li>
               <li>Our Team</li>
               <li>Blog</li>
-            </ul>
+            </ol>
           </div>
 
-          <span id="link-null">Careers</span>
-          <span><a href="#">About</a></span>
-        </div>
+          <div class="dropDown dropDown--3">
+            <div class="dropDown-heading">
+              <span id="link-null">Careers</span>
+            </div>
+
+            <ol class="dropDown-options dropDown-option-3">
+              <!-- <li>--</li> -->
+            </ol>
+          </div>
+          <div class="dropDown dropDown--4">
+            <div class="dropDown-heading">
+              <span><a href="#">About</a></span>
+            </div>
+            <ol class="dropDown-options dropDown-option-4">
+              <!-- <li>--</li> -->
+            </ol>
+          </div>
+        </nav>
       </div>
 
       <div class="btn-container">
@@ -104,11 +110,8 @@
     </header>
 
     <main>
-      <div class="txt">
-        <h1>
-          Make <br />
-          remote work
-        </h1>
+      <div class="main-txt-body">
+        <h1>Make remote work</h1>
 
         <p>
           Get your team in sync, no matter your location. Streamline processes,
@@ -127,21 +130,21 @@
         </div>
       </div>
 
-      <picture class="hero-img">
+      <picture class="hero-img-container">
         <img
-          id="hero-img--desktop"
+          class="hero-img-desktop"
           src="./images/image-hero-desktop.png"
           alt="image-hero-desktop"
         />
         <img
-          id="hero-img--mobile"
+          class="hero-img-mobile"
           src="./images/image-hero-mobile.png"
           alt="image-hero-mobile"
         />
       </picture>
     </main>
 
-    <div class="footer">
+    <footer>
       <div class="attribution">
         Challenge by
         <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
@@ -149,6 +152,6 @@
         >. Coded by
         <a href="https://www.frontendmentor.io/profile/AkshayV30">AkshayV30</a>.
       </div>
-    </div>
+    </footer>
   </body>
 </html>
