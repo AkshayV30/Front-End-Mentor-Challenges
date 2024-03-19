@@ -28,4 +28,5 @@
 | 22     | [url-shortening-api]()                                                                                                                                             | HTML, CSS, JS, API  |     |
 | 23     | [rest-countries-api-with-color-theme-switcher]()                                                                                                                   | HTML, CSS, JS, API  |     |
 | 24     | [interactive-card-details-form]()                                                                                                                                  | HTML, CSS, JS       |     |
-| 25     | [todo-app]()                                                                                                                                                       | HTML, CSS, JS       |     |
+| 25     | [todo-app]()                                                                                                                                                       | HTML, CSS, JS       |
+| 26     | [four-card-feature-section-master](https://akshayv30.github.io/Front-End-Mentor-Challenges/four-card-feature-section-master/index.html)                            | HTML,CSS            | ✅  |
