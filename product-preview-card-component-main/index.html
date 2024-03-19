@@ -25,11 +25,12 @@
       /* -----------------------------media---queries-------------------------- */
 
       @media (min-width: 646px) {
-        .img-primary {
+        .product-image {
           background: url(./images/image-product-desktop.jpg);
+          width: 50%;
         }
 
-        .container-card {
+        .product-card {
           display: flex;
           flex-direction: row;
 
@@ -37,31 +38,28 @@
           height: 420px;
         }
 
-        .img-primary {
+        .product-details {
           width: 50%;
-        }
-        .card-text {
-          width: 50%;
-
           font-size: 2rem;
         }
 
-        #card-text-heading-2 {
+        #product-heading-2 {
           max-width: 12ch;
           line-height: 1.25;
         }
-        #card-text-para {
+        #product-para {
           max-width: 26ch;
           line-height: 1.5;
         }
       }
 
       @media only screen and (max-width: 646px) {
-        .img-primary {
+        .product-image {
           background: url(./images/image-product-mobile.jpg);
+          height: 100%;
         }
 
-        .container-card {
+        .product-card {
           display: flex;
           flex-direction: column;
 
@@ -69,18 +67,15 @@
           height: 620px;
         }
 
-        .img-primary {
-          height: 100%;
-        }
-        .card-text {
+        .product-details {
           height: 100%;
           font-size: 1.6rem;
         }
 
-        #card-text-heading-2 {
+        #product-heading-2 {
           max-width: 16ch;
         }
-        #card-text-para {
+        #product-para {
           max-width: 30ch;
           line-height: 1.6;
         }
@@ -126,14 +121,14 @@
       }
       /* ========================================================== */
       /* ------------------------------container card--------------- */
-      .container-card {
+      .product-card {
         border-radius: 1rem;
         overflow: hidden;
       }
       /* ========================================================== */
       /* ------------------------------primary image------------------ */
 
-      .img-primary {
+      .product-image {
         /* background-image: url(./images/image-product-desktop.jpg); */
         background-repeat: no-repeat;
         background-size: cover;
@@ -141,7 +136,7 @@
       /* ========================================================== */
       /* ------------------------------card text ------------------ */
 
-      .card-text {
+      .product-details {
         display: flex;
         flex-direction: column;
         justify-content: space-around;
@@ -152,7 +147,7 @@
         background: hsl(0, 0%, 100%);
       }
 
-      #card-text-heading-1 {
+      #product-heading-1 {
         font-size: 1.4rem;
         color: hsl(228, 12%, 48%);
 
@@ -165,7 +160,7 @@
         padding: 1rem 0;
       }
 
-      #card-text-heading-2 {
+      #product-heading-2 {
         font-size: 2.4rem;
 
         color: hsl(212, 21%, 14%);
@@ -173,7 +168,7 @@
         font-style: "Fraunces", serif;
         font-weight: 700;
       }
-      #card-text-para {
+      #product-para {
         font-size: 1.8rem;
 
         padding: 5px 0;
@@ -186,9 +181,9 @@
       }
 
       /* ========================================================== */
-      /* ------------------------------price----------------------- */
+      /* ------------------------------product-price----------------------- */
 
-      .price {
+      .product-price {
         display: flex;
         justify-content: flex-start;
         align-items: center;
@@ -199,20 +194,20 @@
         font-weight: 700;
       }
 
-      .price > #price-1 {
+      .product-price > #product-price-1 {
         font-size: 3.6rem;
         color: hsl(158, 36%, 37%);
         padding-right: 1.4rem;
       }
 
-      .price > #price-2 {
+      .product-price > #product-price-2 {
         font-size: 1.6rem;
         color: hsl(228, 12%, 48%);
       }
 
       /* ========================================================== */
       /* ------------------------------button green----------------- */
-      .btn-green {
+      .btn-add-to-cart {
         border-style: none;
         border-radius: 1rem;
 
@@ -236,19 +231,19 @@
         transition: transform 500ms ease;
       }
 
-      .btn-green:after,
-      .btn-green:hover {
+      .btn-add-to-cart:after,
+      .btn-add-to-cart:hover {
         transform: scale(1.03);
         background-color: rgb(44, 85, 70);
       }
 
-      #btn-green-cart {
+      .btn-cart-icon {
         width: 28px;
         height: auto;
         padding-right: 1.2rem;
       }
 
-      #btn-green-txt {
+      .btn-label {
       }
       /* ========================================================== */
       /* ------------------------------attribuiton----------------- */
@@ -265,46 +260,55 @@
       }
     </style>
   </head>
+
   <body>
-    <div class="container-card">
-      <div class="img-primary">
-        <!-- dummy div for background image -->
-      </div>
-
-      <div class="card-text">
-        <h3 id="card-text-heading-1">Perfume</h3>
-        <h2 id="card-text-heading-2">Gabrielle Essence Eau De Parfum</h2>
-        <p id="card-text-para">
-          A floral, solar and voluptuous interpretation composed by Olivier
-          Polge, Perfumer-Creator for the House of CHANEL.
-        </p>
-
-        <div class="price">
-          <div id="price-1">$149.99</div>
-          <div id="price-2"><del>$169.99</del></div>
+    <main>
+      <section class="product-card">
+        <div class="product-image">
+          <!-- dummy div for background image -->
         </div>
 
-        <button class="btn-green">
-          <img id="btn-green-cart" src="./images/icon-cart.svg" alt="cart" />
-          <p id="btn-green-txt">Add to Cart</p>
-        </button>
-      </div>
-    </div>
+        <div class="product-details">
+          <h3 id="product-heading-1">Perfume</h3>
+          <h2 id="product-heading-2">Gabrielle Essence Eau De Parfum</h2>
+          <p id="product-para">
+            A floral, solar and voluptuous interpretation composed by Olivier
+            Polge, Perfumer-Creator for the House of CHANEL.
+          </p>
 
-    <div class="attribution">
-      Challenge by
-      <a
-        class="link"
-        href="https://www.frontendmentor.io?ref=challenge"
-        target="_blank"
-        >Frontend Mentor</a
-      >. Coded by
-      <a
-        class="link"
-        href="https://www.frontendmentor.io/profile/AkshayV30"
-        target="_blank"
-        >AkshayV30</a
-      >.
-    </div>
+          <div class="product-price">
+            <div id="product-price-1">$149.99</div>
+            <div id="product-price-2"><del>$169.99</del></div>
+          </div>
+
+          <button class="btn-add-to-cart">
+            <img
+              src="./images/icon-cart.svg"
+              alt="cart"
+              class="btn-cart-icon"
+            />
+            <span class="btn-label">Add to Cart</span>
+          </button>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="attribution">
+        Challenge by
+        <a
+          class="link"
+          href="https://www.frontendmentor.io?ref=challenge"
+          target="_blank"
+          >Frontend Mentor</a
+        >. Coded by
+        <a
+          class="link"
+          href="https://www.frontendmentor.io/profile/AkshayV30"
+          target="_blank"
+          >AkshayV30</a
+        >.
+      </div>
+    </footer>
   </body>
 </html>
