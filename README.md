@@ -30,3 +30,4 @@
 | 24     | [interactive-card-details-form]()                                                                                                                                  | HTML, CSS, JS       |     |
 | 25     | [todo-app]()                                                                                                                                                       | HTML, CSS, JS       |
 | 26     | [four-card-feature-section-master](https://akshayv30.github.io/Front-End-Mentor-Challenges/four-card-feature-section-master/index.html)                            | HTML,CSS            | ✅  |
+| 27     | [qr-code-component-main](https://akshayv30.github.io/Front-End-Mentor-Challenges/qr-code-component-main/index.html)                                                | HTML,CSS            | ✅  |

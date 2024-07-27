@@ -46,7 +46,8 @@ header .box {
 
 .container-nav #logo-1 {
   height: 2rem; }
-
+  .nav-checkbox {
+    display: none; }
 .container-nav .nav-list {
   gap: 1rem;
   list-style: none; }
@@ -314,8 +315,8 @@ footer {
       margin: 20vh 0; }
       header .box h1 {
         width: 10ch; }
-  .nav-checkbox {
-    display: none; }
+  //.nav-checkbox {
+   // display: none; }
   .nav-checkbox:checked ~ .nav-background {
     transform: scale(80); }
   .nav-checkbox:checked ~ .container-nav {
