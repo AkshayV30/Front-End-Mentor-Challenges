@@ -32,3 +32,4 @@
 | 26     | [four-card-feature-section-master](https://akshayv30.github.io/Front-End-Mentor-Challenges/four-card-feature-section-master/index.html)                            | HTML,CSS            | ✅  |
 | 27     | [qr-code-component-main](https://akshayv30.github.io/Front-End-Mentor-Challenges/qr-code-component-main/index.html)                                                | HTML,CSS            | ✅  |
 | 28     | [blog-preview-card-main](https://akshayv30.github.io/Front-End-Mentor-Challenges/blog-preview-card-main/index.html)                                                | HTML,CSS            | ✅  |
+| 29     | [social-links-profile-main](https://akshayv30.github.io/Front-End-Mentor-Challenges/social-links-profile-main/index.html)                                          | HTML,CSS            | ✅  |
