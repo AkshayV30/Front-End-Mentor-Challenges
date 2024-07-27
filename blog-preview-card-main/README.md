@@ -1,14 +1,14 @@
-# Frontend Mentor - QR code component solution
+# Frontend Mentor - Blog preview card solution
 
-This is a solution to the [QR code component challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/qr-code-component-iux_sIO_H). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
+This is a solution to the [Blog preview card challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/blog-preview-card-ckPaj01IcS). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
 
 ## Table of contents
 
-- [Frontend Mentor - QR code component solution](#frontend-mentor---qr-code-component-solution)
+- [Frontend Mentor - Blog preview card solution](#frontend-mentor---blog-preview-card-solution)
   - [Table of contents](#table-of-contents)
   - [Overview](#overview)
+    - [The challenge](#the-challenge)
     - [Screenshot](#screenshot)
-    - [Links](#links)
   - [My process](#my-process)
     - [Built with](#built-with)
 
@@ -16,15 +16,21 @@ This is a solution to the [QR code component challenge on Frontend Mentor](https
 
 ## Overview
 
+### The challenge
+
+Users should be able to:
+
+- See hover and focus states for all interactive elements on the page
+
 ### Screenshot
 
-![desktopVeiw](./screenshot/desktop.png)
-![mobileVeiw](./screenshot/mobile.png)
+![desktopView](./screenshot/desktop.png)
+![mobileView](./screenshot/mobile.png)
 
-### Links
+<!-- ### Links
 
-<!-- - Solution URL: [Link to solution URL](https://your-solution-url.com)
-- Live Site URL: [Link to live site URL](https://your-live-site-url.com) -->
+- Solution URL: [Add solution URL here](https://your-solution-url.com)
+- Live Site URL: [Add live site URL here](https://your-live-site-url.com) -->
 
 ## My process
 
@@ -33,16 +39,17 @@ This is a solution to the [QR code component challenge on Frontend Mentor](https
 - Semantic HTML5 markup
 - CSS custom properties
 - Flexbox
-- CSS Grid
 - Mobile-first workflow
 
-<!-- ### What I learned
+<!--
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge. -->
+### What I learned
 
-<!-- To see how you can add code snippets, see below: -->
+Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
 
-<!-- ```html
+To see how you can add code snippets, see below:
+
+```html
 <h1>Some HTML code I'm proud of</h1>
 ```
 
@@ -56,9 +63,9 @@ Use this section to recap over some of your major learnings while working throug
 const proudOfThisFunc = () => {
   console.log("🎉");
 };
-``` -->
+```
 
-<!-- If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
+If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
 
 **Note: Delete this note and the content within this section and replace with your own learnings.**
 
