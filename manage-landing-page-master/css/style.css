@@ -1,0 +1,120 @@
+:root {
+  --Bright-Red: hsl(12, 88%, 59%);
+  --Dark-Blue: hsl(228, 39%, 23%);
+  --Dark-Grayish-Blue: hsl(227, 12%, 61%);
+  --Very-Dark-Blue: hsl(233, 12%, 13%);
+  --Very-Pale-Red: hsl(13, 100%, 96%);
+  --Very-Light-Gray: hsl(0, 0%, 98%); }
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+html {
+  font-size: 62.5%; }
+
+body {
+  font-size: 1.6rem;
+  height: 100vh; }
+
+header,
+main,
+footer {
+  padding: 5rem 10rem; }
+
+header {
+  display: flex;
+  justify-content: space-between; }
+
+button {
+  border-radius: 2rem;
+  border: none;
+  padding: 1rem;
+  background: var(--Bright-Red);
+  color: var(--Very-Light-Gray);
+  cursor: pointer; }
+
+navigation ul {
+  display: flex;
+  list-style: none;
+  gap: 1rem; }
+
+.section-1 {
+  display: flex;
+  align-items: center; }
+  .section-1 div h1 {
+    color: var(--Dark-Blue);
+    font-weight: 700; }
+
+footer {
+  background: var(--Very-Dark-Blue); }
+  footer div {
+    display: grid;
+    grid-template-columns: repeat(5, 20%);
+    grid-template-rows: repeat(4, 2rem); }
+    footer div ul {
+      list-style: none; }
+    footer div #logo-white {
+      grid-column: 1 / 2;
+      grid-row: 1 / 2; }
+    footer div .col-0 {
+      grid-column: 1 / 2;
+      grid-row: 5 / 6;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem; }
+    footer div .col-1 {
+      grid-column: 2 / 3;
+      grid-row: 1 / 6;
+      padding: 0 2rem; }
+      footer div .col-1 li {
+        color: var(--Very-Light-Gray);
+        padding: 0.5rem; }
+    footer div .col-2 {
+      grid-column: 3 / 4;
+      grid-row: 1 / 6;
+      padding: 0 2rem; }
+      footer div .col-2 li {
+        color: var(--Very-Light-Gray);
+        padding: 0.5rem; }
+    footer div .col-3 {
+      grid-column: 4 / 6;
+      grid-row: 1 / 6;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: flex-end; }
+      footer div .col-3 div {
+        display: flex;
+        gap: 1rem;
+        align-items: center; }
+        footer div .col-3 div #update {
+          text-align: center;
+          height: 3.2rem;
+          border-radius: 5.6rem;
+          border: none;
+          width: fit-content;
+          vertical-align: middle; }
+        footer div .col-3 div button {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          width: 4.5rem; }
+      footer div .col-3 cite {
+        color: var(--Dark-Grayish-Blue);
+        font-size: 1.2rem; }
+
+.attribution {
+  font-size: 11px;
+  width: 25%;
+  position: fixed;
+  bottom: -8%;
+  left: 35%;
+  color: aliceblue; }
+
+.attribution a {
+  color: #3e52a3; }

@@ -1,5 +1,7 @@
 # Front End Mentor Challenges
 
+Welcome to the Frontend Mentor challenges! This repository is where I showcase my solutions to various frontend projects from Frontend Mentor. Each challenge focuses on improving HTML, CSS, and JavaScript skills by replicating real-world designs.
+
 [![pages-build-deployment](https://github.com/AkshayV30/Front-End-Mentor-Challenges/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/AkshayV30/Front-End-Mentor-Challenges/actions/workflows/pages/pages-build-deployment)
 
 | Sl No. | Challenge Name                                                                                                                                                     | Technology Utilized |     |
@@ -33,4 +35,5 @@
 | 27     | [qr-code-component-main](https://akshayv30.github.io/Front-End-Mentor-Challenges/qr-code-component-main/index.html)                                                | HTML,CSS            | ✅  |
 | 28     | [blog-preview-card-main](https://akshayv30.github.io/Front-End-Mentor-Challenges/blog-preview-card-main/index.html)                                                | HTML,CSS            | ✅  |
 | 29     | [social-links-profile-main](https://akshayv30.github.io/Front-End-Mentor-Challenges/social-links-profile-main/index.html)                                          | HTML,CSS            | ✅  |
-| 30     | [recipe-page-main](https://akshayv30.github.io/Front-End-Mentor-Challenges/recipe-page-main/index.html)                                                            | HTML,CSS            |   |
+| 30     | [recipe-page-main](https://akshayv30.github.io/Front-End-Mentor-Challenges/recipe-page-main/index.html)                                                            | HTML,CSS            |     |
+| 31     | [Manage landing page]()                                                                                                                                            | HTML,CSS,JS         |     |
