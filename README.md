@@ -33,3 +33,4 @@
 | 27     | [qr-code-component-main](https://akshayv30.github.io/Front-End-Mentor-Challenges/qr-code-component-main/index.html)                                                | HTML,CSS            | ✅  |
 | 28     | [blog-preview-card-main](https://akshayv30.github.io/Front-End-Mentor-Challenges/blog-preview-card-main/index.html)                                                | HTML,CSS            | ✅  |
 | 29     | [social-links-profile-main](https://akshayv30.github.io/Front-End-Mentor-Challenges/social-links-profile-main/index.html)                                          | HTML,CSS            | ✅  |
+| 30     | [recipe-page-main](https://akshayv30.github.io/Front-End-Mentor-Challenges/recipe-page-main/index.html)                                                            | HTML,CSS            |   |
