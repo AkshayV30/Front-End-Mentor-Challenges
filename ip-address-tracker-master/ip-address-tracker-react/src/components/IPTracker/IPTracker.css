@@ -1,0 +1,28 @@
+.ip-tracker {
+  padding: 1rem;
+  font-family: sans-serif;
+}
+.input-container {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+.search-input {
+  flex: 1;
+  padding: 0.5rem;
+}
+.search-submit {
+  padding: 0.5rem 1rem;
+}
+.info {
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+.error {
+  color: red;
+  margin-bottom: 1rem;
+}
+.map-container {
+  height: 400px;
+  width: 100%;
+}
