@@ -1,0 +1,124 @@
+// === Font Families ===
+$font-primary: "Barlow", sans-serif;
+$font-heading: "Bellefair", serif;
+
+// === Colors ===
+$color-white: #ffffff;
+$color-offwhite: #d0d6f9;
+$color-dark: #0b0d17;
+$color-gray: #979797;
+$color-highlight: red;
+
+// === Backgrounds ===
+$bg-home-desktop: url("/assets/home/background-home-desktop.jpg");
+$bg-home-tablet: url("/assets/home/background-home-tablet.jpg");
+$bg-home-mobile: url("/assets/home/background-home-mobile.jpg");
+
+nav {
+  display: flex;
+  padding: 4rem;
+  align-items: center;
+  justify-content: space-between;
+
+  img {
+  }
+  #spacer {
+    border-bottom: 2px solid red;
+    width: 30rem;
+  }
+
+  ol {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-end;
+
+    list-style: none;
+    text-transform: uppercase;
+
+    background: rgba(81, 81, 81, 0.5);
+    padding: 2rem 8rem;
+
+    li {
+      span {
+        margin-right: 0.25rem;
+      }
+      color: white;
+    }
+  }
+}
+
+.page-background {
+  min-height: 100vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: $bg-home-desktop;
+
+  @media (max-width: 1024px) {
+    background-image: $bg-home-tablet;
+  }
+
+  @media (max-width: 767px) {
+    background-image: $bg-home-mobile;
+  }
+}
+
+.container-home-content {
+  display: flex;
+  justify-content: space-between;
+  padding: 12rem;
+
+  .first-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    font-family: $font-primary;
+
+    h1 {
+      font-size: 4.2rem;
+      color: $color-white;
+      font-family: $font-heading;
+    }
+
+    h2 {
+      font-size: 2rem;
+      color: $color-gray;
+    }
+
+    p {
+      line-height: 1.25;
+      width: 58ch;
+      color: $color-offwhite;
+    }
+  }
+
+  button {
+    border-radius: 100%;
+    padding: 4rem;
+    aspect-ratio: 1;
+    border: none;
+    text-transform: uppercase;
+    cursor: pointer;
+
+    &:hover {
+      color: $color-highlight;
+    }
+  }
+}
+
+// @media (max-width: 768px) {
+//   .container-home-content {
+//     flex-direction: column;
+//     padding: 4rem 2rem;
+//     text-align: center;
+//     align-items: center;
+
+//     .first-content p {
+//       width: 100%;
+//     }
+
+//     button {
+//       margin-top: 2rem;
+//     }
+//   }
+// }

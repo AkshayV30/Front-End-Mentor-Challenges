@@ -37,3 +37,5 @@ Welcome to the Frontend Mentor challenges! This repository is where I showcase m
 | 29     | [social-links-profile-main](https://akshayv30.github.io/Front-End-Mentor-Challenges/social-links-profile-main/index.html)                                          | 1 NEWBIE          | HTML,CSS           | ✅  |
 | 30     | [recipe-page-main](https://akshayv30.github.io/Front-End-Mentor-Challenges/recipe-page-main/index.html)                                                            |                   | HTML,CSS           |     |
 | 31     | [Manage landing page]()                                                                                                                                            |                   | HTML,CSS,JS        |     |
+
+---
