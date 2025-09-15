@@ -19,3 +19,30 @@
 //     </p>
 //   </div>
 // `;
+import './css/style.css';
+import './css/chat.css';
+import './css/mobileChatHeader.css';
+import './css/description.css';
+
+async function loadComponent(path) {
+  const res = await fetch(path);
+  return await res.text();
+}
+
+async function initApp() {
+  const app = document.getElementById('app');
+
+  const header = await loadComponent('/src/components/header.html');
+  const chat = await loadComponent('/src/components/chat.html');
+  const desc = await loadComponent('/src/components/description.html');
+
+  app.innerHTML = `
+   <div class="container-mobile">
+    ${header}
+    ${chat}
+   </div>
+    ${desc}
+  `;
+}
+
+initApp();

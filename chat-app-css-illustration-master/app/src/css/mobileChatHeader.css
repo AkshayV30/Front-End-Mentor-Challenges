@@ -1,0 +1,71 @@
+.container-mobile--header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+
+  padding: 2rem;
+  border-radius: 4rem 4rem 1rem 1rem;
+  margin-bottom: -0.4rem;
+
+  background: linear-gradient(to bottom left, var(--gradient-pink-500), var(--gradient-purple-500));
+  position: relative;
+}
+
+.container-mobile--header::after {
+  content: '';
+  width: 24rem;
+  height: 2.4rem;
+
+  border-radius: 2rem;
+  position: absolute;
+  top: -5%;
+  left: 50%;
+  transform: translateX(-50%);
+
+  background: var(--secondary-white);
+}
+
+.container-mobile--header-left {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.container-mobile--header-left img {
+  height: 4.5rem;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: 0.3rem solid var(--secondary-gray-100);
+  margin-left: -0.5rem;
+}
+
+.user-info h4 {
+  color: var(--text-purple-300);
+  font-weight: var(--font-weights-500);
+}
+
+.user-info p {
+  color: var(--text-purple-300);
+  font-size: 1.2rem;
+  font-weight: var(--font-weights-400);
+}
+
+.back-btn,
+.menu-btn {
+  background: transparent;
+  border: none;
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--secondary-white);
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  line-height: 1;
+  border-radius: 50%;
+  transition: background 0.2s ease-in-out;
+}
+
+.back-btn:hover,
+.menu-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+}

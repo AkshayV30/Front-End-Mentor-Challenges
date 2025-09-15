@@ -1,0 +1,14 @@
+.container-description h2 {
+  font-size: 3.2rem;
+  font-weight: var(--font-weights-700);
+  color: var(--text-purple-950);
+}
+
+.container-description p {
+  color: var(--text-gray-500);
+  max-width: 55%;
+  min-width: 10%;
+}
+
+.container-description {
+}
