@@ -1,0 +1,290 @@
+/* #app {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+} */
+
+:root {
+  /* The designs were created to the following widths: */
+  --width-mobile: 37.5rem; /* 375 px */
+  --width-desktop: 144rem; /* 1440 px */
+
+  /*   ----- Colors -------  */
+
+  /* Primary Text */
+
+  --text-purple-300: hsl(276, 100%, 81%); /* (sub-heading at the top of the app UI) */
+  --text-purple-600: hsl(276, 55%, 52%); /* (chat on the left): */
+  --text-gray-500: hsl(270, 7%, 64%); /* (chat on the right, paragraph) */
+  --text-gray-300: hsl(206, 6%, 79%); /* (placeholder text) */
+  --text-purple-950: hsl(271, 36%, 24%); /* (main heading) */
+
+  /* Gradients */
+
+  --gradient-pink-500: hsl(293, 100%, 63%);
+  --gradient-purple-500: hsl(264, 100%, 61%);
+  /* Secondary */
+
+  --secondary-white: hsl(0, 100%, 100%);
+  --secondary-gray-100: hsl(270, 20%, 96%); /* (app background) */
+  --secondary-purple-950: hsl(271, 36%, 24%); /* (submit button background) */
+  --secondary-pink-400: hsl(289, 100%, 72%); /* (radio button outline) */
+
+  /* Typography */
+
+  --font-weights-400: 400;
+  --font-weights-500: 500;
+  --font-weights-700: 700;
+}
+
+/* ======================================================= */
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: 'Rubik', sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+
+  /* 1rem = 10px */
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem; /* Default body text size = 16px */
+  background-color: var(--secondary-white);
+  color: var(--text-purple-950); /* Default text color */
+  line-height: 1.6;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
+  height: 100vh;
+}
+
+/* ---------------------
+------------- Main----------------
+------------------------------ */
+
+.main {
+  width: 70%;
+}
+.back {
+  position: relative;
+  top: 0;
+  left: 0;
+
+  z-index: -100;
+
+  width: 100%;
+  height: 100%;
+
+  pointer-events: none; /* dont block clicks*/
+}
+
+.back::after,
+.back::before {
+  content: '';
+  height: 78rem;
+  aspect-ratio: 0.8;
+  position: absolute;
+
+  z-index: -100;
+}
+
+.back::before {
+  background: linear-gradient(135deg, var(--gradient-pink-500), var(--gradient-purple-500));
+  border-radius: 0 0 50% 50%;
+
+  top: 0;
+  left: -6%;
+}
+
+.back::after {
+  background: var(--secondary-gray-100);
+  border-radius: 50% 50% 0% 0%;
+
+  right: 0rem;
+  bottom: -80rem;
+}
+
+/* ---------------------------------------------------- */
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #000;
+  gap: 10rem;
+}
+
+.container-mobile {
+  width: 100rem;
+  border-radius: 6%;
+  border: 2rem solid var(--secondary-white);
+  box-shadow: 0.2rem 0.2rem 0.4rem rgba(0, 0, 0, 0.09);
+}
+/* ---------------------------------------------------- */
+.container-mobile--header {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.container-mobile--header img {
+  height: 6.5rem;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: 2px solid var(--secondary-gray-100);
+}
+
+.container-mobile--header > div h4 {
+  /* color: ; */
+  font-weight: var(--font-weights-500);
+}
+
+.container-mobile--header > div p {
+  /* color: ; */
+  font-weight: var(--font-weights-400);
+}
+
+/* ---------------------------------------------------- */
+.container-mobile--chat {
+  border-radius: 0 0 4rem 4rem;
+  background: var(--secondary-gray-100);
+
+  border: 2px solid red;
+  padding: 1rem;
+}
+
+.container-mobile--chat ol {
+  list-style: none;
+
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+li {
+  padding: 0.8rem 1.2rem;
+  margin: 0.5rem;
+  max-width: 60%;
+
+  box-shadow: 0.2rem 0.4rem 0.4rem rgba(0, 0, 0, 0.15);
+}
+
+.msg-left {
+  align-self: flex-start;
+  color: var(--text-purple-600);
+  background: var(--text-purple-300);
+  border-radius: 1.5rem 1.5rem 1.5rem 0.5rem;
+}
+
+.msg-right {
+  align-self: flex-end;
+  color: var(--text-gray-500);
+  background: var(--secondary-white);
+
+  border-radius: 1.5rem 1.5rem 0.5rem 1.5rem;
+}
+
+.dog-gallery-chat {
+  display: flex;
+  gap: 0.5rem;
+  margin-left: -100rem;
+}
+.dog-gallery-chat img {
+  border-radius: 1rem;
+  width: 7rem;
+  aspect-ratio: 1;
+}
+
+.chat-input {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 1rem;
+  margin: 0.5rem 0;
+  border-radius: 2rem;
+  background: var(--secondary-white);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+.chat-input input {
+  border: none;
+  outline: none;
+
+  background: transparent;
+
+  font-size: 1.6rem;
+  color: var(--text-gray-500);
+}
+
+.chat-input input::placeholder {
+  color: var(--text-gray-300);
+}
+
+.chat-input .send-btn {
+  background: linear-gradient(135deg, var(--gradient-pink-500), var(--gradient-purple-500));
+  border: none;
+  outline: none;
+  color: var(--secondary-white);
+  font-size: 1.8rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+}
+
+.chat-input .send-btn:hover {
+  transform: scale(1.1);
+}
+/* ---------------------------------------------------- */
+
+.container-description h2 {
+  font-size: 3.2rem;
+  font-weight: var(--font-weights-700);
+  color: var(--text-purple-950);
+}
+
+.container-description p {
+  color: var(--text-gray-500);
+
+  max-width: 40%;
+  min-width: 10%;
+}
+
+/* ---------------------
+-------------Footer----------------
+------------------------------ */
+
+footer {
+}
+.attribution {
+  font-size: 1.1rem;
+
+  margin: 2rem 0 1rem 0;
+  color: var(--text-gray-500);
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+  text-decoration: none;
+}
+.attribution a:hover {
+  text-decoration: underline;
+}
