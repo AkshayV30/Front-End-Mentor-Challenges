@@ -24,7 +24,7 @@ export async function loadCards() {
     // 🌐 Fetch JSON Data
     // -----------------------------
     // Attempt to load the data.json file containing project info
-  const res = await fetch(`${window.location.origin}/res/data/data.json`);
+  const res = await fetch(`./res/data/data.json`);
 
 
     // Check for successful HTTP response
