@@ -1,0 +1,435 @@
+[
+  {
+    "id": 1,
+    "title": "Stats Preview Card",
+    "images": {
+      "desktop": ["./src/newbie/stats-preview-card-component/screenshot/desktop-final.jpeg"],
+      "mobile": ["./src/newbie/stats-preview-card-component/screenshot/mobile-final.jpeg"]
+    },
+    "link": "./src/newbie/stats-preview-card-component/index.html",
+    "tech": ["HTML", "CSS"],
+    "level": "NEWBIE"
+  },
+  {
+    "id": 2,
+    "title": "3 Column Preview Card",
+    "images": {
+      "desktop": ["./src/newbie/3-column-preview-card-component/screenshot/desktop-final.png"],
+      "mobile": ["./src/newbie/3-column-preview-card-component/screenshot/mobile-final.png"]
+    },
+    "link": "./src/newbie/3-column-preview-card-component/index.html",
+    "tech": ["HTML", "CSS"],
+    "level": "NEWBIE"
+  },
+  {
+    "id": 3,
+    "title": "Testimonials Grid Section",
+    "images": {
+      "desktop": ["./src/junior/testimonials-grid-section/screenshot/desktop-final.png"],
+      "mobile": ["./src/junior/testimonials-grid-section/screenshot/mobile-final.png"]
+    },
+    "link": "./src/junior/testimonials-grid-section/index.html",
+    "tech": ["HTML", "CSS"],
+    "level": "JUNIOR"
+  },
+  {
+    "id": 4,
+    "title": "Product Preview Card Component",
+    "images": {
+      "desktop": ["./src/newbie/product-preview-card-component/screenshot/desktop-final.jpeg"],
+      "mobile": ["./src/newbie/product-preview-card-component/screenshot/mobile-final.jpeg"]
+    },
+    "link": "./src/newbie/product-preview-card-component/index.html",
+    "tech": ["HTML", "CSS"],
+    "level": "NEWBIE"
+  },
+  {
+    "id": 5,
+    "title": "Fylo Data Storage Component",
+    "images": {
+      "desktop": ["./src/junior/fylo-data-storage-component/screenshot/desktop-final.jpeg"],
+      "mobile": ["./src/junior/fylo-data-storage-component/screenshot/mobile-final.jpeg"]
+    },
+    "link": "./src/junior/fylo-data-storage-component/index.html",
+    "tech": ["HTML", "CSS"],
+    "level": "JUNIOR"
+  },
+  {
+    "id": 6,
+    "title": "Fylo Landing Page with Two Column Layout",
+    "images": {
+      "desktop": [
+        "./src/junior/fylo-landing-page-with-two-column-layout/screenshot/desktop-final.jpeg"
+      ],
+      "mobile": [
+        "./src/junior/fylo-landing-page-with-two-column-layout/screenshot/mobile-final.jpeg"
+      ]
+    },
+    "link": "./src/junior/fylo-landing-page-with-two-column-layout/index.html",
+    "tech": ["HTML", "CSS"],
+    "level": "JUNIOR"
+  },
+  {
+    "id": 7,
+    "title": "Space Tourism Website",
+    "images": {
+      "desktop": [],
+      "mobile": []
+    },
+    "link": "./src/intermediate/space-tourism-website/index.html",
+    "tech": ["HTML", "CSS", "JS"],
+    "level": "INTERMEDIATE"
+  },
+  {
+    "id": 8,
+    "title": "Ecommerce Product Page",
+    "images": {
+      "desktop": [],
+      "mobile": []
+    },
+    "link": "./src/intermediate/ecommerce-product-page/index.html",
+    "tech": ["HTML", "CSS", "JS"],
+    "level": "INTERMEDIATE"
+  },
+  {
+    "id": 9,
+    "title": "Room Homepage",
+    "images": {
+      "desktop": [],
+      "mobile": []
+    },
+    "link": "./src/intermediate/room-homepage/index.html",
+    "tech": ["HTML", "CSS", "JS"],
+    "level": "INTERMEDIATE"
+  },
+  {
+    "id": 10,
+    "title": "Easybank Landing Page",
+    "images": {
+      "desktop": [],
+      "mobile": []
+    },
+    "link": "./src/intermediate/easybank-landing-page/index.html",
+    "tech": ["HTML", "CSS", "JS"],
+    "level": "INTERMEDIATE"
+  },
+  {
+    "id": 11,
+    "title": "Blogr Landing Page",
+    "images": {
+      "desktop": ["./src/junior/blogr-landing-page/screenshot/desktop-final.jpeg"],
+      "mobile": [
+        "./src/junior/blogr-landing-page/screenshot/mobile-final.jpeg",
+        "./src/junior/blogr-landing-page/screenshot/mobile-final-active.png"
+      ]
+    },
+    "link": "./src/junior/blogr-landing-page/index.html",
+    "tech": ["HTML", "CSS", "JS"],
+    "level": "JUNIOR"
+  },
+  {
+    "id": 12,
+    "title": "Multi-Step Form",
+    "images": {
+      "desktop": [],
+      "mobile": []
+    },
+    "link": "./src/advanced/multi-step-form/index.html",
+    "tech": ["HTML", "CSS", "JS"],
+    "level": "ADVANCED"
+  },
+  {
+    "id": 13,
+    "title": "Calculator App",
+    "images": {
+      "desktop": [
+        "./src/intermediate/calculator-app/screenshots/desktop-t-1.jpeg",
+        "./src/intermediate/calculator-app/screenshots/desktop-t-2.jpeg",
+        "./src/intermediate/calculator-app/screenshots/desktop-t-3.jpeg",
+        "./src/intermediate/calculator-app/screenshots/desktop.jpeg"
+      ],
+      "mobile": [
+        "./src/intermediate/calculator-app/screenshots/mobile-t-1.jpeg",
+        "./src/intermediate/calculator-app/screenshots/mobile-t-2.jpeg",
+        "./src/intermediate/calculator-app/screenshots/mobile-t-3.jpeg",
+        "./src/intermediate/calculator-app/screenshots/mobile.jpeg"
+      ]
+    },
+    "link": "./src/intermediate/calculator-app/index.html",
+    "tech": ["HTML", "CSS", "JS"],
+    "level": "INTERMEDIATE"
+  },
+  {
+    "id": 14,
+    "title": "Launch Countdown Timer",
+    "images": {
+      "desktop": [],
+      "mobile": []
+    },
+    "link": "./src/intermediate/launch-countdown-timer/index.html",
+    "tech": ["HTML", "CSS", "JS"],
+    "level": "INTERMEDIATE"
+  },
+  {
+    "id": 15,
+    "title": "Profile Card Component",
+    "images": {
+      "desktop": ["./src/newbie/profile-card-component/screenshot/desktop.jpeg"],
+      "mobile": ["./src/newbie/profile-card-component/screenshot/mobile.jpeg"]
+    },
+    "link": "./src/newbie/profile-card-component/index.html",
+    "tech": ["HTML", "CSS"],
+    "level": "NEWBIE"
+  },
+
+  {
+    "id": 16,
+    "title": "Time Tracking Dashboard",
+    "images": {
+      "desktop": [],
+      "mobile": []
+    },
+    "link": "./src/junior/time-tracking-dashboard/index.html",
+    "tech": ["HTML", "CSS", "JS"],
+    "level": "JUNIOR"
+  },
+
+  {
+    "id": 17,
+    "title": "Ip Address Tracker",
+    "images": {
+      "desktop": [],
+      "mobile": []
+    },
+    "link": "./src/intermediate/ip-address-tracker/index.html",
+    "tech": ["HTML", "CSS", "JS", "API"],
+    "level": "INTERMEDIATE"
+  },
+
+  {
+    "id": 18,
+    "title": "Social Media Dashboard ",
+    "images": {
+      "desktop": [
+        "./src/junior/social-media-dashboard-with-theme-switcher/screenshots/desktop-dark.jpeg",
+        "./src/junior/social-media-dashboard-with-theme-switcher/screenshots/desktop-light.jpeg"
+      ],
+      "mobile": [
+        "./src/junior/social-media-dashboard-with-theme-switcher/screenshots/mobile-dark.jpeg",
+        "./src/junior/social-media-dashboard-with-theme-switcher/screenshots/mobile-light.jpeg"
+      ]
+    },
+    "link": "./src/junior/social-media-dashboard-with-theme-switcher/index.html",
+    "tech": ["HTML", "CSS", "JS"],
+    "level": "JUNIOR"
+  },
+
+  {
+    "id": 19,
+    "title": "Intro-Section with DropDown Navigation",
+    "images": {
+      "desktop": [
+        "./src/junior/intro-section-with-dropdown-navigation/screenshots/Screenshot_desktop-1.jpeg",
+        "./src/junior/intro-section-with-dropdown-navigation/screenshots/Screenshot_desktop-2.jpeg"
+      ],
+      "mobile": [
+        "./src/junior/intro-section-with-dropdown-navigation/screenshots/Screenshot_mobile-1.jpeg",
+        "./src/junior/intro-section-with-dropdown-navigation/screenshots/Screenshot_mobile-2.jpeg"
+      ]
+    },
+    "link": "./src/junior/intro-section-with-dropdown-navigation/index.html",
+    "tech": ["HTML", "CSS", "JS"],
+    "level": "JUNIOR"
+  },
+  {
+    "id": 20,
+    "title": "LoopStudio Landing Page ",
+    "images": {
+      "desktop": [
+        "./src/junior/loopstudios-landing-page/screenshots/desktop-f.jpeg",
+        "./src/junior/loopstudios-landing-page/screenshots/desktop.jpeg"
+      ],
+      "mobile": ["./src/junior/loopstudios-landing-page/screenshots/mobile-final.jpeg"]
+    },
+    "link": "./src/junior/loopstudios-landing-page/index.html",
+    "tech": ["HTML", "CSS", "JS"],
+    "level": "JUNIOR"
+  },
+
+  {
+    "id": 21,
+    "title": "Advice Generator App ",
+    "images": {
+      "desktop": ["./src/junior/advice-generator-app/screenshot/desktop.jpeg"],
+      "mobile": ["./src/junior/advice-generator-app/screenshot/mobile.jpeg"]
+    },
+    "link": "./src/junior/advice-generator-app/index.html",
+    "tech": ["HTML", "CSS", "JS", "API"],
+    "level": "JUNIOR"
+  },
+  {
+    "id": 22,
+    "title": "URL Shortening Api ",
+    "images": {
+      "desktop": [],
+      "mobile": []
+    },
+    "link": "./src/intermediate/url-shortening-api/index.html",
+    "tech": ["HTML", "CSS", "JS", "API"],
+    "level": "INTERMEDIATE"
+  },
+  {
+    "id": 23,
+    "title": "Rest Countries API  ",
+    "images": {
+      "desktop": [],
+      "mobile": []
+    },
+    "link": "./src/advanced/rest-countries-api-with-color-theme-switcher/index.html",
+    "tech": ["HTML", "CSS", "JS", "API"],
+    "level": "ADVANCED"
+  },
+  {
+    "id": 24,
+    "title": "Interactive Card Details Form",
+    "images": {
+      "desktop": [],
+      "mobile": []
+    },
+    "link": "./src/junior/interactive-card-details-form/index.html",
+    "tech": ["HTML", "CSS", "JS"],
+    "level": "JUNIOR"
+  },
+  {
+    "id": 25,
+    "title": "ToDo App ",
+    "images": {
+      "desktop": [],
+      "mobile": []
+    },
+    "link": "./src/intermediate/todo-app/index.html",
+    "tech": ["HTML", "CSS", "JS"],
+    "level": "INTERMEDIATE"
+  },
+  {
+    "id": 26,
+    "title": "FourCard Feature Section ",
+    "images": {
+      "desktop": ["./src/newbie/four-card-feature-section/screenshot/desktop.jpeg"],
+      "mobile": ["./src/newbie/four-card-feature-section/screenshot/mobile.jpeg"]
+    },
+    "link": "./src/newbie/four-card-feature-section/index.html",
+    "tech": ["HTML", "CSS"],
+    "level": "NEWBIE"
+  },
+  {
+    "id": 27,
+    "title": "QR Code Component  ",
+    "images": {
+      "desktop": ["./src/newbie/qr-code-component/screenshot/desktop.png"],
+      "mobile": ["./src/newbie/qr-code-component/screenshot/mobile.png"]
+    },
+    "link": "./src/newbie/qr-code-component/index.html",
+    "tech": ["HTML", "CSS"],
+    "level": "NEWBIE"
+  },
+  {
+    "id": 28,
+    "title": "Blog Preview Card  ",
+    "images": {
+      "desktop": ["./src/newbie/blog-preview-card/screenshot/desktop.png"],
+      "mobile": ["./src/newbie/blog-preview-card/screenshot/mobile.png"]
+    },
+    "link": "./src/newbie/blog-preview-card/index.html",
+    "tech": ["HTML", "CSS"],
+    "level": "NEWBIE"
+  },
+  {
+    "id": 29,
+    "title": "Social Links Profile  ",
+    "images": {
+      "desktop": ["./src/newbie/social-links-profile/screenshot/desktop.png"],
+      "mobile": ["./src/newbie/social-links-profile/screenshot/mobile.png"]
+    },
+    "link": "./src/newbie/social-links-profile/index.html",
+    "tech": ["HTML", "CSS"],
+    "level": "NEWBIE"
+  },
+  {
+    "id": 30,
+    "title": "Recipe Page",
+    "images": {
+      "desktop": [],
+      "mobile": []
+    },
+    "link": "./src/newbie/recipe-page/index.html",
+    "tech": ["HTML", "CSS"],
+    "level": "NEWBIE"
+  },
+  {
+    "id": 31,
+    "title": "Manage Landing Page ",
+    "images": {
+      "desktop": [],
+      "mobile": []
+    },
+    "link": "./src/intermediate/manage-landing-page/index.html",
+    "tech": ["HTML", "CSS", "JS"],
+    "level": "INTERMEDIATE"
+  },
+  {
+    "id": 32,
+    "title": "Weather App ",
+    "images": {
+      "desktop": [],
+      "mobile": []
+    },
+    "link": "./src/intermediate/weather-app/index.html",
+    "tech": ["HTML", "CSS", "JS", "API"],
+    "level": "INTERMEDIATE"
+  },
+  {
+    "id": 33,
+    "title": "Contact Form",
+    "images": {
+      "desktop": [],
+      "mobile": []
+    },
+    "link": "./src/junior/contact-form/index.html",
+    "tech": ["HTML", "CSS", "JS"],
+    "level": "JUNIOR"
+  },
+  {
+    "id": 34,
+    "title": "Expenses Chart Component",
+    "images": {
+      "desktop": [],
+      "mobile": []
+    },
+    "link": "./src/junior/expenses-chart-component/index.html",
+    "tech": ["HTML", "CSS", "JS"],
+    "level": "JUNIOR"
+  },
+  {
+    "id": 35,
+    "title": "Rock Paper Scissors",
+    "images": {
+      "desktop": [],
+      "mobile": []
+    },
+    "link": "./src/advanced/rock-paper-scissors/index.html",
+    "tech": ["HTML", "CSS", "JS"],
+    "level": "ADVANCED"
+  },
+  {
+    "id": 36,
+    "title": "Chat App CSS Ilustration",
+    "images": {
+      "desktop": [],
+      "mobile": []
+    },
+    "link": "./src/intermediate/chat-app-css-ilustration/index.html",
+    "tech": ["HTML", "CSS"],
+    "level": "INTERMEDIATE"
+  }
+]

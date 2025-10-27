@@ -1,2 +1,5 @@
 desktop.ini
 *.vscode
+
+
+node_modules/

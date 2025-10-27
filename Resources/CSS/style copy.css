@@ -1,38 +1,62 @@
+/* =========================================
+🎨 Theme Variables
+========================================= */
 :root {
+  /* Accent Levels */
+  --color-newbie: rgb(106, 190, 205);
+  --color-junior: rgb(170, 215, 66);
+  --color-intermediate: rgb(241, 182, 4);
+  --color-advanced: rgb(244, 137, 37);
+
+  /* Brand Colors */
   --primary-color: #07e236;
   --secondary-color: #c1e207;
   --tertiary-color: #e2a807;
   --quaternary-color: #ff3d00;
   --quaternary-light-color: #ff8762;
 
+  /* Backgrounds */
   --bg-main: #000;
   --bg-accent-1: #212121;
   --bg-accent-2: #191919;
 
-  --btn: #424242;
+  /* Texts */
+  --text-color: #fff;
+  --text-dark: #000;
+
+  /* Button Colors */
   --btn-html: rgb(106, 190, 205);
   --btn-css: rgb(62, 84, 163);
   --btn-js: rgb(207, 99, 144);
   --btn-api: rgb(170, 215, 66);
-
-  --text-color: #fff;
-  --text-color--2: #000000;
 }
 
-@media only screen and (max-width: 720px) {
-  /* Styles for screens with a maximum width of 720px */
+/* =========================================
+📱 Responsive Layout
+========================================= */
+.container-main {
+  display: grid;
+  padding: 2rem;
+  grid-template-columns: repeat(auto-fill, minmax(19rem, 1fr));
+  gap: 2rem;
+  overflow: hidden;
+}
+
+@media (max-width: 720px) {
   .container-main {
     margin: 1rem 5rem;
   }
 }
 
 @media (min-width: 721px) {
-  /* Styles for screens with a minimum width of 721px */
   .container-main {
     margin: 5rem 10rem;
   }
 }
 
+/* =========================================
+🌐 Global Resets
+========================================= */
 *,
 *::after,
 *::before {
@@ -44,106 +68,112 @@
 body {
   font-family: "Roboto", sans-serif;
   text-align: center;
-  font-size: 62.5%; /* 1rem = 10px, so 62.5% of 10px = 6.25px */
+  font-size: 62.5%;
   display: grid;
   background: var(--bg-main);
 }
 
-
-
+/* =========================================
+📌 Header (Sticky)
+========================================= */
 header {
-  position: sticky;              /* 🧷 Keeps header fixed within scrollable area */
-  top: 0;                        /* 📍 Stick to the very top */
-  z-index: 1000;                 /* ⬆️ Ensure it stays above all content */
-
+  position: sticky;
+  top: 0;
+  z-index: 1000;
   height: 4rem;
   width: 100%;
-
   background: var(--bg-accent-2);
   color: var(--text-color);
-
   display: flex;
   align-items: center;
   justify-content: center;
-
-  /* 💅 Optional UI Enhancements */
   font-weight: 600;
   letter-spacing: 0.5px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* soft shadow when scrolling */
-  backdrop-filter: blur(6px);               /* subtle glass effect */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(6px);
   transition: background 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Optional: Change style when page is scrolled */
 body.scrolled header {
-  background: var(--bg-accent-3);
+  background: var(--bg-accent-1);
   box-shadow: 0 3px 12px rgba(0, 0, 0, 0.2);
 }
 
-
-header > h1 {
+header h1 {
   text-transform: uppercase;
   letter-spacing: 0.1rem;
   font-size: 1.2rem;
 }
 
-.container-main {
-  display: grid;
-  padding: 2rem; /* 20px converted to rem */
-  grid-template-columns: repeat(
-    auto-fill,
-    minmax(19rem, 1fr)
-  ); /* 300px converted to rem */
-  gap: 2rem;
-  overflow: hidden;
-}
-
+/* =========================================
+🧩 Card Containers
+========================================= */
 .container-sub {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  padding: 1rem;
-  gap: 2.8rem;
-
-  border-radius: 0.6rem;
   padding: 0.8rem;
+  gap: 2.8rem;
+  border-radius: 0.6rem;
   width: 98%;
   height: 98%;
-
   background: var(--bg-accent-1);
-  transition: border 0.5s linear;
-
+  transition: border 0.3s linear;
   position: relative;
 }
 
-.newbie-container-sub:hover {
-  border-bottom: 2px solid rgb(106, 190, 205);
-}
-.junior-container-sub:hover {
-  border-bottom: 2px solid rgb(170, 215, 66);
-}
-.intermediate-container-sub:hover {
-  border-bottom: 2px solid rgb(241, 182, 4);
+/* DRY Hover Borders Using Data-Level */
+.container-sub[data-level="newbie"]:hover {
+  border-bottom: 2px solid var(--color-newbie);
 }
 
-.advanced-container-sub:hover {
-  border-bottom: 2px solid rgb(244, 137, 37);
+.container-sub[data-level="junior"]:hover {
+  border-bottom: 2px solid var(--color-junior);
 }
 
+.container-sub[data-level="intermediate"]:hover {
+  border-bottom: 2px solid var(--color-intermediate);
+}
+
+.container-sub[data-level="advanced"]:hover {
+  border-bottom: 2px solid var(--color-advanced);
+}
+
+/* =========================================
+🧾 Description Area
+========================================= */
 .container-description {
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 1.4rem;
   padding: 1.6rem;
   border-radius: 0.6rem;
-  align-items: center;
   font-size: 1.2rem;
   background: var(--bg-accent-2);
 }
 
-.container-description > a {
+.container-description a {
   text-decoration: none;
   color: var(--text-color);
+}
+
+/* =========================================
+🏷️ Stickers
+========================================= */
+.round-sticker {
+  position: absolute;
+  z-index: 20;
+  top: -2.5%;
+  left: -2.5%;
+  height: 2.4rem;
+  width: 2.4rem;
+  font-size: 1.2rem;
+  border-radius: 50%;
+  background: var(--secondary-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .sticker {
@@ -154,56 +184,42 @@ header > h1 {
   font-family: Barlow, sans-serif;
   padding: 0.6rem 0.8rem;
   letter-spacing: 0.2rem;
-  color: #000;
-
-  border-top-right-radius: 0.4rem;
-  border-top-left-radius: 1.2rem;
-  border-bottom-right-radius: 1.2rem;
-  border-bottom-left-radius: 0.4rem;
+  color: var(--text-dark);
+  border-radius: 0.6rem;
 }
 
-.round-sticker {
-  position: absolute;
-  z-index: 20;
-  top: -2.5%;
-  left: -2.5%;
-  height: 2.4rem;
-  width: 2.4rem;
-  font-size: 1.2rem;
-  border-radius: 50%;
-  background: rgb(168, 241, 50);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+/* Sticker Color by Level */
+.sticker.newbie {
+  background: var(--color-newbie);
 }
 
-.newbie {
-  background: rgb(106, 190, 205);
-}
-.junior {
-  background: rgb(170, 215, 66);
-}
-.intermediate {
-  background: rgb(241, 182, 4);
+.sticker.junior {
+  background: var(--color-junior);
 }
 
-.advanced {
-  background: rgb(244, 137, 37);
+.sticker.intermediate {
+  background: var(--color-intermediate);
 }
 
+.sticker.advanced {
+  background: var(--color-advanced);
+}
+
+/* =========================================
+💻 Tech Tag Badges
+========================================= */
 .font-style {
   padding: 0.6rem;
   border-radius: 0.2rem;
   margin-left: 0.2rem;
-
   font-size: 1rem;
-
-  color: var(--text-color--2);
+  color: var(--text-dark);
 }
 
 .font-html-color {
   background: var(--btn-html);
 }
+
 .font-css-color {
   background: var(--btn-css);
 }
@@ -216,38 +232,41 @@ header > h1 {
   background: var(--btn-api);
 }
 
+/* =========================================
+🔗 Hover Link Animation
+========================================= */
 .my-animation-links {
-  text-decoration: none;
-
   position: relative;
+  text-decoration: none;
 }
 
 .my-animation-links::after {
-  content: " ";
-
+  content: "";
   position: absolute;
   left: 0;
   bottom: -4px;
   width: 100%;
   height: 2px;
-
   transform: scaleX(0);
   transform-origin: right;
   transition: transform 250ms ease-in;
 }
 
-.newbie-link::after {
-  background: rgb(106, 190, 205);
-}
-.junior-link::after {
-  background: rgb(170, 215, 66);
-}
-.intermediate-link::after {
-  background: rgb(241, 182, 4);
+/* Unified hover color logic via data-level */
+.container-sub[data-level="newbie"] .my-animation-links::after {
+  background: var(--color-newbie);
 }
 
-.advanced-link::after {
-  background: rgb(244, 137, 37);
+.container-sub[data-level="junior"] .my-animation-links::after {
+  background: var(--color-junior);
+}
+
+.container-sub[data-level="intermediate"] .my-animation-links::after {
+  background: var(--color-intermediate);
+}
+
+.container-sub[data-level="advanced"] .my-animation-links::after {
+  background: var(--color-advanced);
 }
 
 .my-animation-links:hover::after {
@@ -255,33 +274,25 @@ header > h1 {
   transform-origin: left;
 }
 
+/* =========================================
+🎠 Carousel
+========================================= */
 .carousel {
   position: relative;
-
   height: 20vh;
   width: 85%;
   margin: 0 auto;
 }
-/*  */
-.carousel__image {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-}
 
 .carousel__track-container {
   height: 100%;
-  position: relative;
-
   overflow: hidden;
+  position: relative;
 }
 
 .carousel__track {
   list-style: none;
-
-  position: relative;
   height: 100%;
-
   transition: transform 250ms ease-in;
 }
 
@@ -292,14 +303,19 @@ header > h1 {
   width: 100%;
 }
 
+.carousel__image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* Carousel Buttons */
 .carousel__button {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-
   background: transparent;
   border: none;
-
   cursor: pointer;
 }
 
@@ -310,12 +326,13 @@ header > h1 {
 .carousel__button--right {
   right: -30px;
 }
-.carousel__button > img {
-  width: 24px;
 
+.carousel__button img {
+  width: 24px;
   border-radius: 50%;
 }
 
+/* Carousel Indicators */
 .carousel__nav {
   display: flex;
   justify-content: center;
@@ -329,7 +346,6 @@ header > h1 {
   width: 10px;
   aspect-ratio: 1;
   background: var(--quaternary-light-color);
-
   cursor: pointer;
 }
 
@@ -341,8 +357,9 @@ header > h1 {
   display: none;
 }
 
-
-/* -------------- */
+/* =========================================
+⚙️ Sorting Dropdown
+========================================= */
 .sorting {
   display: flex;
   align-items: center;
@@ -366,15 +383,11 @@ header > h1 {
   background-color: #333;
 }
 
-/* Work in progress placeholder */
+/* =========================================
+🚧 Work in Progress Placeholder
+========================================= */
 .wip-placeholder {
-  background: repeating-linear-gradient(
-    -45deg,
-    #444,
-    #444 10px,
-    #555 10px,
-    #555 20px
-  );
+  background: repeating-linear-gradient(-45deg, #444, #444 10px, #555 10px, #555 20px);
   color: #fff;
   font-weight: bold;
   text-align: center;
@@ -389,7 +402,13 @@ header > h1 {
 }
 
 @keyframes pulse {
-  0% { opacity: 0.8; }
-  50% { opacity: 1; }
-  100% { opacity: 0.8; }
+
+  0%,
+  100% {
+    opacity: 0.8;
+  }
+
+  50% {
+    opacity: 1;
+  }
 }
