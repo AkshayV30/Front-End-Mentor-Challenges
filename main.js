@@ -20,9 +20,9 @@
 // -----------------------------
 // 🧩 Import Modules
 // -----------------------------
-import { loadCards } from './loadCards.js';
-import { renderCards } from './renderCards.js';
-import { initCarousel } from './carousel.js';
+import { loadCards } from './resources/js/loadCards.js';
+import { renderCards } from './resources/js/renderCards.js';
+import { initCarousel } from './resources/js/carousel.js';
 
 // -----------------------------
 // ⚡ Main App Initialization
