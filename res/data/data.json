@@ -163,8 +163,8 @@
     "id": 14,
     "title": "Launch Countdown Timer",
     "images": {
-      "desktop": [],
-      "mobile": []
+      "desktop": ["./src/intermediate/launch-countdown-timer/screenshot/desktop-final.jpeg"],
+      "mobile": ["./src/intermediate/launch-countdown-timer/screenshot/mobile-final.jpeg"]
     },
     "link": "./src/intermediate/launch-countdown-timer/index.html",
     "tech": ["HTML", "CSS", "JS"],
