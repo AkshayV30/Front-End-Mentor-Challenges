@@ -91,7 +91,7 @@ export function renderCards(projects) {
         <!-- 🎠 Carousel Section -->
         <div class="carousel">
           <button type="button" class="carousel__button carousel__button--left is-hidden">
-            <img src="./resources/img/chevron_left.svg" alt="left arrow" />
+            <img src="./res/img/chevron_left.svg" alt="left arrow" />
           </button>
 
           <div class="carousel__track-container">
@@ -99,7 +99,7 @@ export function renderCards(projects) {
           </div>
 
           <button type="button" class="carousel__button carousel__button--right">
-            <img src="./resources/img/chevron_right.svg" alt="right arrow" />
+            <img src="./res/img/chevron_right.svg" alt="right arrow" />
           </button>
 
           <div class="carousel__nav">${indicators}</div>
