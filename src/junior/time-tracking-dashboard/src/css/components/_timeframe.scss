@@ -2,13 +2,16 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  justify-content: space-around;
   gap: 1rem;
 
   padding: 2rem;
+  padding-top: 4rem;
   background: var(--Dark-blue);
 
   border-radius: 0 0 2rem 2rem;
   margin-top: -1rem;
+  margin-bottom: 1rem;
 
   .time-btn {
     border: none;

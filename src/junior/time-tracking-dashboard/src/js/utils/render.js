@@ -12,6 +12,13 @@ export function renderData(period) {
     return;
   }
 
+  // Label map for previous period text
+  const previousLabels = {
+    daily: 'Yesterday',
+    weekly: 'Last Week',
+    monthly: 'Last Month',
+  };
+
   data.forEach(({ title, timeframes }) => {
     const frame = timeframes[period];
     if (!frame) return;
@@ -47,7 +54,9 @@ export function renderData(period) {
         </header>
         <div class="card-body">
           <p class="hours">${current}hr${current > 1 ? 's' : ''}</p>
-          <p class="previous">Previous - ${previous}hr${previous > 1 ? 's' : ''}</p>
+          <p class="previous">${previousLabels[period]} - ${previous}hr${
+      previous > 1 ? 's' : ''
+    }</p>
         </div>
       </div>
     `;

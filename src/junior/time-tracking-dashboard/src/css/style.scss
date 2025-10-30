@@ -1,29 +1,60 @@
 @import 'base/variables';
 @import 'base/reset';
 @import 'base/global';
-@import 'utils/animations';
-@import 'layout/dashboard';
+
 @import 'components/profile';
 @import 'components/cards';
+@import 'components/timeframe';
+
+@import 'layout/dashboard';
 @import 'layout/footer';
 
+@import 'utils/animations';
 
-@media (max-width: 900px) {
-  .container-dashboard {
-    flex-direction: column;
-    align-items: center;
-  }
+
+@media (max-width: 90rem) {
+  .profile{
+  flex-direction: row;  
+  justify-content: center;
+  align-items: center;
 
   .profile__image #profile-pic {
     width: 5.5rem;
   }
 
+  .profile__subtitle{
+    font-size: 1rem;
+  }
+
+  .profile__name{
+    width: fit-content;
+    font-size: 1.2rem;
+  }
+
+    }
+  .container-dashboard {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .timeframe-selector{
+    flex-direction: row;
+  }
+
+
   .container-dashboard__contents {
     grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
   }
+
+  .card-body{
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        gap: 1rem;
+      }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 60rem) {
   body {
     justify-content: flex-start;
     height: auto;

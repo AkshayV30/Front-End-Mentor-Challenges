@@ -44,12 +44,12 @@
     border-radius: 1.25rem;
     margin-top: -1rem;
 
-    transition: background var(--transition-smooth), transform var(--transition-fast);
+    // transition: background var(--transition-smooth), transform var(--transition-fast);
 
     &:hover {
       background: var(--Desaturated-blue);
       cursor: pointer;
-      transform: translateY(-0.3rem);
+      // transform: translateY(-0.3rem);
     }
 
     padding: 2.25rem;
@@ -81,6 +81,7 @@
     }
 
     .card-body {
+  
       .hours {
         font-size: 3.6rem;
         font-weight: var(--font-weight--1);
