@@ -35,18 +35,19 @@ export function renderData(period) {
 
     // Create card element
     const card = document.createElement('article');
-    card.className = `card fade-in ${backgroundImageClass}`;
+    card.className = `card fade-in `;
 
     // Build inner HTML (semantic & accessible)
     card.innerHTML = `
-      <div class="cards-content">
+      <div class="card-bg ${backgroundImageClass}"></div>   
+    <div  class="cards-content">
         <header class="card-header">
           <h3 class="card-title">${title}</h3>
           <button class="ellipsis-btn" aria-label="Options">•••</button>
         </header>
         <div class="card-body">
-          <p class="hours">${current}hr${current !== 1 ? 's' : ''}</p>
-          <p class="previous">Previous - ${previous}hr${previous !== 1 ? 's' : ''}</p>
+          <p class="hours">${current}hr${current > 1 ? 's' : ''}</p>
+          <p class="previous">Previous - ${previous}hr${previous > 1 ? 's' : ''}</p>
         </div>
       </div>
     `;

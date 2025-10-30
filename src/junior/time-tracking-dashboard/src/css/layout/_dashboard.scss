@@ -1,0 +1,17 @@
+.container-dashboard {
+  display: flex;
+  gap: 2.5rem;
+  align-items: center;
+  justify-content: center;
+
+  flex-wrap: wrap;
+  max-width: 100rem;
+  padding: 2rem;
+}
+
+.container-dashboard__heading {
+  background: var(--Dark-blue);
+  border-radius: 1.25rem;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+}

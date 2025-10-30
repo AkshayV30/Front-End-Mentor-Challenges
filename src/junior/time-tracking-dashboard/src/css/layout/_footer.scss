@@ -1,0 +1,16 @@
+.footer {
+  text-align: center;
+  font-size: 1.2rem;
+  color: var(--Desaturated-blue);
+  padding: 2rem 0;
+
+  a {
+    color: hsl(228, 45%, 44%);
+    text-decoration: none;
+    transition: color var(--transition-fast);
+
+    &:hover {
+      color: var(--Pale-Blue);
+    }
+  }
+}

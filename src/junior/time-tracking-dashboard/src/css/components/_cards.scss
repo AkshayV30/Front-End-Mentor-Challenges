@@ -1,0 +1,95 @@
+.container-dashboard__contents {
+  display: grid;
+  grid-template-columns: repeat(3, 18rem);
+  grid-template-rows: repeat(2, 2fr);
+
+  gap: 2rem;
+
+  /* Background theme mapping */
+  .bg-work {
+    background: var(--work) url('../images/icon-work.svg');
+  }
+  .bg-play {
+    background: var(--play) url('../images/icon-play.svg');
+  }
+  .bg-study {
+    background: var(--study) url('../images/icon-study.svg');
+  }
+  .bg-exercise {
+    background: var(--exercise) url('../images/icon-exercise.svg');
+  }
+  .bg-social {
+    background: var(--social) url('../images/icon-social.svg');
+  }
+  .bg-selfcare {
+    background: var(--self-care) url('../images/icon-self-care.svg');
+  }
+
+  .bg-default {
+    background: linear-gradient(135deg, #555, #333);
+  }
+
+  .card-bg {
+    height: 4rem;
+    border-radius: 1.2rem 1.2rem 0 0;
+    background-repeat: no-repeat;
+    background-position: top right;
+  }
+
+  .cards-content {
+    background: var(--Dark-blue);
+
+    position: relative;
+    z-index: 2;
+    border-radius: 1.25rem;
+    margin-top: -1rem;
+
+    transition: background var(--transition-smooth), transform var(--transition-fast);
+
+    &:hover {
+      background: var(--Desaturated-blue);
+      cursor: pointer;
+      transform: translateY(-0.3rem);
+    }
+
+    padding: 2.25rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      color: var(--Pale-Blue);
+      padding: 1rem 0;
+
+      h3 {
+        font-size: 1.2rem;
+      }
+      .ellipsis-btn {
+        background: transparent;
+        letter-spacing: 0.2rem;
+        border: none;
+
+        color: inherit;
+      }
+      .ellipsis-btn:hover {
+        cursor: pointer;
+      }
+    }
+
+    .card-body {
+      .hours {
+        font-size: 3.6rem;
+        font-weight: var(--font-weight--1);
+      }
+
+      .previous {
+        font-size: 1rem;
+        color: var(--Desaturated-blue);
+      }
+    }
+  }
+}
