@@ -3,7 +3,6 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- displays site properly based on user's device -->
 
     <link
       rel="icon"
@@ -11,138 +10,58 @@
       sizes="32x32"
       href="./images/favicon-32x32.png"
     />
-
-    <title>Frontend Mentor | Time tracking dashboard</title>
-
-    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-    <link rel="stylesheet" href="style.css" />
-    <style>
-      @import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&display=swap");
-    </style>
+    
+    <title>Time Tracking Dashboard | Frontend Mentor Challenge</title>
+   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&display=swap');
+   </style> 
+    <link rel="stylesheet" href="./src/css/style.css" />
   </head>
+
   <body>
     <main>
-      <div class="container-card">
-        <div class="container-up profile">
-          <img
-            src="./images/image-jeremy.png"
-            id="profile-pic"
-            alt="profile-img"
-          />
-          <h3><span>Report for</span> <br />Jeremy Robson</h3>
-        </div>
+      
+    <section class="container-dashboard">
+      <div class="container-dashboard__heading">
+        <div class="profile">
+          <figure class="profile__image">
+          <img src="./src/images/image-jeremy.png" id="profile-pic" alt="Profile picture of Jeremy Robson"/>
+          </figure>
+  
+          <div class="profile__info">
+              <p class="profile__subtitle">Report for</p>
+              <h1 class="profile__name">Jeremy Robson</h1>
+          </div>
+       </div>
+    
+      <div class="timeframe-selector" aria-label="Select time period">
+        <button type="button" class="time-btn" data-target="daily">Daily</button>
+        <button type="button" class="time-btn" data-target="weekly">Weekly</button>
+        <button type="button" class="time-btn" data-target="monthly">Monthly</button>
+      </div>
+  </div>
 
-        <div class="container-down">
-          <button>Daily</button>
-          <button>Weekly</button>
-          <button>Monthly</button>
-        </div>
+    <!----------------------------------------------------------------------------->
+      <div id="cards-contents" 
+      class="container-dashboard__content" aria-live="polite">
+        <!-- Cards injected dynamically -->
       </div>
 
-      <div class="daily">
-        Work 5hrs
-        <!-- daily -->
-        Previous - 7hrs
-        <!-- daily -->
 
-        Play 1hr
-        <!-- daily -->
-        Previous - 2hrs
-        <!-- daily -->
-
-        Study 0hrs
-        <!-- daily -->
-        Previous - 1hr
-        <!-- daily -->
-
-        Exercise 1hr
-        <!-- daily -->
-        Previous - 1hr
-        <!-- daily -->
-
-        Social 1hr
-        <!-- daily -->
-        Previous - 3hrs
-        <!-- daily -->
-
-        Self Care 0hrs
-        <!-- daily -->
-        Previous - 1hr
-        <!-- daily -->
-      </div>
-
-      <div class="weekly">
-        32hrs
-        <!-- weekly -->
-        Previous - 36hrs
-        <!-- weekly -->
-
-        10hrs
-        <!-- weekly -->
-        Previous - 8hrs
-        <!-- weekly -->
-
-        4hrs
-        <!-- weekly -->
-        Previous - 7hrs
-        <!-- weekly -->
-
-        4hrs
-        <!-- weekly -->
-        Previous - 5hrs
-        <!-- weekly -->
-
-        5hrs
-        <!-- weekly -->
-        Previous - 10hrs
-        <!-- weekly -->
-
-        2hrs
-        <!-- weekly -->
-        Previous - 2hrs
-        <!-- weekly -->
-      </div>
-
-      <div class="monthly">
-        103hrs
-        <!-- monthly -->
-        Previous - 128hrs
-        <!-- monthly -->
-
-        23hrs
-        <!-- monthly -->
-        Previous - 29hrs
-        <!-- monthly -->
-
-        13hrs
-        <!-- monthly -->
-        Previous - 19hrs
-        <!-- monthly -->
-
-        11hrs
-        <!-- monthly -->
-        Previous - 18hrs
-        <!-- monthly -->
-
-        21hrs
-        <!-- monthly -->
-        Previous - 23hrs
-        <!-- monthly -->
-
-        7hrs
-        <!-- monthly -->
-        Previous - 11hrs
-        <!-- monthly -->
-      </div>
+    </section >
+        <!--  -->
     </main>
 
-    <footer>
-      <div class="attribution">
+    <footer class="footer">
+      <p class="attribution">
         Challenge by
-        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        <a rel="noopener" href="https://www.frontendmentor.io?ref=challenge" target="_blank"
           >Frontend Mentor</a
-        >. Coded by <a href="#">Your Name Here</a>.
-      </div>
+        >. Coded by
+        <a rel="noopener"   href="https://github.com/AkshayV30" target="_blank">Akshay Minz</a>.
+      </p>
     </footer>
+
+    <script type="module" src="./src/js/main.js"></script>
   </body>
 </html>
