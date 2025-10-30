@@ -49,22 +49,33 @@ body {
 .container-dashboard {
   display: flex;
   gap: 2rem;
+align-items: center;
+justify-content: center;
 }
 
 .container-dashboard__heading {
   border-radius: 1.25rem;
-
+.profile:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.45);
+}
   .profile {
+    position: relative;
+    z-index: 1;
+
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     gap: 2rem;
 
     background: var(--Base);
+   
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
 
     border-radius: 1.25rem;
 
     padding: 2rem;
+     transition: transform 0.3s ease, box-shadow 0.3s ease;
 
     .profile__image {
       #profile-pic {
@@ -100,7 +111,7 @@ body {
     gap: 1rem;
 
     margin-top: -1rem;
-    z-index: -50;
+    // z-index: -50;
     border-radius: 0 0 2rem 2rem;
 
     background: var(--Dark-blue);
@@ -121,13 +132,26 @@ body {
   }
 }
 // -----------------------------
+/* Background theme mapping */
+.bg-work { background: hsl(15, 100%, 70%) url('../images/icon-work.svg') top right no-repeat; }
+.bg-play { background: hsl(195, 74%, 62%) url('../images/icon-play.svg') top right no-repeat; }
+.bg-study { background: hsl(348, 100%, 68%) url('../images/icon-study.svg') top right no-repeat; }
+.bg-exercise { background: hsl(145, 58%, 55%) url('../images/icon-exercise.svg') top right no-repeat; }
+.bg-social { background: hsl(264, 64%, 52%) url('../images/icon-social.svg') top right no-repeat; }
+.bg-selfcare { background: hsl(43, 84%, 65%) url('../images/icon-self-care.svg') top right no-repeat; }
+
+.bg-default {
+  background: linear-gradient(135deg, #555, #333);
+}
+
+//
 .container-dashboard__content {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, 18rem);
   grid-template-rows: repeat(2, 2fr);
-  gap: 2rem;
+  gap: 1rem;
 
-  .cards {
+  .cards-content {
     padding: 1.5rem;
     display: flex;
     flex-direction: column;
