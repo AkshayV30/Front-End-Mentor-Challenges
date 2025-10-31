@@ -1,0 +1,124 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  height: 100vh;
+  background: url('./../assets/home/background-home-desktop.jpg') no-repeat center center;
+  background-size: cover;
+  background-attachment: fixed; /* optional: gives parallax-like effect */
+
+  color: #fff;
+}
+
+/* 🌐 Mobile adjustments (below 720px) */
+@media (max-width: 720px) {
+  body {
+    background: url('./../assets/home/background-home-mobile.jpg') no-repeat center center;
+    background-size: cover;
+  }
+}
+
+header {
+  padding: 4rem;
+  nav {
+    padding: 2rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    #space_logo {
+      height: 3rem;
+      aspect-ratio: 1;
+    }
+
+    #thin-line {
+      background: rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px); /* Safari support */
+      height: 0.2rem;
+      width: 50rem;
+    }
+
+    ol {
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+
+      padding: 2rem;
+      // margin: 0rem 2rem;
+
+      width: 70%;
+
+      background: rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px); /* Safari support */
+
+      li {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        font-size: 1.4rem;
+        h3 {
+          text-transform: uppercase;
+          letter-spacing: 0.2ch;
+        }
+
+        &:hover {
+          border-bottom: 0.2rem solid white;
+          cursor: pointer;
+          // position: absolute;
+          margin-bottom: 2rem;
+        }
+        &.active {
+        }
+      }
+    }
+  }
+}
+
+.section__home {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  .section__home-left-content {
+    h2 {
+      font-size: 2rem;
+      letter-spacing: 0.2ch;
+      text-transform: uppercase;
+    }
+    h1 {
+      text-transform: uppercase;
+      font-size: 8rem;
+    }
+    .section__home-left-content-contain {
+      max-width: 47ch;
+    }
+  }
+  #section__home-explore-btn {
+    border-radius: 50%;
+    background: '#fff';
+    height: 10rem;
+    aspect-ratio: 1;
+    border: none;
+    &:hover {
+      transform: scale(1.25);
+      background: red;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px); /* Safari support */
+    }
+  }
+}

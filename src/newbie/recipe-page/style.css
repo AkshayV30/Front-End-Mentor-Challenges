@@ -1,5 +1,5 @@
 /* =========================================
-   Base Setup & Variables
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 🧱 Base Setup
 ========================================= */
 *,
 *::after,
@@ -23,6 +23,7 @@
 html {
   font-size: 62.5%;
   font-family: "Outfit", sans-serif;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -30,20 +31,22 @@ body {
   flex-direction: column;
   align-items: center;
   background: var(--stone-100);
-    color: var(--stone-900);
+  color: var(--stone-900);
     line-height: 1.6;
     padding: 2rem;
+  min-height: 100vh;
 }
 
 /* =========================================
-   Main Container
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 📦 Container
 ========================================= */
 .container {
-  max-width: 720px;
+  max-width: 72rem;
   background: var(--white);
   border-radius: 1.6rem;
   padding: 2.4rem;
   box-shadow: 0 0.3rem 0.6rem rgba(0, 0, 0, 0.1);
+  overflow: hidden;
 }
 
 #main-img {
@@ -53,35 +56,38 @@ body {
   object-fit: cover;
 }
 
-h1 {
+/* =========================================
+   🧠 Typography
+========================================= */
+h1,
+h3 {
   font-family: "Young Serif", serif;
-  font-size: 3rem;
   color: var(--stone-900);
+}
+
+h1 {
+  font-size: 3rem;
   margin-bottom: 1.2rem;
 }
 
-p {
+p,
+li,
+td {
   font-size: 1.5rem;
   color: var(--stone-600);
-  margin-bottom: 2rem;
+  margin-bottom: 1.6rem;
 }
 
 /* =========================================
-   Sections
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 📋 Sections
 ========================================= */
 section {
   margin-bottom: 2.4rem;
 }
 
-section h3 {
-  font-size: 1.8rem;
-  margin-bottom: 1.2rem;
-}
-
 ul,
 ol {
   padding-left: 2rem;
-  font-size: 1.4rem;
 }
 
 li {
@@ -89,20 +95,21 @@ li {
 }
 
 /* =========================================
-   Preparation Section
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 🍳 Preparation
 ========================================= */
 .prep-content {
   background: var(--rose-50);
-    padding: 1.6rem;
+  padding: 1.6rem;
     border-radius: 1rem;
-  }
-  
-  .prep-content h3 {
-    color: var(--rose-800);
-  }
+  margin-bottom: 2rem;
+}
+
+.prep-content h3 {
+  color: var(--rose-800);
+}
 
 /* =========================================
-   Ingredients / Instructions
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 🧂 Ingredients & Instructions
 ========================================= */
 .ingredients-content h3,
 .instructions-content h3 {
@@ -118,7 +125,7 @@ li {
 }
 
 /* =========================================
-   Nutrition Table
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 🧮 Nutrition
 ========================================= */
 .nutrition-content table {
   width: 100%;
@@ -136,34 +143,36 @@ li {
   color: var(--brown-800);
   font-weight: 600;
 }
+
 /* =========================================
-   Footer
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 🦶 Footer
 ========================================= */
 footer {
   text-align: center;
   font-size: 1.2rem;
   padding: 2rem 0;
 }
+
 .attribution a {
   color: hsl(228, 45%, 44%);
 }
 
 /* =========================================
-   Media Queries
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 📱 Responsive Design
 ========================================= */
 
-/* 📱 Small screens (≤480px) */
+/* Small (≤480px) */
 @media (max-width: 480px) {
   html {
     font-size: 55%;
   }
 
     body {
-      padding: 1rem;
+      padding: 0;
     }
 
     .container {
-      padding: 1.6rem;
+  padding: 0;
     }
 
     h1 {
@@ -181,7 +190,7 @@ footer {
     }
 }
 
-/* 💻 Medium screens (481px–768px) */
+/* Medium (481px–768px) */
 @media (max-width: 768px) {
   html {
     font-size: 58%;
@@ -189,16 +198,18 @@ footer {
 
     .container {
       max-width: 90%;
+        padding: 0;
     }
 }
 
-/* 🖥️ Large screens (≥1024px) */
+/* Large (≥1024px) */
 @media (min-width: 1024px) {
   html {
     font-size: 64%;
   }
 
     .container {
-      max-width: 760px;
+    max-width: 76rem;
+      padding: 0;
     }
 }

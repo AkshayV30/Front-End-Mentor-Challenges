@@ -1,0 +1,106 @@
+@charset "UTF-8";
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  height: 100vh;
+  background: url("./../assets/home/background-home-desktop.jpg") no-repeat center center;
+  background-size: cover;
+  background-attachment: fixed; /* optional: gives parallax-like effect */
+  color: #fff;
+}
+
+/* 🌐 Mobile adjustments (below 720px) */
+@media (max-width: 720px) {
+  body {
+    background: url("./../assets/home/background-home-mobile.jpg") no-repeat center center;
+    background-size: cover;
+  }
+}
+header {
+  padding: 4rem;
+}
+header nav {
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+header nav #space_logo {
+  height: 3rem;
+  aspect-ratio: 1;
+}
+header nav #thin-line {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px); /* Safari support */
+  height: 0.2rem;
+  width: 50rem;
+}
+header nav ol {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem;
+  width: 70%;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px); /* Safari support */
+}
+header nav ol li {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 1.4rem;
+}
+header nav ol li h3 {
+  text-transform: uppercase;
+  letter-spacing: 0.2ch;
+}
+header nav ol li:hover {
+  border-bottom: 0.2rem solid white;
+  cursor: pointer;
+  margin-bottom: 2rem;
+}
+.section__home {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.section__home .section__home-left-content h2 {
+  font-size: 2rem;
+  letter-spacing: 0.2ch;
+  text-transform: uppercase;
+}
+.section__home .section__home-left-content h1 {
+  text-transform: uppercase;
+  font-size: 8rem;
+}
+.section__home .section__home-left-content .section__home-left-content-contain {
+  max-width: 47ch;
+}
+.section__home #section__home-explore-btn {
+  border-radius: 50%;
+  background: "#fff";
+  height: 10rem;
+  aspect-ratio: 1;
+  border: none;
+}
+.section__home #section__home-explore-btn:hover {
+  transform: scale(1.25);
+  background: red;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px); /* Safari support */
+}
+
+/*# sourceMappingURL=style.css.map */
