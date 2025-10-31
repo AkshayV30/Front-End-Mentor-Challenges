@@ -186,8 +186,16 @@
     "id": 16,
     "title": "Time Tracking Dashboard",
     "images": {
-      "desktop": [],
-      "mobile": []
+      "desktop": [
+        "./src/junior/time-tracking-dashboard/screenshots/desktop-1.png",
+        "./src/junior/time-tracking-dashboard/screenshots/desktop-2.png",
+        "./src/junior/time-tracking-dashboard/screenshots/desktop-3.png"
+      ],
+      "mobile": [
+        "./src/junior/time-tracking-dashboard/screenshots/mobile-1.png",
+        "./src/junior/time-tracking-dashboard/screenshots/mobile-2.png",
+        "./src/junior/time-tracking-dashboard/screenshots/mobile-3.png"
+      ]
     },
     "link": "./src/junior/time-tracking-dashboard/index.html",
     "tech": ["HTML", "CSS", "JS"],
