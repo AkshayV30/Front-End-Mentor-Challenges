@@ -239,17 +239,21 @@ body {
   transition: all var(--transition-smooth);
 }
 
-@media (max-width: 90rem) {
+@media (max-width: 72rem) {
   .profile {
     flex-direction: row;
     justify-content: center;
     align-items: center;
+  }
+  .profile .profile__info {
+    padding: 0;
   }
   .profile .profile__image #profile-pic {
     width: 5.5rem;
   }
   .profile .profile__subtitle {
     font-size: 1rem;
+    padding: 0.5rem;
   }
   .profile .profile__name {
     width: fit-content;
@@ -270,19 +274,6 @@ body {
     align-items: center;
     justify-content: space-around;
     gap: 1rem;
-  }
-}
-@media (max-width: 60rem) {
-  body {
-    justify-content: flex-start;
-    height: auto;
-    padding: 2rem;
-  }
-  .profile__name {
-    font-size: 2.2rem;
-  }
-  .cards-content {
-    padding: 1.6rem;
   }
 }
 
