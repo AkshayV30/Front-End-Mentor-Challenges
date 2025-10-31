@@ -186,8 +186,8 @@
     "id": 16,
     "title": "Time Tracking Dashboard",
     "images": {
-      "desktop": [],
-      "mobile": []
+      "desktop": ["./src/intermediate/ip-address-tracker/screenshot/desktop.png"],
+      "mobile": ["./src/intermediate/ip-address-tracker/screenshot/mobile.png"]
     },
     "link": "./src/junior/time-tracking-dashboard/index.html",
     "tech": ["HTML", "CSS", "JS"],
