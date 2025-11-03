@@ -14,20 +14,20 @@
       <nav>
         <img id="space_logo" src="./src/assets/shared/logo.svg" alt="logo" />
         <p id="thin_line"></p>
-        <ol>
-          <li id="home">
+        <ol aria-label="Select nav items"  class="home-nav-item-selector">
+          <li id="home" data-target="home" >
             <strong>00</strong>
             <h3>Home</h3>
-          </li>
-          <li id="destination">
+          </li >
+          <li id="destination" data-target="destination">
             <strong>01</strong>
             <h3>Destination</h3>
           </li>
-          <li id="crew">
+          <li id="crew" data-target="crew">
             <strong>02</strong>
             <h3>Crew</h3>
           </li>
-          <li id="technology">
+          <li id="technology" data-target="technology">
             <strong>03</strong>
             <h3>Technology</h3>
           </li>
@@ -35,19 +35,10 @@
       </nav>
     </header>
     <main>
-      <section class="section__home">
-        <div class="section__home-left-content">
-          <h2>So, you want to travel to</h2>
-          <h1>Space</h1>
-          <div class="section__home-left-content-contain">
-            Let’s face it; if you want to go to space, you might as well genuinely go to outer space
-            and not hover kind of on the edge of it. Well sit back, and relax because we’ll give you
-            a truly out of this world experience!
-          </div>
-        </div>
-        <button id="section__home-explore-btn" type="button">Explore</button>
-      </section>
+     <section id="contents"  class="container-contents" aria-live="polite"> </section>
     </main>
     <footer></footer>
+
+    <script type="module" src="./src/js/main.js"></script>
   </body>
 </html>
