@@ -1,12 +1,17 @@
+@use './../abstracts/variables' as *;
+@use './../base/animations';
+
+/* ==== Section Container ==== */
 .section-destination {
   padding: 3rem;
-  color: #fff;
+  color: $color-text;
   min-height: 80vh;
   position: relative;
   overflow: hidden;
   perspective: 1000px;
 }
 
+/* ==== Destination Layout ==== */
 .destinations {
   max-width: 1100px;
   margin: 0 auto;
@@ -21,37 +26,37 @@
   display: flex;
   gap: 1rem;
   justify-content: flex-end;
-  z-index: 10;
+  z-index: $z-tab;
   padding: 0.5rem 1rem;
 }
 
 .destination__tab {
   background: transparent;
-  color: #bbb;
+  color: $color-subtle;
   border: none;
-  font-size: 1.2rem;
+  font-size: $font-size-tab;
   text-transform: uppercase;
   letter-spacing: 1px;
   cursor: pointer;
   border-bottom: 2px solid transparent;
   padding: 0.5rem 1rem;
-  transition: color 0.3s ease, transform 0.3s ease, border-color 0.3s ease;
+  transition: color $transition-fast, transform $transition-fast, border-color $transition-fast;
   transform: translateZ(0);
   will-change: transform, color;
+
+  &:hover {
+    color: $color-text;
+    transform: translateY(-2px);
+  }
+
+  &--active {
+    color: $color-text;
+    border-bottom: 2px solid $color-text;
+    transform: translateY(-2px);
+  }
 }
 
-.destination__tab:hover {
-  color: #fff;
-  transform: translateY(-2px);
-}
-
-.destination__tab--active {
-  color: #fff;
-  border-bottom: 2px solid #fff;
-  transform: translateY(-2px);
-}
-
-/* ==== Content & Fade Transitions ==== */
+/* ==== Content Area ==== */
 .destinations__content-area {
   position: relative;
   margin-top: 6rem;
@@ -60,75 +65,66 @@
 
 .destination__content-wrapper {
   will-change: opacity, transform;
-  transition: opacity 0.35s ease, transform 0.35s ease;
-}
-
-.fade-in {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.fade-out {
-  opacity: 0;
-  transform: translateY(-10px);
-  pointer-events: none;
+  transition: opacity $transition-medium, transform $transition-medium;
 }
 
 /* ==== Inner Content ==== */
 .destination__content {
   display: flex;
   align-items: center;
-  gap: 3rem;
-}
+  gap: $gap;
 
-.destination__figure {
-  flex: 0 0 340px;
-}
-
-.destination__figure img {
-  width: 100%;
-  border-radius: 1rem;
-  display: block;
-  transform: translateZ(0);
-  backface-visibility: hidden;
-}
-
-.destination-info {
-  flex: 1;
-  text-align: left;
-}
-
-.destination-info h1 {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-}
-
-.destination__description {
-  color: #aaa;
-  line-height: 1.6;
-  max-width: 60ch;
-  margin-bottom: 2rem;
-}
-
-.destination-stats {
-  display: flex;
-  gap: 3rem;
-  flex-wrap: wrap;
-}
-
-.destination-stats h4 {
-  font-weight: 400;
-  opacity: 0.7;
-  margin-bottom: 0.3rem;
-}
-
-/* ==== Responsive ==== */
-@media (max-width: 900px) {
-  .destination__content {
+  @media (max-width: 900px) {
     flex-direction: column;
     text-align: center;
   }
+}
 
+/* ==== Image ==== */
+.destination__figure {
+  flex: 0 0 340px;
+
+  img {
+    width: 100%;
+    border-radius: $radius;
+    display: block;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+  }
+}
+
+/* ==== Info ==== */
+.destination-info {
+  flex: 1;
+  text-align: left;
+
+  h1 {
+    font-size: $font-size-title;
+    margin-bottom: 1rem;
+  }
+
+  .destination__description {
+    color: $color-muted;
+    line-height: 1.6;
+    max-width: 60ch;
+    margin-bottom: 2rem;
+  }
+
+  .destination-stats {
+    display: flex;
+    gap: $gap;
+    flex-wrap: wrap;
+
+    h4 {
+      font-weight: 400;
+      opacity: 0.7;
+      margin-bottom: 0.3rem;
+    }
+  }
+}
+
+/* ==== Mobile Tabs ==== */
+@media (max-width: 900px) {
   .destinations__tab-container {
     position: static;
     justify-content: center;
