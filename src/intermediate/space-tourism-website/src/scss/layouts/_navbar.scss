@@ -1,0 +1,36 @@
+.navbar {
+  padding: 4rem 30rem 4rem 20rem;
+  position: relative;
+  right: -10rem;
+  z-index: 10;
+
+  // Glass
+  background: rgba(255, 255, 255, 0.1);
+
+  .nav-list {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 4rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+
+    .nav-list-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+
+      font-size: 1.4rem;
+
+      strong {
+        font-weight: 700;
+        font-size: 1.3rem;
+      }
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+}

@@ -1,0 +1,24 @@
+.section-home {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+
+  margin: 20rem;
+
+  .home-text {
+    h2 {
+      font-size: 2rem;
+      letter-spacing: 0.2ch;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      text-transform: uppercase;
+      font-size: 8rem;
+    }
+
+    .home-text-para {
+      max-width: 50ch;
+    }
+  }
+}

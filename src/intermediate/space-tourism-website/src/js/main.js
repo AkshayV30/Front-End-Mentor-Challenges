@@ -1,34 +1,70 @@
 'use strict';
 
-import { fetchCrew, fetchDestination, fetchTechnology } from './utils/fetching.js';
-import { renderMainData } from './utils/render.js';
+import { fetchData } from './utils/fetchData.js';
+import { renderHome } from './utils/renderHome.js';
+import { renderCrew } from './utils/renderCrew.js';
+import { renderDestinations } from './utils/renderDestinations.js';
+import { renderTechnology } from './utils/renderTechnology.js';
 
 export const contentsContainer = document.getElementById('contents');
-export const homeNavItems = document.querySelectorAll('.home-nav-item-selector li');
+export const navItems = document.querySelectorAll('.nav-list li');
 
-export let currentSection = 'home'; // keep track of current tab
-export let data = {}; // holds all data
+export let data = {
+  crew: [],
+  destination: [],
+  technology: [],
+};
+export let currentSection = 'home';
 
-// === Initialize app ===
-window.addEventListener('DOMContentLoaded', async () => {
-  // preload all JSONs
-  const [crew, destination, technology] = await Promise.all([
-    fetchCrew(),
-    fetchDestination(),
-    fetchTechnology(),
-  ]);
+// === Initialize App ===
+window.addEventListener('DOMContentLoaded', initApp);
 
-  data = { crew, destination, technology };
-  renderMainData('home');
-});
+async function initApp() {
+  try {
+    const [crew, destination, technology] = await Promise.all([
+      fetchData('./src/data/data_crew.json', 'crew'),
+      fetchData('./src/data/data_destinations.json', 'destinations'),
+      fetchData('./src/data/data_technology.json', 'technology'),
+    ]);
+    data = { crew, destination, technology };
+  } catch (err) {
+    console.error('App initialization failed:', err);
+  } finally {
+    renderMain('home');
+    attachNavListeners();
+  }
+}
 
 // === Tab Switching ===
-homeNavItems.forEach((tab) => {
-  tab.addEventListener('click', () => {
-    homeNavItems.forEach((t) => t.classList.remove('active'));
-    tab.classList.add('active');
-    const target = tab.dataset.target;
-    currentSection = target;
-    renderMainData(target);
+function attachNavListeners() {
+  navItems.forEach((tab) => {
+    tab.addEventListener('click', () => {
+      if (tab.dataset.target === currentSection) return; // avoid redundant re-render
+      navItems.forEach((t) => t.classList.remove('active'));
+      tab.classList.add('active');
+      currentSection = tab.dataset.target;
+      renderMain(currentSection);
+    });
   });
-});
+}
+
+// === Section Renderer ===
+export function renderMain(section) {
+  contentsContainer.innerHTML = ''; // clear container
+  switch (section) {
+    case 'home':
+      renderHome();
+      break;
+    case 'destination':
+      renderDestinations();
+      break;
+    case 'crew':
+      renderCrew();
+      break;
+    case 'technology':
+      renderTechnology();
+      break;
+    default:
+      contentsContainer.innerHTML = `<p class="error-text">⚠️ Section not found.</p>`;
+  }
+}

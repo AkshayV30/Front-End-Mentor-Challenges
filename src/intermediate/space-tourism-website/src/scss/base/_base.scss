@@ -1,0 +1,21 @@
+html {
+  font-size: 62.5%;
+}
+
+body {
+  height: 100vh;
+  background: url('./../assets/home/background-home-desktop.jpg') no-repeat center center;
+  background-size: cover;
+  background-attachment: fixed; /* optional: gives parallax-like effect */
+
+  color: #fff;
+  overflow-x: hidden;
+}
+
+/* 🌐 Mobile adjustments (below 720px) */
+@media (max-width: 720px) {
+  body {
+    background: url('./../assets/home/background-home-mobile.jpg') no-repeat center center;
+    background-size: cover;
+  }
+}
