@@ -11,16 +11,18 @@ export function renderDestinations() {
     <section class="section-destination fade-in">
       <h2><span>01</span> Pick Your Destination</h2>
       <div class="destinations">
-        <div class="destinations__tab-container">
-          ${destinations
-            .map(
-              (d, i) =>
-                `<div class="destination__tab ${
-                  i === 0 ? 'destination__tab--active' : ''
-                }" data-index="${i}">${d.name}</div>`
-            )
-            .join('')}
-        </div>
+         <div class="destinations__tab-container">
+  
+        ${destinations
+          .map(
+            (d, i) =>
+              `<div class="destination__tab ${
+                i === 0 ? 'destination__tab--active' : ''
+              }" data-index="${i}">${d.name}</div>`
+          )
+          .join('')}
+         </div>
+
 
         <div class="destinations__content-area">
           <div class="destination__content-wrapper"></div>

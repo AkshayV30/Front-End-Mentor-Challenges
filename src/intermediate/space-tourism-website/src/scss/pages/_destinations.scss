@@ -1,133 +1,105 @@
 @use './../abstracts/variables' as *;
 @use './../base/animations';
 
-/* ==== Section Container ==== */
 .section-destination {
-  padding: 3rem;
+  padding: 4rem 2rem;
   color: $color-text;
+  text-align: center;
   min-height: 80vh;
-  position: relative;
-  overflow: hidden;
-  perspective: 1000px;
+
+  h2 {
+    margin-bottom: 3rem;
+    font-size: 2.4rem;
+  }
 }
 
-/* ==== Destination Layout ==== */
 .destinations {
-  max-width: 1100px;
-  margin: 0 auto;
-  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
 }
 
-/* ==== Tabs ==== */
 .destinations__tab-container {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
   display: flex;
+  flex-wrap: wrap;
   gap: 1rem;
-  justify-content: flex-end;
-  z-index: $z-tab;
-  padding: 0.5rem 1rem;
+  justify-content: center;
 }
 
 .destination__tab {
   background: transparent;
-  color: $color-subtle;
   border: none;
-  font-size: $font-size-tab;
-  text-transform: uppercase;
-  letter-spacing: 1px;
+  color: $color-subtle;
+  font-size: 1.4rem;
+  padding: 0.8rem 1.2rem;
   cursor: pointer;
   border-bottom: 2px solid transparent;
-  padding: 0.5rem 1rem;
-  transition: color $transition-fast, transform $transition-fast, border-color $transition-fast;
-  transform: translateZ(0);
-  will-change: transform, color;
+  transition: 0.3s ease;
 
   &:hover {
     color: $color-text;
-    transform: translateY(-2px);
   }
 
   &--active {
     color: $color-text;
-    border-bottom: 2px solid $color-text;
-    transform: translateY(-2px);
+    border-color: $color-text;
   }
 }
 
-/* ==== Content Area ==== */
-.destinations__content-area {
-  position: relative;
-  margin-top: 6rem;
-  overflow: hidden;
-}
-
-.destination__content-wrapper {
-  will-change: opacity, transform;
-  transition: opacity $transition-medium, transform $transition-medium;
-}
-
-/* ==== Inner Content ==== */
 .destination__content {
   display: flex;
   align-items: center;
-  gap: $gap;
-
-  @media (max-width: 900px) {
-    flex-direction: column;
-    text-align: center;
-  }
+  gap: 4rem;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
-/* ==== Image ==== */
-.destination__figure {
-  flex: 0 0 340px;
-
-  img {
-    width: 100%;
-    border-radius: $radius;
-    display: block;
-    transform: translateZ(0);
-    backface-visibility: hidden;
-  }
+.destination__figure img {
+  width: 280px;
+  max-width: 100%;
+  border-radius: $radius;
 }
 
-/* ==== Info ==== */
 .destination-info {
-  flex: 1;
-  text-align: left;
+  max-width: 480px;
 
   h1 {
-    font-size: $font-size-title;
+    font-size: 3.6rem;
     margin-bottom: 1rem;
   }
 
-  .destination__description {
-    color: $color-muted;
+  p {
     line-height: 1.6;
-    max-width: 60ch;
     margin-bottom: 2rem;
   }
 
   .destination-stats {
     display: flex;
-    gap: $gap;
+    justify-content: space-between;
     flex-wrap: wrap;
 
     h4 {
-      font-weight: 400;
       opacity: 0.7;
-      margin-bottom: 0.3rem;
+      margin-bottom: 0.5rem;
     }
   }
 }
 
-/* ==== Mobile Tabs ==== */
-@media (max-width: 900px) {
-  .destinations__tab-container {
-    position: static;
-    justify-content: center;
-    margin-bottom: 2rem;
+@media (max-width: 720px) {
+  .destination__content {
+    flex-direction: column;
+    gap: 2rem;
+    text-align: center;
+  }
+
+  .destination__figure img {
+    width: 200px;
+  }
+
+  .destination-info {
+    h1 {
+      font-size: 2.4rem;
+    }
   }
 }

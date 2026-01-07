@@ -3,8 +3,12 @@
     "id": 1,
     "title": "Stats Preview Card",
     "images": {
-      "desktop": ["./src/newbie/stats-preview-card-component/screenshot/desktop-final.jpeg"],
-      "mobile": ["./src/newbie/stats-preview-card-component/screenshot/mobile-final.jpeg"]
+      "desktop": [
+        "./src/newbie/stats-preview-card-component/screenshot/desktop-final.jpeg"
+      ],
+      "mobile": [
+        "./src/newbie/stats-preview-card-component/screenshot/mobile-final.jpeg"
+      ]
     },
     "link": "./src/newbie/stats-preview-card-component/index.html",
     "tech": ["HTML", "CSS"],
@@ -14,8 +18,12 @@
     "id": 2,
     "title": "3 Column Preview Card",
     "images": {
-      "desktop": ["./src/newbie/3-column-preview-card-component/screenshot/desktop-final.png"],
-      "mobile": ["./src/newbie/3-column-preview-card-component/screenshot/mobile-final.png"]
+      "desktop": [
+        "./src/newbie/3-column-preview-card-component/screenshot/desktop-final.png"
+      ],
+      "mobile": [
+        "./src/newbie/3-column-preview-card-component/screenshot/mobile-final.png"
+      ]
     },
     "link": "./src/newbie/3-column-preview-card-component/index.html",
     "tech": ["HTML", "CSS"],
@@ -25,8 +33,12 @@
     "id": 3,
     "title": "Testimonials Grid Section",
     "images": {
-      "desktop": ["./src/junior/testimonials-grid-section/screenshot/desktop-final.png"],
-      "mobile": ["./src/junior/testimonials-grid-section/screenshot/mobile-final.png"]
+      "desktop": [
+        "./src/junior/testimonials-grid-section/screenshot/desktop-final.png"
+      ],
+      "mobile": [
+        "./src/junior/testimonials-grid-section/screenshot/mobile-final.png"
+      ]
     },
     "link": "./src/junior/testimonials-grid-section/index.html",
     "tech": ["HTML", "CSS"],
@@ -36,8 +48,12 @@
     "id": 4,
     "title": "Product Preview Card Component",
     "images": {
-      "desktop": ["./src/newbie/product-preview-card-component/screenshot/desktop-final.jpeg"],
-      "mobile": ["./src/newbie/product-preview-card-component/screenshot/mobile-final.jpeg"]
+      "desktop": [
+        "./src/newbie/product-preview-card-component/screenshot/desktop-final.jpeg"
+      ],
+      "mobile": [
+        "./src/newbie/product-preview-card-component/screenshot/mobile-final.jpeg"
+      ]
     },
     "link": "./src/newbie/product-preview-card-component/index.html",
     "tech": ["HTML", "CSS"],
@@ -47,8 +63,12 @@
     "id": 5,
     "title": "Fylo Data Storage Component",
     "images": {
-      "desktop": ["./src/junior/fylo-data-storage-component/screenshot/desktop-final.jpeg"],
-      "mobile": ["./src/junior/fylo-data-storage-component/screenshot/mobile-final.jpeg"]
+      "desktop": [
+        "./src/junior/fylo-data-storage-component/screenshot/desktop-final.jpeg"
+      ],
+      "mobile": [
+        "./src/junior/fylo-data-storage-component/screenshot/mobile-final.jpeg"
+      ]
     },
     "link": "./src/junior/fylo-data-storage-component/index.html",
     "tech": ["HTML", "CSS"],
@@ -117,7 +137,9 @@
     "id": 11,
     "title": "Blogr Landing Page",
     "images": {
-      "desktop": ["./src/junior/blogr-landing-page/screenshot/desktop-final.jpeg"],
+      "desktop": [
+        "./src/junior/blogr-landing-page/screenshot/desktop-final.jpeg"
+      ],
       "mobile": [
         "./src/junior/blogr-landing-page/screenshot/mobile-final.jpeg",
         "./src/junior/blogr-landing-page/screenshot/mobile-final-active.png"
@@ -163,8 +185,12 @@
     "id": 14,
     "title": "Launch Countdown Timer",
     "images": {
-      "desktop": ["./src/intermediate/launch-countdown-timer/screenshot/desktop-final.jpeg"],
-      "mobile": ["./src/intermediate/launch-countdown-timer/screenshot/mobile-final.jpeg"]
+      "desktop": [
+        "./src/intermediate/launch-countdown-timer/screenshot/desktop-final.jpeg"
+      ],
+      "mobile": [
+        "./src/intermediate/launch-countdown-timer/screenshot/mobile-final.jpeg"
+      ]
     },
     "link": "./src/intermediate/launch-countdown-timer/index.html",
     "tech": ["HTML", "CSS", "JS"],
@@ -174,7 +200,9 @@
     "id": 15,
     "title": "Profile Card Component",
     "images": {
-      "desktop": ["./src/newbie/profile-card-component/screenshot/desktop.jpeg"],
+      "desktop": [
+        "./src/newbie/profile-card-component/screenshot/desktop.jpeg"
+      ],
       "mobile": ["./src/newbie/profile-card-component/screenshot/mobile.jpeg"]
     },
     "link": "./src/newbie/profile-card-component/index.html",
@@ -206,7 +234,9 @@
     "id": 17,
     "title": "Ip Address Tracker",
     "images": {
-      "desktop": ["./src/intermediate/ip-address-tracker/screenshot/desktop.png"],
+      "desktop": [
+        "./src/intermediate/ip-address-tracker/screenshot/desktop.png"
+      ],
       "mobile": ["./src/intermediate/ip-address-tracker/screenshot/mobile.png"]
     },
     "link": "./src/intermediate/ip-address-tracker/index.html",
@@ -257,7 +287,9 @@
         "./src/junior/loopstudios-landing-page/screenshots/desktop-f.jpeg",
         "./src/junior/loopstudios-landing-page/screenshots/desktop.jpeg"
       ],
-      "mobile": ["./src/junior/loopstudios-landing-page/screenshots/mobile-final.jpeg"]
+      "mobile": [
+        "./src/junior/loopstudios-landing-page/screenshots/mobile-final.jpeg"
+      ]
     },
     "link": "./src/junior/loopstudios-landing-page/index.html",
     "tech": ["HTML", "CSS", "JS"],
@@ -323,8 +355,12 @@
     "id": 26,
     "title": "FourCard Feature Section ",
     "images": {
-      "desktop": ["./src/newbie/four-card-feature-section/screenshot/desktop.jpeg"],
-      "mobile": ["./src/newbie/four-card-feature-section/screenshot/mobile.jpeg"]
+      "desktop": [
+        "./src/newbie/four-card-feature-section/screenshot/desktop.jpeg"
+      ],
+      "mobile": [
+        "./src/newbie/four-card-feature-section/screenshot/mobile.jpeg"
+      ]
     },
     "link": "./src/newbie/four-card-feature-section/index.html",
     "tech": ["HTML", "CSS"],
@@ -367,8 +403,8 @@
     "id": 30,
     "title": "Recipe Page",
     "images": {
-      "desktop": [],
-      "mobile": []
+      "desktop": ["./src/newbie/recipe-page/screenshot/desktop.jpeg"],
+      "mobile": ["./src/newbie/recipe-page/screenshot/mobile.jpeg"]
     },
     "link": "./src/newbie/recipe-page/index.html",
     "tech": ["HTML", "CSS"],

@@ -1,215 +1,133 @@
-/* =========================================
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 🧱 Base Setup
-========================================= */
+/* ===== Reset ===== */
 *,
-*::after,
-*::before {
+*::before,
+*::after {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }
 
+/* ===== Variables ===== */
 :root {
-  --white: hsl(0, 0%, 100%);
-  --stone-100: hsl(30, 54%, 90%);
-  --stone-150: hsl(30, 18%, 87%);
-  --stone-600: hsl(30, 10%, 34%);
-  --stone-900: hsl(24, 5%, 18%);
-  --brown-800: hsl(14, 45%, 36%);
-  --rose-800: hsl(332, 51%, 32%);
-  --rose-50: hsl(330, 100%, 98%);
+  --white: #ffffff;
+  --bg: hsl(30, 54%, 90%);
+  --text: hsl(30, 10%, 34%);
+  --title: hsl(24, 5%, 18%);
+  --accent: hsl(14, 45%, 36%);
+  --rose: hsl(332, 51%, 32%);
+  --rose-bg: hsl(330, 100%, 98%);
+  --border: hsl(30, 18%, 87%);
 }
 
-html {
-  font-size: 62.5%;
-  font-family: "Outfit", sans-serif;
-  scroll-behavior: smooth;
-}
-
+/* ===== Base ===== */
 body {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background: var(--stone-100);
-  color: var(--stone-900);
-    line-height: 1.6;
-    padding: 2rem;
-  min-height: 100vh;
+  font-family: "Outfit", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  padding: 1.5rem;
 }
 
-/* =========================================
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 📦 Container
-========================================= */
-.container {
-  max-width: 72rem;
-  background: var(--white);
-  border-radius: 1.6rem;
-  padding: 2.4rem;
-  box-shadow: 0 0.3rem 0.6rem rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-}
-
-#main-img {
-  width: 100%;
-  border-radius: 1.6rem;
-  margin-bottom: 2rem;
-  object-fit: cover;
-}
-
-/* =========================================
-   🧠 Typography
-========================================= */
 h1,
 h3 {
   font-family: "Young Serif", serif;
-  color: var(--stone-900);
-}
-
-h1 {
-  font-size: 3rem;
-  margin-bottom: 1.2rem;
-}
-
-p,
-li,
-td {
-  font-size: 1.5rem;
-  color: var(--stone-600);
-  margin-bottom: 1.6rem;
-}
-
-/* =========================================
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 📋 Sections
-========================================= */
-section {
-  margin-bottom: 2.4rem;
+  color: var(--title);
 }
 
 ul,
 ol {
-  padding-left: 2rem;
+  padding-left: 1.5rem;
 }
 
 li {
-  margin-bottom: 0.8rem;
+  margin-bottom: 0.5rem;
 }
 
-/* =========================================
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 🍳 Preparation
-========================================= */
-.prep-content {
-  background: var(--rose-50);
-  padding: 1.6rem;
-    border-radius: 1rem;
-  margin-bottom: 2rem;
+/* ===== Layout ===== */
+.recipe {
+  max-width: 740px;
+  background: var(--white);
+  border-radius: 1.5rem;
+  overflow: hidden;
+  margin: auto;
 }
 
-.prep-content h3 {
-  color: var(--rose-800);
+.recipe__image {
+  width: 100%;
+  display: block;
 }
 
-/* =========================================
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 🧂 Ingredients & Instructions
-========================================= */
-.ingredients-content h3,
-.instructions-content h3 {
-  color: var(--brown-800);
-  border-bottom: 1px solid var(--stone-150);
-  padding-bottom: 0.8rem;
-  margin-bottom: 1rem;
+.recipe__content {
+  padding: 2rem;
 }
 
-.instructions-content ol li::marker {
-  color: var(--brown-800);
-  font-weight: 700;
+/* ===== Header ===== */
+.recipe__header p {
+  margin-top: 1rem;
 }
 
-/* =========================================
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 🧮 Nutrition
-========================================= */
-.nutrition-content table {
+/* ===== Prep Box ===== */
+.prep {
+  background: var(--rose-bg);
+  padding: 1.5rem;
+  border-radius: 1rem;
+  margin: 2rem 0;
+}
+
+.prep h3 {
+  color: var(--rose);
+  margin-bottom: 0.75rem;
+}
+
+/* ===== Sections ===== */
+.section-title {
+  color: var(--accent);
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 0.5rem;
+  margin: 2rem 0 1rem;
+}
+
+/* ===== Instructions ===== */
+ol li::marker {
+  color: var(--accent);
+  font-weight: bold;
+}
+
+/* ===== Nutrition ===== */
+.nutrition {
   width: 100%;
   border-collapse: collapse;
-  margin-top: 1.2rem;
-  font-size: 1.4rem;
+  margin-top: 1rem;
 }
 
-.nutrition-content td {
-  padding: 0.8rem 0;
-  border-bottom: 1px solid var(--stone-150);
+.nutrition td {
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--border);
 }
 
-.nutrition-content td:nth-child(2) {
-  color: var(--brown-800);
+.nutrition td:last-child {
+  color: var(--accent);
   font-weight: 600;
 }
 
-/* =========================================
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 🦶 Footer
-========================================= */
-footer {
+/* ===== Footer ===== */
+.footer {
   text-align: center;
-  font-size: 1.2rem;
-  padding: 2rem 0;
+  font-size: 0.85rem;
+  margin-top: 2rem;
 }
 
-.attribution a {
+.footer a {
   color: hsl(228, 45%, 44%);
 }
 
-/* =========================================
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 📱 Responsive Design
-========================================= */
-
-/* Small (≤480px) */
-@media (max-width: 480px) {
-  html {
-    font-size: 55%;
+/* ===== Desktop ===== */
+@media (min-width: 768px) {
+  body {
+    padding: 4rem 0;
   }
 
-    body {
-      padding: 0;
-    }
-
-    .container {
-  padding: 0;
-    }
-
-    h1 {
-      font-size: 2.4rem;
-    }
-
-    p,
-    li,
-    td {
-      font-size: 1.3rem;
-    }
-
-    #main-img {
-      aspect-ratio: 4 / 3;
-    }
-}
-
-/* Medium (481px–768px) */
-@media (max-width: 768px) {
-  html {
-    font-size: 58%;
+  .recipe__content {
+    padding: 3rem;
   }
-
-    .container {
-      max-width: 90%;
-        padding: 0;
-    }
-}
-
-/* Large (≥1024px) */
-@media (min-width: 1024px) {
-  html {
-    font-size: 64%;
-  }
-
-    .container {
-    max-width: 76rem;
-      padding: 0;
-    }
 }
