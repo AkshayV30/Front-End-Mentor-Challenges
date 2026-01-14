@@ -1,52 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Contact form</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
-<body>
+    <title>Frontend Mentor | Contact form</title>
 
-  Contact Us
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./res/style.css" />
+  </head>
+  <body>
+    <main class="container">
+      <h1>Contact Us</h1>
 
-  First Name
-  This field is required
+      <form id="contactForm" novalidate>
+        <!-- Name -->
+        <div class="row">
+          <div class="form-group">
+            <label for="firstName">First Name *</label>
+            <input type="text" id="firstName" required />
+            <small class="error">This field is required</small>
+          </div>
 
-  Last Name
-  This field is required
+          <div class="form-group">
+            <label for="lastName">Last Name *</label>
+            <input type="text" id="lastName" required />
+            <small class="error">This field is required</small>
+          </div>
+        </div>
 
-  Email Address
-  Please enter a valid email address
-  This field is required
+        <!-- Email -->
+        <div class="form-group">
+          <label for="email">Email Address *</label>
+          <input type="email" id="email" required />
+          <small class="error">Please enter a valid email</small>
+        </div>
 
-  Query Type
-  General Enquiry
-  Support Request
-  Please select a query type
+        <!-- Query type -->
+        <fieldset class="form-group">
+          <legend>Query Type *</legend>
 
-  Message
-  This field is required
+          <label class="radio">
+            <input type="radio" name="query" value="general" required />
+            General Enquiry
+          </label>
 
-  I consent to being contacted by the team
-  To submit this form, please consent to being contacted
+          <label class="radio">
+            <input type="radio" name="query" value="support" required />
+            Support Request
+          </label>
 
-  Submit
+          <small class="error">Please select a query type</small>
+        </fieldset>
 
-  Message Sent!
-  Thanks for completing the form. We'll be in touch soon!
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
-</body>
+        <!-- Message -->
+        <div class="form-group">
+          <label for="message">Message *</label>
+          <textarea id="message" rows="4" required></textarea>
+          <small class="error">This field is required</small>
+        </div>
+
+        <!-- Consent -->
+        <div class="form-group checkbox">
+          <label>
+            <input type="checkbox" id="consent" required />
+            I consent to being contacted by the team *
+          </label>
+          <small class="error">Consent is required</small>
+        </div>
+
+        <button type="submit">Submit Message</button>
+      </form>
+
+      <!-- Success Modal -->
+      <section id="successModal" aria-live="polite">
+        <p>Thanks for completing the form. We'll be in touch soon!</p>
+      </section>
+    </main>
+
+    <footer>
+      <p class="attribution">
+        Challenge by
+        <a href="https://www.frontendmentor.io">Frontend Mentor</a>. Coded by
+        <a href="#">AkshayV30</a>.
+      </p>
+    </footer>
+
+    <script src="./res/script.js"></script>
+  </body>
 </html>

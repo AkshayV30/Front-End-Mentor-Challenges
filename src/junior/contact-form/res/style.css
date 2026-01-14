@@ -1,0 +1,140 @@
+/* # Front-end Style Guide
+
+## Layout
+
+The designs were created to the following widths:
+
+- Mobile: 375px
+- Desktop: 1440px
+
+*/
+
+:root {
+  /* ## Colors */
+
+  /* # Primary */
+  --green-200: hsl(148, 38%, 91%);
+  --green-600: hsl(169, 82%, 27%);
+  --red: hsl(0, 66%, 54%);
+
+  /* # Neutral */
+  --white: hsl(0, 0%, 100%);
+  --grey-500: hsl(186, 15%, 59%);
+  --grey-900: hsl(187, 24%, 22%);
+  /* font-weights */
+  --font-weight-1: 400;
+  --font-weight-2: 700;
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%; /*1rem =10px*/
+}
+body {
+  font-family: "Karla", sans-serif;
+  font-size: 1.6rem;
+  background: var(--green-200);
+  color: var(--grey-900);
+}
+
+.container {
+  max-width: 700px;
+  background: var(--white);
+  padding: 2.5rem;
+  margin: 3rem auto;
+  border-radius: 1.2rem;
+}
+
+h1 {
+  margin-bottom: 2rem;
+}
+
+.row {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.5rem;
+  flex: 1;
+}
+
+input,
+textarea {
+  padding: 1.2rem;
+  border-radius: 0.5rem;
+  border: 1px solid var(--grey-500);
+  font-family: inherit;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--green-600);
+}
+
+fieldset {
+  border: none;
+}
+
+.radio {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 0.8rem;
+}
+
+.checkbox {
+  margin-bottom: 2rem;
+}
+
+button {
+  background: var(--green-600);
+  color: var(--white);
+  border: none;
+  padding: 1.2rem;
+  border-radius: 0.6rem;
+  cursor: pointer;
+  font-size: 1.6rem;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+.error {
+  display: none;
+  color: var(--red);
+  font-size: 1.2rem;
+  margin-top: 0.4rem;
+}
+
+#successModal {
+  display: none;
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background: var(--green-200);
+  border-radius: 0.8rem;
+  text-align: center;
+}
+
+.attribution {
+  text-align: center;
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .row {
+    flex-direction: column;
+  }
+}
