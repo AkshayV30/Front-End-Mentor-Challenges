@@ -126,6 +126,48 @@ button:hover {
   text-align: center;
 }
 
+.query-type > label {
+  border: 0.2rem solid var(--grey-500);
+  padding: 1rem;
+  margin-top: 0.5rem;
+  border-radius: 0.6rem;
+  width: 100%;
+}
+
+/* ---- Toast Alert ---- */
+#toast {
+  position: fixed;
+  top: 1rem;
+  left: 50%;
+  transform: translate(-50%, -120%);
+  background: hsl(169, 82%, 27%);
+  color: white;
+  padding: 1.2rem 2rem;
+  border-radius: 0.6rem;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  transition: transform 0.4s ease, opacity 0.4s ease;
+  opacity: 0;
+  z-index: 1000;
+}
+
+#toast.show {
+  transform: translate(-50%, 0);
+  opacity: 1;
+}
+
+/* ---- Errors ---- */
+.error {
+  color: hsl(0, 66%, 54%);
+  font-size: 1.2rem;
+  margin-top: 0.4rem;
+  display: none;
+}
+
+/* ---- Invalid Field ---- */
+.invalid {
+  border-color: hsl(0, 66%, 54%);
+}
+
 .attribution {
   text-align: center;
   font-size: 1.2rem;

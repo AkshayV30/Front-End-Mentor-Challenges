@@ -23,72 +23,67 @@
     <link rel="stylesheet" href="./res/style.css" />
   </head>
   <body>
+    <!-- Success Alert (Injected/controlled by JS) -->
+    <div id="toast" role="alert" aria-live="polite">
+      <strong>Success!</strong> Thanks for completing the form. We'll be in
+      touch soon.
+    </div>
+
     <main class="container">
       <h1>Contact Us</h1>
 
       <form id="contactForm" novalidate>
-        <!-- Name -->
         <div class="row">
           <div class="form-group">
             <label for="firstName">First Name *</label>
-            <input type="text" id="firstName" required />
-            <small class="error">This field is required</small>
+            <input id="firstName" />
+            <small class="error"></small>
           </div>
 
           <div class="form-group">
             <label for="lastName">Last Name *</label>
-            <input type="text" id="lastName" required />
-            <small class="error">This field is required</small>
+            <input id="lastName" />
+            <small class="error"></small>
           </div>
         </div>
 
-        <!-- Email -->
         <div class="form-group">
           <label for="email">Email Address *</label>
-          <input type="email" id="email" required />
-          <small class="error">Please enter a valid email</small>
+          <input id="email" />
+          <small class="error"></small>
         </div>
 
-        <!-- Query type -->
         <fieldset class="form-group">
           <legend>Query Type *</legend>
-
-          <label class="radio">
-            <input type="radio" name="query" value="general" required />
-            General Enquiry
-          </label>
-
-          <label class="radio">
-            <input type="radio" name="query" value="support" required />
-            Support Request
-          </label>
-
-          <small class="error">Please select a query type</small>
+          <div class="row query-type">
+            <label class="radio">
+              <input type="radio" name="query" value="general" />
+              General Enquiry
+            </label>
+            <label class="radio">
+              <input type="radio" name="query" value="support" />
+              Support Request
+            </label>
+          </div>
+          <small class="error"></small>
         </fieldset>
 
-        <!-- Message -->
         <div class="form-group">
           <label for="message">Message *</label>
-          <textarea id="message" rows="4" required></textarea>
-          <small class="error">This field is required</small>
+          <textarea id="message"></textarea>
+          <small class="error"></small>
         </div>
 
-        <!-- Consent -->
         <div class="form-group checkbox">
           <label>
-            <input type="checkbox" id="consent" required />
+            <input type="checkbox" id="consent" />
             I consent to being contacted by the team *
           </label>
-          <small class="error">Consent is required</small>
+          <small class="error"></small>
         </div>
 
         <button type="submit">Submit Message</button>
       </form>
-
-      <!-- Success Modal -->
-      <section id="successModal" aria-live="polite">
-        <p>Thanks for completing the form. We'll be in touch soon!</p>
-      </section>
     </main>
 
     <footer>
