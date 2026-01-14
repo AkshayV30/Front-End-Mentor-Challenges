@@ -1,51 +1,136 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Interactive card details form</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
-<body>
+    <title>Frontend Mentor | Interactive card details form</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap");
+    </style>
+    <link rel="stylesheet" href="./res/css/style.css" />
+  </head>
+  <body>
+    <main>
+      <picture class="main-desktop-img">
+        <!-- Desktop image -->
+        <!-- <source
+          srcset="./images/bg-main-desktop.png"
+          media="(min-width: 1440px)"
+        /> -->
+        <img src="./images/bg-main-desktop.png" alt="" />
+        <!-- Mobile image  -->
+        <!-- <img src="./images/bg-main-mobile.png" alt="Background pattern" /> -->
+      </picture>
 
-  0000 0000 0000 0000
-  Jane Appleseed
-  00/00
+      <div class="container">
+        <!-- overlays -->
+        <div class="card-preview">
+          <section class="card-front">
+            <picture>
+              <img
+                src="./images/card-logo.svg"
+                alt="card logo"
+                class="card-logo"
+              />
+            </picture>
 
-  000
+            <p id="preview-number">0000 0000 0000 0000</p>
 
-  Cardholder Name
-  e.g. Jane Appleseed
+            <div class="card-meta">
+              <span id="preview-name">Jane Appleseed</span>
+              <span id="preview-exp">00/00</span>
+            </div>
+          </section>
 
-  Card Number
-  e.g. 1234 5678 9123 0000
+          <section class="card-back">
+            <span id="preview-cvc">000</span>
+          </section>
+        </div>
+        <!-- FORM STATE -->
+        <section id="form-section">
+          <form id="card-form" novalidate>
+            <div class="form-group">
+              <label for="cardHolderName">Cardholder Name</label>
+              <input
+                type="text"
+                id="cardHolderName"
+                name="cardHolderName"
+                placeholder="e.g. Jane Appleseed"
+                required
+              />
+            </div>
 
-  Exp. Date (MM/YY)
-  MM
-  YY
+            <div class="form-group">
+              <label for="cardNumber">Card Number</label>
+              <input
+                type="text"
+                id="cardNumber"
+                name="cardNumber"
+                placeholder="e.g. 1234 5678 9123 0000"
+                maxlength="19"
+                required
+              />
+            </div>
 
-  CVC
-  e.g. 123
+            <div class="form-row">
+              <label for="exp"> Exp. Date (MM / YY)</label>
+              <div id="exp">
+                <input
+                  type="number"
+                  id="expMonth"
+                  min="1"
+                  max="12"
+                  placeholder="MM"
+                  required
+                />
 
-  Confirm
+                <input
+                  type="number"
+                  id="expYear"
+                  min="23"
+                  max="99"
+                  placeholder="YY"
+                  required
+                />
+              </div>
 
-  <!-- Completed state start -->
+              <div>
+                <label for="cvc">CVC</label>
+                <input type="number" id="cvc" placeholder="123" required />
+              </div>
+            </div>
 
-  Thank you!
-  We've added your card details
-  Continue
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
-</body>
+            <button type="submit">Confirm</button>
+          </form>
+        </section>
+
+        <!-- COMPLETED STATE -->
+        <section id="thank-you-section" hidden>
+          <h2>Thank You!</h2>
+          <p>We’ve added your card details.</p>
+          <button id="continue-btn">Continue</button>
+        </section>
+      </div>
+    </main>
+
+    <footer>
+      <div class="attribution">
+        Challenge by
+        <a href="https://www.frontendmentor.io" target="_blank"
+          >Frontend Mentor</a
+        >. Coded by Akshay V30.
+      </div>
+    </footer>
+
+    <script src="./res/js/script.js"></script>
+  </body>
 </html>

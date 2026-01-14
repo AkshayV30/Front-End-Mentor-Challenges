@@ -1,0 +1,221 @@
+/* 
+## Layout
+
+The designs were created to the following widths:
+
+- Mobile: 375px
+- Desktop: 1440px
+
+
+
+
+
+
+ */
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /*  Colors */
+  /* # Primary */
+  /* - Linear gradient (active input border): hsl(249, 99%, 64%) tohsl(278, 94%, 30%) */
+  --color-linear-gradient-1: hsl(249, 99%, 64%);
+  --color-linear-gradient-2: hsl(278, 94%, 30%);
+  --color-input-errors: hsl(0, 100%, 66%);
+
+  /* # Neutral */
+  --color-white: hsl(0, 0%, 100%);
+  --color-Light-grayish-violet: hsl(270, 3%, 87%);
+  --color-Dark-grayish-violet: hsl(279, 6%, 55%);
+  --color-Very-dark-violet: hsl(278, 68%, 11%);
+}
+html {
+  font-size: 62.5%; /* 1rem = 10px */
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: space-between;
+  background: #f5f7fb;
+
+  font-family: "Space Grotesk", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+
+  font-size: 1.8rem;
+}
+
+/* - - - - - - - - - - - - - - - Header (Card Area) - - - - - - - - - - - - */
+
+.card-preview {
+  padding: 3rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  min-height: 28rem;
+  z-index: 100;
+  left: 205rem;
+  /* top: 50rem; */
+}
+
+.card-front,
+.card-back {
+  width: 34rem;
+  height: 20rem;
+  border-radius: 1.5rem;
+  padding: 2rem;
+  color: white;
+  background-size: cover;
+  box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.4);
+}
+
+.card-front {
+  background-image: url("./../../images/bg-card-front.png");
+}
+
+.card-back {
+  background-image: url("./../../images/bg-card-back.png");
+  margin-left: 8rem;
+}
+
+.card-logo {
+  font-size: 2rem;
+  letter-spacing: 0.4rem;
+}
+
+.card-front p {
+  font-size: 2rem;
+  letter-spacing: 0.2rem;
+  margin-top: 4rem;
+}
+
+.card-meta {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 3rem;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+}
+
+.card-back span {
+  position: absolute;
+  right: 2rem;
+  top: 8rem;
+  color: var(--color-Light-grayish-violet);
+  padding: 0.5rem 0.8rem;
+  border-radius: 0.4rem;
+}
+/* -- */
+.container {
+  display: flex;
+  flex: 1;
+  position: relative;
+}
+/* - - - - - - - - - - - - - - - Main - - - - - - - - - - - - */
+.main-desktop-img {
+}
+main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#form-section,
+#thank-you-section {
+  width: 40rem;
+  background: white;
+  padding: 3rem;
+  border-radius: 1.2rem;
+  box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.08);
+}
+
+/* Form */
+
+.form-group {
+  margin-bottom: 2rem;
+}
+
+label {
+  display: block;
+  font-size: 1.1rem;
+  letter-spacing: 0.15rem;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+input {
+  width: 100%;
+  padding: 1rem;
+  border-radius: 0.8rem;
+  border: 1px solid #ccc;
+  font-size: 1.4rem;
+}
+
+input:focus {
+  outline: none;
+  border-color: #7a2be2;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1.5rem;
+}
+
+button {
+  width: 100%;
+  padding: 1.2rem;
+  margin-top: 2.5rem;
+  background: #22092c;
+  color: white;
+  border: none;
+  border-radius: 0.8rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #3b1054;
+}
+
+/* - - - - - - - - - - - - - - - Thank You - - - - - - - - - - - - */
+
+#thank-you-section {
+  text-align: center;
+}
+
+#thank-you-section h2 {
+  font-size: 2.4rem;
+  margin-bottom: 1rem;
+}
+
+#thank-you-section p {
+  font-size: 1.4rem;
+  color: #555;
+  margin-bottom: 3rem;
+}
+
+/* - - - - - - - - - - - - - - - Footer - - - - - - - - - - - - */
+.footer {
+  z-index: 200;
+  position: relative;
+}
+.attribution {
+  font-size: 1.2rem;
+  text-align: center;
+  padding: 1rem 0;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+  text-decoration: none;
+}
