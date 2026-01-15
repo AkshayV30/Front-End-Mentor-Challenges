@@ -7,7 +7,7 @@ Welcome to the Frontend Mentor challenges! This repository is where I showcase m
 | Sl No. | Challenge Name                                                                                                                                                 | Difficulty      | Technologies       | Live Demo |
 | ------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------- | ------------------ | --------- |
 | 01     | [Stats Preview Card](https://akshayv30.github.io/Front-End-Mentor-Challenges/src/newbie/stats-preview-card-component/index.html)                               | 🟢 NEWBIE       | HTML, CSS          | ✅        |
-| 02     | [3 Column Preview Card](https://akshayv30.github.io/Front-End-Mentor-Challenges/src/newbie/3-column-preview-card-component/index.html)                         | 🟢 NEWBIE       | HTML, CSS          | ✅        |
+| 02     | [3 Column Preview Card](https://akshayv30.github.io/Front-End-Mentor-Challenges/src/newbie/3-column-preview-card-component/index.html)                         | 🟢 NEWBIE       | HTML, CSS \*\*\*\* | ✅        |
 | 03     | [Testimonials Grid Section](https://akshayv30.github.io/Front-End-Mentor-Challenges/src/junior/testimonials-grid-section/index.html)                           | 🟡 JUNIOR       | HTML, CSS          | ✅        |
 | 04     | [Product Preview Card](https://akshayv30.github.io/Front-End-Mentor-Challenges/src/newbie/product-preview-card-component/index.html)                           | 🟢 NEWBIE       | HTML, CSS          | ✅        |
 | 05     | [Fylo Data Storage Component](https://akshayv30.github.io/Front-End-Mentor-Challenges/src/junior/fylo-data-storage-component/index.html)                       | 🟡 JUNIOR       | HTML, CSS          | ✅        |
@@ -39,7 +39,7 @@ Welcome to the Frontend Mentor challenges! This repository is where I showcase m
 | 31     | [Manage Landing Page](https://akshayv30.github.io/Front-End-Mentor-Challenges/src/intermediate/manage-landing-page/index.html)                                 | 🟠 INTERMEDIATE | HTML, CSS, JS      |           |
 | 32     | [Weather App](https://akshayv30.github.io/Front-End-Mentor-Challenges/src/intermediate/weather-app/index.html)                                                 | 🟠 INTERMEDIATE | HTML, CSS, JS, API |           |
 | 33     | [Contact Form](https://akshayv30.github.io/Front-End-Mentor-Challenges/src/junior/contact-form/index.html)                                                     | 🟡 JUNIOR       | HTML, CSS, JS      |           |
-| 34     | [Expenses Chart Component](https://akshayv30.github.io/Front-End-Mentor-Challenges/src/junior/expenses-chart-component/index.html)                             | 🟡 JUNIOR       | HTML, CSS, JS      |           |
+| 34     | [Expenses Chart Component](https://akshayv30.github.io/Front-End-Mentor-Challenges/src/junior/expenses-chart-component/index.html)                             | 🟡 JUNIOR       | HTML, CSS, JS      | ✅        |
 | 35     | [Rock Paper Scissors](https://akshayv30.github.io/Front-End-Mentor-Challenges/src/advanced/rock-paper-scissors/index.html)                                     | 🔴 ADVANCED     | HTML, CSS, JS      |           |
 | 36     | [Chat App CSS Illustration](https://akshayv30.github.io/Front-End-Mentor-Challenges/src/intermediate/chat-app-css-ilustration/index.html)                      | 🟠 INTERMEDIATE | HTML, CSS          |           |
 
