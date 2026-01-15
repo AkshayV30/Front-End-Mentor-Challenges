@@ -20,106 +20,111 @@
   </head>
   <body>
     <main>
-      <picture class="main-desktop-img">
-        <!-- Desktop image -->
-        <!-- <source
-          srcset="./images/bg-main-desktop.png"
-          media="(min-width: 1440px)"
-        /> -->
-        <img src="./images/bg-main-desktop.png" alt="" />
-        <!-- Mobile image  -->
-        <!-- <img src="./images/bg-main-mobile.png" alt="Background pattern" /> -->
+      <picture class="main-background">
+        <img src="./images/bg-main-desktop.png" alt="main-background" />
       </picture>
+      <!-- overlays -->
+      <div class="card-preview">
+        <section class="card-front">
+          <picture>
+            <img
+              src="./images/card-logo.svg"
+              alt="card logo"
+              class="card-logo"
+            />
+          </picture>
 
-      <div class="container">
-        <!-- overlays -->
-        <div class="card-preview">
-          <section class="card-front">
-            <picture>
-              <img
-                src="./images/card-logo.svg"
-                alt="card logo"
-                class="card-logo"
-              />
-            </picture>
+          <p id="preview-number">0000 0000 0000 0000</p>
 
-            <p id="preview-number">0000 0000 0000 0000</p>
-
-            <div class="card-meta">
-              <span id="preview-name">Jane Appleseed</span>
-              <span id="preview-exp">00/00</span>
-            </div>
-          </section>
-
-          <section class="card-back">
-            <span id="preview-cvc">000</span>
-          </section>
-        </div>
-        <!-- FORM STATE -->
-        <section id="form-section">
-          <form id="card-form" novalidate>
-            <div class="form-group">
-              <label for="cardHolderName">Cardholder Name</label>
-              <input
-                type="text"
-                id="cardHolderName"
-                name="cardHolderName"
-                placeholder="e.g. Jane Appleseed"
-                required
-              />
-            </div>
-
-            <div class="form-group">
-              <label for="cardNumber">Card Number</label>
-              <input
-                type="text"
-                id="cardNumber"
-                name="cardNumber"
-                placeholder="e.g. 1234 5678 9123 0000"
-                maxlength="19"
-                required
-              />
-            </div>
-
-            <div class="form-row">
-              <label for="exp"> Exp. Date (MM / YY)</label>
-              <div id="exp">
-                <input
-                  type="number"
-                  id="expMonth"
-                  min="1"
-                  max="12"
-                  placeholder="MM"
-                  required
-                />
-
-                <input
-                  type="number"
-                  id="expYear"
-                  min="23"
-                  max="99"
-                  placeholder="YY"
-                  required
-                />
-              </div>
-
-              <div>
-                <label for="cvc">CVC</label>
-                <input type="number" id="cvc" placeholder="123" required />
-              </div>
-            </div>
-
-            <button type="submit">Confirm</button>
-          </form>
+          <div class="card-meta">
+            <span id="preview-name">Jane Appleseed</span>
+            <span id="preview-exp">00/00</span>
+          </div>
         </section>
 
-        <!-- COMPLETED STATE -->
-        <section id="thank-you-section" hidden>
-          <h2>Thank You!</h2>
-          <p>We’ve added your card details.</p>
-          <button id="continue-btn">Continue</button>
+        <section class="card-back">
+          <span id="preview-cvc">000</span>
         </section>
       </div>
+
+      <!-- FORM STATE -->
+      <section id="form-section">
+        <form id="card-form" novalidate>
+          <div class="form-group">
+            <label for="cardHolderName">Cardholder Name</label>
+            <input
+              type="text"
+              id="cardHolderName"
+              name="cardHolderName"
+              placeholder="e.g. Jane Appleseed"
+              aria-describedby="name-error"
+            />
+            <small id="name-error" class="error-msg" role="alert"></small>
+          </div>
+
+          <div class="form-group">
+            <label for="cardNumber">Card Number</label>
+            <input
+              type="text"
+              id="cardNumber"
+              name="cardNumber"
+              placeholder="e.g. 1234 5678 9123 0000"
+              maxlength="19"
+              aria-describedby="number-error"
+            />
+            <small id="number-error" class="error-msg" role="alert"></small>
+          </div>
+
+          <div class="form-row">
+            <div data-group="expiry">
+              <label for="exp"> Exp. Date (MM / YY)</label>
+              <div id="exp" class="expiry">
+                <input
+                  type="text"
+                  inputmode="numeric"
+                  id="expMonth"
+                  maxlength="2"
+                  placeholder="MM"
+                  aria-describedby="exp-error"
+                />
+
+                <input
+                  type="text"
+                  inputmode="numeric"
+                  maxlength="2"
+                  id="expYear"
+                  placeholder="YY"
+                  aria-describedby="exp-error"
+                />
+              </div>
+              <small id="exp-error" class="error-msg" role="alert"></small>
+            </div>
+
+            <div>
+              <label for="cvc">CVC</label>
+              <input
+                type="text"
+                inputmode="numeric"
+                maxlength="3"
+                id="cvc"
+                placeholder="000"
+                aria-describedby="cvc-error"
+              />
+              <small id="cvc-error" class="error-msg" role="alert"></small>
+            </div>
+          </div>
+
+          <button type="submit">Confirm</button>
+        </form>
+      </section>
+
+      <!-- COMPLETED STATE -->
+      <section id="thank-you-section" hidden>
+        <img src="./images/icon-complete.svg" alt="complted-check mark" />
+        <h2>Thank You!</h2>
+        <p>We’ve added your card details.</p>
+        <button id="continue-btn">Continue</button>
+      </section>
     </main>
 
     <footer>

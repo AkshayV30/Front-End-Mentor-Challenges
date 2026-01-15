@@ -61,9 +61,8 @@ body {
   flex-direction: column;
   gap: 2rem;
   min-height: 28rem;
-  z-index: 100;
-  left: 205rem;
-  /* top: 50rem; */
+
+  margin-left: -20rem;
 }
 
 .card-front,
@@ -72,12 +71,12 @@ body {
   height: 20rem;
   border-radius: 1.5rem;
   padding: 2rem;
-  color: white;
   background-size: cover;
   box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.4);
 }
 
 .card-front {
+  color: white;
   background-image: url("./../../images/bg-card-front.png");
 }
 
@@ -106,35 +105,34 @@ body {
 }
 
 .card-back span {
-  position: absolute;
-  right: 2rem;
-  top: 8rem;
+  position: relative;
+  right: -26rem;
+  top: 6.75rem;
+
   color: var(--color-Light-grayish-violet);
+
   padding: 0.5rem 0.8rem;
   border-radius: 0.4rem;
 }
-/* -- */
-.container {
-  display: flex;
-  flex: 1;
-  position: relative;
-}
+
 /* - - - - - - - - - - - - - - - Main - - - - - - - - - - - - */
-.main-desktop-img {
+.main-background > img {
+  width: 25.5vw;
 }
 main {
   display: flex;
   align-items: center;
-  justify-content: center;
+}
+
+.main-background {
 }
 
 #form-section,
 #thank-you-section {
   width: 40rem;
-  background: white;
   padding: 3rem;
   border-radius: 1.2rem;
-  box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.08);
+  margin-left: 10rem;
 }
 
 /* Form */
@@ -163,13 +161,35 @@ input {
 input:focus {
   outline: none;
   border-color: #7a2be2;
+  cursor: pointer;
+}
+
+input.error {
+  border-color: var(--color-input-errors);
+}
+
+.error-msg {
+  display: none;
+  font-size: 1.1rem;
+  color: var(--color-input-errors);
+  margin-top: 0.4rem;
+}
+
+.error-msg.active {
+  display: block;
 }
 
 .form-row {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  display: flex;
   gap: 1.5rem;
 }
+
+.expiry {
+  display: flex;
+  gap: 1rem;
+}
+
+/* submit button */
 
 button {
   width: 100%;
@@ -205,14 +225,13 @@ button:hover {
 }
 
 /* - - - - - - - - - - - - - - - Footer - - - - - - - - - - - - */
-.footer {
-  z-index: 200;
-  position: relative;
+footer {
+  /* background: greenyellow; */
+  padding: 1rem 0;
 }
 .attribution {
   font-size: 1.2rem;
   text-align: center;
-  padding: 1rem 0;
 }
 
 .attribution a {
