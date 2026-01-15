@@ -1,43 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Expenses chart component</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
-<body>
+    <title>Frontend Mentor | Expenses chart component</title>
 
-  My balance
-  $921.48
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap");
+    </style>
+    <link rel="stylesheet" href="./res/style.css" />
+  </head>
+  <body>
+    <main>
+      <div class="container-chart-component">
+        <div class="component-header">
+          <div>
+            <p class="h6">My balance</p>
+            <p class="h2">$921.48</p>
+          </div>
+          <img id="component-logo" src="./images/logo.svg" alt="logo" />
+        </div>
 
-  Spending - Last 7 days
-
-  mon
-  tue
-  wed
-  thu
-  fri
-  sat
-  sun
-
-  Total this month
-  $478.33
-
-  +2.4%
-  from last month
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
-</body>
+        <div class="contents">
+          <p class="h2">Spending - Last 7 days</p>
+          <ol class="data-lists">
+            <li>mon</li>
+            <li>tue</li>
+            <li>wed</li>
+            <li>thu</li>
+            <li>fri</li>
+            <li>sat</li>
+            <li>sun</li>
+          </ol>
+          <div class="component-footer">
+            <div>
+              <p class="h6">Total this month</p>
+              <p class="h1">$478.33</p>
+            </div>
+            <p>
+              <span id="num"> +2.4% </span>
+              <br />
+              <span id="texts"> from last month </span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <div class="attribution">
+        Challenge by
+        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+          >Frontend Mentor</a
+        >. Coded by <a href="#">Your Name Here</a>.
+      </div>
+    </footer>
+    <script src="./res/script.js"></script>
+  </body>
 </html>
