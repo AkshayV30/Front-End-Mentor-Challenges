@@ -1,17 +1,15 @@
 "use strict";
 
 /* =======================
-   CONSTANTS
+   DEFAULT VALUES
 ======================= */
-const DEFAULTS = {
-  name: "Jane Appleseed",
-  number: "0000 0000 0000 0000",
-  exp: "00/00",
-  cvc: "000",
-};
+const DEFAULT_NAME = "Jane Appleseed";
+const DEFAULT_NUMBER = "0000 0000 0000 0000";
+const DEFAULT_EXPIRY = "00/00";
+const DEFAULT_CVC = "000";
 
 /* =======================
-   DOM REFERENCES
+   GET ELEMENTS
 ======================= */
 const form = document.getElementById("card-form");
 const formSection = document.getElementById("form-section");
@@ -23,163 +21,176 @@ const numberInput = document.getElementById("cardNumber");
 const monthInput = document.getElementById("expMonth");
 const yearInput = document.getElementById("expYear");
 const cvcInput = document.getElementById("cvc");
-
 const continueBtn = document.getElementById("continue-btn");
 
-/* Preview */
+/* Card Preview */
 const previewName = document.getElementById("preview-name");
 const previewNumber = document.getElementById("preview-number");
 const previewExp = document.getElementById("preview-exp");
 const previewCvc = document.getElementById("preview-cvc");
 
 /* =======================
-   HELPERS
+   HELPER FUNCTIONS
 ======================= */
-const digitsOnly = (v) => v.replace(/\D/g, "");
 
-function formatCardNumber(value) {
-  return digitsOnly(value)
-    .slice(0, 16)
-    .replace(/(.{4})/g, "$1 ")
-    .trim();
-}
+/* Allow only numbers */
+const onlyNumbers = (value) => {
+  return value.replace(/[^0-9]/g, "");
+};
 
-function getErrorEl(input) {
-  const group = input.closest("[data-group]");
-  return group
-    ? group.querySelector(".error-msg")
-    : input.parentElement.querySelector(".error-msg");
-}
+/* Format card number: 0000 0000 0000 0000 */
+const formatCardNumber = (value) => {
+  const digits = onlyNumbers(value).slice(0, 16);
+  return digits.replace(/(.{4})/g, "$1 ").trim();
+};
 
-function setError(input, message) {
-  const errorEl = getErrorEl(input);
+/* Get error message element */
+const getErrorElement = (input) => {
+  return input.parentElement.querySelector(".error-msg");
+};
+
+/* Show error */
+const showError = (input, message) => {
+  const errorEl = getErrorElement(input);
   input.classList.add("error");
   input.setAttribute("aria-invalid", "true");
   errorEl.textContent = message;
   errorEl.classList.add("active");
-}
+};
 
-function clearError(input) {
-  const errorEl = getErrorEl(input);
+/* Remove error */
+const removeError = (input) => {
+  const errorEl = getErrorElement(input);
   input.classList.remove("error");
-  input.setAttribute("aria-invalid", "false");
+  input.removeAttribute("aria-invalid");
   errorEl.textContent = "";
   errorEl.classList.remove("active");
-}
+};
 
 /* =======================
-   VALIDATION
+   VALIDATION FUNCTIONS
 ======================= */
-function validateName() {
-  const v = nameInput.value.trim();
-  if (!/^[a-zA-Z ]{3,}$/.test(v)) {
-    setError(nameInput, "Name must contain only letters");
+
+const validateName = () => {
+  const value = nameInput.value.trim();
+
+  if (value.length < 3 || !/^[a-zA-Z ]+$/.test(value)) {
+    showError(nameInput, "Name must contain only letters");
     return false;
   }
-  clearError(nameInput);
-  return true;
-}
 
-function validateNumber() {
-  const digits = digitsOnly(numberInput.value);
+  removeError(nameInput);
+  return true;
+};
+
+const validateCardNumber = () => {
+  const digits = onlyNumbers(numberInput.value);
+
   if (digits.length !== 16) {
-    setError(numberInput, "Wrong format, numbers only");
+    showError(numberInput, "Wrong format, numbers only");
     return false;
   }
-  clearError(numberInput);
-  return true;
-}
 
-function validateExpiry() {
-  const m = monthInput.value.trim();
-  const y = yearInput.value.trim();
+  removeError(numberInput);
+  return true;
+};
+
+const validateExpiry = () => {
+  const month = monthInput.value;
+  const year = yearInput.value;
   const errorEl = document.getElementById("exp-error");
 
-  // Clear previous state
-  clearError(monthInput);
-  clearError(yearInput);
+  errorEl.textContent = "";
+  errorEl.classList.remove("active");
 
-  if (!m || !y) {
+  monthInput.classList.remove("error");
+  yearInput.classList.remove("error");
+
+  if (!month || !year) {
     errorEl.textContent = "Expiry date required";
     errorEl.classList.add("active");
 
-    if (!m) monthInput.classList.add("error");
-    if (!y) yearInput.classList.add("error");
+    if (!month) monthInput.classList.add("error");
+    if (!year) yearInput.classList.add("error");
     return false;
   }
 
-  if (+m < 1 || +m > 12) {
+  if (month < 1 || month > 12) {
     errorEl.textContent = "Invalid month";
     errorEl.classList.add("active");
     monthInput.classList.add("error");
     return false;
   }
 
-  if (!/^\d{2}$/.test(y)) {
+  if (year.length !== 2) {
     errorEl.textContent = "Invalid year";
     errorEl.classList.add("active");
     yearInput.classList.add("error");
     return false;
   }
 
-  errorEl.textContent = "";
-  errorEl.classList.remove("active");
   return true;
-}
+};
 
-function validateCvc() {
+const validateCvc = () => {
   if (!/^\d{3}$/.test(cvcInput.value)) {
-    setError(cvcInput, "CVC must be 3 digits");
+    showError(cvcInput, "CVC must be 3 digits");
     return false;
   }
-  clearError(cvcInput);
+
+  removeError(cvcInput);
   return true;
-}
+};
 
 /* =======================
-   LIVE PREVIEW
+   LIVE INPUT HANDLERS
 ======================= */
+
 nameInput.addEventListener("input", () => {
-  previewName.textContent = nameInput.value || DEFAULTS.name;
+  previewName.textContent = nameInput.value || DEFAULT_NAME;
   validateName();
 });
 
 numberInput.addEventListener("input", () => {
   numberInput.value = formatCardNumber(numberInput.value);
-  previewNumber.textContent = numberInput.value || DEFAULTS.number;
-  validateNumber();
+  previewNumber.textContent = numberInput.value || DEFAULT_NUMBER;
+  validateCardNumber();
 });
 
-monthInput.addEventListener("input", updateExpiry);
-yearInput.addEventListener("input", updateExpiry);
-
-function updateExpiry() {
-  monthInput.value = digitsOnly(monthInput.value).slice(0, 2);
-  yearInput.value = digitsOnly(yearInput.value).slice(0, 2);
+const updateExpiryPreview = () => {
+  monthInput.value = onlyNumbers(monthInput.value).slice(0, 2);
+  yearInput.value = onlyNumbers(yearInput.value).slice(0, 2);
 
   const mm = monthInput.value.padStart(2, "0");
   const yy = yearInput.value.padStart(2, "0");
 
   previewExp.textContent =
-    monthInput.value && yearInput.value ? `${mm}/${yy}` : DEFAULTS.exp;
+    monthInput.value && yearInput.value ? `${mm}/${yy}` : DEFAULT_EXPIRY;
 
   validateExpiry();
-}
+};
+
+monthInput.addEventListener("input", updateExpiryPreview);
+yearInput.addEventListener("input", updateExpiryPreview);
 
 cvcInput.addEventListener("input", () => {
-  cvcInput.value = digitsOnly(cvcInput.value).slice(0, 3);
-  previewCvc.textContent = cvcInput.value ? "***" : DEFAULTS.cvc;
+  cvcInput.value = onlyNumbers(cvcInput.value).slice(0, 3);
+
+  /* Mask CVC in preview */
+  previewCvc.textContent = cvcInput.value ? "***" : DEFAULT_CVC;
+
   validateCvc();
 });
 
 /* =======================
-   SUBMIT
+   FORM SUBMIT
 ======================= */
-form.addEventListener("submit", (e) => {
-  e.preventDefault();
+
+form.addEventListener("submit", (event) => {
+  event.preventDefault();
 
   const isValid =
-    validateName() & validateNumber() & validateExpiry() & validateCvc();
+    validateName() && validateCardNumber() && validateExpiry() && validateCvc();
 
   if (!isValid) return;
 
@@ -187,18 +198,18 @@ form.addEventListener("submit", (e) => {
   thankYouSection.hidden = false;
 });
 
-// continue btn
+/* =======================
+   CONTINUE BUTTON
+======================= */
+
 continueBtn.addEventListener("click", () => {
-  // Reset form fields
   form.reset();
 
-  // Reset previews
-  previewName.textContent = DEFAULTS.name;
-  previewNumber.textContent = DEFAULTS.number;
-  previewExp.textContent = DEFAULTS.exp;
-  previewCvc.textContent = DEFAULTS.cvc;
+  previewName.textContent = DEFAULT_NAME;
+  previewNumber.textContent = DEFAULT_NUMBER;
+  previewExp.textContent = DEFAULT_EXPIRY;
+  previewCvc.textContent = DEFAULT_CVC;
 
-  // Clear errors
   document.querySelectorAll(".error-msg").forEach((el) => {
     el.textContent = "";
     el.classList.remove("active");
@@ -209,10 +220,8 @@ continueBtn.addEventListener("click", () => {
     input.removeAttribute("aria-invalid");
   });
 
-  // Switch UI
   thankYouSection.hidden = true;
   formSection.hidden = false;
 
-  // Focus first field (UX polish)
   nameInput.focus();
 });
