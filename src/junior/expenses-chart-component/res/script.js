@@ -2,12 +2,15 @@
 
 const chart = document.getElementById("chart");
 
+const CHART_HEIGHT = 18; // rem
+
 // Fetch data directly from JSON
-fetch("./../data/data.json")
+fetch("./data/data.json")
   .then((response) => response.json())
   .then((data) => renderChart(data))
   .catch((error) => console.error("Error loading data:", error));
 
+//   rendering chart
 function renderChart(data) {
   const maxAmount = Math.max(...data.map((item) => item.amount));
   const today = new Date()
@@ -16,31 +19,26 @@ function renderChart(data) {
 
   data.forEach((item) => {
     const barWrapper = document.createElement("div");
-    barWrapper.classList.add("bar-wrapper");
+    barWrapper.className = "bar-wrapper";
 
     const amountLabel = document.createElement("div");
-    amountLabel.classList.add("amount");
+    amountLabel.className = "amount";
     amountLabel.textContent = `$${item.amount}`;
 
     const bar = document.createElement("div");
-    bar.classList.add("bar");
+    bar.className = "bar";
 
-    // Scale bar height relative to max value
-    bar.style.height = `${(item.amount / maxAmount) * 100}%`;
+    // Height in pixels
+    bar.style.height = `${(item.amount / maxAmount) * CHART_HEIGHT}rem`;
 
-    // Highlight current day
-    if (item.day === today.slice(0, 3)) {
-      bar.classList.add("active");
-    }
+    // Color logic
+    if (item.amount === maxAmount) bar.classList.add("bar--max");
 
     const dayLabel = document.createElement("div");
-    dayLabel.classList.add("day");
+    dayLabel.className = "day";
     dayLabel.textContent = item.day;
 
-    barWrapper.appendChild(amountLabel);
-    barWrapper.appendChild(bar);
-    barWrapper.appendChild(dayLabel);
-
+    barWrapper.append(amountLabel, bar, dayLabel);
     chart.appendChild(barWrapper);
   });
 }

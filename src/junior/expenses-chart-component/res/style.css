@@ -18,8 +18,14 @@ The designs were created to the following widths:
   --color-brown-400: hsl(28, 10%, 53%);
   --color-red-100: hsl(26, 66%, 93%);
 
-  --font-wt-1: 400;
-  --font-wt-2: 700;
+  /* Typography */
+  --font-primary: "DM Sans", sans-serif;
+  --font-weight-regular: 400;
+  --font-weight-bold: 700;
+
+  /* Layout */
+  --radius-lg: 1.6rem;
+  --radius-sm: 0.4rem;
 }
 *,
 *::after,
@@ -34,43 +40,55 @@ html {
 }
 
 body {
-  font-family: "DM Sans", sans-serif;
-  font-optical-sizing: auto;
-  font-style: normal;
-
   height: 100vh;
+  font-family: var(--font-primary);
   font-size: 1.8rem;
+  background-color: var(--color-red-100);
 
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-
   flex-direction: column;
-  background: var(--color-red-100);
+  align-items: center;
+  justify-content: space-between;
 }
 
-main {
-}
 .h1 {
   font-size: 3.2rem;
-  font-weight: var(--font-wt-2);
+  font-weight: var(--font-weight-bold);
 }
 
 .h2 {
   font-size: 2.4rem;
-  font-weight: var(--font-wt-2);
+  font-weight: var(--font-weight-bold);
 }
+
 .h6 {
   font-size: 1.4rem;
-  font-weight: var(--font-wt-1);
+  font-weight: var(--font-weight-regular);
 }
+
+/* layouts */
+
+main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100%;
+}
+
+.container-chart-component {
+  width: 100%;
+  max-width: 42rem;
+  padding: 2rem;
+}
+/*  */
 .component-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
 
   padding: 2rem;
-  border-radius: 1.6rem;
+  border-radius: var(--radius-lg);
   background: var(--color-red-500);
 }
 
@@ -78,27 +96,75 @@ main {
   color: #fff;
 }
 
-#component-logo {
-  aspect-ratio: 1;
-}
-
 .contents {
   margin-top: 2rem;
   padding: 2rem;
   background: #fff;
 
-  border-radius: 1.6rem;
+  border-radius: var(--radius-lg);
 }
 
 .contents > h2 {
 }
 
-.data-lists {
-  list-style: none;
+/* charts */
+.chart {
   display: flex;
-  gap: 2rem;
+  align-items: flex-end;
+  justify-content: space-between;
+  height: 20rem;
+  margin: 2rem 0;
 }
 
+.bar-wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.bar {
+  width: 3.2rem;
+  border-radius: var(--radius-sm);
+  background-color: var(--color-red-500);
+  cursor: pointer;
+
+  transition: opacity 0.15s ease;
+}
+
+.bar:hover {
+  opacity: 0.75;
+}
+.bar--max {
+  background-color: var(--color-blue-300);
+}
+.amount {
+  background-color: var(--color-brown-950);
+  color: #ffffff;
+  font-size: 1.2rem;
+  padding: 0.4rem 0.6rem;
+  border-radius: var(--radius-sm);
+  margin-bottom: 0.6rem;
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  transition: opacity 0.15s ease;
+}
+
+.bar-wrapper:hover .amount {
+  opacity: 1;
+  visibility: visible;
+}
+
+.day {
+  margin-top: 0.6rem;
+  font-size: 1.2rem;
+  color: var(--color-brown-400);
+}
+
+/*  */
 .component-footer {
   margin-top: 2.8rem;
   padding-top: 2.8rem;
@@ -109,7 +175,9 @@ main {
 
   border-top: 0.2rem solid var(--color-red-100);
 }
+/* footer */
 footer {
+  margin-bottom: 1rem;
 }
 .attribution {
   font-size: 11px;
