@@ -447,7 +447,9 @@
     "id": 34,
     "title": "Expenses Chart Component",
     "images": {
-      "desktop": [],
+      "desktop": [
+        "./src/junior/expenses-chart-component/screenshots/screenshot.jpeg"
+      ],
       "mobile": []
     },
     "link": "./src/junior/expenses-chart-component/index.html",

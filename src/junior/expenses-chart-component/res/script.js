@@ -28,7 +28,7 @@ function renderChart(data) {
     const bar = document.createElement("div");
     bar.className = "bar";
 
-    // Height in pixels
+    // Height
     bar.style.height = `${(item.amount / maxAmount) * CHART_HEIGHT}rem`;
 
     // Color logic
