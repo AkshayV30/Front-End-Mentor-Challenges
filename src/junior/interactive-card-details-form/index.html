@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -17,11 +17,31 @@
       @import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap");
     </style>
     <link rel="stylesheet" href="./res/css/style.css" />
+    <link rel="stylesheet" href="./res/css/mobileStyle.css" />
   </head>
   <body>
     <main>
       <picture class="main-background">
-        <img src="./images/bg-main-desktop.png" alt="main-background" />
+        <!-- <source
+          media="(width < 720px)"
+          src="./images/bg-main-mobile.png "
+          type="image"
+        />
+        <source
+          media="(width > 720px)"
+          src="./images/bg-main-desktop.png "
+          type="image"
+        /> -->
+        <!-- <img
+          src="./images/bg-main-desktop.png"
+          class="main-background--desktop"
+          alt="main-background"
+        /> -->
+        <img
+          src="./images/bg-main-mobile.png"
+          class="main-background--mobile"
+          alt="main-background"
+        />
       </picture>
       <!-- overlays -->
       <div class="card-preview">

@@ -1,0 +1,186 @@
+:root {
+  /* 
+   # Front-end Style Guide
+
+## Layout
+
+The designs were created to the following widths:
+
+- Mobile: 375px
+- Desktop: 1440px
+
+
+  /*  Colors */
+  /* # Primary */
+
+  --color-Bright-Blue: hsl(220, 98%, 61%);
+  /* - Check Background: linear-gradient hsl(192, 100%, 67%) to hsl(280, 87%, 65%) */
+  --color-check-grad-1: hsl(192, 100%, 67%);
+  --color-check-grad-2: hsl(280, 87%, 65%);
+
+  /* # Neutral */
+  /* ## Light Theme */
+
+  --light-theme--Very-Light-Gray: hsl(0, 0%, 98%);
+  --light-theme--Very-Light-Grayish-Blue: hsl(236, 33%, 92%);
+  --light-theme--Light-Grayish-Blue: hsl(233, 11%, 84%);
+  --light-theme--Dark-Grayish-Blue: hsl(236, 9%, 61%);
+  --light-theme--Very-Dark-Grayish-Blue: hsl(235, 19%, 35%);
+
+  /* ## Dark Theme */
+
+  --dark-theme--Very-Dark-Blue: hsl(235, 21%, 11%);
+  --dark-theme--Very-Dark-Desaturated-Blue: hsl(235, 24%, 19%);
+  --dark-theme--Light-Grayish-Blue: hsl(234, 39%, 85%);
+  --dark-theme--Light-Grayish-Blue-hover: hsl(236, 33%, 92%);
+  --dark-theme--Dark-Grayish-Blue: hsl(234, 11%, 52%);
+  --dark-theme--Very-Dark-Grayish-Blue-1: hsl(233, 14%, 35%);
+  --dark-theme--Very-Dark-Grayish-Blue-2: hsl(237, 14%, 26%);
+
+  /*  */
+  --font-wt-light: 400;
+  --fotn-wt-regular: 700;
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Josefin Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-size: 1.8rem;
+
+  height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+
+  /* dark */
+  background: var(--dark-theme--Very-Dark-Blue);
+
+  /* light   */
+  /* background: var(--light-theme--Very-Light-Gray); */
+}
+
+/* ---------- HERO ---------- */
+.hero__image {
+  width: 100%;
+  display: block;
+}
+
+/* ---------- LAYOUT ---------- */
+.container {
+  max-width: 540px;
+  margin: -12rem auto 0;
+  padding: 0 2rem;
+}
+
+/* ---------- TODO ---------- */
+.todo__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.todo__title {
+  letter-spacing: 0.4rem;
+}
+
+.todo__theme-btn {
+  background: none;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.todo__input-wrapper {
+  margin-bottom: 2rem;
+}
+
+.todo__input {
+  width: 100%;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  border: none;
+  outline: none;
+  background: var(--dark-card);
+  color: inherit;
+}
+
+/* ---------- LIST ---------- */
+.todo__list-wrapper {
+  background: var(--dark-card);
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.todo__list {
+  list-style: none;
+}
+
+.todo__item {
+  display: flex;
+  align-items: center;
+  padding: 1.5rem;
+  border-bottom: 1px solid hsl(235, 14%, 26%);
+}
+
+.todo__item.completed span {
+  text-decoration: line-through;
+  color: var(--dark-theme--Very-Dark-Grayish-Blue-1);
+}
+
+.todo__item input {
+  margin-right: 1.5rem;
+}
+
+/* ---------- FOOTER ---------- */
+.todo__footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem;
+  font-size: 1.3rem;
+  color: var(--dark-theme--Very-Dark-Grayish-Blue-1);
+}
+
+.todo__filters button,
+.todo__clear {
+  background: none;
+  border: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+.todo__filters button:hover,
+.todo__clear:hover {
+  color: var(--dark-text);
+}
+
+.todo__hint {
+  text-align: center;
+  margin-top: 4rem;
+  color: var(--dark-theme--Very-Dark-Grayish-Blue-1);
+}
+
+/* footer */
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}

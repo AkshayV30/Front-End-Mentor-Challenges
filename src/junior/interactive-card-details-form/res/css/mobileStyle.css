@@ -1,0 +1,47 @@
+/* =====================================================
+   ≥ 375px — Phones
+   ===================================================== */
+@media (max-width: 720px) {
+  main {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .card-preview {
+    margin-left: 0;
+    min-height: 24rem;
+  }
+
+  .main-background--desktop {
+    display: none;
+  }
+  .main-background--mobile {
+    /* display: block; */
+    width: 100vw;
+    height: 20vh;
+  }
+
+  /* .main-background > img {
+    width: 100%;
+  } */
+  .card-front,
+  .card-back {
+    width: 28rem;
+    height: 16rem;
+    border-radius: 1.5rem;
+    padding: 0.6rem;
+    position: relative;
+  }
+
+  .card-back {
+    margin-left: 0;
+    top: -40rem;
+  }
+  .card-front {
+    margin-left: -10rem;
+    font-size: 0.8rem;
+    z-index: 100;
+    top: -15rem;
+    left: 2rem;
+  }
+}

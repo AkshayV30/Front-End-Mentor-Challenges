@@ -1,0 +1,261 @@
+:root {
+  /* 
+### Primary
+#### Text */
+
+  --Purple-300: hsl(276, 100%, 81%); /*(sub-heading at the top of the app UI)*/
+  --Purple-600: hsl(276, 55%, 52%); /* (chat on the left)*/
+  --Gray-500: hsl(270, 7%, 64%); /*(chat on the right, paragraph)*/
+  --Gray-300: hsl(206, 6%, 79%); /* (placeholder text)  */
+  --Purple-950: hsl(271, 36%, 24%); /*(main heading)*/
+
+  /* ####Gradients
+   These two colors are the vibrant background
+   colors you see throughout the design and are
+   applied as a linear gradient  */
+
+  --Pink-500: hsl(293, 100%, 63%);
+  --Purple-500: hsl(264, 100%, 61%);
+
+  /* ###Secondary  */
+  --White: hsl(0, 100%, 100%);
+  --Gray-100: hsl(270, 20%, 96%); /* (app background) */
+  --Purple-950: hsl(271, 36%, 24%); /*(submit button background)*/
+  --Pink-400: hsl(289, 100%, 72%); /*(radio button outline):*/
+}
+
+/*
+# Front-end Style Guide 
+## Layout
+The designs were created to the following widths:
+
+- Mobile: 375px
+- Desktop: 1440px
+
+*/
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+
+  font-family: "Rubik", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+
+  align-items: center;
+  justify-content: space-between;
+
+  font-size: 1.6rem;
+}
+
+main {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  background: var(--Gray-100);
+}
+
+section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 10rem;
+}
+
+/* ----------------------------------------------------- */
+.phone-container {
+  background: var(--White);
+  border-radius: 2.4rem;
+  padding: 1.2rem;
+
+  display: flex;
+  flex-direction: column;
+
+  min-width: 40rem;
+  max-width: 80rem;
+}
+
+/* ----------------------------- */
+.phone-chat-heading {
+  padding: 3rem 3rem 2rem 3rem;
+  border-radius: 2rem 2rem 0 0;
+
+  background: linear-gradient(
+    to top right,
+    var(--Purple-500) 0%,
+    var(--Pink-500) 100%
+  );
+  background-blend-mode: screen;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  position: relative;
+}
+
+.phone-chat-heading::before {
+  content: "";
+  background: var(--Gray-100);
+  width: 20rem;
+  height: 2.4rem;
+  border-radius: 1.2rem;
+  position: absolute;
+  top: -7%;
+  left: 25%;
+}
+/* +++++++++++++++++++++++++++++++++++ */
+.chevron-left {
+  position: relative;
+  display: inline-block;
+  width: 1.5rem; /* button width */
+  height: 1.5rem; /* button height */
+  cursor: pointer;
+}
+
+.chevron-left::before,
+.chevron-left::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.chevron-left::before {
+  width: 12px;
+  height: 12px;
+  border-left: 3px solid var(--White);
+  border-bottom: 3px solid var(--White);
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.chevron-left::after {
+  width: 1rem;
+  height: 2rem;
+  /* optional background or spacing element */
+}
+
+/* +++++++++++++++++++++++++++++++++++ */
+.menu-dots-vertical {
+  --dots-size: 0.5rem;
+  cursor: pointer;
+  width: var(--dots-size);
+  aspect-ratio: 1;
+  background-color: var(--White);
+  border-radius: 50%;
+  position: relative;
+}
+
+.menu-dots-vertical::before,
+.menu-dots-vertical::after {
+  position: absolute;
+  content: "";
+  width: var(--dots-size);
+  aspect-ratio: 1;
+  background-color: var(--White);
+  border-radius: 50%;
+}
+/* +++++++++++++++++++++++++++++++++++ */
+.menu-dots-vertical::before {
+  top: 1rem;
+}
+.menu-dots-vertical::after {
+  bottom: 1rem;
+}
+
+.phone-chat-heading > #avatar {
+  width: 7rem;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: 0.4rem solid var(--Gray-100);
+}
+
+.phone-chat-heading > .avatar-profile {
+  margin-left: 1rem;
+}
+
+.avatar-profile > h3 {
+  color: var(--Purple-300);
+}
+
+.avatar-profile > p {
+  color: var(--Purple-300);
+  opacity: 0.8;
+}
+/* ----------------------------- */
+.phone-chats {
+}
+
+.phone-chats > .reciver {
+  text-align: left;
+  list-style: none;
+}
+
+.reciver > li {
+  margin: 1rem;
+  color: var(--Purple-600);
+  background: color-mix(in srgb, var(--Purple-600), transparent 85%);
+
+  border-radius: 1rem;
+  padding: 1.2rem;
+  width: 24ch;
+}
+
+.phone-chats > .sender {
+  text-align: right;
+  list-style: none;
+}
+.sender > li {
+  margin: 1rem;
+  color: var(--Purple-600);
+  background: var(--White);
+
+  border-radius: 1rem;
+  padding: 1.2rem;
+  width: 24ch;
+}
+
+.sender > li > picture > img {
+  border-radius: 1rem;
+  aspect-ratio: 1;
+  width: 6rem;
+  margin: 0.2rem;
+}
+
+/* ----------------------------------------------------- */
+.description-container {
+  padding: 2.5rem;
+}
+.description-container > h1 {
+  color: var(--Purple-950);
+  padding-bottom: 1.2rem;
+}
+.description-container > .description {
+  color: var(--Gray-300);
+  letter-spacing: 1.2;
+  line-height: 1.5;
+}
+/* ----------------------------------------------------- */
+/* footer  */
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}

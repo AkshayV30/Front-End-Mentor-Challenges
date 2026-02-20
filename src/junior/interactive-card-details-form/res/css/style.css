@@ -6,11 +6,6 @@ The designs were created to the following widths:
 - Mobile: 375px
 - Desktop: 1440px
 
-
-
-
-
-
  */
 *,
 *::after,
@@ -59,6 +54,7 @@ body {
   padding: 3rem 2rem;
   display: flex;
   flex-direction: column;
+
   gap: 2rem;
   min-height: 28rem;
 
@@ -116,15 +112,22 @@ body {
 }
 
 /* - - - - - - - - - - - - - - - Main - - - - - - - - - - - - */
-.main-background > img {
+/* .main-background > img {
   width: 25.5vw;
-}
+} */
 main {
   display: flex;
   align-items: center;
 }
 
 .main-background {
+}
+
+.main-background--desktop {
+  display: block;
+}
+.main-background--mobile {
+  /* display: none; */
 }
 
 #form-section,

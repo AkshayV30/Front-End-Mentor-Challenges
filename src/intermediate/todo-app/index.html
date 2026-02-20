@@ -1,36 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Todo app</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
-<body>
+    <title>Frontend Mentor | Todo app</title>
 
-  Todo
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap");
+    </style>
+    <link rel="stylesheet" href="./res/css/styles.css" />
+  </head>
+  <body class="theme-dark">
+    <header class="hero">
+      <img
+        src="./images/bg-desktop-dark.jpg"
+        alt="Background"
+        class="hero__image"
+      />
+    </header>
+    <main>
+      <section class="todo">
+        <header class="todo__header">
+          <h1 class="todo__title">TODO</h1>
+          <button
+            id="themeToggle"
+            class="todo__theme-btn"
+            aria-label="Toggle theme"
+          >
+            <img src="./images/icon-sun.svg" alt="" />
+          </button>
+        </header>
+        <div class="todo__input-wrapper">
+          <input
+            id="taskInput"
+            type="text"
+            class="todo__input"
+            placeholder="Create a new task"
+          />
+        </div>
 
-  <!-- Add dynamic number --> items left
+        <div class="todo__list-wrapper">
+          <ul id="taskList" class="todo__list"></ul>
+          <footer class="todo__footer">
+            <span> <strong id="itemsLeft">0</strong> items left </span>
+            <div class="todo__filters">
+              <button data-filter="all">All</button>
+              <button data-filter="active">Active</button>
+              <button data-filter="completed">Completed</button>
+            </div>
+            <button id="clearCompleted" class="todo__clear">
+              Clear Completed
+            </button>
+          </footer>
+        </div>
+        <p class="todo__hint">Drag and drop to reorder list</p>
+      </section>
+    </main>
 
-  All
-  Active 
-  Completed
-
-  Clear Completed
-
-  Drag and drop to reorder list
-
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
-</body>
+    <footer>
+      <div class="attribution">
+        Challenge by
+        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+          >Frontend Mentor</a
+        >. Coded by <a href="#">AkshayV30</a>.
+      </div>
+    </footer>
+    <script src="./res/js/script.js"></script>
+  </body>
 </html>
