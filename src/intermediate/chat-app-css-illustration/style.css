@@ -170,13 +170,47 @@ section {
   background-color: var(--White);
   border-radius: 50%;
 }
-/* +++++++++++++++++++++++++++++++++++ */
 .menu-dots-vertical::before {
   top: 1rem;
 }
 .menu-dots-vertical::after {
   bottom: 1rem;
 }
+
+/* +++++++++++++++++++++++++++++++++++ */
+.chevron-right {
+  position: relative;
+  display: inline-block;
+  width: 1.5rem; /* button width */
+  aspect-ratio: 1;
+  cursor: pointer;
+  background: var(--Purple-950);
+  padding: 1.6rem;
+  border-radius: 100%;
+}
+
+.chevron-right::before,
+.chevron-right::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 25%;
+}
+
+.chevron-right::before {
+  width: 10px;
+  aspect-ratio: 1;
+  border-right: 3px solid var(--White);
+  border-top: 3px solid var(--White);
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.chevron-right::after {
+  width: 1rem;
+  height: 2rem;
+  /* optional background or spacing element */
+}
+/* +++++++++++++++++++++++++++++++++++ */
 
 .phone-chat-heading > #avatar {
   width: 7rem;
@@ -199,9 +233,10 @@ section {
 }
 /* ----------------------------- */
 .phone-chats {
+  list-style: none;
 }
 
-.phone-chats > .reciver {
+.phone-chats > li > .reciver {
   text-align: left;
   list-style: none;
 }
@@ -216,7 +251,7 @@ section {
   width: 24ch;
 }
 
-.phone-chats > .sender {
+.phone-chats > li > .sender {
   text-align: right;
   list-style: none;
 }
@@ -237,6 +272,24 @@ section {
   margin: 0.2rem;
 }
 
+.phone-chats > .chat-send {
+  padding: 1.2rem;
+  border: 2px solid red;
+  border-radius: 4rem;
+  background: white;
+  color: rgb(245, 163, 55);
+  text-align: left;
+  display: inline-flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+}
+.chat-send > input {
+  /* border: none; */
+  padding: 1rem;
+  width: 100%;
+  border-radius: 2rem;
+}
 /* ----------------------------------------------------- */
 .description-container {
   padding: 2.5rem;
