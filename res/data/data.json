@@ -436,8 +436,8 @@
     "id": 33,
     "title": "Contact Form",
     "images": {
-      "desktop": [],
-      "mobile": []
+      "desktop": ["./src/junior/contact-form/screenshots/desktop.jpeg"],
+      "mobile": ["./src/junior/contact-form/screenshots/mobile.jpeg"]
     },
     "link": "./src/junior/contact-form/index.html",
     "tech": ["HTML", "CSS", "JS"],
