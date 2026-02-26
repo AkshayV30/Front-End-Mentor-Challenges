@@ -1,66 +1,228 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Weather app</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
-<body>
+    <title>Frontend Mentor | Weather app</title>
+    <link rel="stylesheet" href="./res/css/main.css" />
+  </head>
+  <body>
+    <header>
+      <img src="./assets/images/logo.svg" alt="logo" id="app__logo" />
+      <div>
+        <img
+          src="./assets/images/icon-units.svg"
+          alt="icon-units"
+          id="app__setting_icon"
+        />
+        <span>Units</span>
+        <ul>
+          <li>Celsius (°C)</li>
+          <li>Fahrenheit (°F)</li>
+        </ul>
+        <img src="./assets/images/icon-dropdown.svg" alt="icon-dropdown" />
+      </div>
+    </header>
+    <main>
+      <div>
+        <h1>How's the sky looking today?</h1>
+        <div>
+          <span>
+            <img src="./assets/images/icon-search.svg" alt="icon-search" />
+            <input type="text" placeholder="Search for a place . . . " />
+          </span>
+          <button type="button">Search</button>
+        </div>
+      </div>
+      <div>
+        <picture data-positon="1">
+          <img src="./assets/images/bg-today-large.svg" alt="bg-large" />
+          <img src="./assets/images/bg-today-small.svg" alt="bg-small" />
+        </picture>
 
-  Units
+        <div data-positon="2">
+          <div>
+            <h3>Feels like</h3>
+            <p class="value">
+              <!-- Insert temperature here -->
+            </p>
+          </div>
+          <div>
+            <h3>Humidity</h3>
+            <p class="value">
+              <!-- Insert humidity here -->
+            </p>
+          </div>
+          <div>
+            <h3>Wind</h3>
+            <p class="value">
+              <!-- Insert wind here -->
+            </p>
+          </div>
+          <div>
+            <h3>Precipitation</h3>
+            <p class="value">
+              <!-- Insert precipitation here -->
+            </p>
+          </div>
+        </div>
+        <div data-positon="3">
+          <h2>Daily Forecast</h2>
+          <ol>
+            <li>
+              <h3>Tue</h3>
+              <img src="./assets/images/icon-drizzle.webp" alt="icon-drizzle" />
+              <div>
+                <p>max values</p>
+                <p>min_value</p>
+              </div>
+            </li>
+            <li>
+              <h3>wed</h3>
+              <img src="./assets/images/icon-fog.webp" alt="icon-fog" />
+              <div>
+                <p>max values</p>
+                <p>min_value</p>
+              </div>
+            </li>
+            <li>
+              <h3>thru</h3>
+              <img
+                src="./assets/images/icon-partly-cloudy.webp"
+                alt="icon-partly-cloudy"
+              />
+              <div>
+                <p>max values</p>
+                <p>min_value</p>
+              </div>
+            </li>
+            <li>
+              <h3>fri</h3>
+              <img src="./assets/images/icon-sunny.webp" alt="icon-sunny" />
+              <div>
+                <p>max values</p>
+                <p>min_value</p>
+              </div>
+            </li>
+            <li>
+              <h3>sat</h3>
+              <img src="./assets/images/icon-storm.webp" alt="icon-storm" />
+              <div>
+                <p>max values</p>
+                <p>min_value</p>
+              </div>
+            </li>
+            <li>
+              <h3>sun</h3>
+              <img src="./assets/images/icon-snow.webp" alt="icon-snow" />
+              <div>
+                <p>max values</p>
+                <p>min_value</p>
+              </div>
+            </li>
+            <li>
+              <h3>mon</h3>
+              <img src="./assets/images/icon-drizzle.webp" alt="icon-drizzle" />
+              <div>
+                <p>max values</p>
+                <p>min_value</p>
+              </div>
+            </li>
+          </ol>
+        </div>
 
-  Switch to Imperial/Metric
+        <div data-positon="4">
+          <div class="mini--header">
+            <h2>Hourly Forecast</h2>
+            <ol>
+              <li>mon</li>
+              <li>tue</li>
+              <li>wed</li>
+              <li>thru</li>
+              <li>fri</li>
+              <li>sat</li>
+              <li>sun</li>
+            </ol>
+            <img src="./assets/images/icon-dropdown.svg" alt="icon-dropdown" />
+          </div>
+        </div>
 
-  Temperature
-
-  Celsius (°C)
-  Fahrenheit (°F)
-
-  Wind Speed
-
-  km/h
-  mph
-
-  Precipitation
-
-  Millimeters (mm)
-  Inches (in)
-
-  How's the sky looking today?
-
-  Search for a city, e.g., New York
-  Search
-
-  Feels like
-  <!-- Insert temperature here -->
-
-  Humidity
-  <!-- Insert humidity here -->
-
-  Wind
-  <!-- Insert wind here -->   
-  
-  Precipitation
-  <!-- Insert precipitation here -->
-
-  Daily forecast
-  <!-- Insert daily forecast for the next 7 days here -->
-
-  Hourly forecast
-  <!-- Insert hourly forecast for the selected day here -->
-
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
-</body>
+        <ol>
+          <li>
+            <div>
+              <img src="./assets/images/icon-drizzle.webp" alt="icon-drizzle" />
+              <p>3 PM</p>
+            </div>
+            <p>20deg</p>
+          </li>
+          <li>
+            <div>
+              <img src="./assets/images/icon-drizzle.webp" alt="icon-drizzle" />
+              <p>4 PM</p>
+            </div>
+            <p>20deg</p>
+          </li>
+          <li>
+            <div>
+              <img src="./assets/images/icon-drizzle.webp" alt="icon-drizzle" />
+              <p>5 PM</p>
+            </div>
+            <p>20deg</p>
+          </li>
+          <li>
+            <div>
+              <img src="./assets/images/icon-drizzle.webp" alt="icon-drizzle" />
+              <p>6 PM</p>
+            </div>
+            <p>20deg</p>
+          </li>
+          <li>
+            <div>
+              <img src="./assets/images/icon-drizzle.webp" alt="icon-drizzle" />
+              <p>7 PM</p>
+            </div>
+            <p>20deg</p>
+          </li>
+          <li>
+            <div>
+              <img src="./assets/images/icon-drizzle.webp" alt="icon-drizzle" />
+              <p>8 PM</p>
+            </div>
+            <p>20deg</p>
+          </li>
+          <li>
+            <div>
+              <img src="./assets/images/icon-drizzle.webp" alt="icon-drizzle" />
+              <p>9 PM</p>
+            </div>
+            <p>20deg</p>
+          </li>
+          <li>
+            <div>
+              <img src="./assets/images/icon-drizzle.webp" alt="icon-drizzle" />
+              <p>10 PM</p>
+            </div>
+            <p>20deg</p>
+          </li>
+        </ol>
+      </div>
+    </main>
+    <footer>
+      <div class="attribution">
+        Challenge by
+        <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a
+        >. Coded by <a href="#">Your Name Here</a>.
+      </div>
+    </footer>
+    <script src="./res/js/main.js" type="module"></script>
+  </body>
 </html>
