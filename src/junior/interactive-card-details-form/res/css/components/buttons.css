@@ -2,19 +2,26 @@
    BUTTON COMPONENT
 ========================================= */
 
-button {
+.button {
   width: 100%;
   padding: 1.2rem;
   margin-top: 2.5rem;
-  background: var(--very-dark-violet);
-  color: var(--white);
+
+  font-size: 1.5rem;
+
+  cursor: pointer;
+
   border: none;
   border-radius: var(--radius-md);
-  font-size: 1.5rem;
-  cursor: pointer;
   transition: background 0.3s ease;
 }
 
-button:hover {
+.button:hover {
+  color: var(--color-white);
   background: hsl(278, 60%, 25%);
+}
+
+.button--primary {
+  background: var(--very-dark-violet);
+  color: var(--color-white);
 }

@@ -2,59 +2,58 @@
    CARD COMPONENT
 ========================================= */
 
-.card-preview {
-  padding: 3rem;
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-
-  margin-right: 24rem;
-}
-
 .card {
-  width: 40rem;
+  width: 100%;
+  max-width: 42rem;
   aspect-ratio: 16 / 9;
+
   border-radius: var(--radius-lg);
-  padding: 2rem;
-  box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.4);
+  padding: var(--space-md);
+
+  position: absolute;
+
+  color: var(--color-white);
   background-size: cover;
+  box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.4);
 }
 
-.card-front {
+.card--front {
   background-image: url("./../../images/bg-card-front.png");
-  color: var(--white);
 
-  position: relative;
+  left: 25%;
+  top: 10%;
 }
 
-.card-back {
+.card--back {
   background-image: url("./../../images/bg-card-back.png");
-  margin-left: 8rem;
 
-  position: relative;
+  left: 30%;
 }
 
-#card-logo {
+.card__logo {
   width: 6rem;
 }
-#preview-number {
+
+.card__number {
   position: absolute;
-  bottom: 20%;
+  bottom: 35%;
+  font-size: 2rem;
+  letter-spacing: 0.2rem;
 }
 
-.card-meta {
+.card__meta {
   position: absolute;
-  bottom: 10%;
+  bottom: 15%;
+  width: 90%;
 
-  font-size: 1.2rem;
   text-transform: uppercase;
 
   display: flex;
   justify-content: space-between;
-  width: 90%;
 }
-#preview-cvc {
+
+.card__cvc {
   position: absolute;
-  bottom: 45%;
   right: 10%;
+  bottom: 45%;
 }

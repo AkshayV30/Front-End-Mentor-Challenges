@@ -1,55 +1,58 @@
 /* =========================================
    FORM COMPONENT
 ========================================= */
-
-.form-group {
-  margin-bottom: 2rem;
+.app .form__group {
+  margin-bottom: var(--space-md);
 }
 
-label {
+.form__label {
   display: block;
-  font-size: 1.1rem;
-  letter-spacing: 0.15rem;
-  text-transform: uppercase;
-  font-weight: 600;
   margin-bottom: 0.5rem;
+
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.15rem;
 }
 
-input {
+.form__input {
   width: 100%;
-  padding: 1rem;
+  padding: 1.2rem;
+
   border-radius: var(--radius-md);
   border: 1px solid #ccc;
+
   font-size: 1.4rem;
   cursor: pointer;
 }
 
-input:focus {
+.form__input:focus {
   outline: none;
   border-color: var(--gradient-1);
 }
 
-input.error {
+.form__input.error {
   border-color: var(--color-error);
 }
 
-.error-msg {
+.form__error {
   display: none;
   font-size: 1.1rem;
   color: var(--color-error);
   margin-top: 0.4rem;
 }
 
-.error-msg.active {
+.form__error.active {
   display: block;
 }
 
-.form-row {
-  display: flex;
-  gap: 1.5rem;
+.form__row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-md);
 }
 
-.expiry {
+.form__expiry {
   display: flex;
-  gap: 1rem;
+  gap: var(--space-sm);
 }

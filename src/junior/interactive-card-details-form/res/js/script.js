@@ -101,8 +101,8 @@ class CardForm {
 
   getErrorElement(input) {
     return (
-      input.closest("[data-group]")?.querySelector(".error-msg") ||
-      input.parentElement.querySelector(".error-msg")
+      input.closest("[data-group]")?.querySelector(".form__error") ||
+      input.parentElement.querySelector(".form__error")
     );
   }
 
@@ -134,6 +134,10 @@ class CardForm {
 
   validateName() {
     const value = this.DOM.inputs.name.value.trim();
+    if (!value) {
+      this.showError(this.DOM.inputs.name, "Provide a name");
+      return false;
+    }
 
     if (!/^[a-zA-Z ]{3,}$/.test(value)) {
       this.showError(this.DOM.inputs.name, "Invalid name");
@@ -146,6 +150,11 @@ class CardForm {
 
   validateCardNumber() {
     const number = this.DOM.inputs.number.value;
+
+    if (!number) {
+      this.showError(this.DOM.inputs.name, "Provide a Card Number");
+      return false;
+    }
 
     if (this.onlyNumbers(number).length !== 16 || !this.validateLuhn(number)) {
       this.showError(this.DOM.inputs.number, "Invalid card number");
@@ -201,6 +210,11 @@ class CardForm {
 
   validateCvc() {
     const value = this.DOM.inputs.cvc.value;
+
+    if (!value) {
+      this.showError(this.DOM.inputs.name, "Provide CVC ");
+      return false;
+    }
 
     if (!/^\d{3}$/.test(value)) {
       this.showError(this.DOM.inputs.cvc, "Invalid CVC");

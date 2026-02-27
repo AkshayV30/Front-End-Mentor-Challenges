@@ -1,12 +1,13 @@
 html {
-  font-size: 62.5%;
+  font-size: clamp(56%, 1vw, 62.5%);
+  line-height: 1.15;
 }
 
 body {
   font-family: "Space Grotesk", sans-serif;
   font-size: 1.8rem;
 
-  height: 100vh;
+  height: 100dvh;
 
   display: flex;
   flex-direction: column;

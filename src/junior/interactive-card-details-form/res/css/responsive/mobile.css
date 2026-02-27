@@ -4,46 +4,48 @@
 
 @media (max-width: 720px) {
   .bg-hero {
-    height: 100%;
-    background: url("./../../images/bg-main-mobile.png") no-repeat;
-  }
-  /* main {
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  } */
-  .layout-main {
-    flex-direction: column;
-    justify-content: center;
-    width: 100%;
+    background-image: url("./../../images/bg-main-mobile.png") no-repeat;
+    background-size: 100% 35dvh;
+    background-position: top;
   }
 
-  .form-container,
-  .thank-container {
-    margin-left: 0;
+  .app {
+    grid-template-columns: 1fr;
+    padding: 0;
   }
 
-  .card-preview {
-    margin-right: 0;
-    min-height: 24rem;
+  .app__preview {
+    position: relative;
+    height: 35dvh;
   }
 
-  .card-front,
-  .card-back {
-    width: 28rem;
-    height: 16rem;
+  .app__form,
+  .modal {
+    padding: 2.4rem;
+  }
+
+  .card {
+    border-radius: var(--radius-md);
     padding: 0.6rem;
+    width: 28rem;
   }
 
-  .card-back {
-    margin-left: 0;
-    top: -40rem;
+  .card__logo {
+    width: 4rem;
+    margin: 1rem;
   }
 
-  .card-front {
-    margin-left: -10rem;
-    z-index: 10;
-    top: -15rem;
-    left: 2rem;
+  .card--back {
+    top: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+  }
+
+  .card--front {
+    top: 9rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
   }
 }
