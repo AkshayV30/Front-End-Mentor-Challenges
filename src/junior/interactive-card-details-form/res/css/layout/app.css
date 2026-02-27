@@ -9,7 +9,7 @@
   grid-template-columns: 1fr 1fr;
   align-items: center;
 
-  padding: 4rem clamp(2rem, 6vw, 8rem);
+  padding: var(--space-lg);
 }
 
 .bg-hero {
@@ -20,10 +20,13 @@
 }
 
 .app__preview {
+  position: relative;
+  width: 100%;
+  height: clamp(35rem, 55vh, 60rem);
+
   display: flex;
-  flex-direction: column;
-  gap: 3rem;
-  max-width: 42rem;
+  justify-content: center;
+  align-items: center;
 }
 
 .app__form,

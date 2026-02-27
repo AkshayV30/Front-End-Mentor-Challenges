@@ -333,8 +333,12 @@
     "id": 24,
     "title": "Interactive Card Details Form",
     "images": {
-      "desktop": [],
-      "mobile": []
+      "desktop": [
+        "./src/junior/interactive-card-details-form/screenshots/desktop.jpeg"
+      ],
+      "mobile": [
+        "./src/junior/interactive-card-details-form/screenshots/mobile.jpeg"
+      ]
     },
     "link": "./src/junior/interactive-card-details-form/index.html",
     "tech": ["HTML", "CSS", "JS"],

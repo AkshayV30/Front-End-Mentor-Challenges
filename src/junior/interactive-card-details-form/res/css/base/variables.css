@@ -10,12 +10,10 @@
   --dark-violet: hsl(279, 6%, 55%);
   --very-dark-violet: hsl(278, 68%, 11%);
 
-  /* Spacing scale */
-  --space-sm: 0.8rem;
-  --space-md: 1.6rem;
-  --space-lg: 2.4rem;
-
-  /* Radius */
   --radius-md: 0.8rem;
   --radius-lg: 1.5rem;
+
+  --space-sm: clamp(0.6rem, 1vw, 1rem);
+  --space-md: clamp(1.2rem, 2vw, 2rem);
+  --space-lg: clamp(2rem, 4vw, 4rem);
 }

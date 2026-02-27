@@ -3,8 +3,7 @@
 ========================================= */
 
 .card {
-  width: 100%;
-  max-width: 42rem;
+  width: clamp(26rem, 32vw, 42rem);
   aspect-ratio: 16 / 9;
 
   border-radius: var(--radius-lg);
@@ -14,30 +13,37 @@
 
   color: var(--color-white);
   background-size: cover;
+  background-position: center;
   box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.4);
 }
 
 .card--front {
   background-image: url("./../../images/bg-card-front.png");
 
-  left: 25%;
-  top: 10%;
+  top: 25%;
+  left: 50%;
+  transform: translate(-30%, -50%);
+  z-index: 2;
 }
 
 .card--back {
   background-image: url("./../../images/bg-card-back.png");
 
-  left: 30%;
+  top: 75%;
+  left: 50%;
+  transform: translate(10%, -50%);
+
+  z-index: 1;
 }
 
 .card__logo {
-  width: 6rem;
+  width: clamp(4rem, 6vw, 6rem);
 }
 
 .card__number {
   position: absolute;
   bottom: 35%;
-  font-size: 2rem;
+  font-size: clamp(1.6rem, 2vw, 2rem);
   letter-spacing: 0.2rem;
 }
 
