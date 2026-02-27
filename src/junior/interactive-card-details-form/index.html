@@ -3,56 +3,33 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- displays site properly based on user's device -->
 
     <link
       rel="icon"
       type="image/png"
       sizes="32x32"
-      href="./images/favicon-32x32.png"
+      href="./res/images/favicon-32x32.png"
     />
 
     <title>Frontend Mentor | Interactive card details form</title>
-    <style>
-      @import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap");
-    </style>
-    <link rel="stylesheet" href="./res/css/style.css" />
-    <link rel="stylesheet" href="./res/css/mobileStyle.css" />
+    <!-- Google Font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./res/css/main.css" />
   </head>
   <body>
-    <main>
-      <picture class="main-background">
-        <!-- <source
-          media="(width < 720px)"
-          src="./images/bg-main-mobile.png "
-          type="image"
-        />
-        <source
-          media="(width > 720px)"
-          src="./images/bg-main-desktop.png "
-          type="image"
-        /> -->
-        <!-- <img
-          src="./images/bg-main-desktop.png"
-          class="main-background--desktop"
-          alt="main-background"
-        /> -->
-        <img
-          src="./images/bg-main-mobile.png"
-          class="main-background--mobile"
-          alt="main-background"
-        />
-      </picture>
-      <!-- overlays -->
+    <main class="layout-main bg-hero">
+      <!--  CARD PREVIEW SECTION   -->
       <div class="card-preview">
-        <section class="card-front">
-          <picture>
-            <img
-              src="./images/card-logo.svg"
-              alt="card logo"
-              class="card-logo"
-            />
-          </picture>
+        <!-- Front Card -->
+        <section class="card-front card">
+          <img
+            src="./res/images/card-logo.svg"
+            alt="Card logo"
+            id="card-logo"
+          />
 
           <p id="preview-number">0000 0000 0000 0000</p>
 
@@ -62,18 +39,23 @@
           </div>
         </section>
 
-        <section class="card-back">
+        <!-- Back Card -->
+        <section class="card-back card">
           <span id="preview-cvc">000</span>
         </section>
       </div>
 
-      <!-- FORM STATE -->
-      <section id="form-section">
+      <!-- =========================
+           FORM STATE
+      ========================== -->
+      <section id="form-section" class="form-container">
         <form id="card-form" novalidate>
+          <!-- Name -->
           <div class="form-group">
             <label for="cardHolderName">Cardholder Name</label>
             <input
               type="text"
+              `
               id="cardHolderName"
               name="cardHolderName"
               placeholder="e.g. Jane Appleseed"
@@ -82,6 +64,7 @@
             <small id="name-error" class="error-msg" role="alert"></small>
           </div>
 
+          <!-- Card Number -->
           <div class="form-group">
             <label for="cardNumber">Card Number</label>
             <input
@@ -95,10 +78,13 @@
             <small id="number-error" class="error-msg" role="alert"></small>
           </div>
 
+          <!-- Expiry + CVC -->
           <div class="form-row">
-            <div data-group="expiry">
-              <label for="exp"> Exp. Date (MM / YY)</label>
-              <div id="exp" class="expiry">
+            <!-- Expiry -->
+            <div class="form-group" data-group="expiry">
+              <label>Exp. Date (MM / YY)</label>
+
+              <div class="expiry">
                 <input
                   type="text"
                   inputmode="numeric"
@@ -111,16 +97,18 @@
                 <input
                   type="text"
                   inputmode="numeric"
-                  maxlength="2"
                   id="expYear"
+                  maxlength="2"
                   placeholder="YY"
                   aria-describedby="exp-error"
                 />
               </div>
+
               <small id="exp-error" class="error-msg" role="alert"></small>
             </div>
 
-            <div>
+            <!-- CVC -->
+            <div class="form-group">
               <label for="cvc">CVC</label>
               <input
                 type="text"
@@ -134,24 +122,24 @@
             </div>
           </div>
 
-          <button type="submit">Confirm</button>
+          <button type="submit" class="btn">Confirm</button>
         </form>
       </section>
 
-      <!-- COMPLETED STATE -->
-      <section id="thank-you-section" hidden>
-        <img src="./images/icon-complete.svg" alt="complted-check mark" />
+      <!-- THANK YOU STATE -->
+      <section id="thank-you-section" class="thank-container" hidden>
+        <img src="./res/images/icon-complete.svg" alt="Completed check mark" />
         <h2>Thank You!</h2>
         <p>We’ve added your card details.</p>
-        <button id="continue-btn">Continue</button>
+        <button id="continue-btn" class="btn">Continue</button>
       </section>
     </main>
 
     <footer>
       <div class="attribution">
         Challenge by
-        <a href="https://www.frontendmentor.io" target="_blank"
-          >Frontend Mentor</a
+        <a href="https://www.frontendmentor.io" target="_blank">
+          Frontend Mentor </a
         >. Coded by Akshay V30.
       </div>
     </footer>

@@ -1,0 +1,21 @@
+:root {
+  /* Primary */
+  --gradient-1: hsl(249, 99%, 64%);
+  --gradient-2: hsl(278, 94%, 30%);
+  --color-error: hsl(0, 100%, 66%);
+
+  /* Neutral */
+  --white: hsl(0, 0%, 100%);
+  --light-violet: hsl(270, 3%, 87%);
+  --dark-violet: hsl(279, 6%, 55%);
+  --very-dark-violet: hsl(278, 68%, 11%);
+
+  /* Spacing scale */
+  --space-sm: 0.8rem;
+  --space-md: 1.6rem;
+  --space-lg: 2.4rem;
+
+  /* Radius */
+  --radius-md: 0.8rem;
+  --radius-lg: 1.5rem;
+}

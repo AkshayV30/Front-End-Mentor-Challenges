@@ -1,0 +1,55 @@
+/* =========================================
+   FORM COMPONENT
+========================================= */
+
+.form-group {
+  margin-bottom: 2rem;
+}
+
+label {
+  display: block;
+  font-size: 1.1rem;
+  letter-spacing: 0.15rem;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+input {
+  width: 100%;
+  padding: 1rem;
+  border-radius: var(--radius-md);
+  border: 1px solid #ccc;
+  font-size: 1.4rem;
+  cursor: pointer;
+}
+
+input:focus {
+  outline: none;
+  border-color: var(--gradient-1);
+}
+
+input.error {
+  border-color: var(--color-error);
+}
+
+.error-msg {
+  display: none;
+  font-size: 1.1rem;
+  color: var(--color-error);
+  margin-top: 0.4rem;
+}
+
+.error-msg.active {
+  display: block;
+}
+
+.form-row {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.expiry {
+  display: flex;
+  gap: 1rem;
+}

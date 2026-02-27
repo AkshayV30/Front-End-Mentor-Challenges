@@ -1,0 +1,22 @@
+/* =========================================
+   MAIN LAYOUT
+========================================= */
+
+.layout-main {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.bg-hero {
+  background: url("./../../images/bg-main-desktop.png") no-repeat;
+  height: 100%;
+}
+
+.form-container,
+.thank-container {
+  width: 40rem;
+  padding: 3rem;
+
+  margin-left: -24rem;
+}

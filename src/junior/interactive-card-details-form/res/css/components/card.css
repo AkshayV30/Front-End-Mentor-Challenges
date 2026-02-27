@@ -1,0 +1,60 @@
+/* =========================================
+   CARD COMPONENT
+========================================= */
+
+.card-preview {
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+  margin-right: 24rem;
+}
+
+.card {
+  width: 40rem;
+  aspect-ratio: 16 / 9;
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.4);
+  background-size: cover;
+}
+
+.card-front {
+  background-image: url("./../../images/bg-card-front.png");
+  color: var(--white);
+
+  position: relative;
+}
+
+.card-back {
+  background-image: url("./../../images/bg-card-back.png");
+  margin-left: 8rem;
+
+  position: relative;
+}
+
+#card-logo {
+  width: 6rem;
+}
+#preview-number {
+  position: absolute;
+  bottom: 20%;
+}
+
+.card-meta {
+  position: absolute;
+  bottom: 10%;
+
+  font-size: 1.2rem;
+  text-transform: uppercase;
+
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+}
+#preview-cvc {
+  position: absolute;
+  bottom: 45%;
+  right: 10%;
+}

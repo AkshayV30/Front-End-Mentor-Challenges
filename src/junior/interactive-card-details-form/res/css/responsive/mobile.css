@@ -1,0 +1,49 @@
+/* =========================================
+   MOBILE BREAKPOINT ≤ 720px
+========================================= */
+
+@media (max-width: 720px) {
+  .bg-hero {
+    height: 100%;
+    background: url("./../../images/bg-main-mobile.png") no-repeat;
+  }
+  /* main {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  } */
+  .layout-main {
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .form-container,
+  .thank-container {
+    margin-left: 0;
+  }
+
+  .card-preview {
+    margin-right: 0;
+    min-height: 24rem;
+  }
+
+  .card-front,
+  .card-back {
+    width: 28rem;
+    height: 16rem;
+    padding: 0.6rem;
+  }
+
+  .card-back {
+    margin-left: 0;
+    top: -40rem;
+  }
+
+  .card-front {
+    margin-left: -10rem;
+    z-index: 10;
+    top: -15rem;
+    left: 2rem;
+  }
+}
