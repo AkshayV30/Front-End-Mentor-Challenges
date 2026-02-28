@@ -1,0 +1,56 @@
+@use "../abstracts" as *;
+/* ==========================================================
+   UTILITIES → SPACING
+   ----------------------------------------------------------
+   Generates margin and padding utilities from $spacing-scale.
+
+   Output pattern:
+   .u-m-{token}   → margin
+   .u-mt-{token}  → margin-top
+   .u-mb-{token}  → margin-bottom
+   .u-ml-{token}  → margin-left
+   .u-mr-{token}  → margin-right
+
+   .u-p-{token}   → padding
+   .u-pt-{token}  → padding-top
+   .u-pb-{token}  → padding-bottom
+   .u-pl-{token}  → padding-left
+   .u-pr-{token}  → padding-right
+
+   Spacing values are defined in the design token layer.
+   Utilities remain low-specificity and composable.
+========================================================== */
+
+@each $key, $space in $spacing-scale {
+  .u-m-#{$key} {
+    margin: $space;
+  }
+  .u-mt-#{$key} {
+    margin-top: $space;
+  }
+  .u-mb-#{$key} {
+    margin-bottom: $space;
+  }
+  .u-ml-#{$key} {
+    margin-left: $space;
+  }
+  .u-mr-#{$key} {
+    margin-right: $space;
+  }
+
+  .u-p-#{$key} {
+    padding: $space;
+  }
+  .u-pt-#{$key} {
+    padding-top: $space;
+  }
+  .u-pb-#{$key} {
+    padding-bottom: $space;
+  }
+  .u-pl-#{$key} {
+    padding-left: $space;
+  }
+  .u-pr-#{$key} {
+    padding-right: $space;
+  }
+}

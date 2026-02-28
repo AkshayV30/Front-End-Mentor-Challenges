@@ -1,0 +1,38 @@
+.c-crew {
+  text-align: center;
+
+  &__wrapper {
+    display: grid;
+    gap: 4rem;
+    margin-top: 4rem;
+  }
+
+  &__info {
+    display: grid;
+    gap: 2rem;
+  }
+
+  &__nav {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+  }
+
+  &__dot {
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    background: #777;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s ease;
+
+    &.is-active {
+      background: #fff;
+    }
+  }
+
+  &__image img {
+    max-width: 30rem;
+  }
+}

@@ -1,0 +1,177 @@
+/* ==========================================================
+   DESIGN TOKENS 
+   ----------------------------------------------------------
+   Single Source of Truth (SSOT) for visual primitives.
+
+   Architectural Principles:
+   - No component logic.
+   - No hard-coded px values.
+   - All sizes derived from root reference.
+   - Mobile-first and fluid-ready.
+   - Accessible and zoom-friendly.
+========================================================== */
+
+@use "sass:math";
+
+/* ==========================================================
+   0. CORE UNIT SYSTEM
+   ----------------------------------------------------------
+   All dimensional values derive from $root-font-size.
+
+   Changing this value scales the entire system.
+   Default assumes browser base = 16px.
+========================================================== */
+
+$root-font-size: 16px;
+
+/* ==========================================================
+   1. COLOR TOKENS
+   ----------------------------------------------------------
+   Primitive color scale.
+   Semantic layer should consume these.
+========================================================== */
+
+$colors: (
+  "blue-900": #0b0d17,
+  "blue-300": #d0d6f9,
+  "primary": #ffffff,
+);
+
+/* ==========================================================
+   2. TYPOGRAPHY TOKENS (FLUID & REM-BASED)
+   ----------------------------------------------------------
+   Structured map format.
+   No positional lists (prevents fragility).
+   Sizes use clamp() for fluid scaling.
+========================================================== */
+
+$text-presets: (
+  preset-1: (
+    family: "Bellefair",
+    size: token-fluid(72px, 5vw, 144px),
+    line-height: 1.2,
+    letter-spacing: 0,
+  ),
+
+  preset-2: (
+    family: "Bellefair",
+    size: token-fluid(56px, 4vw, 100px),
+    line-height: 1.15,
+    letter-spacing: 0,
+  ),
+
+  preset-3: (
+    family: "Bellefair",
+    size: token-fluid(32px, 3vw, 56px),
+    line-height: 1.15,
+    letter-spacing: 0,
+  ),
+
+  preset-4: (
+    family: "Bellefair",
+    size: token-fluid(24px, 2vw, 32px),
+    line-height: 1.2,
+    letter-spacing: 0,
+  ),
+
+  preset-5: (
+    family: "Barlow Condensed",
+    size: token-fluid(18px, 1.5vw, 28px),
+    line-height: 1.2,
+    letter-spacing: 0.25em,
+  ),
+
+  preset-6: (
+    family: "Bellefair",
+    size: token-rem(28px),
+    line-height: 1.15,
+    letter-spacing: 0,
+  ),
+
+  preset-7: (
+    family: "Barlow Condensed",
+    size: token-rem(14px),
+    line-height: 1.2,
+    letter-spacing: 0.125em,
+  ),
+
+  preset-8: (
+    family: "Barlow Condensed",
+    size: token-rem(16px),
+    line-height: 1.2,
+    letter-spacing: 0.125em,
+  ),
+
+  preset-9: (
+    family: "Barlow",
+    size: token-rem(18px),
+    line-height: 1.8,
+    letter-spacing: 0,
+  ),
+);
+
+/* ==========================================================
+   3. SPACING SCALE (REM SYSTEM)
+   ----------------------------------------------------------
+   Consistent vertical rhythm.
+   Scales with root font-size.
+   Keys represent token identifiers.
+========================================================== */
+
+$spacing-scale: (
+  1600: token-rem(128px),
+  1200: token-rem(96px),
+  1000: token-rem(80px),
+  800: token-rem(64px),
+  600: token-rem(48px),
+  500: token-rem(40px),
+  400: token-rem(32px),
+  300: token-rem(24px),
+  200: token-rem(16px),
+  150: token-rem(12px),
+  100: token-rem(8px),
+  50: token-rem(4px),
+  25: token-rem(2px),
+);
+
+/* ==========================================================
+   4. LAYOUT TOKENS
+   ----------------------------------------------------------
+   Container widths use rem for scalability.
+   Padding uses fluid clamp for responsive breathing room.
+========================================================== */
+
+$container-width: 120rem;
+$container-padding: token-fluid(16px, 4vw, 40px);
+
+/* ==========================================================
+   5. MOTION & SHAPE
+   ----------------------------------------------------------
+   Rem-based radius ensures zoom consistency.
+========================================================== */
+
+$radius: token-rem(16px);
+$transition: 0.3s ease;
+
+/* ==========================================================
+   6. BREAKPOINTS (EM-BASED)
+   ----------------------------------------------------------
+   Em-based breakpoints respond to root font-size.
+   Mobile-first strategy.
+========================================================== */
+
+$breakpoints: (
+  xs: 23.4375em,
+  // 375px
+  sm: 30em,
+  // 480px
+  md: 48em,
+  // 768px
+  lg: 64em,
+  // 1024px
+  xl: 80em,
+  // 1280px
+  xxl: 90em,
+  // 1440px
+  ultra: 120em, // 1920px
+);

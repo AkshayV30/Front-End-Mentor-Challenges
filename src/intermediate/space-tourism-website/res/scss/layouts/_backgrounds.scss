@@ -1,0 +1,112 @@
+@use "../abstracts" as *;
+/* ==========================================================
+   LAYOUT → PAGE BACKGROUNDS
+   ----------------------------------------------------------
+   Purpose:
+   Controls full-page background images based on the
+   active page state class applied to <body>.
+
+   Contract with JS:
+   JS applies: body.page-{name}
+   Example: body.page-home
+
+   Responsive Strategy:
+   Desktop-first.
+   - Default = desktop image
+   - Tablet override
+   - Mobile override
+
+   This is layout-level styling.
+   Not a utility.
+========================================================== */
+
+/* ----------------------------------------------------------
+   1. Page Registry
+   ----------------------------------------------------------
+   Central list of supported page states.
+   Add new pages here to auto-generate backgrounds.
+---------------------------------------------------------- */
+
+$pages: home, destination, crew, technology;
+
+/* ----------------------------------------------------------
+   2. Base Background Behavior
+---------------------------------------------------------- */
+
+body {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* ---------------------------
+   Desktop (Default)
+---------------------------- */
+@each $page in $pages {
+  body.page-#{$page} {
+    background-image: url("../../res/assets/#{$page}/background-#{$page}-desktop.jpg");
+  }
+}
+
+/* ---------------------------
+   Tablet Override (≤ md)
+---------------------------- */
+@include respond-down(md) {
+  @each $page in $pages {
+    body.page-#{$page} {
+      background-image: url("../../res/assets/#{$page}/background-#{$page}-tablet.jpg");
+    }
+  }
+}
+
+/* ---------------------------
+   Mobile Override (≤ sm)
+---------------------------- */
+@include respond-down(sm) {
+  @each $page in $pages {
+    body.page-#{$page} {
+      background-image: url("../../res/assets/#{$page}/background-#{$page}-mobile.jpg");
+    }
+  }
+}
+
+body[class^="page-"] {
+  animation: fadeIn 0.6s ease-in;
+}
+
+// ==========================================================
+// SIMPLE VERSION, Non-Scalable)
+// ----------------------------------------------------------
+// Use only for very small projects without dynamic routing.
+// ==========================================================
+
+// .page-home {
+//   background-image: url("../../res/assets/home/background-home-desktop.jpg");
+// }
+
+// .page-destination {
+//   background-image: url("../../res/assets/destination/background-destination-desktop.jpg");
+// }
+
+// .page-crew {
+//   background-image: url("../../res/assets/crew/background-crew-desktop.jpg");
+// }
+
+// .page-technology {
+//   background-image: url("../../res/assets/technology/background-technology-desktop.jpg");
+// }
+
+// @media (max-width: 720px) {
+//   .page-home {
+//     background-image: url("../../res/assets/home/background-home-mobile.jpg");
+//   }
+//   .page-destination {
+//     background-image: url("../../res/assets/destination/background-destination-mobile.jpg");
+//   }
+//   .page-crew {
+//     background-image: url("../../res/assets/crew/background-crew-mobile.jpg");
+//   }
+//   .page-technology {
+//     background-image: url("../../res/assets/technology/background-technology-mobile.jpg");
+//   }
+// }

@@ -1,0 +1,66 @@
+@use "sass:map";
+@use "tokens" as *;
+
+/* ==========================================================
+   MIXIN → FLEX CENTER
+   ----------------------------------------------------------
+   Perfect center alignment utility
+========================================================== */
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ==========================================================
+   MIXIN → RESPONSIVE (Desktop First)
+   ----------------------------------------------------------
+   respond-up()   → Enhancements for larger screens
+   respond-down() → Overrides for smaller screens
+========================================================== */
+
+/* ───────────────
+  Min-width query
+  Used when scaling UP from desktop
+──────────────── */
+
+@mixin respond-up($size) {
+  @if map.has-key($breakpoints, $size) {
+    @media (min-width: map.get($breakpoints, $size)) {
+      @content;
+    }
+  } @else {
+    @warn "Breakpoint '#{$size}' does not exist.";
+  }
+}
+
+/* ───────────────
+   Max-width query
+   Used to override desktop styles
+   for smaller devices
+──────────────── */
+
+@mixin respond-down($size) {
+  @if map.has-key($breakpoints, $size) {
+    @media (max-width: map.get($breakpoints, $size)) {
+      @content;
+    }
+  } @else {
+    @warn "Breakpoint '#{$size}' does not exist.";
+  }
+}
+/*
+example usage
+
+.card {
+  padding: 2rem; // mobile base
+
+  @include respond(md) {
+    padding: 3rem; // tablet+
+  }
+
+  @include respond(xl) {
+    padding: 4rem; // desktop+
+  }
+}
+*/

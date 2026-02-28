@@ -1,0 +1,42 @@
+.c-technology {
+  &__layout {
+    display: grid;
+    gap: 4rem;
+    margin-top: 4rem;
+  }
+
+  &__nav {
+    display: flex;
+    gap: 2rem;
+  }
+
+  &__btn {
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+    border: 1px solid #777;
+    background: transparent;
+    cursor: pointer;
+    font: inherit;
+    transition: 0.3s ease;
+
+    &.is-active {
+      background: #fff;
+      color: #000;
+    }
+  }
+
+  &__content {
+    display: grid;
+    gap: 3rem;
+  }
+
+  &__image img {
+    max-width: 40rem;
+  }
+
+  &__info {
+    display: grid;
+    gap: 1.5rem;
+  }
+}

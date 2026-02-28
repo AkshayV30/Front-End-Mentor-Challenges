@@ -1,0 +1,48 @@
+@use "../abstracts" as *;
+
+/* ==========================================================
+   COMPONENT → NAVIGATION
+   ----------------------------------------------------------
+   Desktop-first styling
+   Horizontal layout by default
+   Collapses for smaller screens
+========================================================== */
+
+.c-nav__list {
+  display: flex;
+  gap: token-space(25); // assuming spacing scale key
+  list-style: none;
+}
+
+/* Stack nav vertically on tablets and below */
+@include respond-down(md) {
+  .c-nav__list {
+    flex-direction: column;
+    gap: token-space(50);
+  }
+}
+
+.c-nav__item {
+  cursor: pointer;
+  text-transform: uppercase;
+  position: relative;
+
+  /* Animated underline */
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -0.4rem;
+    width: 100%;
+    height: 2px;
+    background: token-color(primary);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform $transition;
+  }
+
+  &:hover::after,
+  &.is-active::after {
+    transform: scaleX(1);
+  }
+}

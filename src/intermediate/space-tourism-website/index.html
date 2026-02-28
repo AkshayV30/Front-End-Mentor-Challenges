@@ -1,34 +1,28 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" href="./src/assets/favicon-32x32.png" type="image/png" />
     <title>Frontend Mentor | Space Tourism Website</title>
-    <link rel="stylesheet" href="./src/css/style.css" />
+
+    <link rel="icon" href="./res/assets/favicon-32x32.png" type="image/png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Bellefair&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./res/css/styles.css" />
   </head>
 
   <body>
-    <header class="main-header">
-      <img src="./src/assets/shared/logo.svg"  alt="Space logo" id="space-logo" />
-      <p id="main-horizontal-line"></p>
-      <nav class="navbar ">
-        <ol class="nav-list " aria-label="Main navigation">
-          <li data-target="home" class=" nav-list-item underline-animation active "><strong>00</strong>
-                        Home</li>
-          <li data-target="destination" class="nav-list-item underline-animation "><strong>01</strong> Destination</li>
-          <li data-target="crew" class="nav-list-item underline-animation "><strong>02</strong> Crew</li>
-          <li data-target="technology" class="nav-list-item underline-animation"><strong>03</strong>
-             Technology</li>
-        </ol>
-      </nav>
-    </header>
+    <header class="c-header"></header>
 
-    <main>
-      <section id="contents" class="content-container" aria-live="polite"></section>
+    <main class="c-main">
+      <section id="app" class="c-container" aria-live="polite"></section>
     </main>
 
-    <footer class="footer"></footer>
-    <script type="module" src="./src/js/main.js"></script>
+    <footer class="c-footer"></footer>
+    <script type="module" src="./res/js/index.js"></script>
   </body>
 </html>

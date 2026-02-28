@@ -1,0 +1,67 @@
+/* ==========================================================
+   DESIGN TOKEN FUNCTIONS
+   ----------------------------------------------------------
+   Central access layer for:
+   - Unit conversion
+   - Fluid sizing
+   - Spacing tokens
+   - Color tokens
+
+   Tokens remain pure data.
+   Components never access raw maps.
+========================================================== */
+
+@use "sass:map";
+@use "sass:meta";
+@use "sass:math";
+@use "tokens" as *;
+
+/* ==========================================================
+   CORE UNIT HELPERS
+========================================================== */
+
+/* ----------------------------------------------------------
+   Converts px to rem
+   Ensures accessibility scaling.
+---------------------------------------------------------- */
+@function token-rem($px) {
+  @return math.div($px, $root-font-size) * 1rem;
+}
+
+/* ----------------------------------------------------------
+   Fluid clamp helper
+   Example:
+   fluid(16px, 4vw, 32px)
+---------------------------------------------------------- */
+@function token-fluid($min, $preferred, $max) {
+  @return clamp(rem($min), $preferred, rem($max));
+}
+
+/* ==========================================================
+   SPACING TOKEN ACCESSOR
+========================================================== */
+
+@function token-space($key) {
+  @if map.has-key($spacing-scale, $key) {
+    @return map.get($spacing-scale, $key);
+  } @else {
+    @error "Spacing key `#{$key}` does not exist in \$spacing-scale.";
+  }
+}
+
+/* ==========================================================
+   COLOR TOKEN ACCESSOR
+========================================================== */
+
+@function token-color($name) {
+  // Normalize non-string values
+  @if meta.type-of($name) != "string" {
+    $name: meta.inspect($name);
+  }
+
+  @if map.has-key($colors, $name) {
+    @return map.get($colors, $name);
+  } @else {
+    @error "Color `#{$name}` does not exist in \$colors.";
+  }
+}

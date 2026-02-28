@@ -1,0 +1,1300 @@
+@charset "UTF-8";
+/* ==========================================================
+   DESIGN TOKENS 
+   ----------------------------------------------------------
+   Single Source of Truth (SSOT) for visual primitives.
+
+   Architectural Principles:
+   - No component logic.
+   - No hard-coded px values.
+   - All sizes derived from root reference.
+   - Mobile-first and fluid-ready.
+   - Accessible and zoom-friendly.
+========================================================== */
+/* ==========================================================
+   0. CORE UNIT SYSTEM
+   ----------------------------------------------------------
+   All dimensional values derive from $root-font-size.
+
+   Changing this value scales the entire system.
+   Default assumes browser base = 16px.
+========================================================== */
+/* ==========================================================
+   1. COLOR TOKENS
+   ----------------------------------------------------------
+   Primitive color scale.
+   Semantic layer should consume these.
+========================================================== */
+/* ==========================================================
+   2. TYPOGRAPHY TOKENS (FLUID & REM-BASED)
+   ----------------------------------------------------------
+   Structured map format.
+   No positional lists (prevents fragility).
+   Sizes use clamp() for fluid scaling.
+========================================================== */
+/* ==========================================================
+   3. SPACING SCALE (REM SYSTEM)
+   ----------------------------------------------------------
+   Consistent vertical rhythm.
+   Scales with root font-size.
+   Keys represent token identifiers.
+========================================================== */
+/* ==========================================================
+   4. LAYOUT TOKENS
+   ----------------------------------------------------------
+   Container widths use rem for scalability.
+   Padding uses fluid clamp for responsive breathing room.
+========================================================== */
+/* ==========================================================
+   5. MOTION & SHAPE
+   ----------------------------------------------------------
+   Rem-based radius ensures zoom consistency.
+========================================================== */
+/* ==========================================================
+   6. BREAKPOINTS (EM-BASED)
+   ----------------------------------------------------------
+   Em-based breakpoints respond to root font-size.
+   Mobile-first strategy.
+========================================================== */
+/* ==========================================================
+   DESIGN TOKEN FUNCTIONS
+   ----------------------------------------------------------
+   Central access layer for:
+   - Unit conversion
+   - Fluid sizing
+   - Spacing tokens
+   - Color tokens
+
+   Tokens remain pure data.
+   Components never access raw maps.
+========================================================== */
+/* ==========================================================
+   CORE UNIT HELPERS
+========================================================== */
+/* ----------------------------------------------------------
+   Converts px to rem
+   Ensures accessibility scaling.
+---------------------------------------------------------- */
+/* ----------------------------------------------------------
+   Fluid clamp helper
+   Example:
+   fluid(16px, 4vw, 32px)
+---------------------------------------------------------- */
+/* ==========================================================
+   SPACING TOKEN ACCESSOR
+========================================================== */
+/* ==========================================================
+   COLOR TOKEN ACCESSOR
+========================================================== */
+/* ==========================================================
+   MIXIN → FLEX CENTER
+   ----------------------------------------------------------
+   Perfect center alignment utility
+========================================================== */
+/* ==========================================================
+   MIXIN → RESPONSIVE (Desktop First)
+   ----------------------------------------------------------
+   respond-up()   → Enhancements for larger screens
+   respond-down() → Overrides for smaller screens
+========================================================== */
+/* ───────────────
+  Min-width query
+  Used when scaling UP from desktop
+──────────────── */
+/* ───────────────
+   Max-width query
+   Used to override desktop styles
+   for smaller devices
+──────────────── */
+/*
+example usage
+
+.card {
+  padding: 2rem; // mobile base
+
+  @include respond(md) {
+    padding: 3rem; // tablet+
+  }
+
+  @include respond(xl) {
+    padding: 4rem; // desktop+
+  }
+}
+*/
+/* ==========================================================
+   BASE → ROOT TYPOGRAPHY
+   ----------------------------------------------------------
+   Establishes a scalable rem baseline.
+
+   62.5% sets 1rem = 10px (assuming 16px default),
+   simplifying spacing and type calculations.
+========================================================== */
+html {
+  font-size: 62.5%;
+}
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Prevent font size inflation */
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+/* Remove default margin in favour of better control in authored CSS */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin-block-end: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role=list],
+ol[role=list] {
+  list-style: none;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+}
+
+/* Set shorter line heights on headings and interactive elements */
+h1,
+h2,
+h3,
+h4,
+button,
+input,
+label {
+  line-height: 1.1;
+}
+
+/* Balance text wrapping on headings */
+h1,
+h2,
+h3,
+h4 {
+  text-wrap: balance;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+  color: currentColor;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+/* Make sure textareas without a rows attribute are not tiny */
+textarea:not([rows]) {
+  min-height: 10em;
+}
+
+/* Anything that has been anchored to should have extra scroll margin */
+:target {
+  scroll-margin-block: 5ex;
+}
+
+.c-btn--circle {
+  width: 20rem;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.c-btn {
+  border: none;
+  cursor: pointer;
+  font: inherit;
+}
+.c-btn--circle {
+  width: 20rem;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  font-size: 2rem;
+  transition: 0.3s ease;
+}
+.c-btn--circle:hover {
+  transform: scale(1.05);
+}
+
+/* ==========================================================
+   COMPONENT → NAVIGATION
+   ----------------------------------------------------------
+   Desktop-first styling
+   Horizontal layout by default
+   Collapses for smaller screens
+========================================================== */
+.c-nav__list {
+  display: flex;
+  gap: token-rem(2px);
+  list-style: none;
+}
+
+/* Stack nav vertically on tablets and below */
+@media (max-width: 48em) {
+  .c-nav__list {
+    flex-direction: column;
+    gap: token-rem(4px);
+  }
+}
+.c-nav__item {
+  cursor: pointer;
+  text-transform: uppercase;
+  position: relative;
+  /* Animated underline */
+}
+.c-nav__item::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -0.4rem;
+  width: 100%;
+  height: 2px;
+  background: #ffffff;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+.c-nav__item:hover::after, .c-nav__item.is-active::after {
+  transform: scaleX(1);
+}
+
+.c-tabs {
+  display: flex;
+  gap: 2rem;
+}
+
+.c-tab {
+  cursor: pointer;
+  padding: 1rem;
+  border-bottom: 2px solid transparent;
+  color: #d0d6f9;
+}
+.c-tab.is-active {
+  color: #ffffff;
+  border-color: #d0d6f9;
+}
+
+.c-header {
+  padding: 1rem 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.c-header #space-logo {
+  aspect-ratio: 1;
+  width: 4rem;
+}
+.c-header #main-horizontal-line {
+  width: 50vw;
+  border-bottom: 0.3rem solid rgba(255, 255, 255, 0.1);
+  position: relative;
+  left: 10%;
+  z-index: 20;
+}
+
+.l-container {
+  width: min(100% - 4rem, 120rem);
+  margin-inline: auto;
+}
+
+/* ==========================================================
+   LAYOUT → PAGE BACKGROUNDS
+   ----------------------------------------------------------
+   Purpose:
+   Controls full-page background images based on the
+   active page state class applied to <body>.
+
+   Contract with JS:
+   JS applies: body.page-{name}
+   Example: body.page-home
+
+   Responsive Strategy:
+   Desktop-first.
+   - Default = desktop image
+   - Tablet override
+   - Mobile override
+
+   This is layout-level styling.
+   Not a utility.
+========================================================== */
+/* ----------------------------------------------------------
+   1. Page Registry
+   ----------------------------------------------------------
+   Central list of supported page states.
+   Add new pages here to auto-generate backgrounds.
+---------------------------------------------------------- */
+/* ----------------------------------------------------------
+   2. Base Background Behavior
+---------------------------------------------------------- */
+body {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* ---------------------------
+   Desktop (Default)
+---------------------------- */
+body.page-home {
+  background-image: url("../../res/assets/home/background-home-desktop.jpg");
+}
+
+body.page-destination {
+  background-image: url("../../res/assets/destination/background-destination-desktop.jpg");
+}
+
+body.page-crew {
+  background-image: url("../../res/assets/crew/background-crew-desktop.jpg");
+}
+
+body.page-technology {
+  background-image: url("../../res/assets/technology/background-technology-desktop.jpg");
+}
+
+/* ---------------------------
+   Tablet Override (≤ md)
+---------------------------- */
+@media (max-width: 48em) {
+  body.page-home {
+    background-image: url("../../res/assets/home/background-home-tablet.jpg");
+  }
+  body.page-destination {
+    background-image: url("../../res/assets/destination/background-destination-tablet.jpg");
+  }
+  body.page-crew {
+    background-image: url("../../res/assets/crew/background-crew-tablet.jpg");
+  }
+  body.page-technology {
+    background-image: url("../../res/assets/technology/background-technology-tablet.jpg");
+  }
+}
+/* ---------------------------
+   Mobile Override (≤ sm)
+---------------------------- */
+@media (max-width: 30em) {
+  body.page-home {
+    background-image: url("../../res/assets/home/background-home-mobile.jpg");
+  }
+  body.page-destination {
+    background-image: url("../../res/assets/destination/background-destination-mobile.jpg");
+  }
+  body.page-crew {
+    background-image: url("../../res/assets/crew/background-crew-mobile.jpg");
+  }
+  body.page-technology {
+    background-image: url("../../res/assets/technology/background-technology-mobile.jpg");
+  }
+}
+body[class^=page-] {
+  animation: fadeIn 0.6s ease-in;
+}
+
+.c-home {
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+}
+.c-home__wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 6rem;
+}
+.c-home__content {
+  max-width: 45rem;
+  display: grid;
+  gap: 2rem;
+}
+.c-home__subtitle {
+  font-size: 1.6rem;
+  letter-spacing: 0.2rem;
+  text-transform: uppercase;
+}
+.c-home__title {
+  font-size: 12rem;
+  line-height: 1;
+}
+.c-home__description {
+  line-height: 1.7;
+  opacity: 0.8;
+}
+.c-home__action {
+  display: flex;
+  align-items: center;
+}
+
+.c-crew {
+  text-align: center;
+}
+.c-crew__wrapper {
+  display: grid;
+  gap: 4rem;
+  margin-top: 4rem;
+}
+.c-crew__info {
+  display: grid;
+  gap: 2rem;
+}
+.c-crew__nav {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+}
+.c-crew__dot {
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  background: #777;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+.c-crew__dot.is-active {
+  background: #fff;
+}
+.c-crew__image img {
+  max-width: 30rem;
+}
+
+.c-destination {
+  text-align: center;
+}
+
+.c-destination__content {
+  display: flex;
+  gap: 4rem;
+  justify-content: center;
+}
+
+.c-technology__layout {
+  display: grid;
+  gap: 4rem;
+  margin-top: 4rem;
+}
+.c-technology__nav {
+  display: flex;
+  gap: 2rem;
+}
+.c-technology__btn {
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  border: 1px solid #777;
+  background: transparent;
+  cursor: pointer;
+  font: inherit;
+  transition: 0.3s ease;
+}
+.c-technology__btn.is-active {
+  background: #fff;
+  color: #000;
+}
+.c-technology__content {
+  display: grid;
+  gap: 3rem;
+}
+.c-technology__image img {
+  max-width: 40rem;
+}
+.c-technology__info {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.u-fade-in {
+  animation: fadeIn 0.6s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(1rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* ==========================================================
+   UTILITIES → COLORS
+   ----------------------------------------------------------
+   Generates text and background color utilities
+   from the $colors design token map.
+
+   Output pattern:
+   .u-text-{token} → color
+   .u-bg-{token}   → background-color
+
+   Tokens are defined in the abstract layer.
+   Utilities remain low-specificity and purely presentational.
+========================================================== */
+.u-text-blue-900 {
+  color: #0b0d17;
+}
+
+.u-bg-blue-900 {
+  background-color: #0b0d17;
+}
+
+.u-text-blue-300 {
+  color: #d0d6f9;
+}
+
+.u-bg-blue-300 {
+  background-color: #d0d6f9;
+}
+
+.u-text-primary {
+  color: #ffffff;
+}
+
+.u-bg-primary {
+  background-color: #ffffff;
+}
+
+/* ════════════════════════════════════════════════════════════
+   FONT UTILITIES
+   Layer: CUBE → Utilities
+   ------------------------------------------------------------
+   Low-specificity, single-responsibility classes for typography.
+
+   Principles:
+   • One utility = one responsibility
+   • Fully composable
+   • No semantic meaning
+   • No component logic
+════════════════════════════════════════════════════════════ */
+/* ────────────────────────────────────────────────────────────
+   1. FONT FAMILY UTILITIES
+   ------------------------------------------------------------
+   Source of truth: $font-families map
+   Key   → utility suffix
+   Value → font stack
+
+   Scaling strategy: Add/remove fonts only in the map.
+──────────────────────────────────────────────────────────── */
+/* Loop: generates .u-font-{name} */
+.u-font-bellefair {
+  font-family: "Bellefair", serif;
+}
+
+.u-font-barlow {
+  font-family: "Barlow", sans-serif;
+}
+
+.u-font-barlow-condensed {
+  font-family: "Barlow Condensed", sans-serif;
+}
+
+/* ────────────────────────────────────────────────────────────
+   2. FONT WEIGHT UTILITIES
+   ------------------------------------------------------------
+   Controlled numeric scale.
+   Modify this list to scale support.
+──────────────────────────────────────────────────────────── */
+/* Loop: generates .u-fw-{weight} */
+.u-fw-100 {
+  font-weight: 100;
+}
+
+.u-fw-200 {
+  font-weight: 200;
+}
+
+.u-fw-300 {
+  font-weight: 300;
+}
+
+.u-fw-400 {
+  font-weight: 400;
+}
+
+.u-fw-500 {
+  font-weight: 500;
+}
+
+.u-fw-600 {
+  font-weight: 600;
+}
+
+.u-fw-700 {
+  font-weight: 700;
+}
+
+.u-fw-800 {
+  font-weight: 800;
+}
+
+.u-fw-900 {
+  font-weight: 900;
+}
+
+/* ────────────────────────────────────────────────────────────
+   3. FONT STYLE UTILITIES
+   ------------------------------------------------------------
+   Simple state modifiers.
+──────────────────────────────────────────────────────────── */
+.u-italic {
+  font-style: italic;
+}
+
+.u-normal {
+  font-style: normal;
+}
+
+/* ==========================================================
+   UTILITIES → SPACING
+   ----------------------------------------------------------
+   Generates margin and padding utilities from $spacing-scale.
+
+   Output pattern:
+   .u-m-{token}   → margin
+   .u-mt-{token}  → margin-top
+   .u-mb-{token}  → margin-bottom
+   .u-ml-{token}  → margin-left
+   .u-mr-{token}  → margin-right
+
+   .u-p-{token}   → padding
+   .u-pt-{token}  → padding-top
+   .u-pb-{token}  → padding-bottom
+   .u-pl-{token}  → padding-left
+   .u-pr-{token}  → padding-right
+
+   Spacing values are defined in the design token layer.
+   Utilities remain low-specificity and composable.
+========================================================== */
+.u-m-1600 {
+  margin: token-rem(128px);
+}
+
+.u-mt-1600 {
+  margin-top: token-rem(128px);
+}
+
+.u-mb-1600 {
+  margin-bottom: token-rem(128px);
+}
+
+.u-ml-1600 {
+  margin-left: token-rem(128px);
+}
+
+.u-mr-1600 {
+  margin-right: token-rem(128px);
+}
+
+.u-p-1600 {
+  padding: token-rem(128px);
+}
+
+.u-pt-1600 {
+  padding-top: token-rem(128px);
+}
+
+.u-pb-1600 {
+  padding-bottom: token-rem(128px);
+}
+
+.u-pl-1600 {
+  padding-left: token-rem(128px);
+}
+
+.u-pr-1600 {
+  padding-right: token-rem(128px);
+}
+
+.u-m-1200 {
+  margin: token-rem(96px);
+}
+
+.u-mt-1200 {
+  margin-top: token-rem(96px);
+}
+
+.u-mb-1200 {
+  margin-bottom: token-rem(96px);
+}
+
+.u-ml-1200 {
+  margin-left: token-rem(96px);
+}
+
+.u-mr-1200 {
+  margin-right: token-rem(96px);
+}
+
+.u-p-1200 {
+  padding: token-rem(96px);
+}
+
+.u-pt-1200 {
+  padding-top: token-rem(96px);
+}
+
+.u-pb-1200 {
+  padding-bottom: token-rem(96px);
+}
+
+.u-pl-1200 {
+  padding-left: token-rem(96px);
+}
+
+.u-pr-1200 {
+  padding-right: token-rem(96px);
+}
+
+.u-m-1000 {
+  margin: token-rem(80px);
+}
+
+.u-mt-1000 {
+  margin-top: token-rem(80px);
+}
+
+.u-mb-1000 {
+  margin-bottom: token-rem(80px);
+}
+
+.u-ml-1000 {
+  margin-left: token-rem(80px);
+}
+
+.u-mr-1000 {
+  margin-right: token-rem(80px);
+}
+
+.u-p-1000 {
+  padding: token-rem(80px);
+}
+
+.u-pt-1000 {
+  padding-top: token-rem(80px);
+}
+
+.u-pb-1000 {
+  padding-bottom: token-rem(80px);
+}
+
+.u-pl-1000 {
+  padding-left: token-rem(80px);
+}
+
+.u-pr-1000 {
+  padding-right: token-rem(80px);
+}
+
+.u-m-800 {
+  margin: token-rem(64px);
+}
+
+.u-mt-800 {
+  margin-top: token-rem(64px);
+}
+
+.u-mb-800 {
+  margin-bottom: token-rem(64px);
+}
+
+.u-ml-800 {
+  margin-left: token-rem(64px);
+}
+
+.u-mr-800 {
+  margin-right: token-rem(64px);
+}
+
+.u-p-800 {
+  padding: token-rem(64px);
+}
+
+.u-pt-800 {
+  padding-top: token-rem(64px);
+}
+
+.u-pb-800 {
+  padding-bottom: token-rem(64px);
+}
+
+.u-pl-800 {
+  padding-left: token-rem(64px);
+}
+
+.u-pr-800 {
+  padding-right: token-rem(64px);
+}
+
+.u-m-600 {
+  margin: token-rem(48px);
+}
+
+.u-mt-600 {
+  margin-top: token-rem(48px);
+}
+
+.u-mb-600 {
+  margin-bottom: token-rem(48px);
+}
+
+.u-ml-600 {
+  margin-left: token-rem(48px);
+}
+
+.u-mr-600 {
+  margin-right: token-rem(48px);
+}
+
+.u-p-600 {
+  padding: token-rem(48px);
+}
+
+.u-pt-600 {
+  padding-top: token-rem(48px);
+}
+
+.u-pb-600 {
+  padding-bottom: token-rem(48px);
+}
+
+.u-pl-600 {
+  padding-left: token-rem(48px);
+}
+
+.u-pr-600 {
+  padding-right: token-rem(48px);
+}
+
+.u-m-500 {
+  margin: token-rem(40px);
+}
+
+.u-mt-500 {
+  margin-top: token-rem(40px);
+}
+
+.u-mb-500 {
+  margin-bottom: token-rem(40px);
+}
+
+.u-ml-500 {
+  margin-left: token-rem(40px);
+}
+
+.u-mr-500 {
+  margin-right: token-rem(40px);
+}
+
+.u-p-500 {
+  padding: token-rem(40px);
+}
+
+.u-pt-500 {
+  padding-top: token-rem(40px);
+}
+
+.u-pb-500 {
+  padding-bottom: token-rem(40px);
+}
+
+.u-pl-500 {
+  padding-left: token-rem(40px);
+}
+
+.u-pr-500 {
+  padding-right: token-rem(40px);
+}
+
+.u-m-400 {
+  margin: token-rem(32px);
+}
+
+.u-mt-400 {
+  margin-top: token-rem(32px);
+}
+
+.u-mb-400 {
+  margin-bottom: token-rem(32px);
+}
+
+.u-ml-400 {
+  margin-left: token-rem(32px);
+}
+
+.u-mr-400 {
+  margin-right: token-rem(32px);
+}
+
+.u-p-400 {
+  padding: token-rem(32px);
+}
+
+.u-pt-400 {
+  padding-top: token-rem(32px);
+}
+
+.u-pb-400 {
+  padding-bottom: token-rem(32px);
+}
+
+.u-pl-400 {
+  padding-left: token-rem(32px);
+}
+
+.u-pr-400 {
+  padding-right: token-rem(32px);
+}
+
+.u-m-300 {
+  margin: token-rem(24px);
+}
+
+.u-mt-300 {
+  margin-top: token-rem(24px);
+}
+
+.u-mb-300 {
+  margin-bottom: token-rem(24px);
+}
+
+.u-ml-300 {
+  margin-left: token-rem(24px);
+}
+
+.u-mr-300 {
+  margin-right: token-rem(24px);
+}
+
+.u-p-300 {
+  padding: token-rem(24px);
+}
+
+.u-pt-300 {
+  padding-top: token-rem(24px);
+}
+
+.u-pb-300 {
+  padding-bottom: token-rem(24px);
+}
+
+.u-pl-300 {
+  padding-left: token-rem(24px);
+}
+
+.u-pr-300 {
+  padding-right: token-rem(24px);
+}
+
+.u-m-200 {
+  margin: token-rem(16px);
+}
+
+.u-mt-200 {
+  margin-top: token-rem(16px);
+}
+
+.u-mb-200 {
+  margin-bottom: token-rem(16px);
+}
+
+.u-ml-200 {
+  margin-left: token-rem(16px);
+}
+
+.u-mr-200 {
+  margin-right: token-rem(16px);
+}
+
+.u-p-200 {
+  padding: token-rem(16px);
+}
+
+.u-pt-200 {
+  padding-top: token-rem(16px);
+}
+
+.u-pb-200 {
+  padding-bottom: token-rem(16px);
+}
+
+.u-pl-200 {
+  padding-left: token-rem(16px);
+}
+
+.u-pr-200 {
+  padding-right: token-rem(16px);
+}
+
+.u-m-150 {
+  margin: token-rem(12px);
+}
+
+.u-mt-150 {
+  margin-top: token-rem(12px);
+}
+
+.u-mb-150 {
+  margin-bottom: token-rem(12px);
+}
+
+.u-ml-150 {
+  margin-left: token-rem(12px);
+}
+
+.u-mr-150 {
+  margin-right: token-rem(12px);
+}
+
+.u-p-150 {
+  padding: token-rem(12px);
+}
+
+.u-pt-150 {
+  padding-top: token-rem(12px);
+}
+
+.u-pb-150 {
+  padding-bottom: token-rem(12px);
+}
+
+.u-pl-150 {
+  padding-left: token-rem(12px);
+}
+
+.u-pr-150 {
+  padding-right: token-rem(12px);
+}
+
+.u-m-100 {
+  margin: token-rem(8px);
+}
+
+.u-mt-100 {
+  margin-top: token-rem(8px);
+}
+
+.u-mb-100 {
+  margin-bottom: token-rem(8px);
+}
+
+.u-ml-100 {
+  margin-left: token-rem(8px);
+}
+
+.u-mr-100 {
+  margin-right: token-rem(8px);
+}
+
+.u-p-100 {
+  padding: token-rem(8px);
+}
+
+.u-pt-100 {
+  padding-top: token-rem(8px);
+}
+
+.u-pb-100 {
+  padding-bottom: token-rem(8px);
+}
+
+.u-pl-100 {
+  padding-left: token-rem(8px);
+}
+
+.u-pr-100 {
+  padding-right: token-rem(8px);
+}
+
+.u-m-50 {
+  margin: token-rem(4px);
+}
+
+.u-mt-50 {
+  margin-top: token-rem(4px);
+}
+
+.u-mb-50 {
+  margin-bottom: token-rem(4px);
+}
+
+.u-ml-50 {
+  margin-left: token-rem(4px);
+}
+
+.u-mr-50 {
+  margin-right: token-rem(4px);
+}
+
+.u-p-50 {
+  padding: token-rem(4px);
+}
+
+.u-pt-50 {
+  padding-top: token-rem(4px);
+}
+
+.u-pb-50 {
+  padding-bottom: token-rem(4px);
+}
+
+.u-pl-50 {
+  padding-left: token-rem(4px);
+}
+
+.u-pr-50 {
+  padding-right: token-rem(4px);
+}
+
+.u-m-25 {
+  margin: token-rem(2px);
+}
+
+.u-mt-25 {
+  margin-top: token-rem(2px);
+}
+
+.u-mb-25 {
+  margin-bottom: token-rem(2px);
+}
+
+.u-ml-25 {
+  margin-left: token-rem(2px);
+}
+
+.u-mr-25 {
+  margin-right: token-rem(2px);
+}
+
+.u-p-25 {
+  padding: token-rem(2px);
+}
+
+.u-pt-25 {
+  padding-top: token-rem(2px);
+}
+
+.u-pb-25 {
+  padding-bottom: token-rem(2px);
+}
+
+.u-pl-25 {
+  padding-left: token-rem(2px);
+}
+
+.u-pr-25 {
+  padding-right: token-rem(2px);
+}
+
+.is-active {
+  opacity: 1;
+}
+
+.is-hidden {
+  display: none !important;
+}
+
+/* ----------------------------------------------------------
+   UTILITIES → TEXT PRESETS
+   ----------------------------------------------------------
+   Generates typography utility classes from $text-presets.
+
+   Output pattern:
+   .u-text-{preset}
+
+   Each class applies a complete typographic style.
+   No semantic meaning. Purely presentational.
+---------------------------------------------------------- */
+.u-text-preset-1 {
+  font-family: "Bellefair";
+  font-size: token-fluid(72px, 5vw, 144px);
+  line-height: 1.2;
+  letter-spacing: 0;
+}
+
+.u-text-preset-2 {
+  font-family: "Bellefair";
+  font-size: token-fluid(56px, 4vw, 100px);
+  line-height: 1.15;
+  letter-spacing: 0;
+}
+
+.u-text-preset-3 {
+  font-family: "Bellefair";
+  font-size: token-fluid(32px, 3vw, 56px);
+  line-height: 1.15;
+  letter-spacing: 0;
+}
+
+.u-text-preset-4 {
+  font-family: "Bellefair";
+  font-size: token-fluid(24px, 2vw, 32px);
+  line-height: 1.2;
+  letter-spacing: 0;
+}
+
+.u-text-preset-5 {
+  font-family: "Barlow Condensed";
+  font-size: token-fluid(18px, 1.5vw, 28px);
+  line-height: 1.2;
+  letter-spacing: 0.25em;
+}
+
+.u-text-preset-6 {
+  font-family: "Bellefair";
+  font-size: token-rem(28px);
+  line-height: 1.15;
+  letter-spacing: 0;
+}
+
+.u-text-preset-7 {
+  font-family: "Barlow Condensed";
+  font-size: token-rem(14px);
+  line-height: 1.2;
+  letter-spacing: 0.125em;
+}
+
+.u-text-preset-8 {
+  font-family: "Barlow Condensed";
+  font-size: token-rem(16px);
+  line-height: 1.2;
+  letter-spacing: 0.125em;
+}
+
+.u-text-preset-9 {
+  font-family: "Barlow";
+  font-size: token-rem(18px);
+  line-height: 1.8;
+  letter-spacing: 0;
+}
+
+/*# sourceMappingURL=styles.css.map */

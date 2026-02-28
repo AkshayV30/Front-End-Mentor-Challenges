@@ -1,0 +1,25 @@
+.c-btn--circle {
+  width: 20rem;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.c-btn {
+  border: none;
+  cursor: pointer;
+  font: inherit;
+
+  &--circle {
+    width: 20rem;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    font-size: 2rem;
+    transition: 0.3s ease;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "name": "space-tourism-website",
+  "version": "1.0.0",
+  "description": "https://akshayv30.github.io/space-tourism-website-main/",
+  "main": "index.js",
+  "dependencies": {
+    "chokidar": "^4.0.3",
+    "detect-libc": "^2.1.2",
+    "immutable": "^5.1.4",
+    "is-extglob": "^2.1.1",
+    "is-glob": "^4.0.3",
+    "node-addon-api": "^7.1.1",
+    "picomatch": "^4.0.3",
+    "readdirp": "^4.1.2",
+    "source-map-js": "^1.2.1"
+  },
+  "devDependencies": {
+    "sass": "^1.97.3"
+  },
+  "scripts": {
+    "build:scss": "sass res/scss/main.scss res/css/styles.css --style=compressed --no-source-map",
+    "watch:scss": "sass --watch res/scss/main.scss res/css/styles.css",
+    "dev:scss": "npm run watch:scss"
+  },
+  "keywords": [],
+  "author": "Akshayv30",
+  "license": "ISC",
+  "type": "module"
+}

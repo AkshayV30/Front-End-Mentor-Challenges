@@ -1,0 +1,22 @@
+@use "../abstracts" as *;
+/* ==========================================================
+   UTILITIES → COLORS
+   ----------------------------------------------------------
+   Generates text and background color utilities
+   from the $colors design token map.
+
+   Output pattern:
+   .u-text-{token} → color
+   .u-bg-{token}   → background-color
+
+   Tokens are defined in the abstract layer.
+   Utilities remain low-specificity and purely presentational.
+========================================================== */
+@each $name, $value in $colors {
+  .u-text-#{$name} {
+    color: $value;
+  }
+  .u-bg-#{$name} {
+    background-color: $value;
+  }
+}
