@@ -1,6 +1,8 @@
 // Abstracts (order matters)
 @use "abstracts";
 
+
+
 // Base
 @use "base/base";
 @use "base/reset";
@@ -24,8 +26,9 @@
 
 //utilities
 @use "utilities/animations";
-@use "utilities/colors";
-@use "utilities/fonts";
-@use "utilities/spacing";
 @use "utilities/states";
-@use "utilities/typography";
+
+// @use "utilities/colors";
+// @use "utilities/fonts";
+// @use "utilities/spacing";
+// @use "utilities/typography";

@@ -13,16 +13,16 @@
 
 @use "sass:math";
 
+
 /* ==========================================================
    0. CORE UNIT SYSTEM
    ----------------------------------------------------------
    All dimensional values derive from $root-font-size.
 
    Changing this value scales the entire system.
-   Default assumes browser base = 16px.
+   Default assumes browser base = 10px = 1.6rem .
 ========================================================== */
-
-$root-font-size: 16px;
+$root-font-size: 10px;
 
 /* ==========================================================
    1. COLOR TOKENS
@@ -35,6 +35,7 @@ $colors: (
   "blue-900": #0b0d17,
   "blue-300": #d0d6f9,
   "primary": #ffffff,
+  "glass": #ffffff26,
 );
 
 /* ==========================================================
@@ -45,66 +46,67 @@ $colors: (
    Sizes use clamp() for fluid scaling.
 ========================================================== */
 
+
 $text-presets: (
   preset-1: (
     family: "Bellefair",
-    size: token-fluid(72px, 5vw, 144px),
+    size: clamp(7.2rem, 5vw, 14.4rem), // 72px → 144px
     line-height: 1.2,
     letter-spacing: 0,
   ),
 
   preset-2: (
     family: "Bellefair",
-    size: token-fluid(56px, 4vw, 100px),
+    size: clamp(5.6rem, 4vw, 10rem), // 56px → 100px
     line-height: 1.15,
     letter-spacing: 0,
   ),
 
   preset-3: (
     family: "Bellefair",
-    size: token-fluid(32px, 3vw, 56px),
+    size: clamp(3.2rem, 3vw, 5.6rem), // 32px → 56px
     line-height: 1.15,
     letter-spacing: 0,
   ),
 
   preset-4: (
     family: "Bellefair",
-    size: token-fluid(24px, 2vw, 32px),
+    size: clamp(2.4rem, 2vw, 3.2rem), // 24px → 32px
     line-height: 1.2,
     letter-spacing: 0,
   ),
 
   preset-5: (
     family: "Barlow Condensed",
-    size: token-fluid(18px, 1.5vw, 28px),
+    size: clamp(1.8rem, 1.5vw, 2.8rem), // 18px → 28px
     line-height: 1.2,
     letter-spacing: 0.25em,
   ),
 
   preset-6: (
     family: "Bellefair",
-    size: token-rem(28px),
+    size: 2.8rem, // 28px
     line-height: 1.15,
     letter-spacing: 0,
   ),
 
   preset-7: (
     family: "Barlow Condensed",
-    size: token-rem(14px),
+    size: 1.4rem, // 14px
     line-height: 1.2,
     letter-spacing: 0.125em,
   ),
 
   preset-8: (
     family: "Barlow Condensed",
-    size: token-rem(16px),
+    size: 1.6rem, // 16px
     line-height: 1.2,
     letter-spacing: 0.125em,
   ),
 
   preset-9: (
     family: "Barlow",
-    size: token-rem(18px),
+    size: 1.8rem, // 18px
     line-height: 1.8,
     letter-spacing: 0,
   ),
@@ -113,25 +115,22 @@ $text-presets: (
 /* ==========================================================
    3. SPACING SCALE (REM SYSTEM)
    ----------------------------------------------------------
-   Consistent vertical rhythm.
-   Scales with root font-size.
-   Keys represent token identifiers.
+      Base: 1rem = 10px
 ========================================================== */
-
 $spacing-scale: (
-  1600: token-rem(128px),
-  1200: token-rem(96px),
-  1000: token-rem(80px),
-  800: token-rem(64px),
-  600: token-rem(48px),
-  500: token-rem(40px),
-  400: token-rem(32px),
-  300: token-rem(24px),
-  200: token-rem(16px),
-  150: token-rem(12px),
-  100: token-rem(8px),
-  50: token-rem(4px),
-  25: token-rem(2px),
+  1600: 12.8rem, // 128px
+  1200: 9.6rem,  // 96px
+  1000: 8rem,    // 80px
+  800:  6.4rem,  // 64px
+  600:  4.8rem,  // 48px
+  500:  4rem,    // 40px
+  400:  3.2rem,  // 32px
+  300:  2.4rem,  // 24px
+  200:  1.6rem,  // 16px
+  150:  1.2rem,  // 12px
+  100:  0.8rem,  // 8px
+  50:   0.4rem,  // 4px
+  25:   0.2rem   // 2px
 );
 
 /* ==========================================================

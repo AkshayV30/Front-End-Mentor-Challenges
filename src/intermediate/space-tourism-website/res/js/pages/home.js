@@ -11,7 +11,7 @@ export function renderHome(app) {
           </h2>
 
           <h1 class="c-home__title">
-            SPACE
+            space
           </h1>
 
           <p class="c-home__description">
@@ -22,7 +22,7 @@ export function renderHome(app) {
         </div>
 
         <div class="c-home__action">
-          <button class="c-btn c-btn--circle js-explore-btn">
+          <button class="c-btn c-btn--circle u-hover-pulse js-explore-btn">
             Explore
           </button>
         </div>

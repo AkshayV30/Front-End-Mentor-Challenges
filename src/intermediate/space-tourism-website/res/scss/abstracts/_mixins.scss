@@ -1,5 +1,6 @@
 @use "sass:map";
 @use "tokens" as *;
+@use "functions" as *;
 
 /* ==========================================================
    MIXIN → FLEX CENTER
@@ -64,3 +65,11 @@ example usage
   }
 }
 */
+
+
+@mixin apply-text($preset) {
+  font-family: token-text($preset, family);
+  font-size: token-text($preset, size);
+  line-height: token-text($preset, line-height);
+  letter-spacing: token-text($preset, letter-spacing);
+}

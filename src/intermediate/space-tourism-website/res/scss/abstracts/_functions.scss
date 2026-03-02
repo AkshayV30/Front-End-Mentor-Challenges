@@ -21,14 +21,6 @@
 ========================================================== */
 
 /* ----------------------------------------------------------
-   Converts px to rem
-   Ensures accessibility scaling.
----------------------------------------------------------- */
-@function token-rem($px) {
-  @return math.div($px, $root-font-size) * 1rem;
-}
-
-/* ----------------------------------------------------------
    Fluid clamp helper
    Example:
    fluid(16px, 4vw, 32px)
@@ -64,4 +56,14 @@
   } @else {
     @error "Color `#{$name}` does not exist in \$colors.";
   }
+}
+
+
+/* ==========================================================
+   TYPOGRAPHY ACCESSOR
+========================================================== */
+
+@function token-text($preset, $property) {
+  $preset-map: map.get($text-presets, $preset);
+  @return map.get($preset-map, $property);
 }

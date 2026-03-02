@@ -1,8 +1,10 @@
+@use "../abstracts" as *;
+
 .c-btn--circle {
-  width: 20rem;
+  width: calc(token-space(300)*10);
   aspect-ratio: 1;
   border-radius: 50%;
-  font-size: 2rem;
+  
   cursor: pointer;
 }
 
@@ -10,16 +12,11 @@
   border: none;
   cursor: pointer;
   font: inherit;
-
-  &--circle {
-    width: 20rem;
-    aspect-ratio: 1;
-    border-radius: 50%;
-    font-size: 2rem;
-    transition: 0.3s ease;
-
-    &:hover {
-      transform: scale(1.05);
-    }
+  
+  @include apply-text(preset-4);
+  text-transform:uppercase;
+  &:hover{
+    color:token-color(blue-300);
   }
+
 }
