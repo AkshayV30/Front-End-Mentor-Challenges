@@ -1,8 +1,6 @@
 // Abstracts (order matters)
 @use "abstracts";
 
-
-
 // Base
 @use "base/base";
 @use "base/reset";
@@ -10,7 +8,6 @@
 // Components
 @use "components/buttons";
 @use "components/nav";
-@use "components/tabs";
 
 // Layout
 @use "layouts/header";

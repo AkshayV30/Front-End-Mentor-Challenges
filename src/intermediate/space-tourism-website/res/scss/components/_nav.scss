@@ -11,15 +11,13 @@
   display: flex;
 
   gap: token-space(500); // assuming spacing scale key
- 
+
   @include apply-text(preset-8);
 
   list-style: none;
   align-items: center;
   justify-content: flex-end;
 }
-
-
 
 /* Stack nav vertically on tablets and below */
 @include respond-down(md) {
@@ -30,20 +28,22 @@
 }
 
 .c-nav__item {
- 
   cursor: pointer;
   text-transform: uppercase;
-  color:token-color(primary);
-
-
- span{  
-   padding-left:0.4rem;
- }
-
+  color: token-color(primary);
   position: relative;
 
-  &.is-active > .c-nav__nav-heading{
-    color:token-color(blue-900)
+  .c-nav__index {
+    font-weight: 600;
+  }
+
+  .c-nav__nav-heading {
+    font-weight: 600;
+    margin-left: 0.4rem;
+  }
+  &.is-active > .c-nav__nav-heading {
+    color: token-color(blue-300);
+    opacity: 0.7;
   }
 
   /* Animated underline */
@@ -55,15 +55,14 @@
     width: 110%;
     height: 0.4rem;
     background: token-color(primary);
+
     transform: scaleX(0);
     transform-origin: left;
     transition: transform $transition;
   }
 
   &:hover::after,
-
   &.is-active::after {
     transform: scaleX(1);
-
   }
 }

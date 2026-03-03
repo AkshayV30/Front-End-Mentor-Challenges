@@ -1,13 +1,5 @@
 @use "../abstracts" as *;
 
-.c-btn--circle {
-  width: calc(token-space(300)*10);
-  aspect-ratio: 1;
-  border-radius: 50%;
-  
-  cursor: pointer;
-}
-
 .c-btn {
   border: none;
   cursor: pointer;
@@ -18,5 +10,20 @@
   &:hover{
     color:token-color(blue-300);
   }
+
+}
+
+
+.c-btn--circle {
+  width: calc(token-space(300)*10);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  
+  cursor: pointer;
+}
+
+
+
+.c-btn--tab{
 
 }

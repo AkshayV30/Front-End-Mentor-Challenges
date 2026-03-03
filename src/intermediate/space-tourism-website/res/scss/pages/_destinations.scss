@@ -1,9 +1,133 @@
+@use "../abstracts" as *;
+
 .c-destination {
-  text-align: center;
+  color: token-color(primary);
+
+  padding: 4rem;
+
+  .c-destination__title {
+    @include apply-text(preset-5);
+
+    font-weight: 400;
+    text-transform: uppercase;
+
+    .c-destination__index {
+      color: token-color(blue-300);
+      opacity: 0.5;
+      font-weight: 800;
+    }
+  }
 }
 
-.c-destination__content {
+.c-destination__contents {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  // Tabs container
+  .c-destination__tabs {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin: 4rem;
+    margin-left: 35rem;
+    @include apply-text(preset-8);
+
+    .c-tab {
+      color: token-color(blue-300);
+      cursor: pointer;
+      font-weight: 600;
+      text-transform: uppercase;
+      transition: all 0.3s;
+
+      padding-bottom: 1rem;
+      border-bottom: 2px solid transparent;
+
+      &:hover {
+        border-color: token-color(primary);
+        color: token-color(primary);
+      }
+
+      &.is-active {
+        border-color: token-color(primary);
+        color: token-color(primary);
+      }
+    }
+  }
+}
+
+.c-destination__layout {
   display: flex;
   gap: 4rem;
   justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap; // makes responsive easier
+
+  .c-destination__media {
+    flex: 1 1 30rem;
+
+    .c-destination__image {
+      max-width: 100%;
+      animation: rotate 20s linear infinite; // optional
+    }
+  }
+
+  .c-destination__body {
+    flex: 1 1 30rem;
+    text-align: left;
+
+    .c-destination__name {
+      @include apply-text(preset-2);
+
+      font-weight: 300;
+      text-transform: uppercase;
+    }
+
+    .c-destination__description {
+      @include apply-text(preset-9);
+
+      color: token-color(blue-300);
+      margin-bottom: 4rem;
+    }
+  }
+}
+
+.c-destination__meta {
+  display: flex;
+  gap: 4rem;
+  border-top: 1px solid token-color(blue-300);
+  padding-top: 2rem;
+  align-items: center;
+  justify-content: space-evenly;
+
+  .c-destination__stat {
+    display: flex;
+    flex-direction: column;
+    text-transform: uppercase;
+    .c-destination__label {
+      @include apply-text(preset-7);
+      font-weight: 300;
+      color: token-color(blue-300);
+    }
+
+    .c-destination__value {
+      @include apply-text(preset-6);
+      margin-top: 1rem;
+    }
+  }
+}
+
+// Optional: small screens
+@include respond-down(md) {
+  // .c-destination__layout {
+  //   flex-direction: column;
+  //   align-items: center;
+  //   gap: 3rem;
+  // }
+
+  // .c-destination__tabs {
+  //   flex-wrap: wrap;
+  //   gap: 1rem;
+  // }
 }

@@ -13,7 +13,6 @@
 
 @use "sass:math";
 
-
 /* ==========================================================
    0. CORE UNIT SYSTEM
    ----------------------------------------------------------
@@ -46,67 +45,75 @@ $colors: (
    Sizes use clamp() for fluid scaling.
 ========================================================== */
 
-
 $text-presets: (
   preset-1: (
     family: "Bellefair",
-    size: clamp(7.2rem, 5vw, 14.4rem), // 72px → 144px
+    size: clamp(7.2rem, 5vw, 14.4rem),
+    // 72px → 144px
     line-height: 1.2,
     letter-spacing: 0,
   ),
 
   preset-2: (
     family: "Bellefair",
-    size: clamp(5.6rem, 4vw, 10rem), // 56px → 100px
+    size: clamp(5.6rem, 4vw, 10rem),
+    // 56px → 100px
     line-height: 1.15,
     letter-spacing: 0,
   ),
 
   preset-3: (
     family: "Bellefair",
-    size: clamp(3.2rem, 3vw, 5.6rem), // 32px → 56px
+    size: clamp(3.2rem, 3vw, 5.6rem),
+    // 32px → 56px
     line-height: 1.15,
     letter-spacing: 0,
   ),
 
   preset-4: (
     family: "Bellefair",
-    size: clamp(2.4rem, 2vw, 3.2rem), // 24px → 32px
+    size: clamp(2.4rem, 2vw, 3.2rem),
+    // 24px → 32px
     line-height: 1.2,
     letter-spacing: 0,
   ),
 
   preset-5: (
     family: "Barlow Condensed",
-    size: clamp(1.8rem, 1.5vw, 2.8rem), // 18px → 28px
+    size: clamp(1.8rem, 1.5vw, 2.8rem),
+    // 18px → 28px
     line-height: 1.2,
     letter-spacing: 0.25em,
   ),
 
   preset-6: (
     family: "Bellefair",
-    size: 2.8rem, // 28px
+    size: 2.8rem,
+    // 28px
     line-height: 1.15,
     letter-spacing: 0,
   ),
 
   preset-7: (
     family: "Barlow Condensed",
-    size: 1.4rem, // 14px
+    size: 1.4rem,
+    // 14px
     line-height: 1.2,
     letter-spacing: 0.125em,
   ),
 
   preset-8: (
     family: "Barlow Condensed",
-    size: 1.6rem, // 16px
+    size: 1.6rem,
+    // 16px
     line-height: 1.2,
     letter-spacing: 0.125em,
   ),
 
   preset-9: (
     family: "Barlow",
-    size: 1.8rem, // 18px
+    size: 1.8rem,
+    // 18px
     line-height: 1.8,
     letter-spacing: 0,
   ),
@@ -118,19 +125,31 @@ $text-presets: (
       Base: 1rem = 10px
 ========================================================== */
 $spacing-scale: (
-  1600: 12.8rem, // 128px
-  1200: 9.6rem,  // 96px
-  1000: 8rem,    // 80px
-  800:  6.4rem,  // 64px
-  600:  4.8rem,  // 48px
-  500:  4rem,    // 40px
-  400:  3.2rem,  // 32px
-  300:  2.4rem,  // 24px
-  200:  1.6rem,  // 16px
-  150:  1.2rem,  // 12px
-  100:  0.8rem,  // 8px
-  50:   0.4rem,  // 4px
-  25:   0.2rem   // 2px
+  1600: 12.8rem,
+  // 128px
+  1200: 9.6rem,
+  // 96px
+  1000: 8rem,
+  // 80px
+  800: 6.4rem,
+  // 64px
+  600: 4.8rem,
+  // 48px
+  500: 4rem,
+  // 40px
+  400: 3.2rem,
+  // 32px
+  300: 2.4rem,
+  // 24px
+  200: 1.6rem,
+  // 16px
+  150: 1.2rem,
+  // 12px
+  100: 0.8rem,
+  // 8px
+  50: 0.4rem,
+  // 4px
+  25: 0.2rem, // 2px
 );
 
 /* ==========================================================
@@ -140,7 +159,7 @@ $spacing-scale: (
    Padding uses fluid clamp for responsive breathing room.
 ========================================================== */
 
-$container-width: 120rem;
+$container-width: 150rem;
 $container-padding: token-fluid(16px, 4vw, 40px);
 
 /* ==========================================================

@@ -128,6 +128,7 @@ example usage
 ========================================================== */
 html {
   font-size: 62.5%;
+  font-variant: normal;
 }
 
 /* Box sizing rules */
@@ -135,6 +136,8 @@ html {
 *::before,
 *::after {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 /* Prevent font size inflation */
@@ -221,13 +224,6 @@ textarea:not([rows]) {
   scroll-margin-block: 5ex;
 }
 
-.c-btn--circle {
-  width: 24rem;
-  aspect-ratio: 1;
-  border-radius: 50%;
-  cursor: pointer;
-}
-
 .c-btn {
   border: none;
   cursor: pointer;
@@ -240,6 +236,13 @@ textarea:not([rows]) {
 }
 .c-btn:hover {
   color: #d0d6f9;
+}
+
+.c-btn--circle {
+  width: 24rem;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  cursor: pointer;
 }
 
 /* ==========================================================
@@ -272,15 +275,18 @@ textarea:not([rows]) {
   cursor: pointer;
   text-transform: uppercase;
   color: #ffffff;
-}
-.c-nav__item span {
-  padding-left: 0.4rem;
-}
-.c-nav__item {
   position: relative;
 }
+.c-nav__item .c-nav__index {
+  font-weight: 600;
+}
+.c-nav__item .c-nav__nav-heading {
+  font-weight: 600;
+  margin-left: 0.4rem;
+}
 .c-nav__item.is-active > .c-nav__nav-heading {
-  color: #0b0d17;
+  color: #d0d6f9;
+  opacity: 0.7;
 }
 .c-nav__item {
   /* Animated underline */
@@ -299,22 +305,6 @@ textarea:not([rows]) {
 }
 .c-nav__item:hover::after, .c-nav__item.is-active::after {
   transform: scaleX(1);
-}
-
-.c-tabs {
-  display: flex;
-  gap: 2rem;
-}
-
-.c-tab {
-  cursor: pointer;
-  padding: 1rem;
-  border-bottom: 2px solid transparent;
-  color: #d0d6f9;
-}
-.c-tab.is-active {
-  color: #ffffff;
-  border-color: #d0d6f9;
 }
 
 .c-header {
@@ -343,7 +333,7 @@ textarea:not([rows]) {
   }
 }
 .c-header .c-nav {
-  padding: 1.2rem;
+  padding: 2.4rem;
   width: 40%;
   position: absolute;
   right: 0%;
@@ -370,7 +360,7 @@ textarea:not([rows]) {
 }
 
 .l-container {
-  width: min(100% - 4rem, 120rem);
+  width: min(100% - 4rem, 150rem);
   margin-inline: auto;
 }
 
@@ -489,6 +479,8 @@ body[class^=page-] {
   line-height: 1.2;
   letter-spacing: 0.25em;
   text-transform: uppercase;
+  color: #d0d6f9;
+  font-weight: 300;
 }
 .c-home__title {
   font-family: "Bellefair";
@@ -496,12 +488,14 @@ body[class^=page-] {
   line-height: 1.2;
   letter-spacing: 0;
   text-transform: uppercase;
+  font-weight: 400;
 }
 .c-home__description {
   font-family: "Barlow";
   font-size: 1.8rem;
   line-height: 1.8;
   letter-spacing: 0;
+  color: #d0d6f9;
   text-align: justify;
 }
 .c-home__action {
@@ -544,13 +538,120 @@ body[class^=page-] {
 }
 
 .c-destination {
-  text-align: center;
+  color: #ffffff;
+  padding: 4rem;
+}
+.c-destination .c-destination__title {
+  font-family: "Barlow Condensed";
+  font-size: clamp(1.8rem, 1.5vw, 2.8rem);
+  line-height: 1.2;
+  letter-spacing: 0.25em;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+.c-destination .c-destination__title .c-destination__index {
+  color: #d0d6f9;
+  opacity: 0.5;
+  font-weight: 800;
 }
 
-.c-destination__content {
+.c-destination__contents {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.c-destination__contents .c-destination__tabs {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin: 4rem;
+  margin-left: 35rem;
+  font-family: "Barlow Condensed";
+  font-size: 1.6rem;
+  line-height: 1.2;
+  letter-spacing: 0.125em;
+}
+.c-destination__contents .c-destination__tabs .c-tab {
+  color: #d0d6f9;
+  cursor: pointer;
+  font-weight: 600;
+  text-transform: uppercase;
+  transition: all 0.3s;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid transparent;
+}
+.c-destination__contents .c-destination__tabs .c-tab:hover {
+  border-color: #ffffff;
+  color: #ffffff;
+}
+.c-destination__contents .c-destination__tabs .c-tab.is-active {
+  border-color: #ffffff;
+  color: #ffffff;
+}
+
+.c-destination__layout {
   display: flex;
   gap: 4rem;
   justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+.c-destination__layout .c-destination__media {
+  flex: 1 1 30rem;
+}
+.c-destination__layout .c-destination__media .c-destination__image {
+  max-width: 100%;
+  animation: rotate 20s linear infinite;
+}
+.c-destination__layout .c-destination__body {
+  flex: 1 1 30rem;
+  text-align: left;
+}
+.c-destination__layout .c-destination__body .c-destination__name {
+  font-family: "Bellefair";
+  font-size: clamp(5.6rem, 4vw, 10rem);
+  line-height: 1.15;
+  letter-spacing: 0;
+  font-weight: 300;
+  text-transform: uppercase;
+}
+.c-destination__layout .c-destination__body .c-destination__description {
+  font-family: "Barlow";
+  font-size: 1.8rem;
+  line-height: 1.8;
+  letter-spacing: 0;
+  color: #d0d6f9;
+  margin-bottom: 4rem;
+}
+
+.c-destination__meta {
+  display: flex;
+  gap: 4rem;
+  border-top: 1px solid #d0d6f9;
+  padding-top: 2rem;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.c-destination__meta .c-destination__stat {
+  display: flex;
+  flex-direction: column;
+  text-transform: uppercase;
+}
+.c-destination__meta .c-destination__stat .c-destination__label {
+  font-family: "Barlow Condensed";
+  font-size: 1.4rem;
+  line-height: 1.2;
+  letter-spacing: 0.125em;
+  font-weight: 300;
+  color: #d0d6f9;
+}
+.c-destination__meta .c-destination__stat .c-destination__value {
+  font-family: "Bellefair";
+  font-size: 2.8rem;
+  line-height: 1.15;
+  letter-spacing: 0;
+  margin-top: 1rem;
 }
 
 .c-technology__layout {
