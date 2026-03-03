@@ -5,9 +5,11 @@
  */
 export async function fetchData(path, key) {
   try {
-    const res = await fetch(path, { cache: 'no-store' }); // no-store avoids stale data
+    const res = await fetch(path, { cache: "no-store" }); // no-store avoids stale data
     if (!res.ok) throw new Error(`Failed to fetch ${path}: ${res.status}`);
     const json = await res.json();
+
+    console.log("response :", res);
     return json[key];
   } catch (err) {
     console.error(`❌ [fetchData] ${err.message}`);

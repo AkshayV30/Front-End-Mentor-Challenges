@@ -14,24 +14,43 @@
     .c-destination__index {
       color: token-color(blue-300);
       opacity: 0.5;
-      font-weight: 800;
+
+      font-weight: 600;
     }
   }
 }
 
-.c-destination__contents {
+.c-destination__layout {
+  margin-top: token-space(800);
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  gap: 4rem;
+  flex-wrap: wrap; // makes responsive easier
+
+  .c-destination__media {
+    flex: 1 1 30rem;
+    min-height: 35rem; // prevents jump
+
+    .c-destination__image {
+      max-width: 100%;
+
+      transition:
+        opacity 0.4s ease,
+        transform 0.4s ease;
+      will-change: opacity, transform;
+    }
+  }
+}
+
+.c-destination__body {
+  min-height: 40rem;
+  flex: 1 1 30rem;
 
   // Tabs container
   .c-destination__tabs {
     display: flex;
-    justify-content: center;
-    gap: 2rem;
-    margin: 4rem;
-    margin-left: 35rem;
+    gap: token-space(200);
+    align-items: center;
+
     @include apply-text(preset-8);
 
     .c-tab {
@@ -41,7 +60,8 @@
       text-transform: uppercase;
       transition: all 0.3s;
 
-      padding-bottom: 1rem;
+      padding-bottom: 0.5rem;
+      margin-bottom: 2rem;
       border-bottom: 2px solid transparent;
 
       &:hover {
@@ -55,56 +75,37 @@
       }
     }
   }
-}
 
-.c-destination__layout {
-  display: flex;
-  gap: 4rem;
-  justify-content: center;
-  align-items: flex-start;
-  flex-wrap: wrap; // makes responsive easier
+  .c-destination__name {
+    @include apply-text(preset-2);
 
-  .c-destination__media {
-    flex: 1 1 30rem;
-
-    .c-destination__image {
-      max-width: 100%;
-      animation: rotate 20s linear infinite; // optional
-    }
+    font-weight: 300;
+    text-transform: uppercase;
   }
 
-  .c-destination__body {
-    flex: 1 1 30rem;
-    text-align: left;
+  .c-destination__description {
+    @include apply-text(preset-9);
 
-    .c-destination__name {
-      @include apply-text(preset-2);
+    color: token-color(blue-300);
+    margin-bottom: 4rem;
 
-      font-weight: 300;
-      text-transform: uppercase;
-    }
-
-    .c-destination__description {
-      @include apply-text(preset-9);
-
-      color: token-color(blue-300);
-      margin-bottom: 4rem;
-    }
+    transition: opacity 0.3s ease;
   }
 }
 
 .c-destination__meta {
   display: flex;
-  gap: 4rem;
-  border-top: 1px solid token-color(blue-300);
-  padding-top: 2rem;
+  gap: token-space(300) * 10;
   align-items: center;
-  justify-content: space-evenly;
+
+  border-top: 1px solid token-color(blue-300);
 
   .c-destination__stat {
+    margin-top: 2rem;
     display: flex;
     flex-direction: column;
     text-transform: uppercase;
+
     .c-destination__label {
       @include apply-text(preset-7);
       font-weight: 300;

@@ -39,12 +39,14 @@ export function renderHeader() {
     const item = e.target.closest(".js-nav");
     if (!item) return;
 
-    header
-      .querySelectorAll(".js-nav")
-      .forEach((el) => el.classList.remove("is-active"));
-
-    item.classList.add("is-active");
-
     navigate(item.dataset.page);
+  });
+}
+
+export function setActiveNav(page) {
+  const header = document.querySelector(".c-header");
+
+  header.querySelectorAll(".js-nav").forEach((el) => {
+    el.classList.toggle("is-active", el.dataset.page === page);
   });
 }

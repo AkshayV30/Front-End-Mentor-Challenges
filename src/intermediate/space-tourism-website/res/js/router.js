@@ -3,38 +3,63 @@ import { renderHome } from "./pages/home.js";
 import { renderCrew } from "./pages/crew.js";
 import { renderDestination } from "./pages/destination.js";
 import { renderTechnology } from "./pages/technology.js";
+import { fetchData } from "./api/fetchData.js";
+import { setActiveNav } from "./components/header.js";
 
 const routes = {
-  home: renderHome,
-  crew: renderCrew,
-  destination: renderDestination,
-  technology: renderTechnology,
+  home: {
+    render: renderHome,
+  },
+  crew: {
+    render: renderCrew,
+    data: {
+      path: "res/data/crews.json",
+      key: "crews",
+      storeKey: "crews",
+    },
+  },
+  destination: {
+    render: renderDestination,
+    data: {
+      path: "res/data/destinations.json",
+      key: "destinations",
+      storeKey: "destinations",
+    },
+  },
+  technology: {
+    render: renderTechnology,
+    data: {
+      path: "res/data/technologys.json",
+      key: "technologys",
+      storeKey: "technologys",
+    },
+  },
 };
 
-export function navigate(page) {
-  if (!routes[page]) return;
+export async function navigate(page) {
+  const route = routes[page];
+  if (!route) return;
 
-  // Update State
-  store.currentPage = page;
-
-  // Remove old page-* class
-  document.body.classList.forEach((cls) => {
-    if (cls.startsWith("page-")) {
-      document.body.classList.remove(cls);
-    }
-  });
-
-  // Update body state class
-  document.body.className = `page-${page}`;
-
-  /* 
-   // if using data attributes:
-    document.body.dataset.page = page;
-  */
-
-  //Render page
   const app = document.getElementById("app");
   app.innerHTML = "";
 
-  routes[page](app);
+  store.currentPage = page;
+  setActiveNav(page);
+
+  // Update body class
+  document.body.className = `page-${page}`;
+
+  //  Lazy fetch if route has data and not already loaded
+  if (route.data) {
+    const { path, key, storeKey } = route.data;
+
+    if (!store.data[storeKey]?.length) {
+      app.innerHTML = `<div class="u-loading"> </div>`;
+
+      const result = await fetchData(path, key);
+      store.data[storeKey] = result;
+    }
+  }
+
+  route.render(app);
 }

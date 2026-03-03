@@ -1,8 +1,4 @@
 export const store = {
-  data: {
-    crew: [],
-    destination: [],
-    technology: [],
-  },
+  data: {},
   currentPage: "home",
 };

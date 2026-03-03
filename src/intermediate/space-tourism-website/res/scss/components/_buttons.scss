@@ -4,26 +4,18 @@
   border: none;
   cursor: pointer;
   font: inherit;
-  
+
   @include apply-text(preset-4);
-  text-transform:uppercase;
-  &:hover{
-    color:token-color(blue-300);
+  text-transform: uppercase;
+  &:hover {
+    color: token-color(blue-300);
   }
-
 }
-
 
 .c-btn--circle {
-  width: calc(token-space(300)*10);
+  width: calc(token-space(300) * 10);
   aspect-ratio: 1;
   border-radius: 50%;
-  
+
   cursor: pointer;
-}
-
-
-
-.c-btn--tab{
-
 }

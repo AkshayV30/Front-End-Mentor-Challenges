@@ -1,7 +1,7 @@
 import { store } from "../store.js";
 
 export function renderCrew(app) {
-  const crew = store.data.crew;
+  const crew = store.data.crews;
 
   if (!crew?.length) {
     app.innerHTML = `<p class="u-error">Crew data unavailable.</p>`;
@@ -9,67 +9,75 @@ export function renderCrew(app) {
   }
 
   app.innerHTML = `
-    <section class="l-section c-crew u-fade-in">
-      <h2 class="c-crew__title">
-        <span class="c-crew__number">02</span>
-        Meet Your Crew
-      </h2>
+<section class="l-section l-container c-crew u-fade-in">
 
-      <div class="c-crew__wrapper">
-        <div class="c-crew__info js-crew-info"></div>
+  <h2 class="c-crew__title">
+    <span class="c-crew__index">02</span>
+    Meet Your Crew
+  </h2>
 
-        <div class="c-crew__nav js-crew-nav">
-          ${crew
-            .map(
-              (_, i) => `
-              <button
-                class="c-crew__dot js-crew-dot ${i === 0 ? "is-active" : ""}"
-                data-index="${i}"
-                aria-label="Crew member ${i + 1}">
-              </button>
-            `,
-            )
-            .join("")}
-        </div>
+  <div class="c-crew__layout">
+
+    <div class="c-crew__text-col">
+      <div class="c-crew__text js-crew-text"></div>
+
+      <div class="c-crew__nav js-crew-nav">
+        ${crew
+          .map(
+            (_, i) => `
+          <button
+            class="c-crew__dot ${i === 0 ? "is-active" : ""}"
+            data-index="${i}">
+          </button>
+        `,
+          )
+          .join("")}
       </div>
-    </section>
-  `;
+    </div>
 
-  const crewInfo = app.querySelector(".js-crew-info");
+    <div class="c-crew__image-frame">
+      <img class="c-crew__image js-crew-image" />
+    </div>
+
+  </div>
+</section>
+`;
+
+  const crewText = app.querySelector(".js-crew-text");
+  const crewImage = app.querySelector(".js-crew-image");
   const crewNav = app.querySelector(".js-crew-nav");
+
+  function renderCrewDetail(member) {
+    crewText.style.opacity = "0";
+    crewImage.style.opacity = "0";
+
+    setTimeout(() => {
+      crewText.innerHTML = `
+      <h3 class="c-crew__role">${member.role}</h3>
+      <h1 class="c-crew__name">${member.name}</h1>
+      <p class="c-crew__bio">${member.bio}</p>
+    `;
+
+      crewImage.src = member.images.png;
+      crewImage.alt = member.name;
+
+      crewText.style.opacity = "1";
+      crewImage.style.opacity = "1";
+    }, 150);
+  }
 
   renderCrewDetail(crew[0]);
 
   crewNav.addEventListener("click", (e) => {
-    const btn = e.target.closest(".js-crew-dot");
+    const btn = e.target.closest(".c-crew__dot");
     if (!btn) return;
 
-    const index = Number(btn.dataset.index);
-
     crewNav
-      .querySelectorAll(".js-crew-dot")
+      .querySelectorAll(".c-crew__dot")
       .forEach((b) => b.classList.remove("is-active"));
 
     btn.classList.add("is-active");
 
-    renderCrewDetail(crew[index]);
+    renderCrewDetail(crew[btn.dataset.index]);
   });
-
-  function renderCrewDetail(member) {
-    crewInfo.innerHTML = `
-      <div class="c-crew__text">
-        <h3 class="c-crew__role">${member.role}</h3>
-        <h1 class="c-crew__name">${member.name}</h1>
-        <p class="c-crew__bio">${member.bio}</p>
-      </div>
-
-      <div class="c-crew__image">
-        <img
-          src="${member.images.png}"
-          alt="${member.name}"
-          loading="lazy"
-        />
-      </div>
-    `;
-  }
 }

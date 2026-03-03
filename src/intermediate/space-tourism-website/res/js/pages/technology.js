@@ -1,7 +1,7 @@
 import { store } from "../store.js";
 
 export function renderTechnology(app) {
-  const tech = store.data.technology;
+  const tech = store.data.technologys;
 
   if (!tech?.length) {
     app.innerHTML = `<p class="u-error">Technology data unavailable.</p>`;
@@ -9,11 +9,11 @@ export function renderTechnology(app) {
   }
 
   app.innerHTML = `
-    <section class="l-section c-technology u-fade-in">
-      <div class="l-container">
+    <section class="l-section l-container c-technology u-fade-in">
+     
 
         <h2 class="c-technology__title">
-          <span class="c-technology__number">03</span>
+          <span class="c-technology__index">03</span>
           Space Launch Technology
         </h2>
 
@@ -36,15 +36,44 @@ export function renderTechnology(app) {
               .join("")}
           </div>
 
-          <div class="c-technology__content js-tech-content"></div>
+  <div class="c-technology__image-frame">
+        <img class="c-technology__image js-technology-image"   />
+      </div>
+
+
+      <div class="c-technology__content js-tech-content"></div>
 
         </div>
-      </div>
-    </section>
+   </section>
   `;
 
+  const technologyContent = app.querySelector(".js-tech-content");
+  const technologyImage = app.querySelector(".js-technology-image");
   const nav = app.querySelector(".js-tech-nav");
-  const content = app.querySelector(".js-tech-content");
+
+  function renderDetail(t) {
+    technologyImage.style.opacity = "0";
+    technologyContent.style.opacity = "0";
+
+    setTimeout(() => {
+      technologyContent.innerHTML = `
+        <div class="c-technology__info">
+        <h3 class="c-technology__subtitle">
+          The Terminology...
+        </h3>
+
+        <h1 class="c-technology__name"> ${t.name} </h1>
+        <p class="c-technology__description">  ${t.description} </p>
+      </div>
+    `;
+
+      technologyImage.src = t.images.landscape;
+      technologyImage.alt = t.name;
+
+      technologyImage.style.opacity = "1";
+      technologyContent.style.opacity = "1";
+    }, 150);
+  }
 
   renderDetail(tech[0]);
 
@@ -52,7 +81,7 @@ export function renderTechnology(app) {
     const btn = e.target.closest(".js-tech-btn");
     if (!btn) return;
 
-    const index = Number(btn.dataset.index);
+    // const index = Number(btn.dataset.index);
 
     nav
       .querySelectorAll(".js-tech-btn")
@@ -60,32 +89,6 @@ export function renderTechnology(app) {
 
     btn.classList.add("is-active");
 
-    renderDetail(tech[index]);
+    renderDetail(tech[btn.dataset.index]);
   });
-
-  function renderDetail(t) {
-    content.innerHTML = `
-      <div class="c-technology__image">
-        <img
-          src="${t.images.landscape}"
-          alt="${t.name}"
-          loading="lazy"
-        />
-      </div>
-
-      <div class="c-technology__info">
-        <h3 class="c-technology__subtitle">
-          The Terminology...
-        </h3>
-
-        <h1 class="c-technology__name">
-          ${t.name}
-        </h1>
-
-        <p class="c-technology__description">
-          ${t.description}
-        </p>
-      </div>
-    `;
-  }
 }

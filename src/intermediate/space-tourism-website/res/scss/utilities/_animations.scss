@@ -1,4 +1,4 @@
-@use "../abstracts/functions" as *;
+@use "../abstracts" as *;
 
 .u-fade-in {
   animation: fadeIn 0.6s ease-in;
@@ -15,11 +15,9 @@
   }
 }
 
-
 .u-hover-pulse:hover {
   background: token-color(primary);
-  animation: pulse1 2s infinite; 
-
+  animation: pulse1 2s infinite;
 }
 
 @keyframes pulse1 {
@@ -31,3 +29,55 @@
     box-shadow: 0 0 0 token-space(1200) rgba(255, 107, 107, 0);
   }
 }
+
+.u-loading {
+  position: absolute;
+  top: 10%;
+  left: 5%;
+
+  width: calc(40vw / cos(45deg));
+  height: 0.4rem;
+
+  overflow: hidden;
+  background: token-color(blue-900); // base track
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background: repeating-linear-gradient(
+      -45deg,
+      token-color(primary) 0 1.5rem,
+      transparent 1.5rem 3rem
+    );
+
+    transform: translateX(-50%);
+    animation: loader-slide 1.5s linear infinite;
+
+    will-change: transform;
+  }
+}
+
+@keyframes loader-slide {
+  to {
+    transform: translateX(0%);
+  }
+}
+
+// .u-planet-spin {
+//   aspect-ratio: 1;
+//   border-radius: 50%;
+//   background: radial-gradient(circle at 30% 30%, #fff, #3498db);
+//   animation: spin 5s linear infinite;
+//   // transform-style: preserve-3d; /* enables 3D effect */
+// }
+
+// @keyframes spin {
+//   from {
+//     transform: rotateY(0deg) rotateX(0deg);
+//   }
+//   to {
+//     transform: spin rotateY(360deg) rotateX(360deg);
+//   }
+// }
