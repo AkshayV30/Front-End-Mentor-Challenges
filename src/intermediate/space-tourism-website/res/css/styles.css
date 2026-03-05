@@ -1,26 +1,27 @@
 @charset "UTF-8";
-/* ==========================================================
-   DESIGN TOKENS 
-   ----------------------------------------------------------
-   Single Source of Truth (SSOT) for visual primitives.
+:root {
+  --logo-size-l: 4.8rem;
+  --logo-padding-l: 6.4rem;
+  --nav-hr-line-l: 56rem;
+  --logo-size-s: 4rem;
+  --logo-padding-s: 2.4rem;
+}
 
-   Architectural Principles:
-   - No component logic.
-   - No hard-coded px values.
-   - All sizes derived from root reference.
-   - Mobile-first and fluid-ready.
-   - Accessible and zoom-friendly.
+/* ==========================================================
+  BREAKPOINT SYSTEM
+   ----------------------------------------------------------
+   Strategy : Desktop-First
+   Units    : em (responsive to root font size)
+   Reason   : Ensures zoom accessibility and scalable layout
+
+   Design Targets
+   ----------------------------------------------------------
+   Desktop : 1440px (base layout)
+   Tablet  : 768px
+   Mobile  : 375px
 ========================================================== */
 /* ==========================================================
-   0. CORE UNIT SYSTEM
-   ----------------------------------------------------------
-   All dimensional values derive from $root-font-size.
-
-   Changing this value scales the entire system.
-   Default assumes browser base = 10px = 1.6rem .
-========================================================== */
-/* ==========================================================
-   1. COLOR TOKENS
+   COLOR TOKENS
    ----------------------------------------------------------
    Primitive color scale.
    Semantic layer should consume these.
@@ -38,21 +39,27 @@
       Base: 1rem = 10px
 ========================================================== */
 /* ==========================================================
-   4. LAYOUT TOKENS
+   DESIGN TOKENS 
+   ----------------------------------------------------------
+   Single Source of Truth (SSOT) for visual primitives.
+
+   Architectural Principles:
+   - No component logic.
+   - No hard-coded px values.
+   - All sizes derived from root reference.
+   - Mobile-first and fluid-ready.
+   - Accessible and zoom-friendly.
+========================================================== */
+/* ==========================================================
+   5. LAYOUT TOKENS
    ----------------------------------------------------------
    Container widths use rem for scalability.
    Padding uses fluid clamp for responsive breathing room.
 ========================================================== */
 /* ==========================================================
-   5. MOTION & SHAPE
+   6. MOTION & SHAPE
    ----------------------------------------------------------
    Rem-based radius ensures zoom consistency.
-========================================================== */
-/* ==========================================================
-   6. BREAKPOINTS (EM-BASED)
-   ----------------------------------------------------------
-   Em-based breakpoints respond to root font-size.
-   Mobile-first strategy.
 ========================================================== */
 /* ==========================================================
    DESIGN TOKEN FUNCTIONS
@@ -84,11 +91,6 @@
    TYPOGRAPHY ACCESSOR
 ========================================================== */
 /* ==========================================================
-   MIXIN → FLEX CENTER
-   ----------------------------------------------------------
-   Perfect center alignment utility
-========================================================== */
-/* ==========================================================
    MIXIN → RESPONSIVE (Desktop First)
    ----------------------------------------------------------
    respond-up()   → Enhancements for larger screens
@@ -118,18 +120,96 @@ example usage
   }
 }
 */
-/* ==========================================================
-   BASE → ROOT TYPOGRAPHY
-   ----------------------------------------------------------
-   Establishes a scalable rem baseline.
+/* Anything that has been anchored to should have extra scroll margin */
+:target {
+  scroll-margin-block: 5ex;
+}
 
-   62.5% sets 1rem = 10px (assuming 16px default),
-   simplifying spacing and type calculations.
-========================================================== */
+/* Set core body defaults */
+body {
+  line-height: 1.5;
+  height: 100vh;
+  /* ----------------------------------------------------------
+      Base Background Behavior
+  ---------------------------------------------------------- */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(1rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(2rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@keyframes pulse1 {
+  0% {
+    box-shadow: 0 0 0 0 white;
+  }
+  100% {
+    box-shadow: 0 0 0 9.6rem rgba(255, 107, 107, 0);
+  }
+}
+@keyframes loader-slide {
+  to {
+    transform: translateX(0%);
+  }
+}
+/* Prevent font size inflation 
+1rem= 10px , 62.5%
+*/
 html {
   font-size: 62.5%;
   font-variant: normal;
-  min-height: 100vh;
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+/* Make sure textareas without a rows attribute are not tiny */
+textarea:not([rows]) {
+  min-height: 10em;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
 }
 
 /* Box sizing rules */
@@ -139,13 +219,6 @@ html {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-}
-
-/* Prevent font size inflation */
-html {
-  -moz-text-size-adjust: none;
-  -webkit-text-size-adjust: none;
-  text-size-adjust: none;
 }
 
 /* Remove default margin in favour of better control in authored CSS */
@@ -168,12 +241,6 @@ ol[role=list] {
   list-style: none;
 }
 
-/* Set core body defaults */
-body {
-  line-height: 1.5;
-}
-
-/* Set shorter line heights on headings and interactive elements */
 h1,
 h2,
 h3,
@@ -198,60 +265,444 @@ a:not([class]) {
   color: currentColor;
 }
 
-/* Make images easier to work with */
-img,
-picture {
-  max-width: 100%;
-  display: block;
+/* ===================================
+   CONTAINERS
+=================================== */
+.l-container {
+  width: min(100% - 4rem, 150rem);
+  margin-inline: auto;
 }
 
-/* Inherit fonts for inputs and buttons */
-input,
-button,
-textarea,
-select {
-  font-family: inherit;
-  font-size: inherit;
+.l-section {
+  width: min(1200px, 90%);
+  margin-inline: auto;
+  padding-block: 2rem;
 }
 
-/* Make sure textareas without a rows attribute are not tiny */
-textarea:not([rows]) {
-  min-height: 10em;
+.l-container {
+  width: min(100% - 4rem, 150rem);
+  margin-inline: auto;
 }
 
-/* Anything that has been anchored to should have extra scroll margin */
-:target {
-  scroll-margin-block: 5ex;
+.l-section {
+  width: min(1200px, 90%);
+  margin-inline: auto;
+  padding: 2rem 0;
+  margin: 20rem;
 }
 
-.c-btn {
-  border: none;
-  cursor: pointer;
-  font: inherit;
-  font-family: "Bellefair";
-  font-size: clamp(2.4rem, 2vw, 3.2rem);
-  line-height: 1.2;
-  letter-spacing: 0;
-  text-transform: uppercase;
-}
-.c-btn:hover {
-  color: #d0d6f9;
+.l-grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 }
 
-.c-btn--circle {
-  width: 24rem;
-  aspect-ratio: 1;
-  border-radius: 50%;
-  cursor: pointer;
+.l-flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.u-grid {
+  display: grid;
+}
+
+.u-flex {
+  display: flex;
+}
+
+/* ===================================
+   GRID LAYOUTS
+=================================== */
+.l-grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+/* responsive auto grid */
+.l-grid--auto {
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+/* fixed column grids */
+.l-grid--2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.l-grid--3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.l-grid--4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+/* sidebar layout */
+.l-sidebar {
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  gap: 2rem;
+}
+
+/* split layout */
+.l-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+/* ===================================
+   FLEX LAYOUTS
+=================================== */
+.l-flex {
+  display: flex;
+  align-items: center;
+}
+
+/* navbar / header */
+.l-flex--between {
+  justify-content: space-between;
+}
+
+.l-flex--center {
+  justify-content: center;
+}
+
+.l-flex--end {
+  justify-content: flex-end;
+}
+
+/* column layout */
+.l-flex--col {
+  flex-direction: column;
+}
+
+/* wrapping layout */
+.l-flex--wrap {
+  flex-wrap: wrap;
+  gap: 1rem;
 }
 
 /* ==========================================================
-   COMPONENT → NAVIGATION
+   LAYOUT → PAGE BACKGROUNDS
    ----------------------------------------------------------
-   Desktop-first styling
-   Horizontal layout by default
-   Collapses for smaller screens
+   Purpose:
+   Controls full-page background images based on the
+   active page state class applied to <body>.
+
+   Contract with JS:
+   JS applies: body.page-{name}
+   Example: body.page-home
+
+   Responsive Strategy:
+   Desktop-first.
+   - Default = desktop image
+   - Tablet override
+   - Mobile override
+
+   This is layout-level styling.
+   Not a utility.
 ========================================================== */
+/* ----------------------------------------------------------
+   1. Page Registry
+   ----------------------------------------------------------
+   Central list of supported page states.
+   Add new pages here to auto-generate backgrounds.
+---------------------------------------------------------- */
+/* ---------------------------
+   Desktop (Default)
+---------------------------- */
+body.page-home {
+  background-image: url("../../res/assets/home/background-home-desktop.jpg");
+}
+
+body.page-destination {
+  background-image: url("../../res/assets/destination/background-destination-desktop.jpg");
+}
+
+body.page-crew {
+  background-image: url("../../res/assets/crew/background-crew-desktop.jpg");
+}
+
+body.page-technology {
+  background-image: url("../../res/assets/technology/background-technology-desktop.jpg");
+}
+
+/* ---------------------------
+   Tablet Override (≤ md)
+---------------------------- */
+@media (max-width: 48em) {
+  body.page-home {
+    background-image: url("../../res/assets/home/background-home-tablet.jpg");
+  }
+  body.page-destination {
+    background-image: url("../../res/assets/destination/background-destination-tablet.jpg");
+  }
+  body.page-crew {
+    background-image: url("../../res/assets/crew/background-crew-tablet.jpg");
+  }
+  body.page-technology {
+    background-image: url("../../res/assets/technology/background-technology-tablet.jpg");
+  }
+}
+/* ---------------------------
+   Mobile Override (≤ sm)
+---------------------------- */
+@media (max-width: 23.4375em) {
+  body.page-home {
+    background-image: url("../../res/assets/home/background-home-mobile.jpg");
+  }
+  body.page-destination {
+    background-image: url("../../res/assets/destination/background-destination-mobile.jpg");
+  }
+  body.page-crew {
+    background-image: url("../../res/assets/crew/background-crew-mobile.jpg");
+  }
+  body.page-technology {
+    background-image: url("../../res/assets/technology/background-technology-mobile.jpg");
+  }
+}
+.u-flex {
+  display: flex;
+}
+
+.u-grid {
+  display: grid;
+}
+
+.u-block {
+  display: block;
+}
+
+.u-inline {
+  display: inline;
+}
+
+.u-inline-block {
+  display: inline-block;
+}
+
+.u-hidden {
+  display: none;
+}
+
+.u-visible {
+  display: block;
+}
+
+.u-center {
+  display: grid;
+  place-items: center;
+}
+
+.u-center-x {
+  margin-inline: auto;
+}
+
+.u-center-y {
+  display: flex;
+  align-items: center;
+}
+
+.u-w-full {
+  width: 100%;
+}
+
+.u-w-fit {
+  width: fit-content;
+}
+
+.u-max-w {
+  max-width: 150rem;
+}
+
+.u-gap-xs {
+  gap: 0.25rem;
+}
+
+.u-gap-sm {
+  gap: 0.5rem;
+}
+
+.u-gap-md {
+  gap: 1rem;
+}
+
+.u-gap-lg {
+  gap: 1.5rem;
+}
+
+.u-gap-xl {
+  gap: 2rem;
+}
+
+.u-fade-in {
+  animation: fadeIn 0.5s ease forwards;
+}
+
+.u-fade-up {
+  animation: fadeUp 0.5s ease forwards;
+}
+
+.u-scale-in {
+  animation: scaleIn 0.4s ease forwards;
+}
+
+.u-hover-pulse:hover {
+  animation: pulse1 2s infinite;
+}
+
+/* direction */
+.u-flex-row {
+  flex-direction: row;
+}
+
+.u-flex-col {
+  flex-direction: column;
+}
+
+/* alignment */
+.u-items-center {
+  align-items: center;
+}
+
+.u-items-start {
+  align-items: flex-start;
+}
+
+.u-items-end {
+  align-items: flex-end;
+}
+
+/* justify */
+.u-justify-center {
+  justify-content: center;
+}
+
+.u-justify-between {
+  justify-content: space-between;
+}
+
+.u-justify-around {
+  justify-content: space-around;
+}
+
+.u-justify-end {
+  justify-content: flex-end;
+}
+
+/* wrap */
+.u-wrap {
+  flex-wrap: wrap;
+}
+
+.u-nowrap {
+  flex-wrap: nowrap;
+}
+
+/* column helpers */
+.u-cols-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.u-cols-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.u-cols-4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+/* auto grid */
+.u-grid-auto {
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.u-loading {
+  position: absolute;
+  top: 10%;
+  left: 5%;
+  width: 56.5685424949vw;
+  height: 0.4rem;
+  overflow: hidden;
+  background: #0b0d17;
+}
+.u-loading::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(-45deg, #ffffff 0 1.5rem, transparent 1.5rem 3rem);
+  transform: translateX(-50%);
+  animation: loader-slide 1.5s linear infinite;
+  will-change: transform;
+}
+
+body[class^=page-] {
+  animation: fadeIn 0.6s ease-in;
+}
+
+.c-header {
+  margin: 4rem 0;
+  position: relative;
+}
+.c-header::after {
+  content: "";
+  position: absolute;
+  right: 36%;
+  bottom: 50%;
+  width: var(--nav-hr-line-l);
+  min-width: fit-content;
+  height: 0.4rem;
+  background: #ffffff;
+  background: rgba(255, 255, 255, 0.05);
+  transform: translateZ(0);
+  will-change: backdrop-filter;
+  backdrop-filter: blur(10px) saturate(1);
+  -webkit-backdrop-filter: blur(10px) saturate(1);
+  border-radius: inherit;
+}
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .c-header::after {
+    background: rgba(255, 255, 255, 0.6);
+  }
+}
+.c-header .c-logo {
+  aspect-ratio: 1;
+  width: var(--logo-size-l);
+  min-width: fit-content;
+  padding: var(--logo-padding-l);
+}
+.c-header .c-nav {
+  background: rgba(255, 255, 255, 0.05);
+  transform: translateZ(0);
+  will-change: backdrop-filter;
+  backdrop-filter: blur(10px) saturate(1);
+  -webkit-backdrop-filter: blur(10px) saturate(1);
+  border-radius: inherit;
+}
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .c-header .c-nav {
+    background: rgba(255, 255, 255, 0.6);
+  }
+}
+.c-header .c-nav {
+  padding: 4.8rem 6.4rem;
+}
+
+@media (max-width: 30em) {
+  .c-logo {
+    width: var(--logo-size-s);
+    padding: var(--logo-padding-s);
+  }
+}
+.c-attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.c-attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
 .c-nav__list {
   display: flex;
   gap: 4rem;
@@ -307,157 +758,13 @@ textarea:not([rows]) {
   transform: scaleX(1);
 }
 
-.c-header {
-  margin-top: 8rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  position: relative;
-}
-.c-header .c-logo {
+.c-btn {
+  cursor: pointer;
   aspect-ratio: 1;
-  width: 4rem;
-  margin-left: 2.4rem;
-}
-.c-header .c-nav {
-  background: rgba(255, 255, 255, 0.05);
-  transform: translateZ(0);
-  will-change: backdrop-filter;
-  backdrop-filter: blur(10px) saturate(1);
-  -webkit-backdrop-filter: blur(10px) saturate(1);
-  border-radius: inherit;
-}
-@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
-  .c-header .c-nav {
-    background: rgba(255, 255, 255, 0.6);
-  }
-}
-.c-header .c-nav {
-  padding: 2.4rem;
-  width: 40%;
-  position: absolute;
-  right: 0%;
-}
-.c-header::after {
-  content: "";
-  position: absolute;
-  right: 36%;
-  bottom: 50%;
-  width: 55%;
-  height: 0.4rem;
-  background: #ffffff;
-  background: rgba(255, 255, 255, 0.05);
-  transform: translateZ(0);
-  will-change: backdrop-filter;
-  backdrop-filter: blur(10px) saturate(1);
-  -webkit-backdrop-filter: blur(10px) saturate(1);
-  border-radius: inherit;
-}
-@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
-  .c-header::after {
-    background: rgba(255, 255, 255, 0.6);
-  }
-}
-
-.l-container {
-  width: min(100% - 4rem, 150rem);
-  margin-inline: auto;
-}
-
-/* ==========================================================
-   LAYOUT → PAGE BACKGROUNDS
-   ----------------------------------------------------------
-   Purpose:
-   Controls full-page background images based on the
-   active page state class applied to <body>.
-
-   Contract with JS:
-   JS applies: body.page-{name}
-   Example: body.page-home
-
-   Responsive Strategy:
-   Desktop-first.
-   - Default = desktop image
-   - Tablet override
-   - Mobile override
-
-   This is layout-level styling.
-   Not a utility.
-========================================================== */
-/* ----------------------------------------------------------
-   1. Page Registry
-   ----------------------------------------------------------
-   Central list of supported page states.
-   Add new pages here to auto-generate backgrounds.
----------------------------------------------------------- */
-/* ----------------------------------------------------------
-   2. Base Background Behavior
----------------------------------------------------------- */
-body {
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-/* ---------------------------
-   Desktop (Default)
----------------------------- */
-body.page-home {
-  background-image: url("../../res/assets/home/background-home-desktop.jpg");
-}
-
-body.page-destination {
-  background-image: url("../../res/assets/destination/background-destination-desktop.jpg");
-}
-
-body.page-crew {
-  background-image: url("../../res/assets/crew/background-crew-desktop.jpg");
-}
-
-body.page-technology {
-  background-image: url("../../res/assets/technology/background-technology-desktop.jpg");
-}
-
-/* ---------------------------
-   Tablet Override (≤ md)
----------------------------- */
-@media (max-width: 48em) {
-  body.page-home {
-    background-image: url("../../res/assets/home/background-home-tablet.jpg");
-  }
-  body.page-destination {
-    background-image: url("../../res/assets/destination/background-destination-tablet.jpg");
-  }
-  body.page-crew {
-    background-image: url("../../res/assets/crew/background-crew-tablet.jpg");
-  }
-  body.page-technology {
-    background-image: url("../../res/assets/technology/background-technology-tablet.jpg");
-  }
-}
-/* ---------------------------
-   Mobile Override (≤ sm)
----------------------------- */
-@media (max-width: 30em) {
-  body.page-home {
-    background-image: url("../../res/assets/home/background-home-mobile.jpg");
-  }
-  body.page-destination {
-    background-image: url("../../res/assets/destination/background-destination-mobile.jpg");
-  }
-  body.page-crew {
-    background-image: url("../../res/assets/crew/background-crew-mobile.jpg");
-  }
-  body.page-technology {
-    background-image: url("../../res/assets/technology/background-technology-mobile.jpg");
-  }
-}
-body[class^=page-] {
-  animation: fadeIn 0.6s ease-in;
+  border-radius: 50%;
 }
 
 .c-home {
-  min-height: 80vh;
   display: flex;
   align-items: center;
   color: #ffffff;
@@ -498,117 +805,30 @@ body[class^=page-] {
   color: #d0d6f9;
   text-align: justify;
 }
-.c-home__action {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
 
-.c-crew {
-  color: #ffffff;
-  margin-top: 6.4rem;
-}
-.c-crew__title {
-  text-transform: uppercase;
-  font-weight: 400;
-  font-family: "Barlow Condensed";
-  font-size: clamp(1.8rem, 1.5vw, 2.8rem);
-  line-height: 1.2;
-  letter-spacing: 0.25em;
-}
-.c-crew__index {
-  color: #666666;
-  font-weight: 600;
-}
-.c-crew__layout {
-  display: flex;
-  justify-content: space-between;
-}
-.c-crew {
-  /* TEXT COLUMN */
-}
-.c-crew__text-col {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: flex-start;
-  height: 60rem;
-}
-.c-crew__text {
-  display: flex;
-  flex-direction: column;
-  gap: 2.4rem;
-  min-height: 22rem;
-  transition: opacity 0.35s ease, transform 0.35s ease;
-  will-change: opacity, transform;
-}
-.c-crew__role {
+.c-btn--explore {
+  width: 27.2rem;
+  border: none;
   font-family: "Bellefair";
   font-size: clamp(2.4rem, 2vw, 3.2rem);
   line-height: 1.2;
   letter-spacing: 0;
   text-transform: uppercase;
-  color: #b3b3b3;
-  font-weight: 300;
 }
-.c-crew__name {
-  font-family: "Bellefair";
-  font-size: clamp(3.2rem, 3vw, 5.6rem);
-  line-height: 1.15;
-  letter-spacing: 0;
-  text-transform: uppercase;
-  font-weight: 400;
-  width: max-content;
-}
-.c-crew__bio {
-  font-family: "Barlow";
-  font-size: 1.8rem;
-  line-height: 1.8;
-  letter-spacing: 0;
-  font-weight: 300;
+.c-btn--explore:hover {
   color: #d0d6f9;
-  max-width: 64rem;
-}
-.c-crew {
-  /* IMAGE */
-}
-.c-crew__image-frame {
-  width: 40rem;
-  aspect-ratio: 1.2;
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-}
-.c-crew__image-frame .c-crew__image {
-  object-fit: contain;
-  transition: opacity 0.4s ease, transform 0.4s ease;
-  will-change: opacity, transform;
-}
-.c-crew {
-  /* NAV DOTS */
-}
-.c-crew__nav {
-  display: flex;
-  gap: 1.5rem;
-}
-.c-crew__dot {
-  width: 1rem;
-  aspect-ratio: 1;
-  border-radius: 50%;
-  border: none;
-  background: #ffffff;
-  opacity: 0.3;
-  cursor: pointer;
-  transition: transform 0.25s ease, opacity 0.25s ease;
-}
-.c-crew__dot:hover {
-  transform: scale(1.2);
-  opacity: 0.6;
-}
-.c-crew__dot.is-active {
-  transform: scale(1.3);
 }
 
+@media (max-width: 30em) {
+  .c-btn--explore {
+    width: 14.4rem;
+  }
+}
+@media (max-width: 23.4375em) {
+  .c-btn--explore {
+    width: 14.4rem;
+  }
+}
 .c-destination {
   padding: 3.2rem;
   color: #ffffff;
@@ -748,6 +968,111 @@ body[class^=page-] {
   transform: scale(0.95);
 }
 
+.c-crew {
+  color: #ffffff;
+  margin-top: 6.4rem;
+}
+.c-crew__title {
+  text-transform: uppercase;
+  font-weight: 400;
+  font-family: "Barlow Condensed";
+  font-size: clamp(1.8rem, 1.5vw, 2.8rem);
+  line-height: 1.2;
+  letter-spacing: 0.25em;
+}
+.c-crew__index {
+  color: #666666;
+  font-weight: 600;
+}
+.c-crew__layout {
+  display: flex;
+  justify-content: space-between;
+}
+.c-crew {
+  /* TEXT COLUMN */
+}
+.c-crew__text-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-start;
+  height: 60rem;
+}
+.c-crew__text {
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+  min-height: 22rem;
+  transition: opacity 0.35s ease, transform 0.35s ease;
+  will-change: opacity, transform;
+}
+.c-crew__role {
+  font-family: "Bellefair";
+  font-size: clamp(2.4rem, 2vw, 3.2rem);
+  line-height: 1.2;
+  letter-spacing: 0;
+  text-transform: uppercase;
+  color: #b3b3b3;
+  font-weight: 300;
+}
+.c-crew__name {
+  font-family: "Bellefair";
+  font-size: clamp(3.2rem, 3vw, 5.6rem);
+  line-height: 1.15;
+  letter-spacing: 0;
+  text-transform: uppercase;
+  font-weight: 400;
+  width: max-content;
+}
+.c-crew__bio {
+  font-family: "Barlow";
+  font-size: 1.8rem;
+  line-height: 1.8;
+  letter-spacing: 0;
+  font-weight: 300;
+  color: #d0d6f9;
+  max-width: 64rem;
+}
+.c-crew {
+  /* IMAGE */
+}
+.c-crew__image-frame {
+  width: 40rem;
+  aspect-ratio: 1.2;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+.c-crew__image-frame .c-crew__image {
+  object-fit: contain;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  will-change: opacity, transform;
+}
+.c-crew {
+  /* NAV DOTS */
+}
+.c-crew__nav {
+  display: flex;
+  gap: 1.5rem;
+}
+.c-crew__dot {
+  width: 1rem;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: none;
+  background: #ffffff;
+  opacity: 0.3;
+  cursor: pointer;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+.c-crew__dot:hover {
+  transform: scale(1.2);
+  opacity: 0.6;
+}
+.c-crew__dot.is-active {
+  transform: scale(1.3);
+}
+
 .c-technology {
   color: #ffffff;
   margin-top: 6.4rem;
@@ -781,7 +1106,7 @@ body[class^=page-] {
   font-size: clamp(2.4rem, 2vw, 3.2rem);
   line-height: 1.2;
   letter-spacing: 0;
-  width: 5rem;
+  width: 8rem;
   aspect-ratio: 1;
   border-radius: 50%;
   border: 1px solid #ffffff;
@@ -858,6 +1183,9 @@ body[class^=page-] {
     grid-column: span 2;
     justify-content: center;
   }
+  .c-technology__btn {
+    width: 5.6rem;
+  }
 }
 /* Mobile */
 @media (max-width: 48em) {
@@ -872,56 +1200,8 @@ body[class^=page-] {
   .c-technology__image-frame {
     order: -1;
   }
-}
-.u-fade-in {
-  animation: fadeIn 0.6s ease-in;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(1rem);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-.u-hover-pulse:hover {
-  background: #ffffff;
-  animation: pulse1 2s infinite;
-}
-
-@keyframes pulse1 {
-  0% {
-    box-shadow: 0 0 0 0 white;
-  }
-  100% {
-    box-shadow: 0 0 0 9.6rem rgba(255, 107, 107, 0);
-  }
-}
-.u-loading {
-  position: absolute;
-  top: 10%;
-  left: 5%;
-  width: 56.5685424949vw;
-  height: 0.4rem;
-  overflow: hidden;
-  background: #0b0d17;
-}
-.u-loading::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: repeating-linear-gradient(-45deg, #ffffff 0 1.5rem, transparent 1.5rem 3rem);
-  transform: translateX(-50%);
-  animation: loader-slide 1.5s linear infinite;
-  will-change: transform;
-}
-
-@keyframes loader-slide {
-  to {
-    transform: translateX(0%);
+  .c-technology__btn {
+    width: 4rem;
   }
 }
 .is-active {

@@ -1,12 +1,4 @@
 @use "../abstracts" as *;
-/* ==========================================================
-   COMPONENT → NAVIGATION
-   ----------------------------------------------------------
-   Desktop-first styling
-   Horizontal layout by default
-   Collapses for smaller screens
-========================================================== */
-@use "../abstracts" as *;
 
 .c-nav__list {
   display: flex;

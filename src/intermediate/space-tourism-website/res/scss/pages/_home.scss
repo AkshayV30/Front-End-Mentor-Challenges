@@ -1,10 +1,8 @@
 @use "../abstracts" as *;
 
 .c-home {
-  min-height: 80vh;
   display: flex;
   align-items: center;
-
   color: token-color(primary);
 
   &__wrapper {
@@ -40,10 +38,42 @@
     color: token-color(blue-300);
     text-align: justify;
   }
+}
 
-  &__action {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.c-btn--explore {
+  width: 27.2rem;
+  border: none;
+
+  @include apply-text(preset-4);
+  text-transform: uppercase;
+
+  &:hover {
+    color: token-color(blue-300);
+  }
+}
+
+// large-desktop
+@include respond-down(xxl) {
+}
+// standard-desktop
+@include respond-down(xl) {
+}
+// small-desktop
+@include respond-down(lg) {
+}
+// tablet
+@include respond-down(md) {
+}
+
+//large-mobile
+@include respond-down(sm) {
+  .c-btn--explore {
+    width: 14.4rem;
+  }
+}
+//mobile
+@include respond-down(xs) {
+  .c-btn--explore {
+    width: 14.4rem;
   }
 }

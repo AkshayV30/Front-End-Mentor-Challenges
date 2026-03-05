@@ -1,0 +1,29 @@
+/* ==========================================================
+  BREAKPOINT SYSTEM
+   ----------------------------------------------------------
+   Strategy : Desktop-First
+   Units    : em (responsive to root font size)
+   Reason   : Ensures zoom accessibility and scalable layout
+
+   Design Targets
+   ----------------------------------------------------------
+   Desktop : 1440px (base layout)
+   Tablet  : 768px
+   Mobile  : 375px
+========================================================== */
+
+$breakpoints: (
+  ultra: 120em,
+  // 1920px → Ultra-wide monitors
+  xxl: 90em,
+  // 1440px → Large desktop
+  xl: 80em,
+  // 1280px → Standard laptop
+  lg: 64em,
+  // 1024px → Small laptop
+  md: 48em,
+  // 768px → Tablet
+  sm: 30em,
+  // 480px → Large mobile
+  xs: 23.4375em, // 375px → Small mobile
+);

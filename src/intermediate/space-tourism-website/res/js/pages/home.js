@@ -1,18 +1,12 @@
-import { navigate } from "../router.js";
+import { navigate } from "../router/router.js";
 
 export function renderHome(app) {
   app.innerHTML = `
-    <section class="l-section c-home u-fade-in">
-      <div class="l-container c-home__wrapper">
-
+      <div class="c-home">
         <div class="c-home__content">
-          <h2 class="c-home__subtitle">
-            So, you want to travel to
-          </h2>
+          <h2 class="c-home__subtitle"> So, you want to travel to   </h2>
 
-          <h1 class="c-home__title">
-            space
-          </h1>
+          <h1 class="c-home__title"> space  </h1>
 
           <p class="c-home__description">
             Let’s face it: if you want to go to space, you might as well go to outer space
@@ -21,15 +15,14 @@ export function renderHome(app) {
           </p>
         </div>
 
-        <div class="c-home__action">
-          <button class="c-btn c-btn--circle u-hover-pulse js-explore-btn">
+     
+       <button class="c-btn c-btn--explore u-hover-pulse js-explore-btn">
             Explore
-          </button>
-        </div>
+       </button>
+   
 
       </div>
-    </section>
-  `;
+    `;
 
   app
     .querySelector(".js-explore-btn")

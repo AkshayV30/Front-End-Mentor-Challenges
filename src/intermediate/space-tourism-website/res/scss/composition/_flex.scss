@@ -1,0 +1,35 @@
+/* ===================================
+   FLEX LAYOUTS
+=================================== */
+
+.l-flex {
+  display: flex;
+  align-items: center;
+}
+
+/* navbar / header */
+
+.l-flex--between {
+  justify-content: space-between;
+}
+
+.l-flex--center {
+  justify-content: center;
+}
+
+.l-flex--end {
+  justify-content: flex-end;
+}
+
+/* column layout */
+
+.l-flex--col {
+  flex-direction: column;
+}
+
+/* wrapping layout */
+
+.l-flex--wrap {
+  flex-wrap: wrap;
+  gap: 1rem;
+}

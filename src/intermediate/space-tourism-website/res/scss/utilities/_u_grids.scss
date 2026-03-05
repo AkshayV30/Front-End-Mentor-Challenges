@@ -1,0 +1,19 @@
+/* column helpers */
+
+.u-cols-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.u-cols-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.u-cols-4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+/* auto grid */
+
+.u-grid-auto {
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}

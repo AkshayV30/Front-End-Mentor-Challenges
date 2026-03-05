@@ -31,7 +31,7 @@
   .c-technology__btn {
     @include apply-text(preset-4);
 
-    width: 5rem;
+    width: 8rem;
     aspect-ratio: 1;
     border-radius: 50%;
 
@@ -109,6 +109,10 @@
     grid-column: span 2;
     justify-content: center;
   }
+
+  .c-technology__btn {
+    width: 5.6rem;
+  }
 }
 
 /* Mobile */
@@ -126,5 +130,9 @@
 
   .c-technology__image-frame {
     order: -1;
+  }
+
+  .c-technology__btn {
+    width: 4rem;
   }
 }

@@ -1,17 +1,7 @@
 @use "sass:map";
-@use "tokens" as *;
-@use "functions" as *;
-
-/* ==========================================================
-   MIXIN → FLEX CENTER
-   ----------------------------------------------------------
-   Perfect center alignment utility
-========================================================== */
-@mixin flex-center {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+@use "./tokens" as *;
+@use "./functions" as *;
+@use "./breakpoints" as *;
 
 /* ==========================================================
    MIXIN → RESPONSIVE (Desktop First)
@@ -65,7 +55,6 @@ example usage
   }
 }
 */
-
 
 @mixin apply-text($preset) {
   font-family: token-text($preset, family);

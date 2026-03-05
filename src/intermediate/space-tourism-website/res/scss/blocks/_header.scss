@@ -1,0 +1,49 @@
+@use "../abstracts" as *;
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//                       <header>
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.c-header {
+  margin: token-space(500) 0;
+
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    right: 36%;
+    bottom: 50%;
+
+    width: var(--nav-hr-line-l);
+    min-width: fit-content;
+
+    height: 0.4rem;
+    background: token-color(primary);
+
+    @include glass();
+  }
+
+  .c-logo {
+    aspect-ratio: 1;
+
+    width: var(--logo-size-l);
+    min-width: fit-content;
+
+    padding: var(--logo-padding-l);
+  }
+
+  .c-nav {
+    @include glass();
+    padding: token-space(600) token-space(800);
+  }
+}
+
+// ::::::::::::::::::::::::::::::::::::::::::::::::::
+//                   small-mobile-view
+// ::::::::::::::::::::::::::::::::::::::::::::::::::
+@include respond-down(sm) {
+  .c-logo {
+    width: var(--logo-size-s);
+    padding: var(--logo-padding-s);
+  }
+}

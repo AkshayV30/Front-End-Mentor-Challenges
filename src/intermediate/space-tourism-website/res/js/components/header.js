@@ -1,4 +1,4 @@
-import { navigate } from "../router.js";
+import { navigate } from "../router/router.js";
 
 const NAV_ITEMS = [
   { page: "home", label: "Home" },
@@ -6,11 +6,12 @@ const NAV_ITEMS = [
   { page: "crew", label: "Crew" },
   { page: "technology", label: "Technology" },
 ];
+
 export function renderHeader() {
   const header = document.querySelector(".c-header");
 
   header.innerHTML = `
-    <img src="./res/assets/shared/logo.svg" class="c-logo" />
+    <img class="c-logo" src="./res/assets/shared/logo.svg"  />
 
     <nav class="c-nav">
       <ol class="c-nav__list">

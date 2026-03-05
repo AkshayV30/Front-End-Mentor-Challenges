@@ -29,16 +29,6 @@
 
 $pages: home, destination, crew, technology;
 
-/* ----------------------------------------------------------
-   2. Base Background Behavior
----------------------------------------------------------- */
-
-body {
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
 /* ---------------------------
    Desktop (Default)
 ---------------------------- */
@@ -62,16 +52,12 @@ body {
 /* ---------------------------
    Mobile Override (≤ sm)
 ---------------------------- */
-@include respond-down(sm) {
+@include respond-down(xs) {
   @each $page in $pages {
     body.page-#{$page} {
       background-image: url("../../res/assets/#{$page}/background-#{$page}-mobile.jpg");
     }
   }
-}
-
-body[class^="page-"] {
-  animation: fadeIn 0.6s ease-in;
 }
 
 // ==========================================================

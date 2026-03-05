@@ -1,0 +1,43 @@
+/* ===================================
+   GRID LAYOUTS
+=================================== */
+
+.l-grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+/* responsive auto grid */
+.l-grid--auto {
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+/* fixed column grids */
+
+.l-grid--2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.l-grid--3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.l-grid--4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+/* sidebar layout */
+
+.l-sidebar {
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  gap: 2rem;
+}
+
+/* split layout */
+
+.l-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}

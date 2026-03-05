@@ -1,15 +1,5 @@
 @use "sass:map";
-@use "sass:meta";
 @use "./tokens" as *;
-
-// All colors are SCSS values now
-$glass-defaults: (
-  surface-color: map.get($colors, "glass"),
-  opacity: 0.05,
-  blur: 10px,
-  saturation: 1,
-  enable-gpu: true,
-);
 
 @mixin glass($config: ()) {
   $settings: map.merge($glass-defaults, $config);

@@ -14,8 +14,10 @@
 @use "sass:map";
 @use "sass:meta";
 @use "sass:math";
-@use "tokens" as *;
 
+@use "./spacing" as *;
+@use "./typography" as *;
+@use "./colors" as *;
 /* ==========================================================
    CORE UNIT HELPERS
 ========================================================== */
@@ -57,7 +59,6 @@
     @error "Color `#{$name}` does not exist in \$colors.";
   }
 }
-
 
 /* ==========================================================
    TYPOGRAPHY ACCESSOR

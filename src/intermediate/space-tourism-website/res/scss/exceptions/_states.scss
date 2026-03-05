@@ -4,10 +4,6 @@
   opacity: 1;
 }
 
-// .is-hidden {
-//   display: none !important;
-// }
-
 .is-hidden {
   opacity: 0;
   transform: translateY(token-space(50));

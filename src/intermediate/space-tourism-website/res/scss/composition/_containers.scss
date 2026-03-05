@@ -1,0 +1,16 @@
+@use "../abstracts" as *;
+
+/* ===================================
+   CONTAINERS
+=================================== */
+
+.l-container {
+  width: min(100% - 4rem, $container-width);
+  margin-inline: auto;
+}
+
+.l-section {
+  width: min(1200px, 90%);
+  margin-inline: auto;
+  padding-block: 2rem;
+}
