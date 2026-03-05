@@ -1,14 +1,28 @@
-/* direction */
+/* ==========================================================
+   UTILITIES → FLEX DIRECTION
+   ----------------------------------------------------------
+   Controls the direction of flex items.
 
-.u-flex-row {
+   Usage:
+   <div class="l-flex u-row">
+   <div class="l-flex u-col">
+========================================================== */
+
+.u-row {
   flex-direction: row;
 }
 
-.u-flex-col {
+.u-col {
   flex-direction: column;
 }
+/* ==========================================================
+   UTILITIES → ALIGN ITEMS
+   ----------------------------------------------------------
+   Controls vertical alignment inside flex containers.
 
-/* alignment */
+   Usage:
+   <div class="l-flex u-items-center">
+========================================================== */
 
 .u-items-center {
   align-items: center;
@@ -22,7 +36,17 @@
   align-items: flex-end;
 }
 
-/* justify */
+.u-items-stretch {
+  align-items: stretch;
+}
+/* ==========================================================
+   UTILITIES → JUSTIFY CONTENT
+   ----------------------------------------------------------
+   Controls horizontal distribution of flex items.
+
+   Usage:
+   <div class="l-flex u-justify-between">
+========================================================== */
 
 .u-justify-center {
   justify-content: center;
@@ -39,8 +63,11 @@
 .u-justify-end {
   justify-content: flex-end;
 }
-
-/* wrap */
+/* ==========================================================
+   UTILITIES → FLEX WRAPPING
+   ----------------------------------------------------------
+   Controls whether items wrap inside flex containers.
+========================================================== */
 
 .u-wrap {
   flex-wrap: wrap;
@@ -48,4 +75,19 @@
 
 .u-nowrap {
   flex-wrap: nowrap;
+}
+/* ==========================================================
+   UTILITIES → FLEX GROW
+   ----------------------------------------------------------
+   Controls how flex items expand.
+
+   Very useful for layouts such as sticky footer.
+========================================================== */
+
+.u-grow {
+  flex: 1;
+}
+
+.u-grow-0 {
+  flex: 0;
 }

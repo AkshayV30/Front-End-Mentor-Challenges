@@ -291,26 +291,6 @@ a:not([class]) {
   margin: 20rem;
 }
 
-.l-grid {
-  display: grid;
-  gap: 1.5rem;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-}
-
-.l-flex {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.u-grid {
-  display: grid;
-}
-
-.u-flex {
-  display: flex;
-}
-
 /* ===================================
    GRID LAYOUTS
 =================================== */
@@ -351,36 +331,32 @@ a:not([class]) {
   gap: 2rem;
 }
 
-/* ===================================
-   FLEX LAYOUTS
-=================================== */
+/* ==========================================================
+   COMPOSITION → FLEX
+   ----------------------------------------------------------
+   Layout primitives for flexbox containers.
+
+   RULE:
+   Composition classes should ONLY define structure.
+   No alignment, spacing, or behavior.
+
+   Alignment and spacing belong in Utilities.
+========================================================== */
+/* Base flex container */
 .l-flex {
   display: flex;
-  align-items: center;
 }
 
-/* navbar / header */
-.l-flex--between {
-  justify-content: space-between;
-}
-
-.l-flex--center {
-  justify-content: center;
-}
-
-.l-flex--end {
-  justify-content: flex-end;
-}
-
-/* column layout */
-.l-flex--col {
+/* Column layout */
+.l-flex-col {
+  display: flex;
   flex-direction: column;
 }
 
-/* wrapping layout */
-.l-flex--wrap {
+/* Wrapping layout container */
+.l-flex-wrap {
+  display: flex;
   flex-wrap: wrap;
-  gap: 1rem;
 }
 
 /* ==========================================================
@@ -552,16 +528,31 @@ body.page-technology {
   animation: pulse1 2s infinite;
 }
 
-/* direction */
-.u-flex-row {
+/* ==========================================================
+   UTILITIES → FLEX DIRECTION
+   ----------------------------------------------------------
+   Controls the direction of flex items.
+
+   Usage:
+   <div class="l-flex u-row">
+   <div class="l-flex u-col">
+========================================================== */
+.u-row {
   flex-direction: row;
 }
 
-.u-flex-col {
+.u-col {
   flex-direction: column;
 }
 
-/* alignment */
+/* ==========================================================
+   UTILITIES → ALIGN ITEMS
+   ----------------------------------------------------------
+   Controls vertical alignment inside flex containers.
+
+   Usage:
+   <div class="l-flex u-items-center">
+========================================================== */
 .u-items-center {
   align-items: center;
 }
@@ -574,7 +565,18 @@ body.page-technology {
   align-items: flex-end;
 }
 
-/* justify */
+.u-items-stretch {
+  align-items: stretch;
+}
+
+/* ==========================================================
+   UTILITIES → JUSTIFY CONTENT
+   ----------------------------------------------------------
+   Controls horizontal distribution of flex items.
+
+   Usage:
+   <div class="l-flex u-justify-between">
+========================================================== */
 .u-justify-center {
   justify-content: center;
 }
@@ -591,13 +593,32 @@ body.page-technology {
   justify-content: flex-end;
 }
 
-/* wrap */
+/* ==========================================================
+   UTILITIES → FLEX WRAPPING
+   ----------------------------------------------------------
+   Controls whether items wrap inside flex containers.
+========================================================== */
 .u-wrap {
   flex-wrap: wrap;
 }
 
 .u-nowrap {
   flex-wrap: nowrap;
+}
+
+/* ==========================================================
+   UTILITIES → FLEX GROW
+   ----------------------------------------------------------
+   Controls how flex items expand.
+
+   Very useful for layouts such as sticky footer.
+========================================================== */
+.u-grow {
+  flex: 1;
+}
+
+.u-grow-0 {
+  flex: 0;
 }
 
 /* column helpers */
@@ -642,7 +663,6 @@ body[class^=page-] {
 }
 
 .c-header {
-  margin: 4rem 0;
   position: relative;
 }
 .c-header::after {
@@ -651,7 +671,6 @@ body[class^=page-] {
   right: 36%;
   bottom: 50%;
   width: var(--nav-hr-line-l);
-  min-width: fit-content;
   height: 0.4rem;
   background: #ffffff;
   background: rgba(255, 255, 255, 0.05);

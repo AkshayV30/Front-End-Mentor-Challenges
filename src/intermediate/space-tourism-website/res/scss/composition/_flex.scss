@@ -1,35 +1,31 @@
-/* ===================================
-   FLEX LAYOUTS
-=================================== */
+/* ==========================================================
+   COMPOSITION → FLEX
+   ----------------------------------------------------------
+   Layout primitives for flexbox containers.
+
+   RULE:
+   Composition classes should ONLY define structure.
+   No alignment, spacing, or behavior.
+
+   Alignment and spacing belong in Utilities.
+========================================================== */
+
+/* Base flex container */
 
 .l-flex {
   display: flex;
-  align-items: center;
 }
 
-/* navbar / header */
+/* Column layout */
 
-.l-flex--between {
-  justify-content: space-between;
-}
-
-.l-flex--center {
-  justify-content: center;
-}
-
-.l-flex--end {
-  justify-content: flex-end;
-}
-
-/* column layout */
-
-.l-flex--col {
+.l-flex-col {
+  display: flex;
   flex-direction: column;
 }
 
-/* wrapping layout */
+/* Wrapping layout container */
 
-.l-flex--wrap {
+.l-flex-wrap {
+  display: flex;
   flex-wrap: wrap;
-  gap: 1rem;
 }
