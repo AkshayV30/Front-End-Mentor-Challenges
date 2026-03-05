@@ -6,6 +6,7 @@
    Horizontal layout by default
    Collapses for smaller screens
 ========================================================== */
+@use "../abstracts" as *;
 
 .c-nav__list {
   display: flex;
@@ -17,6 +18,7 @@
   list-style: none;
   align-items: center;
   justify-content: flex-end;
+  margin-right: token-space(600);
 }
 
 /* Stack nav vertically on tablets and below */
@@ -41,9 +43,9 @@
     font-weight: 600;
     margin-left: 0.4rem;
   }
+
   &.is-active > .c-nav__nav-heading {
-    color: token-color(blue-300);
-    opacity: 0.7;
+    color: token-color(grey-500);
   }
 
   /* Animated underline */

@@ -1,134 +1,136 @@
 @use "../abstracts" as *;
 
 .c-destination {
+  padding: token-space(400);
   color: token-color(primary);
-
-  padding: 4rem;
-
-  .c-destination__title {
-    @include apply-text(preset-5);
-
-    font-weight: 400;
-    text-transform: uppercase;
-
-    .c-destination__index {
-      color: token-color(blue-300);
-      opacity: 0.5;
-
-      font-weight: 600;
-    }
-  }
 }
+
+/* ---------- TITLE ---------- */
+
+.c-destination__title {
+  display: flex;
+  gap: token-space(200);
+  text-transform: uppercase;
+  font-weight: 400;
+  @include apply-text(preset-5);
+}
+
+.c-destination__index {
+  color: token-color(grey-500);
+  font-weight: 600;
+}
+
+/* ---------- LAYOUT ---------- */
 
 .c-destination__layout {
-  margin-top: token-space(800);
+  margin-top: token-space(600);
   display: flex;
-  gap: 4rem;
-  flex-wrap: wrap; // makes responsive easier
-
-  .c-destination__media {
-    flex: 1 1 30rem;
-    min-height: 35rem; // prevents jump
-
-    .c-destination__image {
-      max-width: 100%;
-
-      transition:
-        opacity 0.4s ease,
-        transform 0.4s ease;
-      will-change: opacity, transform;
-    }
-  }
+  flex-wrap: wrap;
+  gap: clamp(3rem, 6vw, 8rem);
+  align-items: center;
 }
+
+/* ---------- MEDIA ---------- */
+
+.c-destination__media {
+  flex: 1 1 30rem;
+  min-height: 32rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.c-destination__image {
+  max-width: 100%;
+  transition:
+    opacity 0.4s ease,
+    transform 0.4s ease;
+  will-change: opacity, transform;
+}
+
+/* ---------- BODY ---------- */
 
 .c-destination__body {
-  min-height: 40rem;
   flex: 1 1 30rem;
-
-  // Tabs container
-  .c-destination__tabs {
-    display: flex;
-    gap: token-space(200);
-    align-items: center;
-
-    @include apply-text(preset-8);
-
-    .c-tab {
-      color: token-color(blue-300);
-      cursor: pointer;
-      font-weight: 600;
-      text-transform: uppercase;
-      transition: all 0.3s;
-
-      padding-bottom: 0.5rem;
-      margin-bottom: 2rem;
-      border-bottom: 2px solid transparent;
-
-      &:hover {
-        border-color: token-color(primary);
-        color: token-color(primary);
-      }
-
-      &.is-active {
-        border-color: token-color(primary);
-        color: token-color(primary);
-      }
-    }
-  }
-
-  .c-destination__name {
-    @include apply-text(preset-2);
-
-    font-weight: 300;
-    text-transform: uppercase;
-  }
-
-  .c-destination__description {
-    @include apply-text(preset-9);
-
-    color: token-color(blue-300);
-    margin-bottom: 4rem;
-
-    transition: opacity 0.3s ease;
-  }
+  min-height: 36rem;
 }
+
+/* ---------- TABS ---------- */
+
+.c-destination__tabs {
+  display: flex;
+  gap: token-space(200);
+  margin-bottom: token-space(400);
+  @include apply-text(preset-8);
+}
+
+.c-tab {
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: token-color(grey-300);
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid transparent;
+  transition:
+    color 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.c-tab:hover,
+.c-tab.is-active {
+  color: token-color(primary);
+  border-color: token-color(primary);
+}
+
+/* ---------- CONTENT ---------- */
+
+.c-destination__name {
+  @include apply-text(preset-2);
+  font-weight: 300;
+  text-transform: uppercase;
+}
+
+.c-destination__description {
+  @include apply-text(preset-9);
+  color: token-color(blue-300);
+  margin: token-space(300) 0 token-space(500);
+  line-height: 1.7;
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
+  will-change: opacity, transform;
+}
+
+/* ---------- META ---------- */
 
 .c-destination__meta {
   display: flex;
-  gap: token-space(300) * 10;
-  align-items: center;
-
+  gap: clamp(2rem, 5vw, 6rem);
+  padding-top: token-space(300);
   border-top: 1px solid token-color(blue-300);
-
-  .c-destination__stat {
-    margin-top: 2rem;
-    display: flex;
-    flex-direction: column;
-    text-transform: uppercase;
-
-    .c-destination__label {
-      @include apply-text(preset-7);
-      font-weight: 300;
-      color: token-color(blue-300);
-    }
-
-    .c-destination__value {
-      @include apply-text(preset-6);
-      margin-top: 1rem;
-    }
-  }
 }
 
-// Optional: small screens
-@include respond-down(md) {
-  // .c-destination__layout {
-  //   flex-direction: column;
-  //   align-items: center;
-  //   gap: 3rem;
-  // }
+.c-destination__stat {
+  display: flex;
+  flex-direction: column;
+  text-transform: uppercase;
+}
 
-  // .c-destination__tabs {
-  //   flex-wrap: wrap;
-  //   gap: 1rem;
-  // }
+.c-destination__label {
+  @include apply-text(preset-7);
+  font-weight: 300;
+  color: token-color(blue-300);
+}
+
+.c-destination__value {
+  @include apply-text(preset-6);
+  margin-top: token-space(200);
+}
+
+/* ---------- Animation Utility ---------- */
+
+.is-hidden {
+  transform: scale(0.95);
 }

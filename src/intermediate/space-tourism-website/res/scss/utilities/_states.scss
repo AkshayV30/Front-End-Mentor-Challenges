@@ -1,7 +1,14 @@
+@use "../abstracts" as *;
+
 .is-active {
   opacity: 1;
 }
 
+// .is-hidden {
+//   display: none !important;
+// }
+
 .is-hidden {
-  display: none !important;
+  opacity: 0;
+  transform: translateY(token-space(50));
 }

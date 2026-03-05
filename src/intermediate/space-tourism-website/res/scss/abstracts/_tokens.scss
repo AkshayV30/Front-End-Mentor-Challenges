@@ -31,10 +31,25 @@ $root-font-size: 10px;
 ========================================================== */
 
 $colors: (
-  "blue-900": #0b0d17,
-  "blue-300": #d0d6f9,
+  // Primary
   "primary": #ffffff,
-  "glass": #ffffff26,
+  "glass": rgba(255, 255, 255, 0.15),
+  // glass effect, modern transparency
+  // Blues
+  "blue-900": #0b0d17,
+  "blue-700": #1c1f2a,
+  "blue-500": #4a4f71,
+  "blue-300": #d0d6f9,
+  // highlight
+  "blue-100": #eaeffd,
+
+  // very light blue
+  // Greys
+  "grey-700": #2f2f2f,
+  "grey-500": #666666,
+  "grey-300": #b3b3b3,
+  "grey-100": #e6e6e6,
+  "grey-50": rgba(0, 0, 0, 0.05) // subtle overlay
 );
 
 /* ==========================================================
