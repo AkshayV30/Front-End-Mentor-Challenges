@@ -8,8 +8,7 @@
   --bg-main: #000;
   --bg-accent-1: #212121;
   --bg-accent-2: #191919;
-  
-  
+
   --btn: #424242;
   --btn-html: rgb(106, 190, 205);
   --btn-css: rgb(62, 84, 163);
@@ -17,7 +16,7 @@
   --btn-api: rgb(170, 215, 66);
 
   --text-color: #fff;
-  --text-color--2: #000000;
+  --text-color--2: #000;
 }
 
 @media only screen and (max-width: 720px) {
@@ -50,12 +49,10 @@ body {
   background: var(--bg-main);
 }
 
-
-
 header {
-  position: sticky;              /* 🧷 Keeps header fixed within scrollable area */
-  top: 0;                        /* 📍 Stick to the very top */
-  z-index: 1000;                 /* ⬆️ Ensure it stays above all content */
+  position: sticky; /* 🧷 Keeps header fixed within scrollable area */
+  top: 0; /* 📍 Stick to the very top */
+  z-index: 1000; /* ⬆️ Ensure it stays above all content */
 
   height: 4rem;
   width: 100%;
@@ -71,8 +68,10 @@ header {
   font-weight: 600;
   letter-spacing: 0.5px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* soft shadow when scrolling */
-  backdrop-filter: blur(6px);               /* subtle glass effect */
-  transition: background 0.3s ease, box-shadow 0.3s ease;
+  backdrop-filter: blur(6px); /* subtle glass effect */
+  transition:
+    background 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 /* Optional: Change style when page is scrolled */
@@ -80,7 +79,6 @@ body.scrolled header {
   background: var(--bg-accent-3);
   box-shadow: 0 3px 12px rgba(0, 0, 0, 0.2);
 }
-
 
 header > h1 {
   text-transform: uppercase;
@@ -342,7 +340,6 @@ header > h1 {
   display: none;
 }
 
-
 /* -------------- */
 .sorting {
   display: flex;
@@ -390,7 +387,13 @@ header > h1 {
 }
 
 @keyframes pulse {
-  0% { opacity: 0.8; }
-  50% { opacity: 1; }
-  100% { opacity: 0.8; }
+  0% {
+    opacity: 0.8;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.8;
+  }
 }
