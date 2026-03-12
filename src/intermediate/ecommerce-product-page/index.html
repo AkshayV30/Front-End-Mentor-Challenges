@@ -1,318 +1,130 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
+    <!-- displays site properly based on user's device -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- displays site properly based on user's device -->
+
+    <title>Frontend Mentor | E-commerce product page</title>
 
     <link
       rel="icon"
       type="image/png"
       sizes="32x32"
-      href="./images/favicon-32x32.png"
+      href="./res/assets/favicon-32x32.png"
     />
-
-    <title>Frontend Mentor | E-commerce product page</title>
-
-    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-    <link rel="stylesheet" href="./style.css" />
-    <script type="module" src="./script.js"></script>
-    <style>
-      @import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
-    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght,YOPQ@100..900,300&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./res/css/styles.css" />
   </head>
+
   <body>
-    <header>
-      <nav>
-        <img id="logo" src="./images/logo.svg" alt="" />
-        <ul>
-          <li><a href="#">Collections</a></li>
-          <li><a href="#">Men</a></li>
-          <li><a href="#">Women</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Contact</a></li>
+    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    ```````````````````````````````````````````````` header
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+    <header class="l-header">
+      <nav class="l-nav">
+        <img
+          class=""
+          id="logo"
+          src="./res/assets/logo.svg"
+          alt=" sneakers-logo"
+        />
+        <ul class="">
+          <li class=""><a href="#">Collections</a></li>
+          <li class=""><a href="#">Men</a></li>
+          <li class=""><a href="#">Women</a></li>
+          <li class=""><a href="#">About</a></li>
+          <li class=""><a href="#">Contact</a></li>
         </ul>
       </nav>
 
-      <div class="profile-cart">
-        <div class="notification">
+      <div class="">
+        <div class="">
           <img
+            class=""
             id="icon-cart-main"
-            src="./images/icon-cart.svg"
+            src="./res/assets/icons/icon-cart.svg"
             alt="icon cart"
           />
-          <span id="notification-badge"> 0 </span>
+          <p id="notification-badge">0</p>
         </div>
-        <img id="profile-img" src="./images/image-avatar.png" alt="avatar" />
+        <img
+          class="c-avatar"
+          src="./res/assets/avatars/image-avatar.png"
+          alt="avatar"
+        />
       </div>
 
-      <div class="popUp-cart cart-visibility">
+      <div class="">
         <h4>Cart</h4>
-
-        <div class="contents">
-          <div class="upper-content">
-            <img
-              id="product-img"
-              src="./images/image-product-1-thumbnail.jpg"
-              alt="product1"
-            />
-            <span id="item-name">
-              Fall Limited Editon Sneakers $125 X $500
-            </span>
-            <img id="remove-item" src="./images/icon-delete.svg" alt="" />
-          </div>
-
-          <button id="checkOut">CheckOut</button>
-        </div>
+        <div class="contents" id="cart-items"></div>
       </div>
     </header>
 
+    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    ```````````````````````````````````````````````` mains
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
     <main>
-      <div class="container-gallery">
-        <!-- // item--1 -->
-        <div class="gallery-item">
-          <input
-            type="radio"
-            id="img-1"
-            name="gallery"
-            class="gallery-selector"
-          />
-
-          <img
-            class="gallery-img"
-            src="./images/image-product-1.jpg"
-            alt="product-1"
-          />
-
-          <label for="img-1" class="gallery-thumb">
-            <img
-              src="./images/image-product-1-thumbnail.jpg"
-              alt="product-1-thumb"
-            />
-          </label>
-        </div>
-
-        <!-- // item--2 -->
-        <div class="gallery-item">
-          <input
-            type="radio"
-            id="img-2"
-            name="gallery"
-            checked
-            class="gallery-selector"
-          />
-          <img
-            class="gallery-img"
-            src="./images/image-product-2.jpg"
-            alt="product-2"
-          />
-
-          <label for="img-2" class="gallery-thumb">
-            <img
-              src="./images/image-product-2-thumbnail.jpg"
-              alt="product-2-thumb"
-            />
-          </label>
-        </div>
-
-        <!-- // item--3 -->
-        <div class="gallery-item">
-          <input
-            type="radio"
-            id="img-3"
-            name="gallery"
-            class="gallery-selector"
-          />
-          <img
-            class="gallery-img"
-            src="./images/image-product-1.jpg"
-            alt="product-3"
-          />
-
-          <label for="img-3" class="gallery-thumb">
-            <img
-              src="./images/image-product-3-thumbnail.jpg"
-              alt="product-3-thumb"
-            />
-          </label>
-        </div>
-        <!-- // item--4 -->
-        <div class="gallery-item">
-          <input
-            type="radio"
-            id="img-4"
-            name="gallery"
-            class="gallery-selector"
-          />
-          <img
-            class="gallery-img"
-            src="./images/image-product-4.jpg"
-            alt="product-4"
-          />
-
-          <label for="img-4" class="gallery-thumb">
-            <img
-              src="./images/image-product-4-thumbnail.jpg"
-              alt="product-4-thumb"
-            />
-          </label>
-        </div>
+      <div class="">
+        <div id="gallery-item" class="gallery-item"></div>
       </div>
 
-      <div class="card-txt-body">
-        <div class="txt">
-          <h4>Sneaker Company</h4>
-          <h1>Fall Limited Edition Sneakers</h1>
-          <p>
-            These low-profile sneakers are your perfect casual wear companion.
-            Featuring a durable rubber outer sole, they’ll withstand everything
-            the weather can offer.
-          </p>
+      <div class="">
+        <div id="product-info" class=""></div>
 
-          <div class="price">
-            <div>
-              <span id="price-bold"> $125.00</span>
-              <span id="price-discount"> 50%</span>
-            </div>
-            <p id="price-strike"><s> $250.00 </s></p>
-          </div>
-        </div>
+        <audio
+          id="alertSound"
+          src="./res/assets/audio/wrong-answer-126515.mp3"
+        ></audio>
 
-        <audio id="alertSound" src="./audio/wrong-answer-126515.mp3"></audio>
-        <div class="buttons">
+        <div class="">
           <button class="btn-add-sub" type="button">
             <img
               id="icon-minus"
-              src="./images/icon-minus.svg"
+              src="./res/assets/icons/icon-minus.svg"
               alt="minus symbol"
             />
-            <span id="count">0</span>
+          </button>
+          <span id="count">0</span>
+          <button>
             <img
               id="icon-plus"
-              src="./images/icon-plus.svg"
+              src="./res/assets/icons/icon-plus.svg"
               alt="plus symbol"
             />
           </button>
-          <button class="btn-cart" type="button">
-            <img id="icon-cart" src="./images/icon-cart.svg" alt="" />
+          <div>
+            <button class="btn-cart" type="button">
+              <img
+                id="icon-cart"
+                src="./res/assets/icons/icon-cart.svg"
+                alt=""
+              />
+            </button>
             <span>Add to cart</span>
-          </button>
+          </div>
         </div>
       </div>
+
+      <div class="lightbox-modal hidden"></div>
     </main>
-    <div class="lightbox lightbox-visibility">
-      <div class="lightbox-container">
-        <button class="close-btn">
-          <img src="./images/icon-close.svg" alt="close-btn" />
-        </button>
 
-        <button class="left-btn">
-          <img src="./images/icon-previous.svg" alt="previous icon" />
-        </button>
-
-        <button class="right-btn">
-          <img src="./images/icon-next.svg" alt="forward icon" />
-        </button>
-
-        <div class="lightbox-items">
-          <div class="lightbox-item">
-            <input
-              type="radio"
-              id="light-img-1"
-              name="lightbox"
-              class="lightbox-selector"
-            />
-
-            <img
-              class="lightbox-img"
-              src="./images/image-product-1.jpg"
-              alt="product-1"
-            />
-
-            <label for="img-1" class="lightbox-thumb">
-              <img
-                src="./images/image-product-1-thumbnail.jpg"
-                alt="product-1-thumb"
-              />
-            </label>
-          </div>
-
-          <!-- // item--2 -->
-          <div class="lightbox-item">
-            <input
-              type="radio"
-              id="light-img-2"
-              name="lightbox"
-              checked
-              class="lightbox-selector"
-            />
-            <img
-              class="lightbox-img"
-              src="./images/image-product-2.jpg"
-              alt="product-2"
-            />
-
-            <label for="img-2" class="lightbox-thumb">
-              <img
-                src="./images/image-product-2-thumbnail.jpg"
-                alt="product-2-thumb"
-              />
-            </label>
-          </div>
-
-          <!-- // item--3 -->
-          <div class="lightbox-item">
-            <input
-              type="radio"
-              id="light-img-3"
-              name="lightbox"
-              class="lightbox-selector"
-            />
-            <img
-              class="lightbox-img"
-              src="./images/image-product-1.jpg"
-              alt="product-3"
-            />
-
-            <label for="img-3" class="lightbox-thumb">
-              <img
-                src="./images/image-product-3-thumbnail.jpg"
-                alt="product-3-thumb"
-              />
-            </label>
-          </div>
-          <!-- // item--4 -->
-          <div class="lightbox-item">
-            <input
-              type="radio"
-              id="light-img-4"
-              name="lightbox"
-              class="lightbox-selector"
-            />
-            <img
-              class="lightbox-img"
-              src="./images/image-product-4.jpg"
-              alt="product-4"
-            />
-
-            <label for="img-4" class="lightbox-thumb">
-              <img
-                src="./images/image-product-4-thumbnail.jpg"
-                alt="product-4-thumb"
-              />
-            </label>
-          </div>
-        </div>
-      </div>
-    </div>
-
+    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    ```````````````````````````````````````````````` footer
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
     <footer>
       <div class="attribution">
         Challenge by
         <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
           >Frontend Mentor</a
-        >. Coded by <a href="#">Your Name Here</a>.
+        >. Coded by <a href="#">Akshayv30</a>.
       </div>
     </footer>
+    <script defer type="module" src="./res/js/app.js"></script>
   </body>
 </html>

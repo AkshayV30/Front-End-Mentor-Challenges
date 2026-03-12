@@ -1,58 +1,307 @@
-/*
-# Front-end Style Guide
-
-## Layout
-
-The designs were created to the following widths:
-
-- Mobile: 375px
-- Desktop: 1440px
-
-
-
-
-
-
-## Icons
-
-For the social icons, you can either use the SVGs provided or a font icon library. Some suggestions for font icon libraries can be found below:
-
-- [Font Awesome](https://fontawesome.com)
-- [IcoMoon](https://icomoon.io)
-- [Ionicons](https://ionicons.com)
-*/
 :root {
-  --colors-primary-cyan: hsl(180, 66%, 49%);
-  --colors-primary-dark-violet: hsl(257, 27%, 26%);
-
-  --colors-secondary-red: hsl(0, 87%, 67%);
-
-  --colors-neutral-gray: hsl(0, 0%, 75%);
-  --colors-neutral-grayish-violet: hsl(257, 7%, 63%);
-  /* verydark -vd- */
-  --colors-neutral-vd-blue: hsl(255, 11%, 22%);
-  --colors-neutral-vd-violet: hsl(260, 8%, 14%);
-
-  --font-body: 1.8rem;
-
-  --font-weight-1: 500;
-  --font-weight-2: 700;
+  --color-primary-cyan: hsl(180, 66%, 49%);
+  --color-primary-dark-violet: hsl(257, 27%, 26%);
+  --color-neutral-grayish-violet: hsl(257, 7%, 63%);
+  --color-neutral-vd-violet: hsl(260, 8%, 14%);
+  --color-white: #fff;
+  --font-body: "Poppins", sans-serif;
 }
 
-html {
-  font-style: normal;
-  font-size: 62.5%;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-  font-family: "Poppins", sans-serif;
-  font-size: var(--font-body);
+  font-family: var(--font-body);
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
 }
 
-.attribution {
-  font-size: 11px;
+/* Utility */
+.l-padding {
+  padding: 4rem 2rem;
+}
+.c-btn {
+  border: none;
+  cursor: pointer;
+  padding: 1rem 2rem;
+  border-radius: 2rem;
+}
+.c-btn--primary {
+  background: var(--color-primary-cyan);
+  color: var(--color-white);
+}
+.c-btn--primary:hover {
+  opacity: 0.8;
+}
+
+/* Header */
+.l-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.c-nav {
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+  flex-wrap: wrap;
+}
+.c-list {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+.c-list li {
+  cursor: pointer;
+  color: var(--color-neutral-grayish-violet);
+}
+.c-list li:hover {
+  color: var(--color-primary-cyan);
+}
+
+/* Hero Section */
+.l-hero {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 2rem;
+  justify-content: space-between;
+  margin-bottom: 4rem;
+}
+.l-hero__content {
+  flex: 1 1 400px;
+}
+.l-hero__image {
+  flex: 1 1 400px;
   text-align: center;
 }
-.attribution a {
-  color: hsl(228, 45%, 44%);
+.l-hero__image img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Shorten Section */
+.l-shorten {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+.c-shorten {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+.c-shorten input {
+  padding: 1rem;
+  border-radius: 1rem;
+  border: 2px solid #ccc;
+  min-width: 250px;
+}
+.c-shorten input::placeholder {
+  color: var(--color-neutral-grayish-violet);
+}
+.c-shorten-results {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 600px;
+  margin: auto;
+}
+
+/* Stats Section */
+.l-stats__header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+.l-stats__cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+.c-card {
+  background: var(--color-white);
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  flex: 1 1 250px;
+  text-align: center;
+}
+.c-card img {
+  background: var(--color-primary-dark-violet);
+  padding: 1rem;
+  border-radius: 50%;
+  margin-bottom: 2rem;
+}
+
+/* CTA Section */
+.l-cta {
+  text-align: center;
+  margin: 4rem 0;
+  background: var(--color-primary-dark-violet);
+  color: var(--color-white);
+  padding: 4rem 2rem;
+}
+
+/* Footer */
+.l-footer__container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 2rem;
+  background: var(--color-neutral-vd-violet);
+  color: var(--color-white);
+  padding: 2rem;
+}
+.l-footer__links {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+.c-footer-list li {
+  margin-bottom: 1rem;
+  cursor: pointer;
+  color: var(--color-neutral-grayish-violet);
+}
+.c-footer-list li:hover {
+  color: var(--color-primary-cyan);
+}
+.c-footer-social {
+  display: flex;
+  gap: 1rem;
+}
+.c-footer-attribution {
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 1.2rem;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .l-hero {
+    flex-direction: column;
+    text-align: center;
+  }
+  .l-hero__content,
+  .l-hero__image {
+    flex: 1 1 100%;
+  }
+  .l-stats__cards {
+    flex-direction: column;
+  }
+}
+
+/* Section 2 container */
+.l-section-2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 2rem;
+
+  background-color: var(--colors-primary-dark-violet);
+  padding: 3rem 2rem;
+  border-radius: 1rem;
+  width: 100%;
+  max-width: 1000px;
+  margin: 5rem auto;
+  box-sizing: border-box;
+}
+
+/* Input + button label */
+.l-section-2 label {
+  display: flex;
+  width: 100%;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.l-section-2 input[type="url"] {
+  flex: 1 1 60%;
+  padding: 1rem 1.2rem;
+  border-radius: 0.5rem;
+  border: none;
+  font-size: 1.6rem;
+  outline: none;
+}
+
+.l-section-2 input::placeholder {
+  color: var(--colors-neutral-grayish-violet);
+}
+
+/* Shorten button */
+.c-btn--shorten {
+  flex: 1 1 35%;
+  padding: 1rem 2rem;
+  background-color: var(--colors-primary-cyan);
+  color: white;
+  border-radius: 1rem;
+  cursor: pointer;
+  font-weight: 600;
+  transition: opacity 0.2s ease;
+}
+
+.c-btn--shorten:hover {
+  opacity: 0.85;
+}
+
+/* Results container */
+.c-shorten-results {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+/* Individual result cards */
+.c-shorten-result {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  padding: 1rem 2rem;
+  border-radius: 0.8rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.c-shorten-result p {
+  margin: 0;
+  font-size: 1.5rem;
+  color: var(--colors-neutral-vd-blue);
+}
+
+.c-shorten-result button {
+  padding: 0.8rem 1.5rem;
+  border-radius: 1rem;
+  border: none;
+  cursor: pointer;
+  background-color: var(--colors-primary-cyan);
+  color: white;
+  font-weight: 600;
+  transition: opacity 0.2s ease;
+}
+
+.c-shorten-result button:hover {
+  opacity: 0.8;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+  .l-section-2 label {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .c-shorten-result {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
 }

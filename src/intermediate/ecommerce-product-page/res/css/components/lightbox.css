@@ -1,0 +1,39 @@
+.c-lightbox {
+  max-width: 40rem;
+  position: relative;
+}
+
+.c-lightbox__img {
+  width: 100%;
+  border-radius: 1rem;
+}
+
+.c-lightbox__close {
+  position: absolute;
+  top: -3rem;
+  right: -3rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.c-lightbox__nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: white;
+  border-radius: 50%;
+  width: 4rem;
+  height: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.c-lightbox__nav--prev {
+  left: -2rem;
+}
+.c-lightbox__nav--next {
+  right: -2rem;
+}

@@ -1,0 +1,67 @@
+/* =========================
+   GRID CONTAINER
+========================= */
+
+.u-grid {
+  display: grid;
+}
+
+.u-inline-grid {
+  display: inline-grid;
+}
+
+/* =========================
+   GRID COLUMNS
+========================= */
+
+.u-grid-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.u-grid-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.u-grid-4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.u-grid-auto {
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+/* =========================
+   GRID GAP
+========================= */
+
+.u-grid-gap-xs {
+  gap: 0.25rem;
+}
+.u-grid-gap-sm {
+  gap: 0.5rem;
+}
+.u-grid-gap-md {
+  gap: 1rem;
+}
+.u-grid-gap-lg {
+  gap: 1.5rem;
+}
+.u-grid-gap-xl {
+  gap: 2rem;
+}
+
+/* =========================
+   GRID ALIGNMENT
+========================= */
+
+.u-grid-center {
+  place-items: center;
+}
+
+.u-grid-start {
+  place-items: start;
+}
+
+.u-grid-end {
+  place-items: end;
+}

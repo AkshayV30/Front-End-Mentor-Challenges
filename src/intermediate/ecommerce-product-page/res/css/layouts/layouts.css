@@ -1,0 +1,52 @@
+/* =========================
+   CONTAINER
+========================= */
+
+.l-container {
+  width: min(1200px, 90%);
+  margin-inline: auto;
+}
+
+/* =========================
+   STACK (vertical spacing)
+========================= */
+
+.l-stack > * + * {
+  margin-top: var(--space, 1rem);
+}
+
+/* =========================
+   CLUSTER
+========================= */
+
+.l-cluster {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+}
+
+/* =========================
+   SIDEBAR
+========================= */
+
+.l-sidebar {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 2rem;
+}
+
+/* =========================
+   SWITCHER
+========================= */
+
+.l-switcher {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.l-switcher > * {
+  flex-grow: 1;
+  flex-basis: 250px;
+}

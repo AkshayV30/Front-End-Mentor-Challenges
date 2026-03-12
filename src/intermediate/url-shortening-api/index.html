@@ -9,7 +9,7 @@
       rel="icon"
       type="image/png"
       sizes="32x32"
-      href="./images/favicon-32x32.png"
+      href="./assets/favicon-32x32.png"
     />
 
     <title>Frontend Mentor | Shortly URL shortening API Challenge</title>
@@ -21,26 +21,150 @@
     <link rel="stylesheet" href="./res/style.css" />
   </head>
   <body>
-    Features Pricing Resources Login Sign Up More than just shorter links Build
-    your brand’s recognition and get detailed insights on how your links are
-    performing. Get Started Shorten a link here... Shorten It! Advanced
-    Statistics Track how your links are performing across the web with our
-    advanced statistics dashboard. Brand Recognition Boost your brand
-    recognition with each click. Generic links don’t mean a thing. Branded links
-    help instil confidence in your content. Detailed Records Gain insights into
-    who is clicking your links. Knowing when and where people engage with your
-    content helps inform better decisions. Fully Customizable Improve brand
-    awareness and content discoverability through customizable links,
-    supercharging audience engagement. Boost your links today Get Started
-    Features Link Shortening Branded Links Analytics Resources Blog Developers
-    Support Company About Our Team Careers Contact
+    <!-- Header -->
+    <header class="l-padding l-header">
+      <nav class="c-nav">
+        <img src="./assets/logo.svg" alt="logo" class="c-logo" />
+        <ul class="c-list c-list--main">
+          <li>Features</li>
+          <li>Pricing</li>
+          <li>Resources</li>
+        </ul>
+      </nav>
+      <ul class="c-list c-list--actions">
+        <li><button class="c-btn">Login</button></li>
+        <li><button class="c-btn c-btn--primary">Sign Up</button></li>
+      </ul>
+    </header>
 
-    <div class="attribution">
-      Challenge by
-      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
-        >Frontend Mentor</a
-      >. Coded by <a href="#">Your Name Here</a>.
-    </div>
+    <main class="l-main">
+      <!-- Hero Section -->
+      <section class="l-section l-hero">
+        <div class="l-hero__content">
+          <h1 class="t-heading-1">More than just shorter links</h1>
+          <p class="t-paragraph">
+            Build your brand’s recognition and get detailed insights on how your
+            links are performing.
+          </p>
+          <button class="c-btn c-btn--primary">Get Started</button>
+        </div>
+        <div class="l-hero__image">
+          <img
+            src="./assets/illustration-working.svg"
+            alt="illustration-working"
+          />
+        </div>
+      </section>
+
+      <!-- Shorten URL Section -->
+      <section class="l-section l-shorten">
+        <div class="c-shorten">
+          <input
+            type="url"
+            placeholder="Shorten a link here..."
+            id="url-input"
+          />
+          <button class="c-btn c-btn--primary" id="shorten-btn">
+            Shorten It!
+          </button>
+        </div>
+        <div class="c-shorten-results" id="shorten-results"></div>
+      </section>
+
+      <!-- Statistics Section -->
+      <section class="l-section l-stats">
+        <div class="l-stats__header">
+          <h2 class="t-heading-2">Advanced Statistics</h2>
+          <p class="t-paragraph">
+            Track how your links are performing across the web with our advanced
+            statistics dashboard.
+          </p>
+        </div>
+        <div class="l-stats__cards">
+          <div class="c-card">
+            <img
+              src="./assets/icons/icon-brand-recognition.svg"
+              alt="Brand Recognition"
+            />
+            <h4>Brand Recognition</h4>
+            <p>
+              Boost your brand recognition with each click. Generic links don’t
+              mean a thing. Branded links help instil confidence in your
+              content.
+            </p>
+          </div>
+          <div class="c-card">
+            <img
+              src="./assets/icons/icon-detailed-records.svg"
+              alt="Detailed Records"
+            />
+            <h4>Detailed Records</h4>
+            <p>
+              Gain insights into who is clicking your links. Knowing when and
+              where people engage with your content helps inform better
+              decisions.
+            </p>
+          </div>
+          <div class="c-card">
+            <img
+              src="./assets/icons/icon-fully-customizable.svg"
+              alt="Fully Customizable"
+            />
+            <h4>Fully Customizable</h4>
+            <p>
+              Improve brand awareness and content discoverability through
+              customizable links, supercharging audience engagement.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA Section -->
+      <section class="l-section l-cta">
+        <h2 class="t-heading-2">Boost your links today</h2>
+        <button class="c-btn c-btn--primary">Get Started</button>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="l-footer l-padding">
+      <div class="l-footer__container">
+        <img src="./assets/logo.svg" alt="logo" class="c-footer-logo" />
+        <div class="l-footer__links">
+          <ul class="c-footer-list">
+            <li>Features</li>
+            <li>Link Shortening</li>
+            <li>Branded Links</li>
+            <li>Analytics</li>
+          </ul>
+          <ul class="c-footer-list">
+            <li>Resources</li>
+            <li>Blog</li>
+            <li>Developers</li>
+            <li>Support</li>
+          </ul>
+          <ul class="c-footer-list">
+            <li>Company</li>
+            <li>About</li>
+            <li>Our Team</li>
+            <li>Careers</li>
+            <li>Contact</li>
+          </ul>
+        </div>
+        <div class="c-footer-social">
+          <img src="./assets/icons/icon-facebook.svg" alt="Facebook" />
+          <img src="./assets/icons/icon-twitter.svg" alt="Twitter" />
+          <img src="./assets/icons/icon-pinterest.svg" alt="Pinterest" />
+          <img src="./assets/icons/icon-instagram.svg" alt="Instagram" />
+        </div>
+      </div>
+      <div class="c-footer-attribution">
+        Challenge by
+        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+          >Frontend Mentor</a
+        >. Coded by Your Name.
+      </div>
+    </footer>
 
     <script src="./res/script.js" defer></script>
   </body>

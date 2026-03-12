@@ -1,0 +1,18 @@
+:root {
+  --color-primary: hsl(26, 100%, 55%);
+  --color-primary-light: hsl(25, 100%, 94%);
+
+  --color-dark: hsl(220, 13%, 13%);
+  --color-gray: hsl(219, 9%, 45%);
+  --color-light-gray: hsl(220, 14%, 75%);
+  --color-bg: hsl(223, 64%, 98%);
+  --color-white: hsl(0, 0%, 100%);
+  --color-black: hsl(0, 0%, 0%);
+
+  /* --font-w-1: 400;
+  --font-w-2: 700;
+
+  --max-img-width: 20rem;
+  --max-img-height: 10rem; */
+  --radius: 1rem;
+}

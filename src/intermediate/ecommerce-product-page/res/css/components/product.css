@@ -1,0 +1,52 @@
+.c-product__brand {
+  color: var(--color-primary);
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.c-product__title {
+  font-size: 3.6rem;
+  margin-bottom: 1.5rem;
+}
+
+.c-product__desc {
+  color: var(--color-gray);
+  line-height: 1.5;
+  margin-bottom: 2rem;
+}
+
+.c-product__price {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-weight: 700;
+}
+
+.c-product__discount {
+  background: var(--color-primary-light);
+  color: var(--color-primary);
+  padding: 0.3rem 0.8rem;
+  border-radius: 0.5rem;
+}
+
+.c-qty {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  background: var(--color-bg);
+  padding: 1rem 2rem;
+  border-radius: 1rem;
+}
+
+.c-btn {
+  background: var(--color-primary);
+  color: white;
+  border: none;
+  padding: 1rem 3rem;
+  border-radius: 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
