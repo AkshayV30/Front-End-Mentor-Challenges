@@ -10,21 +10,3 @@
 .u-position-fixed {
   position: fixed;
 }
-
-/* Visibility / State Utilities */
-.is-hidden {
-  display: none;
-}
-
-.is-visible {
-  display: block;
-}
-
-.is-active {
-  opacity: 1;
-}
-
-.is-disabled {
-  pointer-events: none;
-  opacity: 0.5;
-}

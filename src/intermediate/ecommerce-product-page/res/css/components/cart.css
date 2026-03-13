@@ -1,46 +1,90 @@
-.c-cart {
-  position: absolute;
-  top: 100%;
-  right: 0;
-  width: 28rem;
-  background: white;
-  border-radius: var(--radius);
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+/* inside header cart*/
+.c-cart-icon {
+  height: 2.4rem;
+  cursor: pointer;
+
+  margin-right: 4rem;
 }
+
+.c-cart-icon-badge {
+  background: var(--color-primary);
+  color: var(--color-white);
+  font-size: 1.2rem;
+
+  padding: 0.2rem 0.8rem;
+  border-radius: 1.6rem;
+
+  position: absolute;
+  top: -1.8rem;
+  left: 1.25rem;
+}
+
+/*  cart -  modal*/
 
 .c-cart__title {
-  padding: 2rem;
-  border-bottom: 1px solid var(--color-light-gray);
+  padding-bottom: 2rem;
   font-weight: 700;
+
+  position: relative;
 }
 
-.c-cart__body {
-  padding: 2rem;
+.c-cart__title::after {
+  position: absolute;
+  inset-inline: -5%;
+  top: 80%;
+
+  content: "";
+
+  border-bottom: 0.2rem solid var(--color-light-gray);
+  opacity: 0.5;
 }
 
-.c-cart__item {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
+.c-cart__content {
+  color: var(--color-gray);
+
+  padding-top: 1rem;
+
+  font-weight: 400;
+  font-size: 1.4rem;
 }
 
-.c-cart__img {
-  width: 5rem;
-  border-radius: 0.8rem;
-}
-
-.c-cart__delete {
-  width: 1.5rem;
-  cursor: pointer;
-}
-
-.c-cart__checkout {
+.c-cart__content-item {
   width: 100%;
-  padding: 1rem;
+  padding-bottom: 2rem;
+}
+
+.c-cart__thumb {
+  width: 4rem;
+  aspect-ratio: 1;
+  border-radius: 0.8rem;
+}
+
+.c-cart__item-name {
+  font-size: 1.2rem;
+}
+.c-cart__item-price--total {
+  color: var(--color-black);
+}
+
+.c-cart__delete-btn {
   border: none;
+  background: transparent;
+  cursor: pointer;
+  padding: 0.4rem;
+  border-radius: 0.4rem;
+}
+
+.c-cart__delete-btn:active {
+  filter: brightness(0) saturate(100%) invert(50%);
+}
+
+.c-btn__checkout {
+  width: 100%;
+  padding: 1.2rem 0;
   background: var(--color-primary);
-  color: white;
+  border: none;
+  color: var(--color-white);
   border-radius: 0.8rem;
   cursor: pointer;
+  font-weight: 700;
 }

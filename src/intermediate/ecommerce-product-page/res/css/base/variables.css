@@ -15,4 +15,11 @@
   --max-img-width: 20rem;
   --max-img-height: 10rem; */
   --radius: 1rem;
+
+  --header-padding: 4rem;
+
+  /* derived spacing */
+  --header-divider-offset: calc(var(--header-padding) * 1.35);
+  --nav-underline-offset: calc(var(--header-padding) * 0.12);
+  --nav-underline-height: calc(var(--header-padding) * 0.1);
 }

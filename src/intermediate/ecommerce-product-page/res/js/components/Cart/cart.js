@@ -3,7 +3,7 @@ import { removeItem } from "../../core/store.js";
 import { cartTemplate } from "./cart.template.js";
 
 export function renderCart() {
-  const container = document.querySelector("#cart-items");
+  const container = document.querySelector(".c-cart__content");
 
   container.innerHTML = cartTemplate(state.cart);
 

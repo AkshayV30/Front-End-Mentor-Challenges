@@ -3,12 +3,24 @@
 }
 
 .c-nav__item {
-  padding-bottom: 4rem;
+  position: relative;
   cursor: pointer;
+  color: var(--color-gray);
 }
 
 .c-nav__item:hover {
-  border-bottom: 4px solid var(--color-primary);
+  color: var(--color-black);
+}
+
+.c-nav__item:hover::after {
+  content: "";
+  position: absolute;
+  inset-inline: 0;
+
+  bottom: calc(-1 * var(--nav-underline-offset));
+  height: var(--nav-underline-height);
+
+  background: var(--color-primary);
 }
 
 .c-avatar {
@@ -19,20 +31,4 @@
 
 .c-avatar:hover {
   border: 2px solid var(--color-primary);
-}
-
-.c-cart-icon {
-  height: 2.4rem;
-  cursor: pointer;
-}
-
-.c-cart-badge {
-  position: absolute;
-  top: -8px;
-  right: -8px;
-  background: var(--color-primary);
-  color: white;
-  font-size: 1rem;
-  padding: 2px 5px;
-  border-radius: 5px;
 }

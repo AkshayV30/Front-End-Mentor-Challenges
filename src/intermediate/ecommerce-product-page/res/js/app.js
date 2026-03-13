@@ -10,7 +10,7 @@ async function init() {
 
   // renderGallery();
   // renderProduct();
-  // renderCart();
+  renderCart();
 
   // initLightbox();
 }

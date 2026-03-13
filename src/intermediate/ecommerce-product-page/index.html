@@ -22,36 +22,33 @@
     <link rel="stylesheet" href="./res/css/styles.css" />
   </head>
 
-  <body>
-    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    ```````````````````````````````````````````````` header
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
-    <header class="l-header">
-      <nav class="l-nav">
+  <body class="l-body">
+    <header class="l-header l-container u-flex u-flex-between">
+      <nav class="l-nav u-flex">
         <img
-          class=""
+          class="c-logo"
           id="logo"
           src="./res/assets/logo.svg"
           alt=" sneakers-logo"
         />
-        <ul class="">
-          <li class=""><a href="#">Collections</a></li>
-          <li class=""><a href="#">Men</a></li>
-          <li class=""><a href="#">Women</a></li>
-          <li class=""><a href="#">About</a></li>
-          <li class=""><a href="#">Contact</a></li>
+        <ul class="l-nav__item-list u-flex u-flex-gap-xl">
+          <li class="c-nav__item"><a href="#">Collections</a></li>
+          <li class="c-nav__item"><a href="#">Men</a></li>
+          <li class="c-nav__item"><a href="#">Women</a></li>
+          <li class="c-nav__item"><a href="#">About</a></li>
+          <li class="c-nav__item"><a href="#">Contact</a></li>
         </ul>
       </nav>
 
-      <div class="">
-        <div class="">
+      <div class="u-flex u-flex-align">
+        <div class="u-flex u-position-relative">
           <img
-            class=""
+            class="c-cart-icon"
             id="icon-cart-main"
             src="./res/assets/icons/icon-cart.svg"
             alt="icon cart"
           />
-          <p id="notification-badge">0</p>
+          <p id="c-cart-icon-badge" class="c-cart-icon-badge is-hidden">0</p>
         </div>
         <img
           class="c-avatar"
@@ -59,16 +56,14 @@
           alt="avatar"
         />
       </div>
-
-      <div class="">
-        <h4>Cart</h4>
-        <div class="contents" id="cart-items"></div>
+      <div class="l-cart u-position-absolute">
+        <h4 class="c-cart__title">Cart</h4>
+        <div
+          class="c-cart__content u-flex u-flex-col u-flex-align u-flex-between"
+        ></div>
       </div>
     </header>
 
-    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    ```````````````````````````````````````````````` mains
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
     <main>
       <div class="">
         <div id="gallery-item" class="gallery-item"></div>
@@ -114,9 +109,6 @@
       <div class="lightbox-modal hidden"></div>
     </main>
 
-    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    ```````````````````````````````````````````````` footer
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
     <footer>
       <div class="attribution">
         Challenge by

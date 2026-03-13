@@ -3,11 +3,10 @@
 @import url("./base/variables.css");
 
 @import url("./layouts/layouts.css");
-@import url("./layouts/grid.css");
-@import url("./layouts/flex.css");
 
 @import url("./utilities/flex.css");
 @import url("./utilities/grid.css");
+@import url("./utilities/states.css");
 @import url("./utilities/utilities.css");
 
 @import url("./components/header.css");
