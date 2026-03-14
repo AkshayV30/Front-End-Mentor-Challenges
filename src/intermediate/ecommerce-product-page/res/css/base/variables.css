@@ -22,4 +22,7 @@
   --header-divider-offset: calc(var(--header-padding) * 1.35);
   --nav-underline-offset: calc(var(--header-padding) * 0.12);
   --nav-underline-height: calc(var(--header-padding) * 0.1);
+
+  --thumbs-gap: 1rem;
+  --thumb-size: 8rem;
 }

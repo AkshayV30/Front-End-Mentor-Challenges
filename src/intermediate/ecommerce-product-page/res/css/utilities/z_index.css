@@ -1,0 +1,124 @@
+/* ======================================================
+   Z-INDEX SCALE
+   Utility Layer — Stacking Context Management
+   ====================================================== */
+
+:root {
+  /* Base content layer */
+  --z-base: 0;
+
+  /* Layout layers */
+  --z-raised: 1;
+  --z-floating: 5;
+
+  /* Navigation layers */
+  --z-header: 10;
+  --z-sticky: 20;
+  --z-nav: 30;
+
+  /* Interactive UI layers */
+  --z-dropdown: 50;
+  --z-popover: 60;
+  --z-tooltip: 70;
+  --z-cart: 80;
+
+  /* Overlay layers */
+  --z-overlay: 100;
+  --z-drawer: 200;
+
+  /* Modal / Lightbox layers */
+  --z-lightbox: 500;
+  --z-modal: 1000;
+
+  /* System UI layers */
+  --z-toast: 1100;
+  --z-critical: 9999;
+}
+
+/* ======================================================
+   BASE LAYER
+   ====================================================== */
+
+.u-z-base {
+  z-index: var(--z-base);
+}
+
+.u-z-raised {
+  z-index: var(--z-raised);
+}
+
+.u-z-floating {
+  z-index: var(--z-floating);
+}
+
+/* ======================================================
+   LAYOUT / NAVIGATION
+   ====================================================== */
+
+.u-z-header {
+  z-index: var(--z-header);
+}
+
+.u-z-sticky {
+  z-index: var(--z-sticky);
+}
+
+.u-z-nav {
+  z-index: var(--z-nav);
+}
+
+/* ======================================================
+   INTERACTIVE COMPONENTS
+   ====================================================== */
+
+.u-z-dropdown {
+  z-index: var(--z-dropdown);
+}
+
+.u-z-popover {
+  z-index: var(--z-popover);
+}
+
+.u-z-tooltip {
+  z-index: var(--z-tooltip);
+}
+
+.u-z-cart {
+  z-index: var(--z-cart);
+}
+
+/* ======================================================
+   OVERLAYS
+   ====================================================== */
+
+.u-z-overlay {
+  z-index: var(--z-overlay);
+}
+
+.u-z-drawer {
+  z-index: var(--z-drawer);
+}
+
+/* ======================================================
+   MODALS / LIGHTBOX
+   ====================================================== */
+
+.u-z-lightbox {
+  z-index: var(--z-lightbox);
+}
+
+.u-z-modal {
+  z-index: var(--z-modal);
+}
+
+/* ======================================================
+   SYSTEM UI
+   ====================================================== */
+
+.u-z-toast {
+  z-index: var(--z-toast);
+}
+
+.u-z-critical {
+  z-index: var(--z-critical);
+}

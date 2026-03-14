@@ -1,3 +1,6 @@
+.c-product-info__text {
+}
+
 .c-product__brand {
   color: var(--color-primary);
   text-transform: uppercase;
@@ -8,19 +11,17 @@
 .c-product__title {
   font-size: 3.6rem;
   margin-bottom: 1.5rem;
+  /* max-width: 35%; */
 }
 
 .c-product__desc {
   color: var(--color-gray);
   line-height: 1.5;
   margin-bottom: 2rem;
+  /* max-width: 45%; */
 }
 
 .c-product__price {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  font-weight: 700;
 }
 
 .c-product__discount {
@@ -30,23 +31,57 @@
   border-radius: 0.5rem;
 }
 
-.c-qty {
+.c-product-price__original {
+  color: var(--color-light-gray);
+}
+/* ------------------ */
+
+.c-product-controls {
+  margin-top: 2rem;
+}
+
+.c-product-controls__qty {
   display: flex;
   align-items: center;
   gap: 3rem;
   background: var(--color-bg);
   padding: 1rem 2rem;
   border-radius: 1rem;
+  width: fit-content;
+}
+
+.c-product-controls__count {
+  pointer-events: none;
 }
 
 .c-btn {
+  border: none;
+  cursor: pointer;
+}
+
+.product-controls__add {
+}
+
+.product-controls__sub {
+}
+
+.product-controls__cart {
   background: var(--color-primary);
   color: white;
-  border: none;
   padding: 1rem 3rem;
   border-radius: 1rem;
-  cursor: pointer;
+
   display: flex;
   align-items: center;
   gap: 1rem;
+}
+
+.c-icon-cart {
+  filter: brightness(0) invert(1);
+}
+
+.product-controls__add:hover,
+.product-controls__sub:hover,
+.product-controls__cart:hover {
+  opacity: 0.5;
 }

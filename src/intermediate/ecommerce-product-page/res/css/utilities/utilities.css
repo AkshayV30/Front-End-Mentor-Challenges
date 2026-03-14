@@ -10,3 +10,19 @@
 .u-position-fixed {
   position: fixed;
 }
+
+.u-z-header {
+  z-index: 10;
+}
+.u-z-dropdown {
+  z-index: 50;
+}
+.u-z-cart {
+  z-index: 100;
+}
+.u-z-overlay {
+  z-index: 500;
+}
+.u-z-modal {
+  z-index: 1000;
+}

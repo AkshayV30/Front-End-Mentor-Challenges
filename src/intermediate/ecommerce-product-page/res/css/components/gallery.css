@@ -1,37 +1,44 @@
-.c-gallery {
-  position: relative;
+:root {
+  --gallery-width: calc((var(--thumb-size) * 4) + (var(--thumbs-gap) * 3));
 }
 
-.c-gallery__img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
+/* ======================================================
+   Main Image
+====================================================== */
+
+.c-gallery__main-img {
+  width: var(--gallery-width);
   border-radius: 1rem;
-  opacity: 0;
-  transition: opacity 0.3s;
 }
 
-.c-gallery__selector {
-  display: none;
+/* ======================================================
+   Thumbnails
+====================================================== */
+.c-gallery__thumbs {
+  display: flex;
+  gap: var(--thumbs-gap);
 }
 
-.c-gallery__selector:checked + .c-gallery__img {
-  opacity: 1;
-}
-
-.c-gallery__thumb {
-  display: inline-block;
-  margin: 0.5rem;
-  cursor: pointer;
-}
-
-.c-gallery__thumb img {
-  width: 8rem;
+.c-gallery__thumb-img {
+  width: var(--thumb-size);
   border-radius: 0.8rem;
+  cursor: pointer;
+  display: block;
+  transition:
+    opacity 0.2s ease,
+    border 0.2s ease;
+  border: 0.3em solid transparent;
 }
 
-.c-gallery__selector:checked ~ .c-gallery__thumb img {
-  opacity: 0.5;
-  border: 3px solid var(--color-primary);
+/* hover effect */
+
+.c-gallery__thumb-img:hover {
+  opacity: 0.6;
+}
+
+/* active thumbnail */
+
+.c-gallery__thumb-img.is-active {
+  opacity: 0.6;
+  border: 0.3em solid var(--color-primary);
 }

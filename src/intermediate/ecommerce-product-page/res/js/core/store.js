@@ -6,15 +6,15 @@ export function addItem(product, qty) {
   if (existing) {
     existing.qty += qty;
     return;
+  } else {
+    state.cart.push({
+      id: product.id,
+      name: product.name,
+      price: product.price,
+      thumb: product.images[0].thumb,
+      qty,
+    });
   }
-
-  state.cart.push({
-    id: product.id,
-    name: product.name,
-    price: product.price,
-    thumb: product.images[0].thumb,
-    qty,
-  });
 }
 
 export function removeItem(id) {

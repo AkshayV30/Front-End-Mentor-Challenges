@@ -3,16 +3,16 @@ import { loadProducts } from "./core/api.js";
 import { renderGallery } from "./components/Gallery/gallery.js";
 import { renderCart } from "./components/Cart/cart.js";
 import { renderProduct } from "./components/Products/product.js";
-import { initLightbox } from "./components/Lightbox/lightbox.js";
+import { setupCartToggle, updateCartBadge } from "./utils/cart.js";
 
 async function init() {
   await loadProducts();
 
-  // renderGallery();
-  // renderProduct();
+  renderGallery();
+  renderProduct();
   renderCart();
-
-  // initLightbox();
+  setupCartToggle();
+  updateCartBadge(); // ensure badge is correct on load
 }
 
 init();

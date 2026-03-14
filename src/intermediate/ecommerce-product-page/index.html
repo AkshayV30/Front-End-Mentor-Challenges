@@ -56,7 +56,7 @@
           alt="avatar"
         />
       </div>
-      <div class="l-cart u-position-absolute">
+      <div class="l-cart u-position-absolute u-z-cart is-hidden">
         <h4 class="c-cart__title">Cart</h4>
         <div
           class="c-cart__content u-flex u-flex-col u-flex-align u-flex-between"
@@ -65,48 +65,13 @@
     </header>
 
     <main>
-      <div class="">
-        <div id="gallery-item" class="gallery-item"></div>
-      </div>
-
-      <div class="">
-        <div id="product-info" class=""></div>
-
-        <audio
-          id="alertSound"
-          src="./res/assets/audio/wrong-answer-126515.mp3"
-        ></audio>
-
-        <div class="">
-          <button class="btn-add-sub" type="button">
-            <img
-              id="icon-minus"
-              src="./res/assets/icons/icon-minus.svg"
-              alt="minus symbol"
-            />
-          </button>
-          <span id="count">0</span>
-          <button>
-            <img
-              id="icon-plus"
-              src="./res/assets/icons/icon-plus.svg"
-              alt="plus symbol"
-            />
-          </button>
-          <div>
-            <button class="btn-cart" type="button">
-              <img
-                id="icon-cart"
-                src="./res/assets/icons/icon-cart.svg"
-                alt=""
-              />
-            </button>
-            <span>Add to cart</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="lightbox-modal hidden"></div>
+      <section class="l-section-1 u-flex u-flex-center u-flex-gap-xl">
+        <div class="l-gallery u-flex u-flex-col u-flex-center"></div>
+        <div
+          class="l-lightbox-modal is-hidden u-flex u-flex-center u-z-lightbox"
+        ></div>
+        <div class="l-product-info u-flex u-flex-col u-flex-between"></div>
+      </section>
     </main>
 
     <footer>
@@ -117,6 +82,11 @@
         >. Coded by <a href="#">Akshayv30</a>.
       </div>
     </footer>
+
+    <audio
+      id="alertSound"
+      src="./res/assets/audio/wrong-answer-126515.mp3"
+    ></audio>
     <script defer type="module" src="./res/js/app.js"></script>
   </body>
 </html>

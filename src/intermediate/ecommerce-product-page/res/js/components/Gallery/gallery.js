@@ -1,26 +1,19 @@
-import { state } from "../../core/state.js";
 import { galleryTemplate } from "./gallery.template.js";
-import { openLightbox } from "../Lightbox/lightbox.js";
+import { state } from "../../core/state.js";
+import { updateMainImage, bindThumbnails } from "../../utils/gallery.js";
+import { renderLightBox } from "../LightBox/lightbox.js";
 
 export function renderGallery() {
-  const container = document.querySelector("#gallery-item");
-
+  const container = document.querySelector(".l-gallery");
   container.innerHTML = galleryTemplate(state.selectedProduct);
 
-  const thumbs = container.querySelectorAll(".c-gallery__thumb");
+  bindThumbnails(container);
+  updateMainImage(container);
 
-  thumbs.forEach((t) => {
-    t.addEventListener("click", (e) => {
-      const i = e.target.dataset.index;
-
-      document.querySelector(".c-gallery__main").src =
-        state.selectedProduct.images[i].full;
-
-      state.currentImage = i;
+  // open lightbox from current image
+  container
+    .querySelector(".c-gallery__main-img")
+    .addEventListener("click", () => {
+      renderLightBox(state.currentImage);
     });
-  });
-
-  container.querySelector(".c-gallery__main").addEventListener("click", () => {
-    openLightbox(state.currentImage);
-  });
 }

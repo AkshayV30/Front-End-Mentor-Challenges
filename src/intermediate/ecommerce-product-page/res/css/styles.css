@@ -8,6 +8,7 @@
 @import url("./utilities/grid.css");
 @import url("./utilities/states.css");
 @import url("./utilities/utilities.css");
+@import url("./utilities/z_index.css");
 
 @import url("./components/header.css");
 @import url("./components/cart.css");

@@ -1,39 +1,31 @@
-.c-lightbox {
-  max-width: 40rem;
-  position: relative;
-}
-
-.c-lightbox__img {
+.c-lightbox-contents {
+  max-width: 45rem;
   width: 100%;
-  border-radius: 1rem;
 }
 
-.c-lightbox__close {
-  position: absolute;
-  top: -3rem;
-  right: -3rem;
-  background: none;
+.c-btn-lightBox {
+  width: 4rem;
+  aspect-ratio: 1;
+
+  background: var(--color-white);
+  border-radius: 50%;
+
   border: none;
   cursor: pointer;
 }
 
-.c-lightbox__nav {
-  position: absolute;
+.btn-prev {
   top: 50%;
-  transform: translateY(-50%);
-  background: white;
-  border-radius: 50%;
-  width: 4rem;
-  height: 4rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-}
-
-.c-lightbox__nav--prev {
   left: -2rem;
+  transform: translateY(-50%);
 }
-.c-lightbox__nav--next {
+.btn-next {
+  top: 50%;
   right: -2rem;
+  transform: translateY(-50%);
+}
+.btn-close {
+  top: -3rem;
+  right: 0;
+  background: transparent;
 }
