@@ -32,7 +32,7 @@ export function renderProduct() {
   btnProductAddCart.addEventListener("click", () => {
     if (productQty <= 0) return; // ignore 0
 
-    const existingItemIndex = state.cart.findIndex(
+    const existingItemIndex = state.cart.find(
       (item) => item.id === state.selectedProduct.id,
     );
 

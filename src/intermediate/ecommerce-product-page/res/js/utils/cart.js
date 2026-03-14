@@ -1,4 +1,4 @@
-import { state } from "./../core/state";
+import { state } from "./../core/state.js";
 
 // Update cart badge
 export function updateCartBadge() {

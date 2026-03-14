@@ -1,4 +1,4 @@
-import { state } from "../core/state";
+import { state } from "../core/state.js";
 /**
  * Update the main image in any container (gallery or lightbox)
  */

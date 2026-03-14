@@ -12,7 +12,7 @@ async function init() {
   renderProduct();
   renderCart();
   setupCartToggle();
-  updateCartBadge(); // ensure badge is correct on load
+  updateCartBadge();
 }
 
 init();
