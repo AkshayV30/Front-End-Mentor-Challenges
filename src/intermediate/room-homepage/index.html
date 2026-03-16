@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -9,23 +9,28 @@
       rel="icon"
       type="image/png"
       sizes="32x32"
-      href="./images/favicon-32x32.png"
+      href="./res/assets/favicon-32x32.png"
     />
 
     <title>Frontend Mentor | Room homepage</title>
 
     <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-    <script type="module" src="./script.js"></script>
-    <link rel="stylesheet" href="./style.css" />
-    <style>
-      @import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@500;600;700&display=swap");
-    </style>
+
+    <link rel="stylesheet" href="./res/css/style.css" />
+    <link rel="stylesheet" href="./res/css/mediaStyle.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght,YOPQ@100..900,300&family=League+Spartan:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <main>
       <nav>
         <div class="container-nav">
-          <img id="logo" src="./images/logo.svg" alt="logo" />
+          <img id="logo" src="./res/assets/logo.svg" alt="logo" />
           <ul>
             <li><a href="#">Home</a></li>
             <li><a href="#">Shop</a></li>
@@ -38,13 +43,25 @@
       <div class="main-hero-img">
         <ul class="main-hero-img__track">
           <li class="main-hero-img__slide active-hero">
-            <img id="hero-img" src="./images/desktop-image-hero-1.jpg" alt="" />
+            <img
+              id="hero-img"
+              src="./res/assets/images/desktop-images/desktop-image-hero-1.jpg"
+              alt="desktop-image-hero-1"
+            />
           </li>
           <li class="main-hero-img__slide">
-            <img id="hero-img" src="./images/desktop-image-hero-2.jpg" alt="" />
+            <img
+              id="hero-img"
+              src="./res/assets/images/desktop-images/desktop-image-hero-2.jpg"
+              alt="desktop-image-hero-2"
+            />
           </li>
           <li class="main-hero-img__slide">
-            <img id="hero-img" src="./images/desktop-image-hero-3.jpg" alt="" />
+            <img
+              id="hero-img"
+              src="./res/assets/images/desktop-images/desktop-image-hero-3.jpg"
+              alt="desktop-image-hero-3"
+            />
           </li>
         </ul>
       </div>
@@ -61,7 +78,8 @@
                 with our collection and make your property a reflection of you
                 and what you love.
               </p>
-              <span>Shop now</span> <img src="./images/icon-arrow.svg" alt="" />
+              <span>Shop now</span>
+              <img src="./res/assets/icons/icon-arrow.svg" alt="icon-arrow" />
             </div>
           </li>
           <li class="main-hero-txt__slide de-active-hero">
@@ -75,7 +93,11 @@
                 hesitate to contact us today.
               </p>
               <span>Shop now</span>
-              <img id="long-arrow" src="./images/icon-arrow.svg" alt="" />
+              <img
+                id="long-arrow"
+                src="./res/assets/icons/icon-arrow.svg "
+                alt="icon-arrow"
+              />
             </div>
           </li>
           <li class="main-hero-txt__slide de-active-hero">
@@ -88,7 +110,8 @@
                 three decades of experience in this industry, we understand what
                 customers want for their home and office.
               </p>
-              <span>Shop now</span> <img src="./images/icon-arrow.svg" alt="" />
+              <span>Shop now</span>
+              <img src="./res/assets/icons/icon-arrow.svg" alt="icon-arrow" />
             </div>
           </li>
         </ul>
@@ -96,15 +119,25 @@
 
       <div class="buttons-arrow">
         <button id="angle-arrow-left" type="button">
-          <img src="./images/icon-angle-left.svg" alt="" />
+          <img
+            src="./res/assets/icons/icon-angle-left.svg"
+            alt="icon-angle-left"
+          />
         </button>
         <button id="angle-arrow-right" type="button">
-          <img src="./images/icon-angle-right.svg" alt="" />
+          <img
+            src="./res/assets/icons/icon-angle-right.svg"
+            alt="icon-angle-right"
+          />
         </button>
       </div>
 
       <div class="container-lower">
-        <img id="img-dark" src="./images/image-about-dark.jpg" alt="" />
+        <img
+          id="img-dark"
+          src="./res/assets/images/image-about-dark.jpg"
+          alt="image-about-dark"
+        />
         <div>
           <h3>About our furniture</h3>
           <p>
@@ -117,7 +150,11 @@
           </p>
         </div>
 
-        <img id="img-light" src="./images/image-about-light.jpg" alt="" />
+        <img
+          id="img-light"
+          src="./res/assets/images/image-about-light.jpg"
+          alt="image-about-light"
+        />
       </div>
     </main>
 
@@ -126,8 +163,10 @@
         Challenge by
         <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
           >Frontend Mentor</a
-        >. Coded by <a href="#">Your Name Here</a>.
+        >. Coded by <a href="#">AkshayV30</a>.
       </div>
     </footer>
+    <!-- <script type="module" src="./res/js/script.js"></script> -->
+    <script type="module" src="./res/js/newscript.js"></script>
   </body>
 </html>

@@ -32,3 +32,31 @@
 .c-avatar:hover {
   border: 2px solid var(--color-primary);
 }
+
+@media (max-width: 768px) {
+  /* tablet layout */
+
+  .c-cart-icon {
+    scale: 0.8;
+  }
+}
+
+@media (max-width: 640px) {
+  /* large phone layout */
+  .c-logo {
+    height: 1.2rem;
+  }
+  .c-avatar {
+    height: 4rem;
+  }
+
+  :root {
+    --header-padding: 3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .l-nav__item-list {
+    flex-direction: column;
+  }
+}

@@ -20,7 +20,7 @@
 
   /* derived spacing */
   --header-divider-offset: calc(var(--header-padding) * 1.35);
-  --nav-underline-offset: calc(var(--header-padding) * 0.12);
+  --nav-underline-offset: calc(var(--header-padding) * 0.45);
   --nav-underline-height: calc(var(--header-padding) * 0.1);
 
   --thumbs-gap: 1rem;

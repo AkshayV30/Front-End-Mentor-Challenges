@@ -28,7 +28,7 @@ export function productControlsTemplate() {
           src="./res/assets/icons/icon-cart.svg"
           alt=""
         />
-        <p> Add to cart </p>
+        <p > Add to cart </p>
       </button>
 
     </div>

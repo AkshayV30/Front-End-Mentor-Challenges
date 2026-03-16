@@ -106,3 +106,27 @@
 .u-flex-gap-xl {
   gap: 2rem;
 }
+
+@media (max-width: 768px) {
+  /* tablet layout */
+
+  .u-flex-gap-xl {
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 640px) {
+  /* large phone layout */
+
+  .u-flex-gap-xl {
+    gap: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  /* phone layout */
+
+  .l-section-1 {
+    flex-direction: column;
+  }
+}

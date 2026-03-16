@@ -5,8 +5,8 @@ export async function loadProducts() {
   const data = await res.json();
   const base = data.config.productImageBase;
 
-  console.log(data);
-  console.log(base);
+  // console.log(data);
+  // console.log(base);
 
   state.config = data.config;
 
