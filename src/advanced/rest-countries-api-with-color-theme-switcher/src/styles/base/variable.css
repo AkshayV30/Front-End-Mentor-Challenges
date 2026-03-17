@@ -1,0 +1,25 @@
+:root {
+  /*  
+  Layout | The designs were created to the following widths:
+
+- Mobile: 375px
+- Desktop: 1440px
+
+  /*  Colors - Neutral */
+  --dark-blue: hsl(209, 23%, 22%); /*(Dark Mode Elements)*/
+  --very-dark-blue-bg: hsl(207, 26%, 17%); /* (Dark Mode Background)*/
+
+  --white: hsl(0, 0%, 100%); /* (Dark Mode Text & Light Mode Elements)*/
+
+  --very-dark-blue-txt: hsl(200, 15%, 8%); /* (Light Mode Text)*/
+  --dark-gray: hsl(0, 0%, 52%); /* (Light Mode Input)*/
+  --very-light-gray: hsl(0, 0%, 98%); /* (Light Mode Background)*/
+
+  /*  Typography -- Fonts
+- Family: [Nunito Sans](https://fonts.google.com/specimen/Nunito+Sans)
+- Weights: 300, 600, 800 */
+
+  /* Body  */
+  --homepage-items-font-size: 1.4rem;
+  --details-page-font-size: 1.6rem;
+}
