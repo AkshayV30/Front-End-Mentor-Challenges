@@ -1,3 +1,7 @@
+@import url("./layouts/layout.css");
+@import url("./components/component.css");
+@import url("./utilities/utils.css");
+
 :root {
   /*  
   Layout | The designs were created to the following widths:

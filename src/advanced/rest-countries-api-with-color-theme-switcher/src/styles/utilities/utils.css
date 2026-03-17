@@ -7,3 +7,7 @@
 .u-flex-justify--between {
   justify-content: space-between;
 }
+/* -------------------- */
+.u-grid {
+  display: grid;
+}
