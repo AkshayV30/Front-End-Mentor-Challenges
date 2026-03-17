@@ -1,4 +1,4 @@
-import { navigate } from "../../app/router.js";
+import { navigate } from "../../router.js";
 
 export function countryCard(country) {
   return `
