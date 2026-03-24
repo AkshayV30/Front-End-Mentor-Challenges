@@ -1,18 +1,16 @@
-// import { renderCountriesPage } from "../countries/countries.page.js";
-import { countriesState } from "../countries/countries.state.js";
+import { appState } from "../../core/state.js";
 import { detailsComponent } from "./details.component.js";
 
-export function renderDetailsPage(name) {
-  const page = document.getElementById("page");
+export function DetailsPage(name) {
+  const root = document.getElementById("page");
 
-  const country = countriesState.countries.find((c) => c.name === name);
+  const country = appState.countries.find((c) => c.name === name);
 
-  page.innerHTML = detailsComponent(country);
+  root.innerHTML = detailsComponent(country);
 
-  const backBtn = document
+  document
     .querySelector(".js-btn-detail-back")
-    .addEventListener("click", (e) => {
-      // renderCountriesPage();
+    ?.addEventListener("click", () => {
       history.back();
     });
 }

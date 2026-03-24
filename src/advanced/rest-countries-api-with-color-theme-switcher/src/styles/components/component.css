@@ -1,19 +1,205 @@
-.c-country-card {
-  background: white;
-  border-radius: 8px;
-  overflow: hidden;
+/* header */
+.c-header {
+  color: var(--color-text);
+  background: var(--header-bg);
+  box-shadow: var(--header-shadow);
+  font-weight: var(--font-weight-bold);
+}
+.c-header > h1 {
+  font-size: 2.6rem;
+}
+.c-header > button {
+  font-size: 1.6rem;
+}
+.c-theme {
+  width: 2rem;
+  aspect-ratio: 1;
+}
+/* ------------------------------------------------------- */
+/*                                               filter UI */
+/* ------------------------------------------------------- */
+/* Search inputs */
+.c-input {
+  padding: var(--space-lg) var(--space-xl);
+  border-radius: var(--radius-md);
+
+  background: var(--card-bg);
+  color: var(--color-text);
+
+  font-size: var(--font-size-home-item);
+  min-width: 30rem;
+
+  transition:
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+  box-shadow: var(--shadow-lg);
+}
+
+.c-input:focus {
+  border-color: var(--color-text);
+}
+
+/* ------------------------------------------------------- */
+/*                                                         */
+/* ------------------------------------------------------- */
+.c-regionDropdown {
+  position: relative;
+  min-width: 15rem;
+}
+
+.c-regionDropdown__trigger {
+  width: 100%;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: var(--space-md) var(--space-lg);
+
+  background: var(--card-bg);
+  color: var(--color-text);
+
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+
   cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-}
-
-.c-country-card__body {
-  padding: 1.2rem;
-}
-
-.c-btn {
-  padding: 0.6rem 1.4rem;
   border: none;
-  background: white;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.c-regionDropdown__arrow {
+  width: 0;
+  height: 0;
+
+  border-left: 0.4rem solid transparent;
+  border-right: 0.4rem solid transparent;
+  /* border-top: 0.4rem solid var(--color-text); */
+  border-top: 0.4rem solid red;
+
+  transition: transform 0.25s ease;
+  will-change: transform;
+}
+
+.c-regionDropdown.is-open .c-regionDropdown__arrow {
+  transform: rotate(180deg);
+}
+
+.c-regionDropdown__menu {
+  position: absolute;
+  top: 110%;
+  left: 0;
+  width: 100%;
+
+  padding: 0.5rem 0;
+
+  background: var(--card-bg);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-8px);
+
+  transition: all 0.2s ease;
+  z-index: 10;
+}
+
+.c-regionDropdown.is-open .c-regionDropdown__menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.c-regionDropdown__item {
+  width: 100%;
+  text-align: left;
+
+  padding: 0.6rem 1.5rem;
+
+  background: transparent;
+  border: none;
+  color: var(--color-text);
+
   cursor: pointer;
+
+  transition: background 0.15s ease;
+}
+
+.c-regionDropdown__item:hover {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+/* ------------------------------------------------------- */
+/*                       Country card 5x5 + 4x18.75) = 100vw*/
+/* ------------------------------------------------------- */
+
+.c-country-card {
+  max-width: 18.75vw;
+
+  color: var(--color-text);
+  background: var(--card-bg);
+  line-height: 1.5;
+
+  font-size: var(--font-size-home-item);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+  overflow: hidden;
+
+  cursor: pointer;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+.c-country-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.c-country-card img {
+  width: 100%;
+  height: 15rem;
+  object-fit: cover;
+}
+
+.c-country-card__body > h3 {
+  margin-bottom: 1rem;
+  font-weight: var(--font-weight-semibold);
+  font-size: 1.2rem;
+}
+.c-country-card__body {
+  padding: 1.5rem;
+}
+
+.c-country-card.placeholder {
+  visibility: hidden;
+}
+
+@media (max-width: 1024px) {
+  .c-country-card {
+    max-width: 45vw; /* 2 cards per row on tablets */
+  }
+}
+
+@media (max-width: 640px) {
+  .c-country-card {
+    max-width: 90vw; /* 1 card per row on mobile */
+  }
+
+  .c-country-card img {
+    height: 18rem; /* adjust for smaller screens */
+  }
+}
+
+/* ------------------ */
+.c-country-details {
+  font-size: var(--details-page-font-size);
+}
+.c-country-details__flag {
+  /* width: 80%; */
+}
+.c-country-details__content {
+}
+.c-country-detailed__content > h2 {
+  margin-bottom: 2rem;
+}
+.c-country-details__borders > .c-pad--border {
 }

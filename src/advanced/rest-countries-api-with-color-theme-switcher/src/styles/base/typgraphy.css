@@ -11,4 +11,7 @@ body {
     "YTLC" 500;
 
   font-size: var(--homepage-items-font-size);
+  background: var(--color-background);
+
+  overflow: scroll;
 }

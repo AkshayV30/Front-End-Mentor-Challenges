@@ -1,25 +1,107 @@
 :root {
-  /*  
-  Layout | The designs were created to the following widths:
+  /* -------   LAYOUT BREAKPOINTS   ------------- */
+  --breakpoint-mobile: 37.5rem;
+  --breakpoint-tablet: 76.8rem;
+  --breakpoint-desktop: 144rem;
 
-- Mobile: 375px
-- Desktop: 1440px
+  /* -------   COLOR TOKENS     --------------- */
+  /* Dark theme */
+  --color-dark-surface: hsl(209 23% 22%);
+  --color-dark-background: hsl(207 26% 17%);
+  --color-dark-text: hsl(0 0% 100%);
 
-  /*  Colors - Neutral */
-  --dark-blue: hsl(209, 23%, 22%); /*(Dark Mode Elements)*/
-  --very-dark-blue-bg: hsl(207, 26%, 17%); /* (Dark Mode Background)*/
+  --color-dark-muted: hsl(0 0% 70%);
 
-  --white: hsl(0, 0%, 100%); /* (Dark Mode Text & Light Mode Elements)*/
+  /* Light theme */
+  --color-light-background: hsl(0 0% 98%);
+  --color-light-surface: hsl(0 0% 100%);
+  --color-light-text: hsl(200 15% 8%);
+  --color-light-muted: hsl(0 0% 52%);
 
-  --very-dark-blue-txt: hsl(200, 15%, 8%); /* (Light Mode Text)*/
-  --dark-gray: hsl(0, 0%, 52%); /* (Light Mode Input)*/
-  --very-light-gray: hsl(0, 0%, 98%); /* (Light Mode Background)*/
+  /* Interactive colors */
+  --color-border: hsl(0 0% 80%);
+  --color-border-dark: hsl(0 0% 30%);
 
+  /* -----  TYPOGRAPHY   ------------- */
   /*  Typography -- Fonts
 - Family: [Nunito Sans](https://fonts.google.com/specimen/Nunito+Sans)
 - Weights: 300, 600, 800 */
+  --font-size-home-item: 1.4rem;
+  --font-size-details: 1.6rem;
+  --font-weight-light: 300;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 800;
 
-  /* Body  */
-  --homepage-items-font-size: 1.4rem;
-  --details-page-font-size: 1.6rem;
+  /* -----  SPACING SCALE ------------ */
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-2xl: 3rem;
+  --space-3xl: 4rem;
+
+  /* -----  SHADOW TOKENS  ---------- */
+  --shadow-sm: 0 0.2rem 0.4rem hsl(0 0% 0% / 0.06);
+  --shadow-md: 0 0.4rem 0.8rem hsl(0 0% 0% / 0.08);
+  --shadow-lg: 0 0.8rem 2rem hsl(0 0% 0% / 0.12);
+
+  /* ----- BORDER RADIUS ------------ */
+  --radius-sm: 0.4rem;
+  --radius-md: 0.8rem;
+  --radius-lg: 1.2rem;
+  --radius-xl: 2rem;
+
+  /* ----  COMPONENT SPECIFIC COLORS  ----- */
+  --header-bg: var(--color-light-surface);
+  --header-bg-dark: var(--color-dark-surface);
+  --header-shadow: var(--shadow-md);
+
+  --button-bg: var(--color-light-surface);
+  --button-bg-dark: var(--color-dark-surface);
+  --button-text: var(--color-light-text);
+  --button-text-dark: var(--color-dark-text);
+  --button-hover-bg: var(--color-primary);
+  --button-hover-text: var(--color-dark-text);
+
+  --card-bg: var(--color-light-surface);
+  --card-bg-dark: var(--color-dark-surface);
+  --card-shadow: var(--shadow-sm);
+
+  --border-color: var(--color-border);
+  --border-color-dark: var(--color-border-dark);
+}
+
+:root[data-theme="dark"] {
+  --color-background: var(--color-dark-background);
+  --color-surface: var(--color-dark-surface);
+  --color-text: var(--color-dark-text);
+  --color-muted: var(--color-dark-muted);
+
+  --header-bg: var(--header-bg-dark);
+  --button-bg: var(--button-bg-dark);
+  --button-text: var(--button-text-dark);
+  --card-bg: var(--card-bg-dark);
+  --border-color: var(--border-color-dark);
+
+  --region-filter-arrow-bg: var(--color-dark-surface);
+  --region-filter-bg: var(--color-dark-surface);
+  --region-filter-text: var(--color-light-text);
+}
+
+:root [data-theme="light"] {
+  --color-background: var(--color-light-background);
+  --color-surface: var(--color-light-surface);
+  --color-text: var(--color-light-text);
+  --color-muted: var(--color-light-muted);
+
+  --header-bg: var(--header-bg);
+  --button-bg: var(--button-bg);
+  --button-text: var(--button-text);
+  --card-bg: var(--card-bg);
+  --border-color: var(--border-color);
+
+  --region-filter-arrow-bg: var(--color-dark-background);
+  --region-filter-bg: var();
+  --region-filter-text: var();
 }

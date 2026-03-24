@@ -20,14 +20,14 @@
 // -----------------------------
 // 🧩 Import Modules
 // -----------------------------
-import { loadCards } from './res/js/loadCards.js';
-import { renderCards } from './res/js/renderCards.js';
-import { initCarousel } from './res/js/carousel.js';
+import { loadCards } from "./res/js/loadCards.js";
+import { renderCards } from "./res/js/renderCards.js";
+import { initCarousel } from "./res/js/carousel.js";
 
 // -----------------------------
 // ⚡ Main App Initialization
 // -----------------------------
-document.addEventListener('DOMContentLoaded', async () => {
+document.addEventListener("DOMContentLoaded", async () => {
   // 1️⃣ Load project data (from JSON or another data source)
   const projects = await loadCards();
 
@@ -41,15 +41,16 @@ document.addEventListener('DOMContentLoaded', async () => {
   // 🎚️ Dropdown Filtering Setup
   // -----------------------------
   // Get reference to the dropdown filter (must exist in HTML as #levelFilter)
-  const filterSelect = document.getElementById('levelFilter');
+  const filterSelect = document.getElementById("levelFilter");
 
   // When user changes dropdown value, filter displayed projects
-  filterSelect.addEventListener('change', (e) => {
+  filterSelect.addEventListener("change", (e) => {
     const level = e.target.value;
 
     // If "ALL" is selected → show every project
     // Otherwise → filter by specific level
-    const filtered = level === 'ALL' ? projects : projects.filter((p) => p.level === level);
+    const filtered =
+      level === "ALL" ? projects : projects.filter((p) => p.level === level);
 
     // Re-render filtered projects
     renderCards(filtered);

@@ -1,63 +1,89 @@
-import { countriesState } from "./countries.state.js";
-import { uniqueRegions } from "../../shared/utils/helpers.js";
-import { countryCard, bindCardNavigation } from "./countryCard.component.js";
-import { filterUI } from "./countryFilter.component.js";
+import { appState } from "../../core/state.js";
 import { filterCountries } from "./countries.service.js";
 
-let searchInput;
-let regionSelect;
+import { FilterComponent } from "../components/Filter.component.js";
+import { GridComponent } from "../components/Grid.component.js";
+import { uniqueRegions } from "../../shared/utils/helpers.js";
 
-export function renderCountriesPage() {
-  const page = document.getElementById("page");
+let gridInstance;
 
-  const regions = uniqueRegions(countriesState.countries);
+export function CountriesPage() {
+  const root = document.getElementById("page");
+  if (!root) return;
 
-  page.innerHTML = `
+  const regions = uniqueRegions(appState.countries);
+
+  root.innerHTML = `
 
    <div class="l-container">
 
-      ${filterUI(regions)}
+    <div class="js-filter__root"> </div>
 
-      <div class="l-countries"></div>
+    <div class="l-countries u-grid u-grid-4 u-grid-justify-content-center u-grid-gap-4xl js-grid__root"></div>
 
    </div>
 
 `;
+  const fRoot = root.querySelector(".js-filter__root");
+  const gRoot = root.querySelector(".js-grid__root");
 
-  renderCountries();
+  renderFilter(fRoot, regions);
+  renderGrid(gRoot);
+}
+function renderFilter(root, regions) {
+  const Filter = FilterComponent({
+    regions,
+    filters: appState.filters,
+    onChange: handleChange,
+  });
 
-  bindFilters();
+  root.innerHTML = Filter.render();
+  Filter.bind(root);
+}
+
+function renderGrid(root) {
+  const Grid = GridComponent({
+    countries: appState.filtered,
+  });
+
+  root.innerHTML = Grid.render();
+  Grid.bind(root);
 }
 
 // -----------------------------------------------------------------------------------------
-
-function renderCountries() {
-  const grid = document.querySelector(".l-countries");
-
-  grid.innerHTML = countriesState.filtered.map(countryCard).join("");
-
-  bindCardNavigation(grid);
-}
-
 // -----------------------------------------------------------------------------------------
-export function bindFilters() {
-  searchInput = document.getElementById("searchInput");
-  regionSelect = document.getElementById("regionFilter");
+export function handleChange({ search, region } = {}) {
+  const label = document.querySelector(".js-regionLabel");
+  const gRoot = document.querySelector(".js-grid__root");
 
-  searchInput.addEventListener("input", handleFilterChange);
-  regionSelect.addEventListener("input", handleFilterChange);
-}
+  if (region !== undefined) {
+    appState.filters.region = region;
+  }
 
-// -----------------------------------------------------------------------------------------
-export function handleFilterChange() {
-  const term = searchInput.value;
-  const region = regionSelect.value;
+  if (search !== undefined) {
+    appState.filters.search = search.toLowerCase();
+  }
 
-  countriesState.filtered = filterCountries(
-    countriesState.countries,
-    term,
-    region,
+  appState.filtered = filterCountries(
+    appState.countries,
+    appState.filters.search,
+    appState.filters.region,
   );
 
-  renderCountries();
+  console.log({
+    search: appState.filters.search,
+    region: appState.filters.region,
+    results: appState.filtered.length,
+  });
+
+  if (label) {
+    label.textContent =
+      appState.filters.region === "All"
+        ? "Filter by Region"
+        : appState.filters.region;
+  }
+
+  if (!gRoot) return;
+
+  renderGrid(gRoot);
 }

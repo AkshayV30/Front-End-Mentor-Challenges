@@ -57,30 +57,44 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  height: 100vh;
 }
-
-/* ======================
-   HEADER Layouts
-====================== */
 
 .l-header {
-  position: relative;
-  padding-block: var(--header-padding);
+  width: 100%;
+  padding: 2rem;
+}
+.l-filters {
+  width: 100%;
+  padding: 4rem 0;
 }
 
-/* ======================
-   main Layouts
-====================== */
-/* ======================
-   section Layouts
-====================== */
-.l-section-1 {
+.l-countries {
+  width: 100%;
 }
 
-@media (max-width: 640px) {
-  /* large phone layout */
+/* @media (max-width: 640px) {
+  /* large phone layout * b/
 }
 
 @media (max-width: 480px) {
 }
+
+.l-details-layout {
+  display: grid;
+  gap: 4rem;
+}
+
+.l-details-meta {
+  display: grid;
+  gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  .l-details-layout {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .l-details-meta {
+    grid-template-columns: repeat(2, 1fr);
+  }
+} */

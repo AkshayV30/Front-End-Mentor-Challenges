@@ -1,0 +1,177 @@
+/* =========================
+   GRID UTILITY CLASSES
+   Provides easy-to-use grid layouts
+   and spacing utilities for rapid prototyping
+========================= */
+
+/* -------------------------
+   GRID CONTAINERS
+------------------------- */
+.u-grid {
+  display: grid;
+}
+
+.u-inline-grid {
+  display: inline-grid;
+}
+
+/* -------------------------
+   GRID COLUMNS
+   - Use these to define how many columns your grid has
+   - Auto-fit allows responsive column widths
+------------------------- */
+.u-grid-1 {
+  grid-template-columns: 1fr;
+}
+.u-grid-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+.u-grid-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+.u-grid-4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+.u-grid-5 {
+  grid-template-columns: repeat(5, 1fr);
+}
+
+.u-grid-auto {
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  /* auto-fit fills the row with as many columns as fit the min width */
+}
+
+/* -------------------------
+   GRID GAP (Spacing)
+   - Defines space between rows and columns
+------------------------- */
+.u-grid-gap-xs {
+  gap: 0.25rem;
+}
+.u-grid-gap-sm {
+  gap: 0.5rem;
+}
+.u-grid-gap-md {
+  gap: 1rem;
+}
+.u-grid-gap-lg {
+  gap: 1.5rem;
+}
+.u-grid-gap-xl {
+  gap: 2rem;
+}
+.u-grid-gap-2xl {
+  gap: 3rem;
+}
+.u-grid-gap-4xl {
+  gap: 6rem;
+}
+
+/* -------------------------
+   GRID ALIGNMENT
+   - Aligns items within the grid container
+   - 'place-items' = 'align-items + justify-items'
+------------------------- */
+.u-grid-center {
+  place-items: center;
+} /* horizontally & vertically centered */
+.u-grid-start {
+  place-items: start;
+} /* aligns items to top-left */
+.u-grid-end {
+  place-items: end;
+} /* aligns items to bottom-right */
+.u-grid-stretch {
+  place-items: stretch;
+} /* stretch items to fill cells */
+
+/* -------------------------
+   JUSTIFY AND ALIGN INDIVIDUAL AXES
+------------------------- */
+.u-grid-justify-start {
+  justify-items: start;
+}
+.u-grid-justify-center {
+  justify-items: center;
+}
+.u-grid-justify-end {
+  justify-items: end;
+}
+.u-grid-justify-stretch {
+  justify-items: stretch;
+}
+
+.u-grid-align-start {
+  align-items: start;
+}
+.u-grid-align-center {
+  align-items: center;
+}
+.u-grid-align-end {
+  align-items: end;
+}
+.u-grid-align-stretch {
+  align-items: stretch;
+}
+
+/* -------------------------
+   GRID ROWS
+   - Explicitly define rows if needed
+------------------------- */
+.u-grid-row-1 {
+  grid-template-rows: 1fr;
+}
+.u-grid-row-2 {
+  grid-template-rows: repeat(2, 1fr);
+}
+.u-grid-row-3 {
+  grid-template-rows: repeat(3, 1fr);
+}
+
+/* -------------------------
+   GRID AUTO FLOW
+   - Controls how items are placed: row vs column
+------------------------- */
+.u-grid-flow-row {
+  grid-auto-flow: row;
+}
+.u-grid-flow-column {
+  grid-auto-flow: column;
+}
+.u-grid-flow-dense {
+  grid-auto-flow: dense;
+} /* fills gaps automatically */
+
+/* -------------------------
+   GRID ITEM SPAN
+   - Apply to individual grid items
+------------------------- */
+.u-col-span-1 {
+  grid-column: span 1;
+}
+.u-col-span-2 {
+  grid-column: span 2;
+}
+.u-col-span-3 {
+  grid-column: span 3;
+}
+.u-col-span-4 {
+  grid-column: span 4;
+}
+
+.u-row-span-1 {
+  grid-row: span 1;
+}
+.u-row-span-2 {
+  grid-row: span 2;
+}
+.u-row-span-3 {
+  grid-row: span 3;
+}
+.u-row-span-4 {
+  grid-row: span 4;
+}
+/* --------------- */
+.u-grid-justify-content-center {
+  justify-content: center;
+}
