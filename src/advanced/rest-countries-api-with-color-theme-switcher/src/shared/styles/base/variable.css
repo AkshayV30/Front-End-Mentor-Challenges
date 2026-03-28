@@ -13,7 +13,7 @@
   --color-dark-muted: hsl(0 0% 70%);
 
   /* Light theme */
-  --color-light-background: hsl(0 0% 98%);
+  --color-light-background: hsl(0 0% 90%);
   --color-light-surface: hsl(0 0% 100%);
   --color-light-text: hsl(200 15% 8%);
   --color-light-muted: hsl(0 0% 52%);
@@ -21,6 +21,8 @@
   /* Interactive colors */
   --color-border: hsl(0 0% 80%);
   --color-border-dark: hsl(0 0% 30%);
+
+  --arrow-bg: hsl(22, 92%, 46%);
 
   /* -----  TYPOGRAPHY   ------------- */
   /*  Typography -- Fonts
@@ -40,6 +42,9 @@
   --space-xl: 2rem;
   --space-2xl: 3rem;
   --space-3xl: 4rem;
+
+  --spacing-header: 2rem;
+  --spacing-section: 4rem;
 
   /* -----  SHADOW TOKENS  ---------- */
   --shadow-sm: 0 0.2rem 0.4rem hsl(0 0% 0% / 0.06);
@@ -83,10 +88,6 @@
   --button-text: var(--button-text-dark);
   --card-bg: var(--card-bg-dark);
   --border-color: var(--border-color-dark);
-
-  --region-filter-arrow-bg: var(--color-dark-surface);
-  --region-filter-bg: var(--color-dark-surface);
-  --region-filter-text: var(--color-light-text);
 }
 
 :root [data-theme="light"] {
@@ -100,8 +101,4 @@
   --button-text: var(--button-text);
   --card-bg: var(--card-bg);
   --border-color: var(--border-color);
-
-  --region-filter-arrow-bg: var(--color-dark-background);
-  --region-filter-bg: var();
-  --region-filter-text: var();
 }

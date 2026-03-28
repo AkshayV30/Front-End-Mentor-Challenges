@@ -5,24 +5,16 @@ import { FilterComponent } from "../components/Filter.component.js";
 import { GridComponent } from "../components/Grid.component.js";
 import { uniqueRegions } from "../../shared/utils/helpers.js";
 
-let gridInstance;
-
 export function CountriesPage() {
-  const root = document.getElementById("page");
+  const root = document.querySelector(".js-page");
   if (!root) return;
 
   const regions = uniqueRegions(appState.countries);
 
   root.innerHTML = `
-
-   <div class="l-container">
-
-    <div class="js-filter__root"> </div>
-
-    <div class="l-countries u-grid u-grid-4 u-grid-justify-content-center u-grid-gap-4xl js-grid__root"></div>
-
-   </div>
-
+   <div class="js-filter__root l-filters u-flex u-items-center u-justify-between"> </div>
+   <div class="js-grid__root l-countries u-grid  u-grid-justify-content-center u-grid-gap-4xl "></div>
+  
 `;
   const fRoot = root.querySelector(".js-filter__root");
   const gRoot = root.querySelector(".js-grid__root");
@@ -30,6 +22,9 @@ export function CountriesPage() {
   renderFilter(fRoot, regions);
   renderGrid(gRoot);
 }
+// -------------------------------------------------------------
+/*                                                            */
+// -------------------------------------------------------------
 function renderFilter(root, regions) {
   const Filter = FilterComponent({
     regions,
@@ -40,7 +35,9 @@ function renderFilter(root, regions) {
   root.innerHTML = Filter.render();
   Filter.bind(root);
 }
-
+// -------------------------------------------------------------
+/*                                                            */
+// -------------------------------------------------------------
 function renderGrid(root) {
   const Grid = GridComponent({
     countries: appState.filtered,
@@ -50,8 +47,9 @@ function renderGrid(root) {
   Grid.bind(root);
 }
 
-// -----------------------------------------------------------------------------------------
-// -----------------------------------------------------------------------------------------
+// -------------------------------------------------------------
+/*                                                            */
+// -------------------------------------------------------------
 export function handleChange({ search, region } = {}) {
   const label = document.querySelector(".js-regionLabel");
   const gRoot = document.querySelector(".js-grid__root");
@@ -70,11 +68,11 @@ export function handleChange({ search, region } = {}) {
     appState.filters.region,
   );
 
-  console.log({
-    search: appState.filters.search,
-    region: appState.filters.region,
-    results: appState.filtered.length,
-  });
+  // console.log({
+  //   search: appState.filters.search,
+  //   region: appState.filters.region,
+  //   results: appState.filtered.length,
+  // });
 
   if (label) {
     label.textContent =

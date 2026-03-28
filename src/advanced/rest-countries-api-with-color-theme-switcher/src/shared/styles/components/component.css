@@ -20,19 +20,18 @@
 /* ------------------------------------------------------- */
 /* Search inputs */
 .c-input {
+  font-size: var(--font-size-home-item);
+
   padding: var(--space-lg) var(--space-xl);
   border-radius: var(--radius-md);
 
   background: var(--card-bg);
   color: var(--color-text);
-
-  font-size: var(--font-size-home-item);
-  min-width: 30rem;
+  box-shadow: var(--shadow-lg);
 
   transition:
     border-color 0.3s ease,
     box-shadow 0.3s ease;
-  box-shadow: var(--shadow-lg);
 }
 
 .c-input:focus {
@@ -44,96 +43,97 @@
 /* ------------------------------------------------------- */
 .c-regionDropdown {
   position: relative;
-  min-width: 15rem;
+  min-width: 18rem;
 }
 
 .c-regionDropdown__trigger {
   width: 100%;
 
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-  padding: var(--space-md) var(--space-lg);
+  padding: var(--space-lg);
 
   background: var(--card-bg);
   color: var(--color-text);
 
   border-radius: var(--radius-md);
-  box-shadow: var(--shadow-md);
+  box-shadow: var(--shadow-lg);
 
   cursor: pointer;
   border: none;
 }
 
-.c-regionDropdown__arrow {
-  width: 0;
-  height: 0;
-
-  border-left: 0.4rem solid transparent;
-  border-right: 0.4rem solid transparent;
-  /* border-top: 0.4rem solid var(--color-text); */
-  border-top: 0.4rem solid red;
-
-  transition: transform 0.25s ease;
-  will-change: transform;
-}
-
-.c-regionDropdown.is-open .c-regionDropdown__arrow {
-  transform: rotate(180deg);
-}
-
+/* ---------------------------------------------------- */
+/* Dropdown Menu */
 .c-regionDropdown__menu {
   position: absolute;
   top: 110%;
   left: 0;
   width: 100%;
 
-  padding: 0.5rem 0;
-
+  padding: var(--space-lg);
   background: var(--card-bg);
   border-radius: var(--radius-md);
-  box-shadow: var(--shadow-md);
+  box-shadow: var(--shadow-lg);
 
   opacity: 0;
   visibility: hidden;
-  transform: translateY(-8px);
+  transform: translateY(-8px) translateZ(0);
 
-  transition: all 0.2s ease;
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
   z-index: 10;
+  will-change: opacity, transform;
+  /* browser for GPU compositing */
 }
 
+/* Open state */
 .c-regionDropdown.is-open .c-regionDropdown__menu {
   opacity: 1;
   visibility: visible;
-  transform: translateY(0);
+  transform: translateY(0) translateZ(0);
 }
 
+/* Dropdown Items */
 .c-regionDropdown__item {
   width: 100%;
   text-align: left;
 
-  padding: 0.6rem 1.5rem;
-
+  padding: var(--space-sm) 0;
   background: transparent;
-  border: none;
   color: var(--color-text);
 
   cursor: pointer;
 
-  transition: background 0.15s ease;
+  transition:
+    background 0.15s ease,
+    border-bottom 0.15s ease;
+
+  will-change: background, border-bottom;
+  /*  for smoother hover */
 }
 
 .c-regionDropdown__item:hover {
-  background: rgba(0, 0, 0, 0.05);
+  border-bottom: 0.02rem solid var(--color-dark-muted);
 }
 
 /* ------------------------------------------------------- */
 /*                       Country card 5x5 + 4x18.75) = 100vw*/
 /* ------------------------------------------------------- */
 
+.c-has-no-country {
+  width: 100%;
+  text-align: center;
+  padding: 12rem 0;
+  font-size: 1.5rem;
+  color: var(--color-text-muted, #888); /* subtle muted color */
+  font-weight: 400;
+  background: var(--card-bg, #f9f9f9);
+  border-radius: var(--radius-md, 0.5rem);
+  box-shadow: var(--shadow-sm, 0 1px 3px rgba(0, 0, 0, 0.1));
+}
+
 .c-country-card {
-  max-width: 18.75vw;
+  max-width: 18.85vw;
 
   color: var(--color-text);
   background: var(--card-bg);
@@ -141,7 +141,7 @@
 
   font-size: var(--font-size-home-item);
   border-radius: var(--radius-md);
-  box-shadow: var(--shadow-md);
+  box-shadow: var(--shadow-lg);
   overflow: hidden;
 
   cursor: pointer;
@@ -151,7 +151,6 @@
 }
 .c-country-card:hover {
   transform: translateY(-4px);
-  box-shadow: var(--shadow-lg);
 }
 
 .c-country-card img {
@@ -172,21 +171,29 @@
 .c-country-card.placeholder {
   visibility: hidden;
 }
-
-@media (max-width: 1024px) {
-  .c-country-card {
-    max-width: 45vw; /* 2 cards per row on tablets */
-  }
+/* ------------------ */
+/*                    */
+/* ------------------ */
+.c-country-detailed__content {
+  color: var(--color-text);
+  line-height: 1.5;
+}
+.c-country-details__flag {
+  width: 50rem;
+  aspect-ratio: 1.5;
 }
 
-@media (max-width: 640px) {
-  .c-country-card {
-    max-width: 90vw; /* 1 card per row on mobile */
-  }
-
-  .c-country-card img {
-    height: 18rem; /* adjust for smaller screens */
-  }
+.c-country-detailed__content > h2 {
+  font-size: 2.4rem;
+}
+.c-country-detailed__container {
+  font-size: 1.2rem;
+}
+.c-country-details__borders {
+  margin-top: var(--spacing-section);
+}
+.c-country-details__border {
+  margin: var(--space-xs) 0;
 }
 
 /* ------------------ */
@@ -202,4 +209,54 @@
   margin-bottom: 2rem;
 }
 .c-country-details__borders > .c-pad--border {
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .c-country-card {
+    max-width: 45vw; /* 2 cards per row on tablets */
+  }
+  .c-input {
+    flex: 1 1 60%;
+  }
+
+  .c-regionDropdown {
+    flex: 1 1 35%;
+  }
+  .c-country-details__flag {
+    width: 100%;
+    max-width: 40rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+  .c-input,
+  .c-regionDropdown {
+    width: 100%;
+  }
+
+  .c-country-card {
+    max-width: 90vw; /* 1 card per row on mobile */
+  }
+
+  .c-country-card img {
+    height: 18rem; /* adjust for smaller screens */
+  }
+
+  .c-header h1 {
+    font-size: 1.8rem;
+  }
+
+  .c-header button {
+    font-size: 1.2rem;
+  }
+  .c-country-detailed__container {
+    flex-direction: column;
+  }
+
+  .c-country-details__borders {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }

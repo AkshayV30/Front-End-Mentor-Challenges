@@ -1,0 +1,13 @@
+@import url("./shared/styles/base/variable.css");
+@import url("./shared/styles/base/typgraphy.css");
+@import url("./shared/styles/base/reset.css");
+
+@import url("./shared/styles/layouts/layout.css");
+
+@import url("./shared/styles/components/component.css");
+@import url("./shared/styles/components/buttons.css");
+@import url("./shared/styles/components/arrows.css");
+
+@import url("./shared/styles/utilities/flex.css");
+@import url("./shared/styles/utilities/grid.css");
+@import url("./shared/styles/utilities/states.css");

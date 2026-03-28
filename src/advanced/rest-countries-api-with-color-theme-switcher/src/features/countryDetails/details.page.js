@@ -1,8 +1,8 @@
 import { appState } from "../../core/state.js";
-import { detailsComponent } from "./details.component.js";
+import { detailsComponent } from "./Details.component.js";
 
 export function DetailsPage(name) {
-  const root = document.getElementById("page");
+  const root = document.querySelector(".js-page");
 
   const country = appState.countries.find((c) => c.name === name);
 

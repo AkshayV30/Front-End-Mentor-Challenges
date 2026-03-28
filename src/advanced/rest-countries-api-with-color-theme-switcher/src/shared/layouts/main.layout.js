@@ -6,7 +6,7 @@ export function mainLayout() {
 
   app.innerHTML = `
     ${header()}
-    <main id="page"></main>
+    <main class="l-main-container js-page"></main>
   `;
 
   initThemeToggle();

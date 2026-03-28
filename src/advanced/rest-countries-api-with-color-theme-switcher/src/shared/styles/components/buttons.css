@@ -1,0 +1,29 @@
+.c-btn {
+  color: var(--button-text);
+  background: var(--button-bg);
+  box-shadow: var(--shadow-lg);
+}
+
+.btn-theme-toggle {
+  background: transparent;
+  padding: 2rem;
+}
+
+.btn-detail-back {
+  padding: var(--space-lg);
+  border-radius: 0.5rem;
+  width: 8rem;
+}
+
+.btn-border {
+  padding: var(--space-sm) var(--space-md);
+  border-radius: 0.5rem;
+  margin: var(--space-sm);
+}
+
+@media (max-width: 640px) {
+  .btn-detail-back {
+    width: fit-content;
+    padding: var(--space-sm) var(--space-md);
+  }
+}

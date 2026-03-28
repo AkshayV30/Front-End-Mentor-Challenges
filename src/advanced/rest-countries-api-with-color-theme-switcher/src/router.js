@@ -1,6 +1,6 @@
-import { mount } from "../core/renderer.js";
-import { CountriesPage } from "../features/countries/countries.page.js";
-import { DetailsPage } from "../features/countryDetails/details.page.js";
+import { mount } from "./core/renderer.js";
+import { CountriesPage } from "./features/countries/countries.page.js";
+import { DetailsPage } from "./features/countryDetails/details.page.js";
 
 export function router() {
   window.addEventListener("hashchange", handleRoute);

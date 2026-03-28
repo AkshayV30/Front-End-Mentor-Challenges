@@ -1,7 +1,6 @@
-export function FilterComponent({ regions, filters, onChange }) {
+export const FilterComponent = ({ regions, filters, onChange }) => {
   function render() {
     return `
-  <div class="l-filters u-flex u-items-center u-justify-between">
 
     <!-- Search Input -->
     <input 
@@ -9,15 +8,17 @@ export function FilterComponent({ regions, filters, onChange }) {
       type="text"
       placeholder="Search for a country"
       value="${filters.search}"
+      name="search_country"
     >
 
     <!-- Region Filter -->
     <div class="c-regionDropdown js-regionDropdownFilter">
-        <button class="c-regionDropdown__trigger js-regionDropdown__trigger">
+        <button class="c-regionDropdown__trigger u-flex  u-justify-between u-items-center  js-regionDropdown__trigger">
           <span class="js-regionLabel"> 
           ${filters.region === "All" ? "Filter by Region" : filters.region}
           </span>
-          <span class="c-regionDropdown__arrow"></span>
+          <span class="c-chevron" data-direction="down" data-state="closed">
+          </span>
         </button>
 
         <div class="c-regionDropdown__menu js-regionDropdown__menu">
@@ -32,7 +33,7 @@ export function FilterComponent({ regions, filters, onChange }) {
 
     </div>
 
-  </div>
+
   `;
   }
 
@@ -43,7 +44,9 @@ export function FilterComponent({ regions, filters, onChange }) {
     const trigger = root.querySelector(".js-regionDropdown__trigger");
     const menu = root.querySelector(".js-regionDropdown__menu");
 
-    if (!input || !dropdown || !trigger || !menu) return;
+    const chevron = trigger?.querySelector(".c-chevron");
+
+    if (!input || !dropdown || !trigger || !menu || !chevron) return;
 
     let debounce;
 
@@ -58,7 +61,9 @@ export function FilterComponent({ regions, filters, onChange }) {
 
     trigger.addEventListener("click", (e) => {
       e.stopPropagation();
-      dropdown.classList.toggle("is-open");
+
+      const isOpen = dropdown.classList.toggle("is-open");
+      chevron.dataset.state = isOpen ? "open" : "closed";
     });
 
     menu.addEventListener("click", (e) => {
@@ -89,4 +94,4 @@ export function FilterComponent({ regions, filters, onChange }) {
     document.body.dataset.dropdownListener = "true";
   }
   return { render, bind };
-}
+};

@@ -1,0 +1,51 @@
+/* Base Chevron */
+.c-chevron {
+  --arrow-rotation: 0deg;
+
+  width: 1.2rem;
+  aspect-ratio: 1.5;
+
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+
+  transition: transform 0.25s ease;
+  will-change: transform;
+
+  transform: rotate(var(--arrow-rotation));
+}
+
+.c-chevron::before,
+.c-chevron::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 0.2rem;
+  height: 100%;
+  background: var(--arrow-bg);
+}
+/* ----------- */
+.c-chevron::before {
+  left: 1rem;
+  transform: rotate(45deg);
+  transform-origin: top left;
+}
+
+.c-chevron::after {
+  right: 1rem;
+  transform: rotate(-45deg);
+  transform-origin: top right;
+}
+
+/* ---------- */
+.c-chevron[data-direction="down"] {
+  --arrow-rotation: 0deg;
+}
+.c-chevron[data-direction="left"] {
+  --arrow-rotation: 90deg;
+}
+
+/* ---------- */
+.c-chevron[data-state="open"][data-direction="down"] {
+  --arrow-rotation: 180deg;
+}

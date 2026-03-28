@@ -1,0 +1,75 @@
+/* =========================
+   CONTAINER
+========================= */
+
+.l-main-container {
+  width: min(120rem, 90%);
+  /* margin-inline: auto; */
+}
+
+/* component layout */
+.l-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.l-header {
+  width: 100%;
+  padding: var(--spacing-header);
+}
+.l-filters {
+  /* width: 120rem; */
+  width: 100%;
+  padding: var(--spacing-section) 0;
+  gap: var(--space-lg);
+}
+
+.l-countries {
+  width: 100%;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  gap: 2rem;
+}
+.l-countries-details,
+.l-country-details__content {
+  padding-top: var(--spacing-section);
+}
+.l-countries-details {
+  /* width: 80%; */
+}
+.l-country-details__content {
+  gap: 4rem;
+}
+/* Tablet */
+@media (max-width: 1024px) {
+  .l-filters {
+    flex-wrap: wrap;
+    gap: var(--space-md);
+  }
+  .l-countries {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .l-country-details__content {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+  .l-filters {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .l-countries {
+    grid-template-columns: 1fr;
+  }
+  .l-header {
+    padding: var(--space-md);
+  }
+  .l-country-details__content {
+    gap: 2rem;
+  }
+}
