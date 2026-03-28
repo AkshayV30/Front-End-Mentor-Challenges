@@ -1,22 +1,32 @@
 # Frontend Mentor - REST Countries API with color theme switcher solution
 
-This is a solution to the [REST Countries API with color theme switcher challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/rest-countries-api-with-color-theme-switcher-5cacc469fec04111f7b848ca). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
+This is a solution to the [REST Countries API with color theme switcher challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/rest-countries-api-with-color-theme-switcher-5cacc469fec04111f7b848ca). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
 
 ## Table of contents
 
-- [Overview](#overview)
-  - [The challenge](#the-challenge)
-  - [Screenshot](#screenshot)
-  - [Links](#links)
-- [My process](#my-process)
-  - [Built with](#built-with)
-  - [What I learned](#what-i-learned)
-  - [Continued development](#continued-development)
-  - [Useful resources](#useful-resources)
-- [Author](#author)
-- [Acknowledgments](#acknowledgments)
-
-**Note: Delete this note and update the table of contents based on what sections you keep.**
+- [Frontend Mentor - REST Countries API with color theme switcher solution](#frontend-mentor---rest-countries-api-with-color-theme-switcher-solution)
+  - [Table of contents](#table-of-contents)
+  - [Overview](#overview)
+    - [The challenge](#the-challenge)
+    - [Screenshot](#screenshot)
+    - [Links](#links)
+  - [My process](#my-process)
+    - [🚀 Features](#-features)
+  - [🧱 Architecture Highlights](#-architecture-highlights)
+  - [🛠️ Built With](#️-built-with)
+    - [What I learned](#what-i-learned)
+  - [🧠 Key Learnings](#-key-learnings)
+    - [1. Component System in Vanilla JS](#1-component-system-in-vanilla-js)
+    - [2. State Management Pattern](#2-state-management-pattern)
+  - [Centralized state:](#centralized-state)
+    - [3. Custom Routing (SPA Behavior)](#3-custom-routing-spa-behavior)
+    - [4. Performance Optimization](#4-performance-optimization)
+    - [5. Responsive System](#5-responsive-system)
+    - [Continued development](#continued-development)
+  - [Planned improvements:](#planned-improvements)
+    - [Useful resources](#useful-resources)
+  - [Author](#author)
+  - [Acknowledgments](#acknowledgments)
 
 ## Overview
 
@@ -29,87 +39,137 @@ Users should be able to:
 - Filter countries by region
 - Click on a country to see more detailed information on a separate page
 - Click through to the border countries on the detail page
-- Toggle the color scheme between light and dark mode *(optional)*
+- Toggle the color scheme between light and dark mode _(optional)_
 
 ### Screenshot
 
-![](./screenshot.jpg)
-
-Add a screenshot of your solution. The easiest way to do this is to use Firefox to view your project, right-click the page and select "Take a Screenshot". You can choose either a full-height screenshot or a cropped one based on how long the page is. If it's very long, it might be best to crop it.
-
-Alternatively, you can use a tool like [FireShot](https://getfireshot.com/) to take the screenshot. FireShot has a free option, so you don't need to purchase it. 
-
-Then crop/optimize/edit your image however you like, add it to your project, and update the file path in the image above.
-
-**Note: Delete this note and the paragraphs above when you add your screenshot. If you prefer not to add a screenshot, feel free to remove this entire section.**
+![desktop-dark](./screenshots/desktop-dark.png)
+![desktop-white](./screenshots/desktop-white.png)
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [Solution](https://github.com/AkshayV30/Front-End-Mentor-Challenges/tree/master/src/advanced/rest-countries-api-with-color-theme-switcher)
+
+- Live Site URL: [Lve site URL](https://akshayv30.github.io/Front-End-Mentor-Challenges/src/advanced/rest-countries-api-with-color-theme-switcher/index.html)
 
 ## My process
 
-### Built with
+### 🚀 Features
 
-- Semantic HTML5 markup
-- CSS custom properties
-- Flexbox
-- CSS Grid
-- Mobile-first workflow
-- [React](https://reactjs.org/) - JS library
-- [Next.js](https://nextjs.org/) - React framework
-- [Styled Components](https://styled-components.com/) - For styles
+Users can:
 
-**Note: These are just examples. Delete this note and replace the list above with your own choices**
+- 🌐 View all countries
+- 🔍 Search countries by name (debounced input)
+- 🌎 Filter by region (custom dropdown)
+- 📄 View detailed country information
+- 🔙 Navigate back from details page
+- 🎯 Client-side routing using hash-based navigation
+- 🌗 Toggle between light and dark themes
+- 📱 Fully responsive (desktop → tablet → mobile)
+
+---
+
+## 🧱 Architecture Highlights
+
+This project is built with a **modular, framework-like architecture using Vanilla JS**:
+
+- Component-based structure
+- Centralized state management (`appState`)
+- Custom renderer + router
+- Separation of concerns:
+  - `features/` → business logic
+  - `components/` → UI blocks
+  - `core/` → rendering & state
+  - `shared/` → utilities & styles
+
+---
+
+## 🛠️ Built With
+
+- Semantic HTML5
+- CSS Custom Properties (Design Tokens)
+- Flexbox + CSS Grid
+- Vanilla JavaScript (ES Modules)
+- Custom Component System
+- Hash-based Routing
+- Debounced Input Handling
+- Responsive Design (Desktop-first)
 
 ### What I learned
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
+---
 
-To see how you can add code snippets, see below:
+## 🧠 Key Learnings
 
-```html
-<h1>Some HTML code I'm proud of</h1>
-```
-```css
-.proud-of-this-css {
-  color: papayawhip;
-}
-```
+### 1. Component System in Vanilla JS
+
+Built reusable UI blocks without React:
+
 ```js
-const proudOfThisFunc = () => {
-  console.log('🎉')
+const Component = () => {
+  return {
+    render: () => `...`,
+    bind: (root) => { ... }
+  }
 }
 ```
 
-If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
+### 2. State Management Pattern
 
-**Note: Delete this note and the content within this section and replace with your own learnings.**
+## Centralized state:
+
+```js
+export const appState = {
+  countries: [],
+  filtered: [],
+  filters: {
+    search: "",
+    region: "All",
+  },
+};
+```
+
+### 3. Custom Routing (SPA Behavior)
+
+```js
+window.addEventListener("hashchange", handleRoute);
+```
+
+### 4. Performance Optimization
+
+- Debounced search input
+  - Minimal DOM re-renders
+  - Event delegation
+    -GPU-friendly CSS animations
+
+### 5. Responsive System
+
+- Desktop-first approach
+- Grid auto-adaptation
+- Flexible layout containers
 
 ### Continued development
 
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
+## Planned improvements:
 
-**Note: Delete this note and the content within this section and replace with your own plans for continued development.**
+- Add pagination / infinite scroll
+- Add API integration (instead of static JSON)
+- Improve accessibility (ARIA, keyboard nav)
+- Add unit testing (Jest / Vitest)
+- Convert into React / Next.js version for comparison
+- Add loading skeletons & error states
 
 ### Useful resources
 
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
-
-**Note: Delete this note and replace the list above with resources that helped you during the challenge. These could come in handy for anyone viewing your solution or for yourself when you look back on this project in the future.**
+- MDN Web Docs (CSS Grid, Flexbox, DOM APIs)
+- JavaScript.info (Event delegation, architecture patterns)
 
 ## Author
 
-- Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-- Twitter - [@yourusername](https://www.twitter.com/yourusername)
-
-**Note: Delete this note and add/remove/edit lines above based on what links you'd like to share.**
+- Website - [AkshayV30](https://www.your-site.com)
+- Frontend Mentor - [@AkshayV30](https://www.frontendmentor.io/profile/yourusername)
 
 ## Acknowledgments
 
-This is where you can give a hat tip to anyone who helped you out on this project. Perhaps you worked in a team or got some inspiration from someone else's solution. This is the perfect place to give them some credit.
-
-**Note: Delete this note and edit this section's content as necessary. If you completed this challenge by yourself, feel free to delete this section entirely.**
+- Frontend Mentor for the challenge
+- Inspiration from modern frontend architectures (React-like patterns in Vanilla JS)
