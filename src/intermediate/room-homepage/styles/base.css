@@ -1,0 +1,44 @@
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-1: hsl(0, 0%, 63%);
+  --primary-2: hsl(0, 0%, 0%);
+  --primary-3: hsl(0, 0%, 100%);
+  --primary-4: hsl(0, 0%, 27%);
+
+  --font-w-1: 500;
+  --font-w-2: 600;
+  --font-w-3: 700;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.2rem;
+  font-family: 'League Spartan', sans-serif;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+button{
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+p {
+  line-height: 1.25;
+  font-size: 1.4rem;
+}

@@ -1,0 +1,105 @@
+/* ===== MOBILE ===== */
+
+@media (max-width: 48rem) {
+  .nav {
+    padding: 2rem;
+  }
+
+  .nav__toggle {
+    display: block;
+    z-index: 200;
+  }
+
+  .nav__list {
+    position: fixed;
+    max-height: 30vh;
+
+    gap: 3rem;
+
+    background: rgba(0, 0, 0, 0.9);
+
+    transform: translateY(-100%);
+    transition: transform 0.4s ease;
+
+    will-change: transform;
+  }
+
+  .nav.is-open .nav__list {
+    transform: translateY(0);
+  }
+
+  .nav__link {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 37.5rem) {
+  .nav {
+    padding: 1.2rem;
+    height: 40rem;
+  }
+
+  .nav__logo {
+    height: 1.6rem;
+  }
+
+  .nav__icon {
+    width: 1.6rem;
+  }
+
+  .nav__link {
+    font-size: 1.6rem;
+  }
+
+  /* ------------hero-------------- */
+  .hero {
+    height: auto;
+    grid-template-columns: 2fr;
+    grid-template-rows: auto auto;
+  }
+  .hero__media {
+    height: 80rem;
+    grid-row: 1;
+    position: relative;
+  }
+  .hero__track,
+  .hero__slide {
+    height: 100%;
+  }
+
+  .hero__controls {
+    bottom: 0;
+    right: 0;
+  }
+
+  .hero__content {
+    grid-row: 2;
+    padding: 1.2rem;
+    min-height: 20rem;
+    align-items: flex-start;
+  }
+  .hero__shop-now {
+    text-align: center;
+  }
+  /* ------------about-------------- */
+  .about {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+  }
+
+  .about__media {
+    height: 16rem;
+  }
+
+  .about__content {
+    padding: 2rem;
+  }
+
+  .about__content h3 {
+    font-size: 1.5rem;
+  }
+
+  .about__content p {
+    font-size: 1.3rem;
+  }
+}
