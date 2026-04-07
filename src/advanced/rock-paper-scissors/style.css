@@ -1,0 +1,135 @@
+:root {
+  --bg1: hsl(214, 47%, 23%);
+  --bg2: hsl(237, 48%, 15%);
+  --blue: hsl(230, 89%, 62%);
+  --red: hsl(349, 71%, 52%);
+  --yellow: hsl(39, 89%, 49%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Barlow Semi Condensed", sans-serif;
+}
+
+body {
+  background: radial-gradient(circle, var(--bg1), var(--bg2));
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* HEADER */
+.header {
+  width: 90%;
+  max-width: 500px;
+  border: 2px solid hsl(246, 11%, 37%);
+  border-radius: 10px;
+  padding: 15px 20px;
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+.title {
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+.score-box {
+  background: white;
+  color: black;
+  padding: 10px 20px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.score-box p {
+  font-size: 12px;
+  color: hsl(229, 64%, 46%);
+}
+
+.score {
+  font-size: 30px;
+  font-weight: 700;
+}
+
+/* GAME AREA */
+.game {
+  position: relative;
+  margin-top: 60px;
+  width: 300px;
+  height: 300px;
+}
+
+.triangle {
+  position: absolute;
+  width: 100%;
+  opacity: 0.2;
+}
+
+/* BUTTONS */
+.choice {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: bold;
+  background: white;
+}
+
+.choice.rock {
+  bottom: 0;
+  left: 100px;
+  border: 10px solid var(--red);
+}
+.choice.paper {
+  top: 0;
+  right: 0;
+  border: 10px solid var(--blue);
+}
+.choice.scissors {
+  top: 0;
+  left: 0;
+  border: 10px solid var(--yellow);
+}
+
+/* RESULT */
+.result {
+  display: none;
+  margin-top: 40px;
+  text-align: center;
+}
+
+.result h2 {
+  margin: 20px 0;
+}
+
+.play-again {
+  padding: 10px 25px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* MOBILE */
+@media (max-width: 500px) {
+  .game {
+    transform: scale(0.9);
+  }
+}

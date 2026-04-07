@@ -1,32 +1,16 @@
-.nav {
-  position: absolute;
-  inset: 0 0 auto 0;
-
-  display: flex;
-  align-items: center;
-
-  gap: 4rem;
-
-  padding: 3rem;
-  z-index: 100;
-}
-
 /* LOGO */
 .nav__logo {
-  height: 2rem;
+  height: 2.4rem;
 }
-
-/* =========================
-   LINKS
-========================= */
 
 .nav__list {
   display: flex;
   gap: 2.4rem;
+  font-size: 1.8rem;
 }
 
 .nav__link {
-  color: white;
+  color: var(--primary-3);
   text-decoration: none;
   position: relative;
 }
@@ -56,10 +40,6 @@
 
 .nav__toggle {
   display: none;
-}
-
-.nav__icon {
-  width: 2rem;
 }
 
 .js-close {

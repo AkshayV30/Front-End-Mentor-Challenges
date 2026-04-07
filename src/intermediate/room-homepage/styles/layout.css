@@ -1,18 +1,77 @@
-/* =========================
+/* 
    COMPOSITION
-========================= */
+ */
 
 body {
   display: flex;
   align-items: center;
   justify-content: center;
-
-  height: 100svh;
 }
+
 main {
   display: flex;
   flex-direction: column;
+  justify-content: center;
 
   position: relative;
-  max-width: 160rem;
+}
+/* ---------------------------- */
+nav {
+  position: absolute;
+  top: 5rem;
+  left: 5rem;
+
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+
+  z-index: 100;
+}
+/* ---------------------------- */
+.hero__container {
+  display: grid;
+  grid-template-columns: 2fr 0.2fr 1fr;
+  grid-template-rows: 60vh;
+  position: relative;
+}
+
+.hero__content {
+  grid-row: 1 / 2;
+  grid-column: 2 / 4;
+
+  padding: 6rem;
+
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+
+  gap: 4.8rem;
+
+  transition: opacity 0.3s ease;
+}
+
+.hero__controls {
+  grid-column: 2 / 3;
+  grid-row: 1 / 2;
+
+  z-index: 20;
+
+  width: fit-content;
+
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+/* ---------------------------- */
+.about {
+  display: grid;
+  grid-template-columns: 30% 40% 30%;
+  min-height: 40vh;
+}
+.about__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  padding: 6rem;
 }

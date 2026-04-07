@@ -19,11 +19,11 @@ export function Navbar() {
         >
         <img src="assets/icons/icon-hamburger.svg" class="nav__icon js-open"/>
         <img src="assets/icons/icon-close.svg" class="nav__icon js-close"/>
-      </button>
-
+      </button> 
+      
       ${renderLogo()}
       
-      ${renderLinks("nav__list", "nav-menu")}
+      ${renderLinks()}
 
     </nav>
   `;
@@ -35,9 +35,9 @@ const renderLogo = () => `
   <img class="nav__logo" src="${NAV_CONFIG.logo}" alt="logo" />
 `;
 
-function renderLinks(className, id = "") {
+function renderLinks() {
   return `
-    <ul class="${className}" id="${id}">
+    <ul class="nav__list" >
       ${NAV_CONFIG.links
         .map(
           ({ label, href }) => `

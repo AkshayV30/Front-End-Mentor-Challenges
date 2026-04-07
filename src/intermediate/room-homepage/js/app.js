@@ -6,8 +6,8 @@ const root = document.getElementById("root");
 
 function renderLayout() {
   root.innerHTML = `
-    ${Navbar()}
-    <section class="hero-container js-slider"></section>
+      ${Navbar()}
+    <section class="hero__container js-slider">  </section>
     ${About()}
   `;
 }
