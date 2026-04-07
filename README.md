@@ -42,5 +42,6 @@ Welcome to the Frontend Mentor challenges! This repository is where I showcase m
 | 34     | [Expenses Chart Component](https://akshayv30.github.io/Front-End-Mentor-Challenges/src/junior/expenses-chart-component/index.html)                             | 🟡 JUNIOR       | HTML, CSS, JS      | ✅        |
 | 35     | [Rock Paper Scissors](https://akshayv30.github.io/Front-End-Mentor-Challenges/src/advanced/rock-paper-scissors/index.html)                                     | 🔴 ADVANCED     | HTML, CSS, JS      |           |
 | 36     | [Chat App CSS Illustration](https://akshayv30.github.io/Front-End-Mentor-Challenges/src/intermediate/chat-app-css-ilustration/index.html)                      | 🟠 INTERMEDIATE | HTML, CSS          |           |
+| 36     | [RSS feed reader](https://akshayv30.github.io/Front-End-Mentor-Challenges/src/advanced/frontpage-feed-reader-main/index.html)                                  | 🔴 ADVANCED     | HTML, CSS, JS      |           |
 
 ---

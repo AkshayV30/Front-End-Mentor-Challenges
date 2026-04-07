@@ -493,5 +493,16 @@
     "link": "./src/intermediate/chat-app-css-illustration/index.html",
     "tech": ["HTML", "CSS"],
     "level": "INTERMEDIATE"
+  },
+  {
+    "id": 37,
+    "title": "FrontPage-Feed-Reader",
+    "images": {
+      "desktop": [],
+      "mobile": []
+    },
+    "link": "./src/advanced/frontpage-feed-reader-main/index.html",
+    "tech": ["HTML", "CSS", "JS"],
+    "level": "ADVANCED"
   }
 ]
