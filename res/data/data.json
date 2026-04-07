@@ -115,8 +115,14 @@
     "id": 9,
     "title": "Room Homepage",
     "images": {
-      "desktop": [],
-      "mobile": []
+      "desktop": [
+        "./src/intermediate/room-homepage/screenshots/desktop-1.png",
+        "./src/intermediate/room-homepage/screenshots/desktop-2.png"
+      ],
+      "mobile": [
+        "./src/intermediate/room-homepage/screenshots/mobile-1.png",
+        "./src/intermediate/room-homepage/screenshots/mobile-2.png"
+      ]
     },
     "link": "./src/intermediate/room-homepage/index.html",
     "tech": ["HTML", "CSS", "JS"],

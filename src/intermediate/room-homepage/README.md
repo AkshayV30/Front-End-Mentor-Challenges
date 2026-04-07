@@ -1,22 +1,24 @@
 # Frontend Mentor - Room homepage solution
 
-This is a solution to the [Room homepage challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/room-homepage-BtdBY_ENq). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
+This is a solution to the [Room homepage challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/room-homepage-BtdBY_ENq). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
 
 ## Table of contents
 
-- [Overview](#overview)
-  - [The challenge](#the-challenge)
-  - [Screenshot](#screenshot)
-  - [Links](#links)
-- [My process](#my-process)
-  - [Built with](#built-with)
-  - [What I learned](#what-i-learned)
-  - [Continued development](#continued-development)
-  - [Useful resources](#useful-resources)
-- [Author](#author)
-- [Acknowledgments](#acknowledgments)
-
-**Note: Delete this note and update the table of contents based on what sections you keep.**
+- [Frontend Mentor - Room homepage solution](#frontend-mentor---room-homepage-solution)
+  - [Table of contents](#table-of-contents)
+  - [Overview](#overview)
+    - [The challenge](#the-challenge)
+    - [Screenshot](#screenshot)
+    - [Links](#links)
+  - [My process](#my-process)
+    - [Built with](#built-with)
+- [](#)
+    - [Key Features \& Learnings](#key-features--learnings)
+    - [Performance Considerations](#performance-considerations)
+    - [Continued Development](#continued-development)
+    - [Useful Resources](#useful-resources)
+    - [Author](#author)
+    - [Acknowledgments](#acknowledgments)
 
 ## Overview
 
@@ -30,83 +32,101 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
+![Desktop-view](./screenshots/desktop-2.png)
 
-Add a screenshot of your solution. The easiest way to do this is to use Firefox to view your project, right-click the page and select "Take a Screenshot". You can choose either a full-height screenshot or a cropped one based on how long the page is. If it's very long, it might be best to crop it.
-
-Alternatively, you can use a tool like [FireShot](https://getfireshot.com/) to take the screenshot. FireShot has a free option, so you don't need to purchase it. 
-
-Then crop/optimize/edit your image however you like, add it to your project, and update the file path in the image above.
-
-**Note: Delete this note and the paragraphs above when you add your screenshot. If you prefer not to add a screenshot, feel free to remove this entire section.**
+![Mobile-view](./screenshots/mobile-2.png)
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [Solution URL here](https://akshayv30.github.io/Front-End-Mentor-Challenges/src/intermediate/room-homepage/index.html)
+- Live Site URL: [Live-Site](https://github.com/AkshayV30/Front-End-Mentor-Challenges/tree/master/src/intermediate/room-homepage)
 
 ## My process
 
 ### Built with
 
 - Semantic HTML5 markup
-- CSS custom properties
-- Flexbox
-- CSS Grid
-- Mobile-first workflow
-- [React](https://reactjs.org/) - JS library
-- [Next.js](https://nextjs.org/) - React framework
-- [Styled Components](https://styled-components.com/) - For styles
+- Modern CSS (Flexbox + Grid)
+- Responisve Design (desktop-first-approach)
+- Vanilla Javascript (modular architecture)
+- ES Modules
+- Custom Slider Logic (no Libraries)
 
-**Note: These are just examples. Delete this note and replace the list above with your own choices**
+#
 
-### What I learned
+### Key Features & Learnings
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
+1. Modular JavaScript Architecture
+   - Separated UI components (Navbar, Slider)
+   - Clean init() and destroy() lifecycle pattern
+   - Reusable and scalable structure
 
-To see how you can add code snippets, see below:
+   ```js
+   export function createSlider(container) {
+     return {
+       init,
+       destroy,
+     };
+   }
+   ```
 
-```html
-<h1>Some HTML code I'm proud of</h1>
-```
-```css
-.proud-of-this-css {
-  color: papayawhip;
-}
-```
-```js
-const proudOfThisFunc = () => {
-  console.log('🎉')
-}
-```
+2. Custom Infinite Slider (No Libraries)
+   - Implemented looping logic using cloned slides
+   - Smooth transitions using translate3d
+   - Prevented layout shifts and flickering
 
-If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
+   ```js
+   track.style.transform = `translate3d(-${index * 100}%, 0, 0)`;
+   ```
 
-**Note: Delete this note and the content within this section and replace with your own learnings.**
+3. Touch + Momentum Swipe Support
+   - Swipe detection using touch events
+   - Velocity-based slide switching
+   - Mobile-first interaction improvements
 
-### Continued development
+4. Responsive Images (Performance Optimization)
+   - Used <picture> for adaptive loading
+   - Avoided background-image for better control and SEO
 
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
+     ```html
+     <picture>
+       <source media="(max-width:768px)" srcset="mobile.jpg" />
+       <img src="desktop.jpg" alt="hero image" />
+     </picture>
+     ```
 
-**Note: Delete this note and the content within this section and replace with your own plans for continued development.**
+5. Mobile Navigation System
+   - JS-controlled toggle state
+   - Smooth slide-down animation
+   - Overlay-style full-screen navigation
 
-### Useful resources
+### Performance Considerations
 
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
+- Lazy loading images (loading="lazy")
+- Avoided unnecessary reflows
+- Used GPU-accelerated transforms (translate3d)
+- Minimal DOM re-renders
 
-**Note: Delete this note and replace the list above with resources that helped you during the challenge. These could come in handy for anyone viewing your solution or for yourself when you look back on this project in the future.**
+### Continued Development
 
-## Author
+Planned improvements:
 
-- Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-- Twitter - [@yourusername](https://www.twitter.com/yourusername)
+- Add autoplay + pause on hover
+- Improve accessibility (ARIA roles, focus trapping)
+- Add gesture inertia refinement
+- Convert to framework version (React / Next.js) for scalability
+- Introduce animation library (GSAP / Framer Motion equivalent)
 
-**Note: Delete this note and add/remove/edit lines above based on what links you'd like to share.**
+### Useful Resources
 
-## Acknowledgments
+- MDN Web Docs — Core reference for JS, CSS, and DOM
+- Frontend Mentor Community — Inspiration and alternative approaches
+- CSS Tricks — For layout and animation patterns
 
-This is where you can give a hat tip to anyone who helped you out on this project. Perhaps you worked in a team or got some inspiration from someone else's solution. This is the perfect place to give them some credit.
+### Author
 
-**Note: Delete this note and edit this section's content as necessary. If you completed this challenge by yourself, feel free to delete this section entirely.**
+Frontend Mentor: @AkshayV30
+
+### Acknowledgments
+
+Frontend Mentor for the challenge design. Community solutions that helped refine slider logic and responsiveness approach
