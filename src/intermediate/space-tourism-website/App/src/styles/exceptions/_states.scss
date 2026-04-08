@@ -1,0 +1,10 @@
+@use "../abstracts" as *;
+
+.is-active {
+  opacity: 1;
+}
+
+.is-hidden {
+  opacity: 0;
+  transform: translateY(token-space(50));
+}

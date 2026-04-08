@@ -1,0 +1,62 @@
+@use "../abstracts" as *;
+
+.c-nav__list {
+  display: flex;
+
+  gap: token-space(500); // assuming spacing scale key
+
+  @include apply-text(preset-8);
+
+  list-style: none;
+  align-items: center;
+  justify-content: flex-end;
+  margin-right: token-space(600);
+}
+
+/* Stack nav vertically on tablets and below */
+@include respond-down(md) {
+  .c-nav__list {
+    flex-direction: column;
+    gap: token-space(50);
+  }
+}
+
+.c-nav__item {
+  cursor: pointer;
+  text-transform: uppercase;
+  color: token-color(primary);
+  position: relative;
+
+  .c-nav__index {
+    font-weight: 600;
+  }
+
+  .c-nav__nav-heading {
+    font-weight: 600;
+    margin-left: 0.4rem;
+  }
+
+  &.is-active > .c-nav__nav-heading {
+    color: token-color(grey-500);
+  }
+
+  /* Animated underline */
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2.6rem;
+    width: 110%;
+    height: 0.4rem;
+    background: token-color(primary);
+
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform $transition;
+  }
+
+  &:hover::after,
+  &.is-active::after {
+    transform: scaleX(1);
+  }
+}

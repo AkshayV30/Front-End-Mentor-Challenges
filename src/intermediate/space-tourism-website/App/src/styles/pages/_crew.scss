@@ -1,0 +1,114 @@
+@use "../abstracts" as *;
+
+.c-crew {
+  color: token-color(primary);
+  margin-top: token-space(800);
+
+  &__title {
+    text-transform: uppercase;
+    font-weight: 400;
+    @include apply-text(preset-5);
+  }
+
+  &__index {
+    color: token-color(grey-500);
+    font-weight: 600;
+  }
+
+  &__layout {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  /* TEXT COLUMN */
+
+  &__text-col {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+
+    height: 60rem; // stable frame
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    gap: token-space(300);
+    min-height: 22rem;
+    transition:
+      opacity 0.35s ease,
+      transform 0.35s ease;
+    will-change: opacity, transform;
+  }
+
+  &__role {
+    @include apply-text(preset-4);
+    text-transform: uppercase;
+    color: token-color(grey-300);
+    font-weight: 300;
+  }
+
+  &__name {
+    @include apply-text(preset-3);
+    text-transform: uppercase;
+    font-weight: 400;
+    width: max-content;
+  }
+
+  &__bio {
+    @include apply-text(preset-9);
+    font-weight: 300;
+    color: token-color(blue-300);
+
+    max-width: 64rem;
+  }
+
+  /* IMAGE */
+
+  &__image-frame {
+    width: 40rem;
+    aspect-ratio: 1.2;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+
+    .c-crew__image {
+      // width: 100%;
+      object-fit: contain;
+      transition:
+        opacity 0.4s ease,
+        transform 0.4s ease;
+      will-change: opacity, transform;
+    }
+  }
+
+  /* NAV DOTS */
+
+  &__nav {
+    display: flex;
+    gap: 1.5rem;
+  }
+
+  &__dot {
+    width: 1rem;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    border: none;
+    background: token-color(primary);
+    opacity: 0.3;
+    cursor: pointer;
+    transition:
+      transform 0.25s ease,
+      opacity 0.25s ease;
+
+    &:hover {
+      transform: scale(1.2);
+      opacity: 0.6;
+    }
+
+    &.is-active {
+      transform: scale(1.3);
+    }
+  }
+}

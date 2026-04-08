@@ -1,0 +1,13 @@
+@use "../abstracts/tokens" as *;
+
+.u-w-full {
+  width: 100%;
+}
+
+.u-w-fit {
+  width: fit-content;
+}
+
+.u-max-w {
+  max-width: $container-width;
+}

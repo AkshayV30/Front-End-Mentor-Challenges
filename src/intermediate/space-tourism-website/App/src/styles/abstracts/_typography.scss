@@ -1,0 +1,83 @@
+@use "sass:math";
+
+/* ==========================================================
+   2. TYPOGRAPHY TOKENS (FLUID & REM-BASED)
+   ----------------------------------------------------------
+   Structured map format.
+   No positional lists (prevents fragility).
+   Sizes use clamp() for fluid scaling.
+========================================================== */
+
+$text-presets: (
+  preset-1: (
+    family: "Bellefair",
+    size: clamp(7.2rem, 5vw, 14.4rem),
+    // 72px → 144px
+    line-height: 1.2,
+    letter-spacing: 0,
+  ),
+
+  preset-2: (
+    family: "Bellefair",
+    size: clamp(5.6rem, 4vw, 10rem),
+    // 56px → 100px
+    line-height: 1.15,
+    letter-spacing: 0,
+  ),
+
+  preset-3: (
+    family: "Bellefair",
+    size: clamp(3.2rem, 3vw, 5.6rem),
+    // 32px → 56px
+    line-height: 1.15,
+    letter-spacing: 0,
+  ),
+
+  preset-4: (
+    family: "Bellefair",
+    size: clamp(2.4rem, 2vw, 3.2rem),
+    // 24px → 32px
+    line-height: 1.2,
+    letter-spacing: 0,
+  ),
+
+  preset-5: (
+    family: "Barlow Condensed",
+    size: clamp(1.8rem, 1.5vw, 2.8rem),
+    // 18px → 28px
+    line-height: 1.2,
+    letter-spacing: 0.25em,
+  ),
+
+  preset-6: (
+    family: "Bellefair",
+    size: 2.8rem,
+    // 28px
+    line-height: 1.15,
+    letter-spacing: 0,
+  ),
+
+  preset-7: (
+    family: "Barlow Condensed",
+    size: 1.4rem,
+    // 14px
+    line-height: 1.2,
+    letter-spacing: 0.125em,
+  ),
+
+  preset-8: (
+    family: "Barlow Condensed",
+    size: 1.6rem,
+    // 16px
+    line-height: 1.2,
+    letter-spacing: 0.125em,
+  ),
+
+  preset-9: (
+    family: "Barlow",
+    size: 1.8rem,
+    // 18px
+    line-height: 1.8,
+    letter-spacing: 0,
+  ),
+);

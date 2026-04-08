@@ -1,0 +1,13 @@
+.u-center {
+  display: grid;
+  place-items: center;
+}
+
+.u-center-x {
+  margin-inline: auto;
+}
+
+.u-center-y {
+  display: flex;
+  align-items: center;
+}
