@@ -1,10 +1,19 @@
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 //                       <footer>
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+@use "../abstracts" as *;
+
+.l-footer {
+  padding: 0.1rem 0;
+  background: token-color(blue-900);
+  color: token-color(grey-500);
+}
+
 .c-attribution {
   font-size: 11px;
   text-align: center;
+
   a {
-    color: hsl(228, 45%, 44%);
+    color: token-color(blue-500);
   }
 }

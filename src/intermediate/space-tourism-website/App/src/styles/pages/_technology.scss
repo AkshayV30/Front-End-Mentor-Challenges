@@ -2,12 +2,12 @@
 
 .c-technology {
   color: token-color(primary);
-  margin-top: token-space(800);
 
   &__title {
     @include apply-text(preset-5);
+
     text-transform: uppercase;
-    margin-bottom: token-space(800);
+    margin-bottom: token-space(1200);
 
     .c-technology__index {
       color: token-color(grey-500);

@@ -96,7 +96,7 @@
       "desktop": [],
       "mobile": []
     },
-    "link": "./src/intermediate/space-tourism-website/index.html",
+    "link": "./src/intermediate/space-tourism-website/App/dist/index.html",
     "tech": ["HTML", "CSS", "JS"],
     "level": "INTERMEDIATE"
   },

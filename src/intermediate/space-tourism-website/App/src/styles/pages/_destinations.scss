@@ -2,6 +2,7 @@
 
 .c-destination {
   padding: token-space(400);
+
   color: token-color(primary);
 }
 
@@ -25,8 +26,11 @@
 .c-destination__layout {
   margin-top: token-space(600);
   display: flex;
-  flex-wrap: wrap;
-  gap: clamp(3rem, 6vw, 8rem);
+  // flex-wrap: wrap;
+  // gap: clamp(3rem, 6vw, 8rem);
+
+  justify-content: space-between;
+
   align-items: center;
 }
 
