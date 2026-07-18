@@ -13,14 +13,6 @@
   margin-right: token-space(600);
 }
 
-/* Stack nav vertically on tablets and below */
-@include respond-down(md) {
-  .c-nav__list {
-    flex-direction: column;
-    gap: token-space(50);
-  }
-}
-
 .c-nav__item {
   cursor: pointer;
   text-transform: uppercase;
@@ -58,5 +50,24 @@
   &:hover::after,
   &.is-active::after {
     transform: scaleX(1);
+  }
+}
+
+/* Stack nav vertically on tablets and below */
+@include respond-down(md) {
+  .c-nav__list {
+    gap: token-space(400);
+
+    justify-content: space-between;
+    margin-right: token-space(200);
+  }
+
+  .c-nav__item {
+    /* Animated underline */
+    &::after {
+      left: 0;
+      bottom: -4.6rem;
+      width: 100%;
+    }
   }
 }

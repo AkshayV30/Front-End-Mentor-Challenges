@@ -112,3 +112,32 @@
     }
   }
 }
+
+/*  on tablets and below */
+@include respond-down(md) {
+  .c-crew {
+    &__layout {
+      flex-direction: column;
+
+      align-items: center;
+    }
+
+    &__text {
+      align-items: center;
+      text-align: center;
+      gap: token-space(300);
+    }
+
+    &__text-col {
+      align-items: center;
+
+      max-height: 32rem; // stable frame
+    }
+  }
+
+  .c-crew__image-frame {
+    .c-crew__image {
+      max-height: 36rem;
+    }
+  }
+}

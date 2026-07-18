@@ -504,5 +504,16 @@
     "link": "./src/advanced/frontpage-feed-reader-main/index.html",
     "tech": ["HTML", "CSS", "JS"],
     "level": "ADVANCED"
+  },
+  {
+    "id": 38,
+    "title": "Foreign-Exchange-Checker",
+    "images": {
+      "desktop": [],
+      "mobile": []
+    },
+    "link": "./src/intermediate/foreign-exchange-checker/index.html",
+    "tech": ["HTML", "CSS", "JS", "API"],
+    "level": "INTERMEDIATE"
   }
 ]

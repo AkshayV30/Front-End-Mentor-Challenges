@@ -44,9 +44,9 @@ export function renderTechnology(app) {
             <p class="c-technology__description js-tech-desc"></p>
           </div>
           
-        <picture class="c-technology__image-frame">
-          <img class="c-technology__image js-tech-image" />
-        </picture>
+          <picture class="c-technology__image-frame">
+            <img class="c-technology__image js-tech-image" />
+          </picture>
 
       
 

@@ -17,8 +17,8 @@
 
   &__layout {
     display: grid;
-    grid-template-columns: auto 4fr 55%;
-    gap: token-space(600);
+    // grid-template-columns: auto 4fr 55%;
+    // gap: token-space(600);
     align-items: center;
   }
 }
@@ -77,9 +77,6 @@
 /* Image */
 
 .c-technology__image-frame {
-  position: absolute;
-  right: 0;
-
   display: flex;
   align-items: center;
   justify-content: center;
@@ -119,7 +116,10 @@
 
 @include respond-down(md) {
   .c-technology__layout {
+    // display: flex;
+    // flex-direction: column;
     grid-template-columns: 1fr;
+    grid-template-rows: 1fr auto auto;
     text-align: center;
   }
 
@@ -129,7 +129,14 @@
   }
 
   .c-technology__image-frame {
-    order: -1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .c-technology__image {
+      width: 100%;
+      max-width: 50rem;
+    }
   }
 
   .c-technology__btn {

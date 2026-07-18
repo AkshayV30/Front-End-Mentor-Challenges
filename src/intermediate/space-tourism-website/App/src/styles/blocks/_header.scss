@@ -5,7 +5,17 @@
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 :root {
   --horizontal-line-w: clamp(25%, 35vw, 45%);
+
+  --logo-padding-l: 6.4rem;
+  --logo-size-l: 4.8rem;
+
+  --logo-padding-m: 3.2rem;
+  --logo-size-m: 4rem;
+
+  --logo-padding-s: 2.4rem;
+  // --logo-size-s: 4rem;
 }
+
 .c-header {
   position: relative;
 
@@ -34,7 +44,7 @@
     aspect-ratio: 1;
 
     width: var(--logo-size-l);
-    min-width: fit-content;
+    min-width: max-content;
 
     padding: var(--logo-padding-l);
   }
@@ -49,34 +59,25 @@
 //                   large-desktop-view xxl-90em
 // ::::::::::::::::::::::::::::::::::::::::::::::::::
 @include respond-down(xxl) {
-  .c-header {
-    --horizontal-line-w: 40%;
-  }
-  .c-logo {
-    width: var(--logo-size-s);
-    padding: var(--logo-padding-s);
-  }
 }
 
 // ::::::::::::::::::::::::::::::::::::::::::::::::::
 //                  standard-laptop-view xl-80em
 // ::::::::::::::::::::::::::::::::::::::::::::::::::
 @include respond-down(xl) {
-  .c-header {
-    --horizontal-line-w: 30%;
-  }
-  .c-logo {
-    width: var(--logo-size-s);
-    padding: var(--logo-padding-s);
-  }
 }
 // ::::::::::::::::::::::::::::::::::::::::::::::::::
 //                  large-mobile-view md- 48em
 // ::::::::::::::::::::::::::::::::::::::::::::::::::
 @include respond-down(md) {
-  .c-logo {
-    width: var(--logo-size-s);
-    padding: var(--logo-padding-s);
+  .c-header {
+    &::after {
+      display: none;
+    }
+    .c-logo {
+      width: var(--logo-size-m);
+      padding: var(--logo-padding-m);
+    }
   }
 }
 

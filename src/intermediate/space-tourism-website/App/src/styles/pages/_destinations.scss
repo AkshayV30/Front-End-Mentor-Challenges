@@ -39,6 +39,7 @@
 .c-destination__media {
   flex: 1 1 30rem;
   min-height: 32rem;
+
   display: flex;
   justify-content: center;
   align-items: center;
@@ -112,8 +113,13 @@
 .c-destination__meta {
   display: flex;
   gap: clamp(2rem, 5vw, 6rem);
+
   padding-top: token-space(300);
   border-top: 1px solid token-color(blue-300);
+
+  justify-content: space-between;
+
+  width: 100%;
 }
 
 .c-destination__stat {
@@ -137,4 +143,72 @@
 
 .is-hidden {
   transform: scale(0.95);
+}
+
+// media -queries
+
+// standard-desktop
+@include respond-down(xl) {
+  .c-destination__media {
+    flex: 1 1 29rem;
+    .c-destination__image {
+      max-height: 31.5rem;
+    }
+  }
+}
+// small-desktop
+@include respond-down(lg) {
+}
+// tablet
+@include respond-down(md) {
+  .c-destination__layout {
+    margin-top: token-space(400);
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: clamp(3rem, 6vw, 8rem);
+
+    // justify-content: space-around;
+  }
+
+  .c-destination__meta {
+    width: 80%;
+  }
+
+  .c-destination__description {
+    text-align: center;
+  }
+
+  .c-destination__tabs {
+    // display: flex;
+    // gap: token-space(200);
+    // margin-bottom: token-space(400);
+  }
+
+  .c-destination__body {
+    display: flex;
+    flex-direction: column;
+    min-height: 36rem;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .c-destination__media {
+    flex: 1 1 29rem;
+    .c-destination__image {
+      max-height: 31.5rem;
+    }
+  }
+}
+
+//large-mobile
+@include respond-down(sm) {
+  .c-btn--explore {
+    width: 14.4rem;
+  }
+}
+//mobile
+@include respond-down(xs) {
+  .c-btn--explore {
+    width: 14.4rem;
+  }
 }
