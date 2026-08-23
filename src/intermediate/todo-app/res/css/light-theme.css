@@ -1,0 +1,43 @@
+/* 
+   LIGHT THEME
+ */
+
+.theme-light {
+  --background: hsl(0, 0%, 98%);
+  --card-background: hsl(0, 0%, 100%);
+
+  --primary-text: hsl(235, 19%, 35%);
+  --secondary-text: hsl(236, 9%, 61%);
+  --completed-text: hsl(233, 11%, 84%);
+
+  --border-color: hsl(236, 33%, 92%);
+  --checkbox-border: hsl(233, 11%, 84%);
+
+  --hover-text: hsl(235, 19%, 35%);
+
+  background-color: var(--background);
+  color: var(--primary-text);
+}
+
+/* Cards */
+
+.theme-light .todo__input,
+.theme-light .todo__list-wrapper {
+  background-color: var(--card-background);
+}
+
+/* Input */
+
+.theme-light .todo__input {
+  color: var(--primary-text);
+}
+
+.theme-light .todo__input::placeholder {
+  color: var(--secondary-text);
+}
+
+/* Hero */
+
+.theme-light .hero__image {
+  content: url("../../images/bg-desktop-light.jpg");
+}

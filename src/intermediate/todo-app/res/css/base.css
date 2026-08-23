@@ -1,0 +1,356 @@
+/* 
+   RESET
+ */
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  min-height: 100vh;
+
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 1.8rem;
+  font-weight: 400;
+
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:focus-visible,
+input:focus-visible {
+  outline: 2px solid var(--color-Bright-Blue);
+  outline-offset: 2px;
+}
+
+/* 
+   HERO
+ */
+
+.hero {
+  width: 100%;
+}
+
+.hero__image {
+  display: block;
+  width: 100%;
+  height: 30rem;
+  object-fit: cover;
+}
+
+/* 
+   CONTAINER
+ */
+
+.container {
+  width: min(100% - 4rem, 54rem);
+  margin: -12rem auto 0;
+  position: relative;
+  z-index: 1;
+}
+
+/* 
+   TODO HEADER
+ */
+
+.todo__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 2rem;
+}
+
+.todo__title {
+  color: white;
+  font-size: 4rem;
+  font-weight: 700;
+  letter-spacing: 1rem;
+}
+
+.todo__theme-btn {
+  display: grid;
+  place-items: center;
+
+  width: 3rem;
+  height: 3rem;
+
+  background: transparent;
+  border: 0;
+}
+
+.todo__theme-btn img {
+  width: 2rem;
+}
+
+/* 
+   INPUT
+ */
+
+.todo__input-wrapper {
+  margin-bottom: 2rem;
+}
+
+.todo__input {
+  width: 100%;
+  padding: 1.8rem 2rem;
+
+  border: 0;
+  border-radius: 0.5rem;
+
+  outline: none;
+
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+.todo__input::placeholder {
+  opacity: 0.7;
+}
+
+/* 
+   LIST
+ */
+
+.todo__list-wrapper {
+  overflow: hidden;
+
+  border-radius: 0.5rem;
+
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
+}
+
+.todo__list {
+  list-style: none;
+}
+
+.todo__item {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+
+  min-height: 6rem;
+  padding: 1.5rem 2rem;
+
+  border-bottom: 1px solid var(--border-color);
+
+  transition:
+    background-color 0.2s ease,
+    opacity 0.2s ease;
+}
+
+.todo__item:hover {
+  opacity: 0.95;
+}
+
+.todo__text {
+  flex: 1;
+  word-break: break-word;
+  line-height: 1.5;
+}
+
+.todo__item.is-completed .todo__text {
+  text-decoration: line-through;
+  color: var(--completed-text);
+}
+
+/* 
+   CHECKBOX
+ */
+
+.todo__checkbox {
+  display: grid;
+  place-items: center;
+
+  flex-shrink: 0;
+
+  width: 2.2rem;
+  height: 2.2rem;
+
+  border: 1px solid var(--checkbox-border);
+  border-radius: 50%;
+
+  background: transparent;
+
+  color: white;
+  font-size: 1.2rem;
+
+  transition:
+    border-color 0.2s ease,
+    background 0.2s ease;
+}
+
+.todo__checkbox:hover {
+  border-color: var(--color-Bright-Blue);
+}
+
+.todo__item.is-completed .todo__checkbox {
+  border-color: transparent;
+
+  background: linear-gradient(
+    135deg,
+    var(--color-check-grad-1),
+    var(--color-check-grad-2)
+  );
+}
+
+/* 
+   DELETE
+ */
+
+.todo__delete {
+  flex-shrink: 0;
+
+  border: 0;
+  background: transparent;
+
+  color: var(--secondary-text);
+
+  font-size: 2.5rem;
+  line-height: 1;
+
+  opacity: 0;
+
+  transition:
+    color 0.2s ease,
+    opacity 0.2s ease;
+}
+
+.todo__item:hover .todo__delete,
+.todo__delete:focus-visible {
+  opacity: 1;
+}
+
+.todo__delete:hover {
+  color: var(--color-Bright-Blue);
+}
+
+/* 
+   FOOTER
+ */
+
+.todo__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  min-height: 5rem;
+  padding: 1.5rem 2rem;
+
+  font-size: 1.3rem;
+  color: var(--secondary-text);
+}
+
+.todo__filters {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.todo__filters button,
+.todo__clear {
+  border: 0;
+  background: transparent;
+
+  color: inherit;
+  font-size: inherit;
+  font-weight: 700;
+
+  transition: color 0.2s ease;
+}
+
+.todo__filters button:hover,
+.todo__clear:hover {
+  color: var(--hover-text);
+}
+
+.todo__filters button.is-active {
+  color: var(--color-Bright-Blue);
+}
+
+/* 
+   HINT
+ */
+
+.todo__hint {
+  margin-top: 4rem;
+
+  text-align: center;
+
+  color: var(--secondary-text);
+  font-size: 1.4rem;
+}
+
+/* 
+   FOOTER
+ */
+
+.site-footer {
+  padding: 2rem;
+}
+
+.attribution {
+  font-size: 1.1rem;
+  text-align: center;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+/* 
+   MOBILE
+ */
+
+@media (max-width: 600px) {
+  .hero__image {
+    height: 20rem;
+  }
+
+  .container {
+    width: min(100% - 3rem, 54rem);
+    margin-top: -8rem;
+  }
+
+  .todo__title {
+    font-size: 3rem;
+  }
+
+  .todo__footer {
+    position: relative;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+  }
+
+  .todo__filters {
+    order: 3;
+
+    width: 100%;
+
+    justify-content: center;
+
+    padding-top: 1rem;
+  }
+
+  .todo__delete {
+    opacity: 1;
+  }
+}

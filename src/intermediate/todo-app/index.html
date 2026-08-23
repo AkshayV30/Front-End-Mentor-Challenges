@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -11,14 +11,21 @@
       sizes="32x32"
       href="./images/favicon-32x32.png"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
 
     <title>Frontend Mentor | Todo app</title>
 
     <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-    <style>
-      @import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap");
-    </style>
-    <link rel="stylesheet" href="./res/css/styles.css" />
+    <link rel="stylesheet" href="./res/css/base.css" />
+
+    <!-- Theme -->
+    <link rel="stylesheet" href="./res/css/dark-theme.css" id="themeStylesheet" />
   </head>
   <body class="theme-dark">
     <header class="hero">
@@ -26,39 +33,68 @@
         src="./images/bg-desktop-dark.jpg"
         alt="Background"
         class="hero__image"
+        id="heroImage"
       />
     </header>
-    <main>
-      <section class="todo">
+    <main class="container">
+      <section class="todo" aria-label="Todo application">
         <header class="todo__header">
           <h1 class="todo__title">TODO</h1>
           <button
             id="themeToggle"
             class="todo__theme-btn"
-            aria-label="Toggle theme"
+            type="button"
+            aria-label="Switch to light theme"
           >
-            <img src="./images/icon-sun.svg" alt="" />
+            <img src="./images/icon-sun.svg" alt="" id="themeIcon" />
           </button>
         </header>
+        <!--  -->
         <div class="todo__input-wrapper">
           <input
             id="taskInput"
-            type="text"
             class="todo__input"
+            type="text"
             placeholder="Create a new task"
+            maxlength="100"
+            autocomplete="off"
           />
         </div>
 
+        <!-- TODO LIST -->
         <div class="todo__list-wrapper">
-          <ul id="taskList" class="todo__list"></ul>
-          <footer class="todo__footer">
-            <span> <strong id="itemsLeft">0</strong> items left </span>
-            <div class="todo__filters">
-              <button data-filter="all">All</button>
-              <button data-filter="active">Active</button>
-              <button data-filter="completed">Completed</button>
+          <ul id="taskList" class="todo__list" aria-live="polite"></ul>
+
+          <!-- FOOTER -->
+          <div class="todo__filters">
+              <button
+                type="button"
+                data-filter="all"
+                class="is-active"
+              >
+                All
+              </button>
+
+              <button
+                type="button"
+                data-filter="active"
+              >
+                Active
+              </button>
+
+              <button
+                type="button"
+                data-filter="completed"
+              >
+                Completed
+              </button>
             </div>
-            <button id="clearCompleted" class="todo__clear">
+
+            <button
+              id="clearCompleted"
+              class="todo__clear"
+              type="button"
+            >
               Clear Completed
             </button>
           </footer>
@@ -75,6 +111,10 @@
         >. Coded by <a href="#">AkshayV30</a>.
       </div>
     </footer>
-    <script src="./res/js/script.js"></script>
+
+    <script src="./res/js/storage.js"></script>
+    <script src="./res/js/todos.js"></script>
+    <script src="./res/js/theme.js"></script>
+    <script src="./res/js/app.js"></script>
   </body>
 </html>
