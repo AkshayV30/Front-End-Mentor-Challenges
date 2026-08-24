@@ -1,64 +1,48 @@
-const themeToggle = document.getElementById("themeToggle");
-const themeIcon = document.getElementById("themeIcon");
-const themeStylesheet = document.getElementById("themeStylesheet");
-const heroImage = document.getElementById("heroImage");
+import { elements } from "./ui/elements.js";
+import { getStoredTheme, saveTheme } from "./storage.js";
 
-const THEMES = {
+const THEMES = Object.freeze({
   dark: {
-    stylesheet: "./res/css/dark-theme.css",
     icon: "./images/icon-sun.svg",
     hero: "./images/bg-desktop-dark.jpg",
     label: "Switch to light theme",
   },
 
   light: {
-    stylesheet: "./res/css/light-theme.css",
     icon: "./images/icon-moon.svg",
     hero: "./images/bg-desktop-light.jpg",
     label: "Switch to dark theme",
   },
-};
+});
 
-/* 
-   APPLY THEME
- */
-
-function applyTheme(theme) {
-  const selectedTheme = THEMES[theme];
-
-  if (!selectedTheme) return;
-
-  document.body.className = `theme-${theme}`;
-
-  themeStylesheet.href = selectedTheme.stylesheet;
-  themeIcon.src = selectedTheme.icon;
-  heroImage.src = selectedTheme.hero;
-
-  themeToggle.setAttribute("aria-label", selectedTheme.label);
-
-  saveTheme(theme);
+export function initializeTheme() {
+  applyTheme(getStoredTheme(), false);
 }
 
-/* 
-   TOGGLE THEME
- */
-
-function toggleTheme() {
-  const currentTheme = document.body.classList.contains("theme-dark")
-    ? "dark"
-    : "light";
-
+export function toggleTheme() {
+  const currentTheme = document.body.dataset.theme;
   const nextTheme = currentTheme === "dark" ? "light" : "dark";
 
   applyTheme(nextTheme);
 }
 
-/* 
-   INITIALIZE THEME
- */
+function applyTheme(theme, persist = true) {
+  const selectedTheme = THEMES[theme];
 
-function initializeTheme() {
-  const savedTheme = getStoredTheme();
+  if (!selectedTheme) {
+    return;
+  }
 
-  applyTheme(savedTheme === "light" ? "light" : "dark");
+  const { themeToggle, themeIcon, heroImage } = elements;
+
+  document.body.dataset.theme = theme;
+
+  themeIcon.src = selectedTheme.icon;
+  heroImage.src = selectedTheme.hero;
+
+  themeToggle.setAttribute("aria-label", selectedTheme.label);
+
+  if (persist) {
+    saveTheme(theme);
+  }
 }

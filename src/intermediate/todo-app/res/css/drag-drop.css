@@ -1,0 +1,17 @@
+/* DRAG AND DROP */
+
+.todo__item {
+  cursor: grab;
+}
+
+.todo__item:active {
+  cursor: grabbing;
+}
+
+.todo__item.is-dragging {
+  opacity: 0.4;
+}
+
+.todo__item.is-drag-over {
+  border-top: 2px solid var(--color-bright-blue);
+}

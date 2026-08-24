@@ -1,0 +1,36 @@
+/* 
+   MOBILE
+    */
+
+@media (max-width: 600px) {
+  .hero__image {
+    height: 20rem;
+  }
+
+  .container {
+    width: min(100% - 3rem, 54rem);
+    margin-top: -8rem;
+  }
+
+  .todo__title {
+    font-size: 3rem;
+  }
+
+  .todo__footer {
+    position: relative;
+    flex-wrap: wrap;
+  }
+
+  .todo__filters {
+    order: 3;
+    width: 100%;
+  }
+
+  .todo__filters fieldset {
+    justify-content: center;
+  }
+
+  .todo__delete {
+    opacity: 1;
+  }
+}

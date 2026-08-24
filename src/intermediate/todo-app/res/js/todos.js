@@ -1,216 +1,210 @@
+import { getStoredTasks, saveTasks } from "./storage.js";
+import { renderTasks, updateItemsLeft } from "./ui/render.js";
+
 let tasks = [];
 let currentFilter = "all";
+let draggedTaskId = null;
 
-const taskInput = document.getElementById("taskInput");
-const taskList = document.getElementById("taskList");
-const itemsLeft = document.getElementById("itemsLeft");
-const clearCompletedBtn = document.getElementById("clearCompleted");
-
-const filterButtons = document.querySelectorAll("[data-filter]");
-
-if (!taskInput || !taskList || !itemsLeft || !clearCompletedBtn) {
-  throw new Error("Todo app: required HTML elements are missing.");
-}
-/* 
-   INITIALIZE
- */
-
-function initializeTodos() {
+export function initializeTodos() {
   tasks = getStoredTasks();
-
-  renderTasks();
+  render();
 }
 
-/* 
-   ADD TASK
- */
+export function addTask() {
+  const input = document.querySelector("#taskInput");
+  const form = document.querySelector("#taskForm");
 
-function addTask() {
-  const text = taskInput.value.trim();
+  const text = input?.value.trim();
 
-  if (!text) return;
+  if (!text) {
+    return;
+  }
 
-  const task = {
+  tasks.push({
     id: crypto.randomUUID(),
     text,
     completed: false,
-  };
-
-  tasks.push(task);
-
-  saveTasks(tasks);
-  renderTasks();
-
-  taskInput.value = "";
-  taskInput.focus();
-}
-
-/* 
-   TOGGLE TASK
- */
-
-function toggleTask(id) {
-  tasks = tasks.map((task) => {
-    if (task.id !== id) return task;
-
-    return {
-      ...task,
-      completed: !task.completed,
-    };
   });
 
-  saveTasks(tasks);
-  renderTasks();
+  persist();
+  render();
+
+  form.reset();
+  input.focus();
 }
 
-/* 
-   DELETE TASK
- */
+export function toggleTask(id) {
+  updateTask(id, (task) => ({
+    ...task,
+    completed: !task.completed,
+  }));
+}
 
-function deleteTask(id) {
+export function deleteTask(id) {
   tasks = tasks.filter((task) => task.id !== id);
 
-  saveTasks(tasks);
-  renderTasks();
+  persist();
+  render();
 }
 
-/* 
-   FILTER TASKS
- */
+function updateTask(id, updater) {
+  tasks = tasks.map((task) => (task.id === id ? updater(task) : task));
+
+  persist();
+  render();
+}
+
+export function handleFilterChange(event) {
+  const button = event.currentTarget;
+  const filter = button.dataset.filter;
+
+  if (!filter) {
+    return;
+  }
+
+  currentFilter = filter;
+  updateFilterButtons();
+  render();
+}
+
+function updateFilterButtons() {
+  document.querySelectorAll("[data-filter]").forEach((button) => {
+    const isActive = button.dataset.filter === currentFilter;
+
+    button.classList.toggle("is-active", isActive);
+    button.setAttribute("aria-current", isActive ? "page" : "false");
+  });
+}
+
+export function clearCompleted() {
+  const remainingTasks = tasks.filter((task) => !task.completed);
+
+  if (remainingTasks.length === tasks.length) {
+    return;
+  }
+
+  tasks = remainingTasks;
+
+  persist();
+  render();
+}
+
+/* Drag and drop */
+
+export function startDrag(event) {
+  const item = event.target.closest(".todo__item");
+
+  if (!item) {
+    return;
+  }
+
+  draggedTaskId = item.dataset.id;
+
+  item.classList.add("is-dragging");
+
+  event.dataTransfer.effectAllowed = "move";
+  event.dataTransfer.setData("text/plain", draggedTaskId);
+}
+
+export function handleDragOver(event) {
+  event.preventDefault();
+
+  const target = event.target.closest(".todo__item");
+
+  if (!target || target.dataset.id === draggedTaskId) {
+    return;
+  }
+
+  event.dataTransfer.dropEffect = "move";
+
+  clearDragIndicators();
+
+  target.classList.add("is-drag-over");
+}
+
+export function handleDrop(event) {
+  event.preventDefault();
+
+  const target = event.target.closest(".todo__item");
+
+  if (!target || !draggedTaskId) {
+    return;
+  }
+
+  const targetId = target.dataset.id;
+
+  if (draggedTaskId !== targetId) {
+    reorderTasks(draggedTaskId, targetId);
+  }
+}
+
+export function endDrag(event) {
+  event.target.closest(".todo__item")?.classList.remove("is-dragging");
+
+  clearDragIndicators();
+  draggedTaskId = null;
+}
+
+function reorderTasks(draggedId, targetId) {
+  const visibleTasks = getFilteredTasks();
+
+  const draggedIndex = visibleTasks.findIndex((task) => task.id === draggedId);
+
+  const targetIndex = visibleTasks.findIndex((task) => task.id === targetId);
+
+  if (draggedIndex === -1 || targetIndex === -1) {
+    return;
+  }
+
+  const reordered = [...visibleTasks];
+  const [draggedTask] = reordered.splice(draggedIndex, 1);
+
+  reordered.splice(targetIndex, 0, draggedTask);
+
+  const visibleIds = new Set(visibleTasks.map((task) => task.id));
+
+  let index = 0;
+
+  tasks = tasks.map((task) =>
+    visibleIds.has(task.id) ? reordered[index++] : task,
+  );
+
+  persist();
+  render();
+}
+
+function clearDragIndicators() {
+  document.querySelectorAll(".todo__item.is-drag-over").forEach((item) => {
+    item.classList.remove("is-drag-over");
+  });
+}
+
+/* Filtering */
 
 function getFilteredTasks() {
-  switch (currentFilter) {
-    case "active":
-      return tasks.filter((task) => !task.completed);
+  const filters = {
+    all: () => tasks,
+    active: () => tasks.filter((task) => !task.completed),
+    completed: () => tasks.filter((task) => task.completed),
+  };
 
-    case "completed":
-      return tasks.filter((task) => task.completed);
-
-    default:
-      return tasks;
-  }
+  return (filters[currentFilter] ?? filters.all)();
 }
 
-/* 
-   RENDER
- */
+/* Rendering */
 
-function renderTasks() {
-  const filteredTasks = getFilteredTasks();
+function render() {
+  const visibleTasks = getFilteredTasks();
 
-  taskList.innerHTML = filteredTasks.map(createTaskHTML).join("");
+  renderTasks(visibleTasks);
 
-  updateItemsLeft();
+  const activeCount = tasks.filter((task) => !task.completed).length;
+
+  updateItemsLeft(activeCount);
 }
 
-/* 
-   CREATE TASK HTML
- */
+/* Persistence */
 
-function createTaskHTML(task) {
-  return `
-    <li
-      class="todo__item ${task.completed ? "is-completed" : ""}"
-      data-id="${task.id}"
-    >
-      <button
-        class="todo__checkbox"
-        type="button"
-        data-action="toggle"
-        aria-label="${
-          task.completed ? "Mark task as active" : "Mark task as completed"
-        }"
-        aria-pressed="${task.completed}"
-      >
-        ${task.completed ? "✓" : ""}
-      </button>
-
-      <span class="todo__text">
-        ${escapeHTML(task.text)}
-      </span>
-
-      <button
-        class="todo__delete"
-        type="button"
-        data-action="delete"
-        aria-label="Delete ${escapeHTML(task.text)}"
-      >
-        ×
-      </button>
-    </li>
-  `;
-}
-
-/* 
-   EVENT DELEGATION
- */
-
-function handleTaskListClick(event) {
-  const actionButton = event.target.closest("[data-action]");
-
-  if (!actionButton) return;
-
-  const taskItem = actionButton.closest(".todo__item");
-
-  if (!taskItem) return;
-
-  const taskId = taskItem.dataset.id;
-  const action = actionButton.dataset.action;
-
-  if (action === "toggle") {
-    toggleTask(taskId);
-  }
-
-  if (action === "delete") {
-    deleteTask(taskId);
-  }
-}
-
-/* 
-   UPDATE COUNT
- */
-
-function updateItemsLeft() {
-  const activeTasks = tasks.filter((task) => !task.completed);
-
-  itemsLeft.textContent = activeTasks.length;
-}
-
-/* 
-   FILTER BUTTONS
- */
-
-function handleFilterChange(event) {
-  const button = event.currentTarget;
-
-  currentFilter = button.dataset.filter;
-
-  filterButtons.forEach((filterButton) => {
-    filterButton.classList.toggle("is-active", filterButton === button);
-  });
-
-  renderTasks();
-}
-
-/* 
-   CLEAR COMPLETED
- */
-
-function clearCompleted() {
-  tasks = tasks.filter((task) => !task.completed);
-
+function persist() {
   saveTasks(tasks);
-  renderTasks();
-}
-
-/* 
-   HTML ESCAPE
- */
-
-function escapeHTML(text) {
-  const element = document.createElement("div");
-
-  element.textContent = text;
-
-  return element.innerHTML;
 }

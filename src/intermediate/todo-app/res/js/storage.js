@@ -1,24 +1,58 @@
-const STORAGE_KEYS = {
+const STORAGE_KEYS = Object.freeze({
   tasks: "todo-tasks",
   theme: "todo-theme",
-};
+});
 
-function getStoredTasks() {
+const VALID_THEMES = new Set(["dark", "light"]);
+
+const DEFAULT_THEME = "dark";
+
+/* TASKS                                                                      */
+
+export function getStoredTasks() {
   try {
-    return JSON.parse(localStorage.getItem(STORAGE_KEYS.tasks)) || [];
-  } catch {
+    const stored = localStorage.getItem(STORAGE_KEYS.tasks);
+
+    if (!stored) {
+      return [];
+    }
+
+    const tasks = JSON.parse(stored);
+
+    return Array.isArray(tasks) ? tasks : [];
+  } catch (error) {
+    console.error("Unable to load stored tasks:", error);
+
     return [];
   }
 }
 
-function saveTasks(tasks) {
-  localStorage.setItem(STORAGE_KEYS.tasks, JSON.stringify(tasks));
+export function saveTasks(tasks) {
+  try {
+    localStorage.setItem(STORAGE_KEYS.tasks, JSON.stringify(tasks));
+  } catch (error) {
+    console.error("Unable to save tasks:", error);
+  }
 }
 
-function getStoredTheme() {
-  return localStorage.getItem(STORAGE_KEYS.theme) || "dark";
+/* THEME                                                                      */
+
+export function getStoredTheme() {
+  try {
+    const theme = localStorage.getItem(STORAGE_KEYS.theme);
+
+    return VALID_THEMES.has(theme) ? theme : DEFAULT_THEME;
+  } catch (error) {
+    console.error("Unable to load stored theme:", error);
+
+    return DEFAULT_THEME;
+  }
 }
 
-function saveTheme(theme) {
-  localStorage.setItem(STORAGE_KEYS.theme, theme);
+export function saveTheme(theme) {
+  try {
+    localStorage.setItem(STORAGE_KEYS.theme, theme);
+  } catch (error) {
+    console.error("Unable to save theme:", error);
+  }
 }

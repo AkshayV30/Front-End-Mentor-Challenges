@@ -1,8 +1,6 @@
-/* 
-   DARK THEME
- */
+/*   DARK THEME */
 
-.theme-dark {
+body[data-theme="dark"] {
   --background: hsl(235, 21%, 11%);
   --card-background: hsl(235, 24%, 19%);
 
@@ -12,32 +10,34 @@
 
   --border-color: hsl(237, 14%, 26%);
   --checkbox-border: hsl(233, 14%, 35%);
-
   --hover-text: hsl(236, 33%, 92%);
+
+  --color-bright-blue: hsl(220, 98%, 61%);
+  --color-check-gradient-1: hsl(192, 100%, 67%);
+  --color-check-gradient-2: hsl(280, 87%, 65%);
 
   background-color: var(--background);
   color: var(--primary-text);
 }
-
 /* Cards */
 
-.theme-dark .todo__input,
+/* .theme-dark .todo__input,
 .theme-dark .todo__list-wrapper {
   background-color: var(--card-background);
-}
+} */
 
 /* Input */
-
+/* 
 .theme-dark .todo__input {
   color: var(--primary-text);
-}
-
+} */
+/* 
 .theme-dark .todo__input::placeholder {
   color: var(--secondary-text);
-}
+} */
 
 /* Hero */
-
+/* 
 .theme-dark .hero__image {
   content: url("../../images/bg-desktop-dark.jpg");
-}
+} */

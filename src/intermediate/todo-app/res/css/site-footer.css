@@ -1,0 +1,12 @@
+.site-footer {
+  padding: 2rem;
+}
+
+.attribution {
+  font-size: 1.1rem;
+  text-align: center;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}

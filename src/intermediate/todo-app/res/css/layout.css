@@ -1,0 +1,22 @@
+/* HERO */
+
+.hero {
+  width: 100%;
+}
+
+.hero__image {
+  display: block;
+  width: 100%;
+  height: 30rem;
+  object-fit: cover;
+}
+
+/* MAIN CONTAINER */
+
+.container {
+  position: relative;
+  z-index: 1;
+
+  width: min(100% - 4rem, 54rem);
+  margin: -18rem auto 0;
+}

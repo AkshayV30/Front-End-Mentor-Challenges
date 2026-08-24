@@ -1,42 +1,80 @@
-/* 
-   TODO INPUT
- */
+import {
+  initializeTodos,
+  addTask,
+  toggleTask,
+  deleteTask,
+  handleFilterChange,
+  clearCompleted,
+  startDrag,
+  handleDragOver,
+  handleDrop,
+  endDrag,
+} from "./todos.js";
 
-taskInput.addEventListener("keydown", (event) => {
-  if (event.key !== "Enter") return;
+import { initializeTheme, toggleTheme } from "./theme.js";
+import { renderApp } from "./ui/render.js";
+import { elements } from "./ui/elements.js";
 
+export function initializeApp() {
+  renderApp();
+
+  initializeTodos();
+  initializeTheme();
+
+  bindEvents();
+}
+
+function bindEvents() {
+  const {
+    taskForm,
+    taskList,
+    themeToggle,
+    clearCompletedButton,
+    filterButtons,
+  } = elements;
+
+  taskForm.addEventListener("submit", handleTaskSubmit);
+  taskList.addEventListener("click", handleTaskListClick);
+
+  clearCompletedButton.addEventListener("click", clearCompleted);
+
+  taskList.addEventListener("dragstart", startDrag);
+  taskList.addEventListener("dragover", handleDragOver);
+  taskList.addEventListener("drop", handleDrop);
+  taskList.addEventListener("dragend", endDrag);
+
+  filterButtons.forEach((button) => {
+    button.addEventListener("click", handleFilterChange);
+  });
+
+  themeToggle.addEventListener("click", toggleTheme);
+}
+
+function handleTaskSubmit(event) {
+  event.preventDefault();
   addTask();
-});
+}
 
-/* 
-   TODO LIST
- */
+function handleTaskListClick(event) {
+  const actionButton = event.target.closest("[data-action]");
 
-taskList.addEventListener("click", handleTaskListClick);
+  if (!actionButton || !elements.taskList.contains(actionButton)) {
+    return;
+  }
 
-/* 
-   FILTERS
- */
+  const taskItem = actionButton.closest(".todo__item");
 
-filterButtons.forEach((button) => {
-  button.addEventListener("click", handleFilterChange);
-});
+  if (!taskItem) {
+    return;
+  }
 
-/* 
-   CLEAR COMPLETED
- */
+  const { id } = taskItem.dataset;
+  const { action } = actionButton.dataset;
 
-clearCompletedBtn.addEventListener("click", clearCompleted);
+  const actions = {
+    toggle: toggleTask,
+    delete: deleteTask,
+  };
 
-/* 
-   THEME
- */
-
-themeToggle.addEventListener("click", toggleTheme);
-
-/* 
-   START APPLICATION
- */
-
-initializeTodos();
-initializeTheme();
+  actions[action]?.(id);
+}
