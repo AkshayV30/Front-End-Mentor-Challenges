@@ -1,4 +1,4 @@
-const DATA_PATH = "./res/data";
+const DATA_PATH = "../data";
 
 const LEVEL_FILES = Object.freeze({
   newbie: "newbie.json",
