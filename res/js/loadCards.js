@@ -1,48 +1,49 @@
-// -----------------------------------------------------------------------------
-// 📁 Data Loader
-// -----------------------------------------------------------------------------
-// ✅ PURPOSE:
-// Responsible for asynchronously fetching project data from the local
-// JSON file (data.json) and returning it as a usable JavaScript array.
-//
-// ✅ BEHAVIOR:
-// - Uses the Fetch API to load `./resources/data/data.json`
-// - Gracefully handles fetch or parse errors
-// - Returns an empty array `[]` if the data cannot be loaded
-//
-// ✅ DEPENDENCIES:
-// None (native JS only)
-//
-// ✅ RETURNS:
-// Promise<Array> → Resolves to an array of project objects
-//
-// -----------------------------------------------------------------------------
+const DATA_PATH = "./res/data";
 
-export async function loadCards() {
-  try {
-    // -----------------------------
-    // 🌐 Fetch JSON Data
-    // -----------------------------
-    // Attempt to load the data.json file containing project info
-  const res = await fetch(`./res/data/data.json`);
+const LEVEL_FILES = Object.freeze({
+  newbie: "newbie.json",
+  junior: "junior.json",
+  intermediate: "intermediate.json",
+  advanced: "advanced.json",
+});
 
+async function loadLevel(level) {
+  const filename = LEVEL_FILES[level];
 
-    // Check for successful HTTP response
-    if (!res.ok) throw new Error('Failed to load data.json');
-
-    // -----------------------------
-    // 📦 Parse and Return Data
-    // -----------------------------
-    // Convert the fetched JSON data into a JavaScript object/array
-    return await res.json();
-  } catch (error) {
-    // -----------------------------
-    // ⚠️ Error Handling
-    // -----------------------------
-    // If fetching or parsing fails, log the error for debugging
-    console.error('Error loading project data:', error);
-
-    // Return an empty array to prevent breaking the app
+  if (!filename) {
+    console.warn(`Unknown level: ${level}`);
     return [];
   }
+
+  try {
+    const response = await fetch(`${DATA_PATH}/${filename}`);
+
+    if (!response.ok) {
+      throw new Error(`${filename} returned ${response.status}`);
+    }
+
+    const data = await response.json();
+
+    if (!Array.isArray(data)) {
+      console.warn(`${filename} does not contain an array.`);
+      return [];
+    }
+
+    return data.map((project) => ({
+      ...project,
+      level: level.toUpperCase(),
+    }));
+  } catch (error) {
+    console.error(`Failed to load ${level} projects:`, error);
+
+    return [];
+  }
+}
+
+export async function loadCards() {
+  const levels = Object.keys(LEVEL_FILES);
+
+  const projects = await Promise.all(levels.map(loadLevel));
+
+  return projects.flat();
 }

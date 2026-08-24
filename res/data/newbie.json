@@ -1,0 +1,110 @@
+[
+  {
+    "id": 1,
+    "title": "Stats Preview Card",
+    "images": {
+      "desktop": [
+        "./src/newbie/stats-preview-card-component/screenshot/desktop-final.jpeg"
+      ],
+      "mobile": [
+        "./src/newbie/stats-preview-card-component/screenshot/mobile-final.jpeg"
+      ]
+    },
+    "link": "./src/newbie/stats-preview-card-component/index.html",
+    "tech": ["HTML", "CSS"]
+  },
+  {
+    "id": 2,
+    "title": "3 Column Preview Card",
+    "images": {
+      "desktop": [
+        "./src/newbie/3-column-preview-card-component/screenshot/desktop-final.png"
+      ],
+      "mobile": [
+        "./src/newbie/3-column-preview-card-component/screenshot/mobile-final.png"
+      ]
+    },
+    "link": "./src/newbie/3-column-preview-card-component/index.html",
+    "tech": ["HTML", "CSS"]
+  },
+  {
+    "id": 4,
+    "title": "Product Preview Card Component",
+    "images": {
+      "desktop": [
+        "./src/newbie/product-preview-card-component/screenshot/desktop-final.jpeg"
+      ],
+      "mobile": [
+        "./src/newbie/product-preview-card-component/screenshot/mobile-final.jpeg"
+      ]
+    },
+    "link": "./src/newbie/product-preview-card-component/index.html",
+    "tech": ["HTML", "CSS"]
+  },
+  {
+    "id": 15,
+    "title": "Profile Card Component",
+    "images": {
+      "desktop": [
+        "./src/newbie/profile-card-component/screenshot/desktop.jpeg"
+      ],
+      "mobile": ["./src/newbie/profile-card-component/screenshot/mobile.jpeg"]
+    },
+    "link": "./src/newbie/profile-card-component/index.html",
+    "tech": ["HTML", "CSS"]
+  },
+  {
+    "id": 26,
+    "title": "FourCard Feature Section ",
+    "images": {
+      "desktop": [
+        "./src/newbie/four-card-feature-section/screenshot/desktop.jpeg"
+      ],
+      "mobile": [
+        "./src/newbie/four-card-feature-section/screenshot/mobile.jpeg"
+      ]
+    },
+    "link": "./src/newbie/four-card-feature-section/index.html",
+    "tech": ["HTML", "CSS"]
+  },
+  {
+    "id": 27,
+    "title": "QR Code Component  ",
+    "images": {
+      "desktop": ["./src/newbie/qr-code-component/screenshot/desktop.png"],
+      "mobile": ["./src/newbie/qr-code-component/screenshot/mobile.png"]
+    },
+    "link": "./src/newbie/qr-code-component/index.html",
+    "tech": ["HTML", "CSS"]
+  },
+  {
+    "id": 28,
+    "title": "Blog Preview Card  ",
+    "images": {
+      "desktop": ["./src/newbie/blog-preview-card/screenshot/desktop.png"],
+      "mobile": ["./src/newbie/blog-preview-card/screenshot/mobile.png"]
+    },
+    "link": "./src/newbie/blog-preview-card/index.html",
+    "tech": ["HTML", "CSS"]
+  },
+  {
+    "id": 29,
+    "title": "Social Links Profile  ",
+    "images": {
+      "desktop": ["./src/newbie/social-links-profile/screenshot/desktop.png"],
+      "mobile": ["./src/newbie/social-links-profile/screenshot/mobile.png"]
+    },
+    "link": "./src/newbie/social-links-profile/index.html",
+    "tech": ["HTML", "CSS"]
+  },
+  {
+    "id": 30,
+    "title": "Recipe Page",
+    "images": {
+      "desktop": ["./src/newbie/recipe-page/screenshot/desktop.jpeg"],
+      "mobile": ["./src/newbie/recipe-page/screenshot/mobile.jpeg"]
+    },
+    "link": "./src/newbie/recipe-page/index.html",
+    "tech": ["HTML", "CSS"]
+  }
+]

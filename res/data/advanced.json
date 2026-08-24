@@ -1,0 +1,48 @@
+[
+  {
+    "id": 12,
+    "title": "Multi-Step Form",
+    "images": {
+      "desktop": [],
+      "mobile": []
+    },
+    "link": "./src/advanced/multi-step-form/index.html",
+    "tech": ["HTML", "CSS", "JS"]
+  },
+  {
+    "id": 23,
+    "title": "Rest Countries API  ",
+    "images": {
+      "desktop": [
+        "./src/advanced/rest-countries-api-with-color-theme-switcher/screenshots/desktop-white.png",
+        "./src/advanced/rest-countries-api-with-color-theme-switcher/screenshots/desktop-dark.png"
+      ],
+      "mobile": [
+        "./src/advanced/rest-countries-api-with-color-theme-switcher/screenshots/mobile-white.jpg",
+        "./src/advanced/rest-countries-api-with-color-theme-switcher/screenshots/mobile-dark.jpg"
+      ]
+    },
+    "link": "./src/advanced/rest-countries-api-with-color-theme-switcher/index.html",
+    "tech": ["HTML", "CSS", "JS", "API"]
+  },
+  {
+    "id": 35,
+    "title": "Rock Paper Scissors",
+    "images": {
+      "desktop": [],
+      "mobile": []
+    },
+    "link": "./src/advanced/rock-paper-scissors/index.html",
+    "tech": ["HTML", "CSS", "JS"]
+  },
+  {
+    "id": 37,
+    "title": "FrontPage-Feed-Reader",
+    "images": {
+      "desktop": [],
+      "mobile": []
+    },
+    "link": "./src/advanced/frontpage-feed-reader-main/index.html",
+    "tech": ["HTML", "CSS", "JS"]
+  }
+]
