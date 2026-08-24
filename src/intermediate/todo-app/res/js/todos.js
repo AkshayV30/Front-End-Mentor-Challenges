@@ -8,6 +8,9 @@ const clearCompletedBtn = document.getElementById("clearCompleted");
 
 const filterButtons = document.querySelectorAll("[data-filter]");
 
+if (!taskInput || !taskList || !itemsLeft || !clearCompletedBtn) {
+  throw new Error("Todo app: required HTML elements are missing.");
+}
 /* 
    INITIALIZE
  */
